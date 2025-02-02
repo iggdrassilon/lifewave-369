@@ -1,0 +1,64 @@
+{
+  "en": {
+    "navigation": {
+      "home": "Home",
+      "patents": "Patents",
+      "reviews": "Reviews",
+      "research": "Research"
+    },
+    "footer": {
+      "titles": {
+        "quick": "Quick Links",
+        "resources": "Resources",
+        "connect": "Connect",
+        "contact": "If You owner Lifewave"
+      },
+      "links": {
+        "about": "About",
+        "mission": "Our Mission",
+        "feedback": "Feetback",
+        "instructions": "Instructions",
+        "story": "Story",
+        "policy": "Privacy and Policy",
+        "terms": "Terms and Conditions",
+        "telegram": "Telegram",
+        "twitter": "Twitter",
+        "vk": "VK",
+        "rutube": "Rutube",
+        "if_owner": "If You Lifewave, contact us to collaborate",
+        "mail": "example@exampler"
+      }
+    }
+  },
+  "ru": {
+    "navigation": {
+      "home": "Главная",
+      "patents": "Патенты",
+      "reviews": "Отзывы",
+      "research": "Исследования"
+    },
+    "footer": {
+      "titles": {
+        "quick": "Ссылки",
+        "resources": "Доп. Инвормация",
+        "connect": "Связь с нами",
+        "contact": "Для владельцев Lifewave"
+      },
+      "links": {
+        "about": "О Компании",
+        "mission": "Наша Миссия",
+        "feedback": "Оставить отзыв",
+        "instructions": "Инструкции",
+        "story": "История",
+        "policy": "Политика приватности",
+        "terms": "Условия и положения",
+        "telegram": "Telegram",
+        "twitter": "Twitter",
+        "vk": "VK",
+        "rutube": "Rutube",
+        "if_owner": "If You Lifewave, contact us to collaborate",
+        "mail": "example@exampler"
+      }
+    }
+  }
+}

@@ -1,18 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import DnaHeader from "@/components/DnaHeader";
-import VideoSection from "@/components/VideoSection";
-import PatentSection from "@/components/PatentSection";
-import FounderBio from "@/components/FounderBio";
-import BackToTop from "@/components/BackToTop";
+import Footer from "@/src/components/modules/Footer";
+import DnaHeader from "@/src/components/modules/home/DnaHeader";
+import VideoSection from "@/src/components/VideoSection";
+import PatentSection from "@/src/components/modules/patents/PatentSection";
+import FounderBio from "@/src/components/modules/patents/FounderBio";
+import BackToTop from "@/src/components/BackToTop";
 
 const Patents = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
-      
       <main>
         <DnaHeader title="Science and Research" />
         

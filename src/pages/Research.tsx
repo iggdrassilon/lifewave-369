@@ -1,14 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import BackToTop from "@/components/BackToTop";
+import Footer from "@/src/components/modules/Footer";
+import BackToTop from "@/src/components/BackToTop";
 
 const Research = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
-      
       <main className="container mx-auto px-4 py-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

@@ -90,6 +90,12 @@
   }
 }
 
+@layer colors {
+  :root {
+    --main-blue: #194F90;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;

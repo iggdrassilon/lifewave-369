@@ -36,7 +36,7 @@ const SpaceBackground = () => {
     });
 
     const starsVertices = [];
-    for (let i = 0; i < 5000; i++) {
+    for (let i = 0; i < 1000; i++) {
       const x = (Math.random() - 0.5) * 2000;
       const y = (Math.random() - 0.5) * 2000;
       const z = (Math.random() - 0.5) * 2000;
@@ -91,8 +91,8 @@ const SpaceBackground = () => {
   return (
     <div 
       ref={containerRef} 
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ background: 'linear-gradient(to bottom, #0a1930 0%, #1a1a2e 100%)' }}
+      className="fixed inset-0 pointer-events-none z-[-1]"
+      style={{ background: 'linear-gradient(to bottom, #0a1930 0%, #000 100%)' }}
     />
   );
 };
