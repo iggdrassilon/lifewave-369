@@ -4,6 +4,10 @@ import AllowedLangs from "../constants/lang";
 
 const languageDomain = createDomain()
 
-export const setLangEvent = languageDomain.createEvent()
+export const setLangEvent = languageDomain.createEvent<AllowedLangs | string>()
 
-export const $language = languageDomain.createStore(setLocalStorage('language', AllowedLangs.ru)).on(setLangEvent, (_, lang) => lang)
+export const $language = languageDomain.createStore(setLocalStorage('language', AllowedLangs.ru))
+  .on(setLangEvent, (_, lang) => { 
+    localStorage.setItem('language', lang)
+    return lang 
+  })

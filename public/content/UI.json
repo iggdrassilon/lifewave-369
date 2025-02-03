@@ -19,15 +19,17 @@
         "feedback": "Feetback",
         "instructions": "Instructions",
         "story": "Story",
+        "policies": "Policies & Procedures",
         "policy": "Privacy and Policy",
         "terms": "Terms and Conditions",
         "telegram": "Telegram",
         "twitter": "Twitter",
         "vk": "VK",
         "rutube": "Rutube",
-        "if_owner": "If You Lifewave, contact us to collaborate",
-        "mail": "example@exampler"
-      }
+        "if_owner": "Pleace, contact us to collaborate",
+        "mail": "example@example.com"
+      },
+      "rights": "369 of LifeWave. All rights reserved."
     }
   },
   "ru": {
@@ -50,15 +52,17 @@
         "feedback": "Оставить отзыв",
         "instructions": "Инструкции",
         "story": "История",
+        "policies": "Политики и регламенты",
         "policy": "Политика приватности",
         "terms": "Условия и положения",
         "telegram": "Telegram",
         "twitter": "Twitter",
         "vk": "VK",
         "rutube": "Rutube",
-        "if_owner": "If You Lifewave, contact us to collaborate",
-        "mail": "example@exampler"
-      }
+        "if_owner": "Свяжитесь с нами для кооперации:",
+        "mail": "example@example.ru"
+      },
+      "rights": "369 of LifeWave. Все права зарегистрированы."
     }
   }
 }
