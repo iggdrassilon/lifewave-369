@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Footer from "@/src/components/modules/Footer";
 import DnaHeader from "@/src/components/modules/home/DnaHeader";
-import VideoSection from "@/src/components/VideoSection";
+import VideoSection from "@/src/components/modules/home/VideoSection";
 import PatentSection from "@/src/components/modules/patents/PatentSection";
 import FounderBio from "@/src/components/modules/patents/FounderBio";
 import BackToTop from "@/src/components/BackToTop";

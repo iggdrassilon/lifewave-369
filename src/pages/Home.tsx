@@ -2,16 +2,17 @@ import React from "react";
 import { motion } from "framer-motion";
 import Footer from "@/src/components/modules/Footer";
 import DnaHero from "@/src/components/modules/home/Intro";
-import VideoSection from "@/src/components/VideoSection";
-import HowItWorks from "@/src/components/HowItWorks";
+import VideoSection from "@/src/components/modules/home/VideoSection";
+import HowItWorks from "@/src/components/modules/home/HowItWorks";
 import WearInstructions from "@/src/components/modules/patents/WearInstructions";
 import Timeline from "@/src/components/modules/home/Timeline";
-import ProductCards from "@/src/components/ProductCards";
-import Disclaimer from "@/src/components/Disclaimer";
-import Contact from "@/src/components/Contact";
+import ProductCards from "@/src/components/modules/home/ProductCards";
+import Disclaimer from "@/src/components/modules/home/Disclaimer";
+import Contact from "@/src/components/modules/home/Contact";
 import BackToTop from "@/src/components/BackToTop";
 import SpaceBackground from "@/src/components/SpaceBackground";
 import SpaceLines from "@/src/components/SpaceLines";
+import { MotionLayout } from "../components/layouts/motionLayout";
 
 const Home = () => {
   return (
@@ -20,24 +21,13 @@ const Home = () => {
       {/* <SpaceLines /> */}
       <main>
         <DnaHero />
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="container mx-auto px-4 py-16 relative z-10"
-        >
+        <MotionLayout duration={0.5} delay={0}>
           <VideoSection
             title="Activate Your Stem Cells"
             videoUrl="https://www.youtube.com/embed/SXMvqTQ4J1Y?feature=oembed"
           />
-        </motion.section>
-
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="container mx-auto px-4 py-16 relative z-10"
-        >
+        </MotionLayout>
+        <MotionLayout duration={0.5} delay={0.3}>
           <VideoSection
             title="How our product Activates Your Own Stem Cells"
             videoUrl="https://www.youtube.com/embed/S-itVjiYD-A?feature=oembed"
@@ -48,14 +38,25 @@ const Home = () => {
               "Age Reversal with GNK-Cu"
             ]}
           />
-        </motion.section>
-
-        <HowItWorks />
-        <WearInstructions />
-        <Timeline />
-        <ProductCards />
-        <Disclaimer />
-        <Contact />
+        </MotionLayout>
+        <MotionLayout duration={0.5} delay={0.3}>
+         <HowItWorks />
+        </MotionLayout>
+        <MotionLayout duration={0.5} delay={0.3}>
+          <WearInstructions />
+        </MotionLayout>
+        <MotionLayout duration={0.5} delay={0.4}>
+          <Timeline />
+        </MotionLayout>
+        <MotionLayout duration={1} delay={0.4}>
+          <ProductCards />
+        </MotionLayout>
+        <MotionLayout duration={1} delay={0.4}>
+          <Disclaimer />
+        </MotionLayout>
+        <MotionLayout duration={1} delay={0.4}>
+          <Contact />
+        </MotionLayout>
       </main>
 
       <Footer />

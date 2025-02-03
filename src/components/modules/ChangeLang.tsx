@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useRef, useState } from 'react'
 
 import AllowedLangs from '@/src/constants/lang'
 
@@ -9,7 +10,14 @@ import OverlayModal from './overlays/OverlayModals'
 import styled, { css } from 'styled-components'
 import { ModalsStateT } from '@/src/types/modals'
 
-const SwitchLanguage = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const SwitchLanguage = ({
+  context,
+  setContext
+}: {
+  context: boolean,
+  setContext: (c: boolean) => void
+}) => {
   const timeRealeses = 0.1 // second
   const timeout = useRef<NodeJS.Timeout | null>(null)
   const [active, setActive] = useState<ModalsStateT>({
@@ -18,23 +26,30 @@ const SwitchLanguage = () => {
   })
 
   const openEvent = () => {
-    setActive((prev) => ({
-      ...prev,
-      modal: true,
-      overlay: true,
-    }))
+    if (context) {
+      setActive((prev) => ({
+        ...prev,
+        modal: true,
+        overlay: true,
+      }))
+    }
   }
 
   const closeEvent = () => {
     setActive((prev) => ({...prev, modal: false}))
     timeout.current = setTimeout(() => {
       setActive((prev) => ({...prev, overlay: false}))
+      setContext(false)
     }, timeRealeses * 1000 + 0.01)
   }
 
+  useEffect(() => {
+    openEvent()
+  }, [context])
+
   return (
-    <div className="w-6 h-6 relative">
-      <Switcher onClick={() => openEvent()}><svg fill='var(--main-blue)' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 18c.335 0 1.121-.296 1.941-1.859.318-.604.595-1.326.812-2.141H9.247c.217.815.494 1.537.812 2.141C10.879 19.704 11.665 20 12 20zm-3.132-6a16.802 16.802 0 01-.118-2c0-.695.041-1.364.118-2h6.264c.077.636.118 1.305.118 2 0 .695-.041 1.364-.118 2H8.868zm7.945 2c-.267 1.164-.647 2.212-1.113 3.095A8.037 8.037 0 0018.93 16h-2.117zm2.935-2h-2.603a18.912 18.912 0 000-4h2.603c.165.64.252 1.31.252 2s-.087 1.36-.252 2zM6.855 14H4.252A8.014 8.014 0 014 12c0-.69.088-1.36.252-2h2.603a18.893 18.893 0 000 4zM5.07 16h2.117c.267 1.164.647 2.212 1.113 3.095A8.036 8.036 0 015.07 16zm4.177-8h5.506a10.376 10.376 0 00-.812-2.141C13.121 4.296 12.335 4 12 4c-.335 0-1.121.296-1.941 1.859A10.375 10.375 0 009.247 8zm7.566 0h2.117a8.037 8.037 0 00-3.23-3.095c.466.883.846 1.931 1.113 3.095zM8.3 4.905C7.834 5.788 7.454 6.836 7.187 8H5.07A8.037 8.037 0 018.3 4.905z"></path></svg></Switcher>
+    <div className="switch-wrapper w-6 h-6 relative">
+      <Switcher><svg fill='var(--main-blue)' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 18c.335 0 1.121-.296 1.941-1.859.318-.604.595-1.326.812-2.141H9.247c.217.815.494 1.537.812 2.141C10.879 19.704 11.665 20 12 20zm-3.132-6a16.802 16.802 0 01-.118-2c0-.695.041-1.364.118-2h6.264c.077.636.118 1.305.118 2 0 .695-.041 1.364-.118 2H8.868zm7.945 2c-.267 1.164-.647 2.212-1.113 3.095A8.037 8.037 0 0018.93 16h-2.117zm2.935-2h-2.603a18.912 18.912 0 000-4h2.603c.165.64.252 1.31.252 2s-.087 1.36-.252 2zM6.855 14H4.252A8.014 8.014 0 014 12c0-.69.088-1.36.252-2h2.603a18.893 18.893 0 000 4zM5.07 16h2.117c.267 1.164.647 2.212 1.113 3.095A8.036 8.036 0 015.07 16zm4.177-8h5.506a10.376 10.376 0 00-.812-2.141C13.121 4.296 12.335 4 12 4c-.335 0-1.121.296-1.941 1.859A10.375 10.375 0 009.247 8zm7.566 0h2.117a8.037 8.037 0 00-3.23-3.095c.466.883.846 1.931 1.113 3.095zM8.3 4.905C7.834 5.788 7.454 6.836 7.187 8H5.07A8.037 8.037 0 018.3 4.905z"></path></svg></Switcher>
       {active.modal && (
         <Wrapper>
           <Select

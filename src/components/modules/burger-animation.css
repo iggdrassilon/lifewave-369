@@ -1,0 +1,30 @@
+.hamburger {
+  /* position: absolute; */
+  /* top: 20px; */
+  /* right: 20px; */
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid rgba(0,0,0, .0);
+  overflow: hidden;
+  padding-top: 3px;
+}
+.bar {
+  width: 25px;
+  height: 2px;
+  background-color: var(--main-blue);
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 4px);
+  transform: rotate(-45deg) translate(-6px, 4px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -4px);
+  transform: rotate(45deg) translate(-6px, -4px);
+}
