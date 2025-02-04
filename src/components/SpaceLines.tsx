@@ -3,11 +3,14 @@ import { motion } from 'framer-motion';
 
 const SpaceLines = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden" style={{
+      height: '100%',
+      width: '100%'
+    }}>
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute h-[1px] bg-blue-400/20"
+          className="absolute h-[1px] bg-blue-600/20"
           style={{
             width: '100%',
             top: `${20 + i * 15}%`,

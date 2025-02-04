@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/public/fonts/HelveticaNeueCyr-Light.otf');
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/public/fonts/HelveticaNeueCyr-Light.otf');
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/public/fonts/HelveticaNeueCyr-Light.otf');
+}
+
+@font-face {
+  font-family: 'Kefa';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/public/fonts/Kefa-Regular.TTF');
+}

@@ -20,9 +20,6 @@ const Research = () => {
           <p className="text-gray-600">Research content coming soon...</p>
         </div>
       </main>
-
-      <Footer />
-      <BackToTop />
     </div>
   );
 };

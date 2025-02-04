@@ -1,10 +1,13 @@
 import useLang from "@/src/hooks/use-lang";
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import SpaceBackground from "../SpaceBackground";
+import SpaceLines from "../SpaceLines";
 
 const Footer = () => {
   const UI = useLang().UI
   const CONTENT = useLang().CONTENT
+  const footerRef = useRef(null)
 
   const links = [
     { name: UI.footer.links.about, path: "/about" },
@@ -25,8 +28,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary py-12">
-      <div className="container mx-auto px-4">
+    <footer ref={footerRef} className="relative overflow-hidden py-12" style={{ filter: 'hue-rotate(-10deg)' }}>
+      <SpaceBackground ref={footerRef} />
+      <SpaceLines />
+      <div className="txt-shadow-light container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-space-dark font-bold text-lg mb-4">{UI.footer.titles.quick}</h3>
@@ -84,8 +89,8 @@ const Footer = () => {
               {UI.footer.links.if_owner}
               <br />
               <a
-                href="mailto:contact@example.com"
-                className="text-primary hover:underline"
+                href={`${UI.footer.links.mail}`}
+                className="text-mail underline"
               >
                 {UI.footer.links.mail}
               </a>
@@ -93,7 +98,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-space-light/20 text-center text-space-medium">
+        <div className="mt-12 pt-8 text-center text-space-medium">
           <p>&copy; {new Date().getFullYear()} {UI.footer.rights} </p>
         </div>
       </div>
@@ -102,3 +107,6 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+// border-t border-space-dark 

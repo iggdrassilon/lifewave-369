@@ -1,63 +1,65 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const SpaceBackground = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<THREE.Scene | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const starsRef = useRef<THREE.Points | null>(null);
+const SpaceBackground = React.forwardRef((props, ref: any) => {
+  const containerRef = useRef(null);
+  const sceneRef = useRef(null);
+  const cameraRef = useRef(null);
+  const rendererRef = useRef(null);
+  const starsRef = useRef(null);
+
+  const starCount = 1000; // Количество звезд
+  const starLimit = 1000; // Ограничение по расстоянию для звезд
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !ref.current) return;
 
-    // Scene setup
+    const parentH = ref.current.offsetHeight;
+    const parentW = ref.current.offsetWidth;
+
     sceneRef.current = new THREE.Scene();
-    cameraRef.current = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
+    cameraRef.current = new THREE.PerspectiveCamera(75, parentW / parentH, 0.1, 1000);
     rendererRef.current = new THREE.WebGLRenderer({ alpha: true });
-    
+
     const renderer = rendererRef.current;
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0);
+    renderer.setSize(parentW, parentH);
     containerRef.current.appendChild(renderer.domElement);
 
-    // Create stars
-    const starsGeometry = new THREE.BufferGeometry();
-    const starsMaterial = new THREE.PointsMaterial({
-      color: 0xFFFFFF,
-      size: 0.1,
-      transparent: true,
-      opacity: 0.8,
-    });
+    const createStars = () => {
+      if (starsRef.current) {
+        sceneRef.current.remove(starsRef.current); // Удаляем предыдущие звезды
+      }
 
-    const starsVertices = [];
-    for (let i = 0; i < 1000; i++) {
-      const x = (Math.random() - 0.5) * 2000;
-      const y = (Math.random() - 0.5) * 2000;
-      const z = (Math.random() - 0.5) * 2000;
-      starsVertices.push(x, y, z);
-    }
+      const starsGeometry = new THREE.BufferGeometry();
+      const starsMaterial = new THREE.PointsMaterial({
+        color: 0xFFFFFF,
+        size: 0.1,
+        transparent: true,
+        opacity: 0.8,
+      });
 
-    starsGeometry.setAttribute(
-      'position',
-      new THREE.Float32BufferAttribute(starsVertices, 3)
-    );
+      const starsVertices = [];
+      for (let i = 0; i < starCount; i++) {
+        const x = (Math.random() - 0.5) * starLimit;
+        const y = (Math.random() - 0.5) * starLimit;
+        const z = (Math.random() - 0.5) * starLimit;
+        starsVertices.push(x, y, z);
+      }
 
-    starsRef.current = new THREE.Points(starsGeometry, starsMaterial);
-    sceneRef.current.add(starsRef.current);
+      starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
+      starsRef.current = new THREE.Points(starsGeometry, starsMaterial);
+      sceneRef.current.add(starsRef.current);
+    };
 
-    // Position camera
+    createStars(); // Создаем звезды при первом рендере
+
+    // Позиция камеры
     cameraRef.current.position.z = 5;
 
-    // Animation
+    // Анимация
     const animate = () => {
       requestAnimationFrame(animate);
-
       if (starsRef.current) {
         starsRef.current.rotation.x += 0.0001;
         starsRef.current.rotation.y += 0.0001;
@@ -70,13 +72,16 @@ const SpaceBackground = () => {
 
     animate();
 
-    // Handle resize
+    // Обработка события изменения размера
     const handleResize = () => {
-      if (!cameraRef.current || !rendererRef.current) return;
-      
-      cameraRef.current.aspect = window.innerWidth / window.innerHeight;
+      const newParentH = ref.current.offsetHeight;
+      const newParentW = ref.current.offsetWidth;
+
+      cameraRef.current.aspect = newParentW / newParentH;
       cameraRef.current.updateProjectionMatrix();
-      rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+      rendererRef.current.setSize(newParentW, newParentH);
+
+      createStars(); // Пересоздаем звезды при изменении размера
     };
 
     window.addEventListener('resize', handleResize);
@@ -86,15 +91,15 @@ const SpaceBackground = () => {
       containerRef.current?.removeChild(renderer.domElement);
       renderer.dispose();
     };
-  }, []);
+  }, [ref]);
 
   return (
-    <div 
-      ref={containerRef} 
-      className="fixed inset-0 pointer-events-none z-[-1]"
-      style={{ background: 'linear-gradient(to bottom, #0a1930 0%, #000 100%)' }}
+    <div
+      ref={containerRef}
+      className="absolute inset-0 pointer-events-none z-[-1]"
+      style={{ background: 'linear-gradient(to top, #0a1930 0%, #000 100%)' }}
     />
   );
-};
+});
 
 export default SpaceBackground;

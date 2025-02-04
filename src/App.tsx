@@ -10,6 +10,9 @@ import Reviews from "./pages/Reviews";
 import Research from "./pages/Research";
 import NotFound from "./pages/NotFound";
 import Header from "./components/modules/Header";
+import Footer from "./components/modules/Footer";
+import BackToTop from "./components/BackToTop";
+import './App.css'
 
 const queryClient = new QueryClient();
 
@@ -28,6 +31,8 @@ const App = () => (
             <Route path="/research" element={<Research />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
+          <BackToTop />
         </AnimatePresence>
       </BrowserRouter>
     </TooltipProvider>

@@ -24,7 +24,11 @@ const Header = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="bg-white shadow-md relative z-50"
+      className='shadow-md fixed z-50 w-[100%]'
+      style={{
+        backgroundColor: 'var(--header-color)',
+        backdropFilter: 'var(--header-blur)'
+      }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -43,8 +47,8 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="text-blue-900 hover:text-indigo-600 transition-colors content-center"
-                >
+                  className="text-blue-900 hover:text-indigo-600 transition-colors content-center py-2.5"
+                  >
                   {link.name}
                 </Link>
               ))}
@@ -75,7 +79,11 @@ const Header = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute overflow-hidden top-16 left-0 right-0 bg-white shadow-lg"
+            className='md:hidden absolute overflow-hidden top-16 left-0 right-0 shadow-lg'
+            style={{
+              backgroundColor: 'var(--header-color)',
+              backdropFilter: 'var(--header-blur)'
+            }}
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4 ">
               {links.map((link) => (

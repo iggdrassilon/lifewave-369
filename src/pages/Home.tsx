@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Footer from "@/src/components/modules/Footer";
-import DnaHero from "@/src/components/modules/home/Intro";
+import DnaHero from "@/src/components/modules/home/MainSectionDNA";
 import VideoSection from "@/src/components/modules/home/VideoSection";
 import HowItWorks from "@/src/components/modules/home/HowItWorks";
 import WearInstructions from "@/src/components/modules/patents/WearInstructions";
@@ -17,11 +17,9 @@ import { MotionLayout } from "../components/layouts/motionLayout";
 const Home = () => {
   return (
     <div className="min-h-screen bg-transparent relative">
-      {/* <SpaceBackground /> */}
-      {/* <SpaceLines /> */}
       <main>
         <DnaHero />
-        <MotionLayout duration={0.5} delay={0}>
+        {/* <MotionLayout duration={0.5} delay={0}>
           <VideoSection
             title="Activate Your Stem Cells"
             videoUrl="https://www.youtube.com/embed/SXMvqTQ4J1Y?feature=oembed"
@@ -56,11 +54,8 @@ const Home = () => {
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Contact />
-        </MotionLayout>
+        </MotionLayout> */}
       </main>
-
-      <Footer />
-      <BackToTop />
     </div>
   );
 };

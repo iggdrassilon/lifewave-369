@@ -18,6 +18,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'helvetica': ['Helvetica Neue', 'sans-serif'],
+        'kefa': ['Kefa'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -26,10 +30,12 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: "#194F90",
         secondary: "#AED8F2",
+        whitePremium: 'rgba(250,250,250, .9)',
+        mail: 'var(--text-color-mail)',
         space: {
-          dark: "#0A1930",
-          medium: "#1E3D59",
-          light: "#2A5298",
+          dark: 'var(--space-dark)',
+          medium: 'var(--space-medium)',
+          light: 'var(--space-light)',
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -55,7 +61,8 @@ export default {
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.5s ease-out",
-        float: "float 6s ease-in-out infinite",
+        "rotate": "rotate 60s linear infinite",
+        "float": "float 6s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -70,8 +77,13 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-20px)" },
         },
+        rotate: {
+          "0": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" }
+        }
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

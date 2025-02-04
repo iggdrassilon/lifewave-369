@@ -20,9 +20,6 @@ const Reviews = () => {
           <p className="text-gray-600">Reviews coming soon...</p>
         </div>
       </main>
-
-      <Footer />
-      <BackToTop />
     </div>
   );
 };

@@ -93,6 +93,13 @@
 @layer colors {
   :root {
     --main-blue: #194F90;
+    --header-color: #f6f7fce1;
+    --header-blur: blur(20px);
+    
+    --space-dark: #20539e;
+    --space-medium: #4b93d1;
+    --space-light: #091b3a;
+    --text-color-mail: #61a1d8;
   }
 }
 
@@ -103,5 +110,6 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Helvetica Neue';
   }
 }

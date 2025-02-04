@@ -28,9 +28,6 @@ const Patents = () => {
         <PatentSection />
         <FounderBio />
       </main>
-
-      <Footer />
-      <BackToTop />
     </div>
   );
 };
