@@ -58,6 +58,9 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      boxShadow: {
+        'custom': 'inset 0 8px 8px rgba(0, 0, 0, 0.4), 0 12px 20px rgba(0, 0, 0, 0.4)',
+      },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.5s ease-out",

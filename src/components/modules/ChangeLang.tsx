@@ -127,13 +127,13 @@ const Icon = styled.a<{ $content: string }>`
     ${props.$content === 'ru' &&
     css`
       &:before {
-        content: url(/public/icons/Rus.svg);
+        content: url('/icons/Rus.svg');
       }
     `}
     ${props.$content === 'eng' &&
     css`
       &:before {
-        content: url(/public/icons/Eng.svg);
+        content: url('/icons/Eng.svg');
       }
     `}
   `}

@@ -33,14 +33,18 @@ const DnaHero = () => {
     >
       {/* bg-[url('/images/DNA.gif')] */}
       <div
-        className="dna-rotate min-h-screen flex items-center justify-center bg-[url('/images/DNA.gif')] bg-cover bg-no-repeat rotate-180 overfrow-hidden"
+        className="dna-rotate min-h-screen flex items-center justify-center bg-cover bg-no-repeat 
+        bg-[url('/images/DNA.gif')] 
+        rotate-180 overfrow-hidden"
         onMouseMove={handlePointerMove}
         onTouchMove={handlePointerMove}
         onTouchStart={handlePointerMove}
       >
-        <div className="absolute top-[65%] md:top-[65%] z-100 w-[200px] h-[200px] animate-rotate bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat"></div>
-        <div className="absolute top-[50%] md:top-[45%] rotate-180 font-bold text-7xl md:text-9xl text-whitePremium font-kefa">LifeWave</div>
-        <div className="rotate-180 translate-y-[-80%] w-[90vw] max-w-[500px] aspect-video">
+        <div className=" absolute top-[60%] md:top-[60%] z-100">
+          <div className="rounded-full rotate-180 w-[200px] h-[200px] animate-rotate bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat"></div>
+          <div className="absolute right-3 bottom-2 rotate-180 inset-0 -z-10 before:block before:content-[''] before:rounded-full before:w-[180px] before:h-[180px] before:shadow-custom before:bg-transparent before:translate-y-1"></div>
+        </div>
+        <div className="rotate-180 translate-y-[-60%] w-[90vw] max-w-[500px] aspect-video">
           <Card3D mousePosition={mousePosition}>
             <div className="layer-1 absolute inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat" />
             <div 
