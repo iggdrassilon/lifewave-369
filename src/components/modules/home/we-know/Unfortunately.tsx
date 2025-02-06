@@ -1,18 +1,18 @@
-import { MotionSection } from '../../layouts/motionLayout'
+import { MotionSection } from "@/src/components/layouts/motionLayout"
 
-const HowItWorks = () => {
+const Unfortunately = () => {
   return (
     <MotionSection
       height_initial={80}
       height_viewported={0}
-      duration={0.3}
-      delay={0.2}
+      duration={0.6}
+      delay={0.3}
       once={true}
       className='container mx-auto px-4 py-16'
     >
       <>
         <h2 className='text-3xl font-bold text-center mb-8 text-space-medium'>
-          How It Works
+          Unfortunately
         </h2>
         <div className='prose max-w-none'>
           <p>Content coming soon...</p>
@@ -22,4 +22,4 @@ const HowItWorks = () => {
   )
 }
 
-export default HowItWorks
+export default Unfortunately

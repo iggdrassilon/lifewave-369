@@ -1,15 +1,15 @@
-import { MotionHookT, MotionSectionT } from "../../types/hooks";
-import { motion } from "framer-motion";
+import { MotionHookT, MotionSectionT } from '../../types/hooks'
+import { motion } from 'framer-motion'
 
 const MotionLayout = (props: MotionHookT) => {
   const { children, duration, delay } = props
-  
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: duration, delay: delay }}
-      className="container mx-auto px-4 py-16 relative z-10"
+      className='container mx-auto px-4 py-16 relative z-10'
     >
       {children}
     </motion.section>
@@ -17,8 +17,16 @@ const MotionLayout = (props: MotionHookT) => {
 }
 
 const MotionSection = (props: MotionSectionT) => {
-  const { children, className, duration, delay, height_initial, height_viewported, once } = props
-  
+  const {
+    children,
+    className,
+    duration,
+    delay,
+    height_initial,
+    height_viewported,
+    once,
+  } = props
+
   return (
     <motion.section
       initial={{ opacity: 0, y: height_initial }}

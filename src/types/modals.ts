@@ -5,6 +5,6 @@ export type ModalsOverlayT = {
 }
 
 export type ModalsStateT = {
-  modal: boolean,
+  modal: boolean
   overlay: boolean
 }

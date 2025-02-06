@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronUp } from "lucide-react";
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronUp } from 'lucide-react'
 
 const BackToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
-      setIsVisible(true);
+      setIsVisible(true)
     } else {
-      setIsVisible(false);
+      setIsVisible(false)
     }
-  };
+  }
 
   // Set the top cordinate to 0
   // make scrolling smooth
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility)
     return () => {
-      window.removeEventListener("scroll", toggleVisibility);
-    };
-  }, []);
+      window.removeEventListener('scroll', toggleVisibility)
+    }
+  }, [])
 
   return (
     <AnimatePresence>
@@ -38,14 +38,14 @@ const BackToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary/40 hover:bg-primary/60 text-white backdrop-blur-sm transition-colors duration-300"
-          aria-label="Back to top"
+          className='fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary/40 hover:bg-primary/60 text-white backdrop-blur-sm transition-colors duration-300'
+          aria-label='Back to top'
         >
-          <ChevronUp className="h-6 w-6" />
+          <ChevronUp className='h-6 w-6' />
         </motion.button>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default BackToTop;
+export default BackToTop

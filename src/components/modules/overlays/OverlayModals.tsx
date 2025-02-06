@@ -2,7 +2,12 @@ import { ModalsOverlayT } from '@/src/types/modals'
 import { OverlayModals } from '@/src/types/overlays'
 import styled, { css } from 'styled-components'
 
-const OverlayModal = ({ closeEvent, holder, context, timeRealeses }: OverlayModals) => {
+const OverlayModal = ({
+  closeEvent,
+  holder,
+  context,
+  timeRealeses,
+}: OverlayModals) => {
   const checker = (type: string): boolean | null =>
     context === type ? true : false
 

@@ -1,16 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from 'react'
+import { motion } from 'framer-motion'
 
 const SpaceLines = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden" style={{
-      height: '100%',
-      width: '100%'
-    }}>
+    <div
+      className='absolute inset-0 pointer-events-none z-10 overflow-hidden'
+      style={{
+        height: '100%',
+        width: '100%',
+      }}
+    >
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute h-[1px] bg-blue-600/20"
+          className='absolute h-[1px] bg-blue-600/20'
           style={{
             width: '100%',
             top: `${20 + i * 15}%`,
@@ -31,7 +34,7 @@ const SpaceLines = () => {
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={`vertical-${i}`}
-          className="absolute w-[1px] bg-blue-400/20"
+          className='absolute w-[1px] bg-blue-400/20'
           style={{
             height: '100%',
             left: `${20 + i * 15}%`,
@@ -50,7 +53,7 @@ const SpaceLines = () => {
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default SpaceLines;
+export default SpaceLines

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave Text Animation</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #282c34;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+      .wave-text {
+        font-size: 2em;
+        display: flex;
+      }
+      .wave-text span {
+        animation: wave 1.5s infinite;
+        opacity: 0;
+      }
+      @keyframes wave {
+        0% {
+          transform: translateY(0);
+          opacity: 0;
+        }
+        25% {
+          transform: translateY(-20px);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        75% {
+          transform: translateY(-10px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 0;
+        }
+      }
+      .wave-text span:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .wave-text span:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .wave-text span:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .wave-text span:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      .wave-text span:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      .wave-text span:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+      .wave-text span:nth-child(7) {
+        animation-delay: 0.35s;
+      }
+      .wave-text span:nth-child(8) {
+        animation-delay: 0.4s;
+      }
+      .wave-text span:nth-child(9) {
+        animation-delay: 0.45s;
+      }
+      .wave-text span:nth-child(10) {
+        animation-delay: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wave-text">
+      <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
+      <span>&nbsp;</span>
+      <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
+    </div>
+  </body>
+</html>

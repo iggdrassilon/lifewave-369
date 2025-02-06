@@ -1,27 +1,37 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-// import Footer from "@/src/components/modules/Footer";
-// import DnaHero from "@/src/components/modules/home/MainSectionDNA";
-// import VideoSection from "@/src/components/modules/home/VideoSection";
-// import HowItWorks from "@/src/components/modules/home/HowItWorks";
-// import WearInstructions from "@/src/components/modules/patents/WearInstructions";
-// import Timeline from "@/src/components/modules/home/Timeline";
-// import ProductCards from "@/src/components/modules/home/ProductCards";
-// import Disclaimer from "@/src/components/modules/home/Disclaimer";
-// import Contact from "@/src/components/modules/home/Contact";
-// import BackToTop from "@/src/components/BackToTop";
-// import SpaceBackground from "@/src/components/SpaceBackground";
-// import SpaceLines from "@/src/components/SpaceLines";
-// import { MotionLayout } from "../components/layouts/motionLayout";
+import React from 'react'
+import { motion } from 'framer-motion'
+import Footer from '@/src/components/modules/Footer'
+import DnaHero from '@/src/components/modules/home/main/MainSectionDNA'
+import VideoSection from '@/src/components/modules/home/VideoSection'
+import HowItWorks from '@/src/components/modules/home/HowItWorks'
+import WearInstructions from '@/src/components/modules/patents/WearInstructions'
+import Timeline from '@/src/components/modules/home/Timeline'
+import ProductCards from '@/src/components/modules/home/ProductCards'
+import Disclaimer from '@/src/components/modules/home/Disclaimer'
+import Contact from '@/src/components/modules/home/Contact'
+import BackToTop from '@/src/components/BackToTop'
+import SpaceBackground from '@/src/components/SpaceBackground'
+import SpaceLines from '@/src/components/SpaceLines'
+import { MotionLayout } from '../components/layouts/motionLayout'
+import WeKnow from '../components/modules/home/we-know/WeKnow'
+import Revolution from '../components/modules/home/we-know/Revolution'
+import Unfortunately from '../components/modules/home/we-know/unfortunately'
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-transparent relative">
+    <div className='min-h-screen bg-transparent relative'>
       <main>
         {/* <DnaHero /> */}
-        {/* <WeKnow />
-        <Revolution /> // photo 1 photo 2
-        <UNFORTUNATELY /> // 30 60 % circles */}
+        <MotionLayout duration={0.5} delay={0}>
+          <WeKnow />
+        </MotionLayout>
+        <MotionLayout duration={0.5} delay={0.3}>
+          <Revolution />
+        </MotionLayout>
+        <MotionLayout duration={1} delay={0.4}>
+          <Unfortunately />
+        </MotionLayout>
+
         {/* photo 3 block */}
 
         {/* <MotionLayout duration={0.5} delay={0}>
@@ -62,7 +72,7 @@ const Home = () => {
         </MotionLayout> */}
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

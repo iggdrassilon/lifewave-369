@@ -1,4 +1,4 @@
-import { MotionSection } from "../../layouts/motionLayout";
+import { MotionSection } from '../../layouts/motionLayout'
 
 const Disclaimer = () => {
   return (
@@ -8,17 +8,17 @@ const Disclaimer = () => {
       duration={0.3}
       delay={0.2}
       once={true}
-      className="container mx-auto px-4 py-16"
+      className='container mx-auto px-4 py-16'
     >
       <>
-        <div className="prose max-w-none">
-          <p className="text-sm text-gray-600 text-center">
+        <div className='prose max-w-none'>
+          <p className='text-sm text-gray-600 text-center'>
             Disclaimer content coming soon...
           </p>
         </div>
       </>
     </MotionSection>
-  );
-};
+  )
+}
 
-export default Disclaimer;
+export default Disclaimer
