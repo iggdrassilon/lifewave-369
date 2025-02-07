@@ -1,8 +1,11 @@
 import { MotionSection } from "@/src/components/layouts/motionLayout"
 import AnimatedCounter from "@/src/components/ui/AnimatedCounter"
 import WaveText from "@/src/components/ui/waveText"
+import useLang from "@/src/hooks/use-lang"
 
 const Unfortunately = () => {
+  const content = useLang().CONTENT
+
   return (
     <MotionSection
       height_initial={80}
@@ -10,14 +13,14 @@ const Unfortunately = () => {
       duration={0.6}
       delay={0.3}
       once={true}
-      className='container mx-auto px-4 py-16'
+      className='container px-4 py-2'
     >
       <>
-        <h2 className='text-3xl font-bold text-center mb-8 text-title'>
-          Unfortunately
+        <h2 className='text-3xl font-bold text-center mb-8 text-title flex items-center justify-center'>
+          <WaveText text={`${content.home.unfortunately}`} color="var(--description-color)" />
         </h2>
-        <div className='prose max-w-none flex items-center justify-center'>
-          <WaveText text="Content coming soon..." color="text-description" />
+        <div className='text-2xl text-description prose max-w-none flex items-center justify-center'>
+          {content.home.slowlyregenerate}
         </div>
         <AnimatedCounter
           endValue={50}
@@ -27,6 +30,9 @@ const Unfortunately = () => {
           sizeBox={220}
           delay={0.4}
         />
+        <div className='text-2xl text-description prose max-w-none flex items-center justify-center'>
+          {content.home.to30years}
+        </div>
         <AnimatedCounter
           endValue={90}
           duration={3000}
@@ -35,6 +41,12 @@ const Unfortunately = () => {
           sizeBox={220}
           delay={0.4}
         />
+        <div className='text-2xl text-description prose max-w-none flex items-center justify-center'>
+          {content.home.to60years}
+        </div>
+        <div className='my-[80px] text-2xl text-description prose max-w-none flex items-center justify-center'>
+          {content.home.stemcells}
+        </div>
       </>
     </MotionSection>
   )

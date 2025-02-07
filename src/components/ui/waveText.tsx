@@ -9,7 +9,6 @@ const WaveText = ({ text, color }: { text: string, color: string }) => {
 
   const [startAnimation, setStartAnimation] = useState(false);
 
-  // Используйте useEffect для управления началом анимации
   useEffect(() => {
     if (inView) {
       setStartAnimation(true);
@@ -18,13 +17,13 @@ const WaveText = ({ text, color }: { text: string, color: string }) => {
 
   return (
     <div ref={ref} className={`flex text-2xl overflow-hidden ${color}`}>
-      {Array.from(text).map((char: ReactNode, index: number) => (
+      {Array.from(text).map((char: string, index: number) => (
         <span
           key={index}
-          className={`transition-opacity duration-500 ${startAnimation ? 'animate-ferrari opacity-100' : 'opacity-0'}`}
+          className={`text-4xl md:text-4xl font-bold transition-opacity duration-500 ${startAnimation ? 'animate-ferrari opacity-100' : 'opacity-0'}`}
           style={{ animationDelay: `${index * 5}ms` }}
         >
-          {char}
+          {char === ' ' ? '\u00A0' : char} {/* Неразрывный пробел */}
         </span>
       ))}
     </div>

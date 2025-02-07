@@ -1,7 +1,7 @@
 {
   "ru": {
     "home": {
-      "weknow": "Мы знаем, что каждый человек обладает безграничным потенциалом и наша Миссия раскрыть его на максимум.",
+      "weknow": "Мы знаем, что каждый человек обладает безграничным потенциалом и наша Миссия раскрыть его на максимум...",
       "revol": "X39 - РЕВОЛЮЦИЯ",
       "firstinworld": "Первая в мире запатентованное нанокристаллическая технология, предназначенная для активации собственных стволовых клеток в вашем организме.",
       "enerhyuse": "X39 использует естественную энергию вашего организма для активизации внутренних процессов регенерации и омоложения.",
@@ -15,16 +15,18 @@
     }
   },
   "en": {
-    "weknow": "We know that every individual has unlimited potential and our mission is to unlock it to the maximum.",
-    "revol": "X39 - REVOLUTION",
-    "firstinworld": "The world's first patented nanocrystalline technology designed to activate your body's own stem cells.",
-    "enerhyuse": "X39 uses your body's natural energy to activate internal processes of regeneration and rejuvenation.",
-    "howitworks": "How does it work?",
-    "aboutX39": "The X39 technology consists of a grid of spirally arranged organic nanocrystals. The nanocrystals capture the light emitted from our bodies and return it back to the skin. The reflected light stimulates receptors on our skin, activating biological processes in the body. This initiates the production of copper peptides, and then STEM CELLS.",
-    "unfortunately": "UNFORTUNATELY",
-    "slowlyregenerate": "The LESS activity of stem cells you have, the faster you age and the slower you recover.",
-    "to30years": "By the age of 30, you lose HALF of your stem cell activity.",
-    "to60years": "By the age of 60, you lose almost ALL of your stem cell activity.",
-    "stemcells": "STEM CELLS are repair cells that can transform into any cell in your body, initiating the process of regeneration and rejuvenation. For example, into liver cells, heart cells, brain cells, etc."
+    "home": {
+      "weknow": "We know that every individual has unlimited potential and our mission is to unlock it to the maximum...",
+      "revol": "X39 - REVOLUTION",
+      "firstinworld": "The world's first patented nanocrystalline technology designed to activate your body's own stem cells.",
+      "enerhyuse": "X39 uses your body's natural energy to activate internal processes of regeneration and rejuvenation.",
+      "howitworks": "How does it work?",
+      "aboutX39": "The X39 technology consists of a grid of spirally arranged organic nanocrystals. The nanocrystals capture the light emitted from our bodies and return it back to the skin. The reflected light stimulates receptors on our skin, activating biological processes in the body. This initiates the production of copper peptides, and then STEM CELLS.",
+      "unfortunately": "UNFORTUNATELY",
+      "slowlyregenerate": "The LESS activity of stem cells you have, the faster you age and the slower you recover.",
+      "to30years": "By the age of 30, you lose HALF of your stem cell activity.",
+      "to60years": "By the age of 60, you lose almost ALL of your stem cell activity.",
+      "stemcells": "STEM CELLS are repair cells that can transform into any cell in your body, initiating the process of regeneration and rejuvenation. For example, into liver cells, heart cells, brain cells, etc."
+    }
   }
 }

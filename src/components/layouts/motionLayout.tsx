@@ -9,7 +9,7 @@ const MotionLayout = (props: MotionHookT) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: duration, delay: delay }}
-      className='container mx-auto px-4 py-16 relative z-10'
+      className='container mx-auto px-0 py-0 relative z-10'
     >
       {children}
     </motion.section>

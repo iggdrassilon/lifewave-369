@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div className='min-h-screen bg-transparent relative'>
       <main>
-        {/* <DnaHero /> */}
+        <DnaHero />
         <MotionLayout duration={0.5} delay={0}>
           <WeKnow />
         </MotionLayout>
