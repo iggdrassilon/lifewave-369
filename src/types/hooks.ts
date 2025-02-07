@@ -26,4 +26,5 @@ export type MotionTextT = {
   once: boolean
   className: string
   variants: any
+  complete: any
 }

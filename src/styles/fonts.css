@@ -17,7 +17,15 @@
   font-display: swap;
   font-style: normal;
   font-weight: 700;
-  src: url('/public/fonts/HelveticaNeueCyr-Light.otf');
+  src: url('/public/fonts/HelveticaNeueCyr-Medium.otf');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+  src: url('/public/fonts/HelveticaNeueCyr-Bold.otf');
 }
 
 @font-face {

@@ -12,7 +12,7 @@ const WeKnow = () => {
   const { ref, inView } = useInView({ threshold: 0.1 })
   const videoRef = useRef(null);
   const [state, setState] = useState(false)
-
+  const [isAnimating, setIsAnimating] = useState(true);
   const variants = {
     hidden: { opacity: 0, scale: 0.8, rotate: -10 },
     visible: {
@@ -51,6 +51,10 @@ const WeKnow = () => {
     }
   }, [inView]);
 
+  const completeAnimation = () => {
+    setIsAnimating(false);
+  };
+
   return (
     <MotionSection
       height_initial={80}
@@ -83,17 +87,17 @@ const WeKnow = () => {
               <source src="/video/human_meridians_rotate.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className='h-[350px] flex items-center flex-col justify-between '>
+          <div className='h-[350px] w-[450px] md:w-[598px] flex items-center flex-col justify-between '>
             <div className="relative z-10 text-center">
               {state && Object.values(content.home.weknow).map((word: string, index: number) => (
-                <MotionText className="text-3xl font-bold text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={2 * Number(`0.${index + 3}`)} once={false}>
+                <MotionText className="text-3xl font-bold text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
                   <span>{word}</span>
                 </MotionText>
               ))}
             </div>
             <div className="relative z-10 text-center">
-              {state && Object.values(content.home.our).map((word: string, index: number) => (
-                <MotionText className="text-3xl font-bold text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={2 * Number(`0.${index + 3}`)} once={false}>
+              {state && !isAnimating && Object.values(content.home.our).map((word: string, index: number) => (
+                <MotionText className="text-3xl font-black text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
                   <span>{word}</span>
                 </MotionText>
               ))}

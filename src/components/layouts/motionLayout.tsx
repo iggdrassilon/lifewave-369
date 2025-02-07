@@ -52,19 +52,27 @@ const MotionText = (props: MotionTextT) => {
     height_viewported,
     once,
     variants,
-  } = props
-  const [state, setState] = useState(false)
+    complete
+  } = props;
+
+  const [state, setState] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: once,
     threshold: 0.3,
     delay: 0.3
-  })
+  });
 
   useEffect(() => {
     if (inView) {
-      setState(true)
+      setState(true);
     }
-  }, [inView])
+  }, [inView]);
+
+  const setComplete = () => {
+    setTimeout(() => {
+      complete()
+    }, 3000);
+  }
 
   return (
     <motion.text
@@ -74,10 +82,10 @@ const MotionText = (props: MotionTextT) => {
       transition={{ duration: duration, delay: delay }}
       variants={variants}
       className={className}
+      onAnimationComplete={() => setComplete()}
     >
       {children}
     </motion.text>
-  )
-}
-
+  );
+};
 export { MotionLayout, MotionSection, MotionText }
