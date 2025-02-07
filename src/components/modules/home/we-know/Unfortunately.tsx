@@ -1,4 +1,5 @@
 import { MotionSection } from "@/src/components/layouts/motionLayout"
+import AnimatedCounter from "@/src/components/ui/AnimatedCounter"
 import WaveText from "@/src/components/ui/waveText"
 
 const Unfortunately = () => {
@@ -18,6 +19,22 @@ const Unfortunately = () => {
         <div className='prose max-w-none flex items-center justify-center'>
           <WaveText text="Content coming soon..." color="text-description" />
         </div>
+        <AnimatedCounter
+          endValue={50}
+          duration={3000}
+          color='var(--persentage-color)'
+          radius={50}
+          sizeBox={220}
+          delay={0.4}
+        />
+        <AnimatedCounter
+          endValue={90}
+          duration={3000}
+          color='var(--persentage-color)'
+          radius={50}
+          sizeBox={220}
+          delay={0.4}
+        />
       </>
     </MotionSection>
   )

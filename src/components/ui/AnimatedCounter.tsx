@@ -3,14 +3,15 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Counter from './counter';
 
-const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox }) => {
+const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox, delay }) => {
   const [count, setCount] = useState(0);
   const { ref, inView } = useInView({
-    threshold: 0.1, // 10% видимости
+    threshold: 1, // 100%
+    delay: delay
   });
 
   useEffect(() => {
-    if (!inView) return; // Если не в области видимости, не запускать анимацию
+    if (!inView) return;
 
     const increment = (endValue / duration) * 50;
     const interval = setInterval(() => {

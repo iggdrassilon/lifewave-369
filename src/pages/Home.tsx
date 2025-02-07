@@ -15,7 +15,7 @@ import SpaceLines from '@/src/components/SpaceLines'
 import { MotionLayout } from '../components/layouts/motionLayout'
 import WeKnow from '../components/modules/home/we-know/WeKnow'
 import Revolution from '../components/modules/home/we-know/Revolution'
-import Unfortunately from '../components/modules/home/we-know/unfortunately'
+import Unfortunately from '../components/modules/home/we-know/Unfortunately'
 
 const Home = () => {
   return (
