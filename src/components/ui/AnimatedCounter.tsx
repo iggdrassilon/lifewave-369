@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Counter from './counter';
 
-const AnimatedCounter = ({ endValue, duration }) => {
+const AnimatedCounter = ({ endValue, duration, color }) => {
   const [count, setCount] = useState(0);
   useEffect(() => {
     const increment = (endValue / duration) * 50;
@@ -35,7 +35,7 @@ const AnimatedCounter = ({ endValue, duration }) => {
           cy="110"
         />
         <motion.circle
-          stroke="#4caf50"
+          stroke={`${color}`}
           fill="transparent"
           strokeWidth="10"
           r={radius}
@@ -47,7 +47,7 @@ const AnimatedCounter = ({ endValue, duration }) => {
         />
       </svg>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-        <Counter value={count} />
+        <Counter value={count} color={color} />
       </div>
     </div>
   );

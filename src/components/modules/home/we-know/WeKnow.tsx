@@ -19,7 +19,8 @@ const WeKnow = () => {
         <div className='max-w-none flex items-center justify-center'>
           <WaveText text="Content coming soon..." color='text-description' />
         </div>
-        <AnimatedCounter endValue={100} duration={5000} />
+        <AnimatedCounter endValue={50} duration={3000} color='var(--persentage-color)' />
+        <AnimatedCounter endValue={90} duration={3000} color='var(--persentage-color)' />
       </>
     </MotionSection>
   )

@@ -5,7 +5,7 @@ const fontSize = 30;
 const padding = 15;
 const height = fontSize + padding;
 
-function Counter({ value }: { value: number }) {
+function Counter({ value, color }: { value: number, color: string }) {
   return (
     <div
       style={{ fontSize }}
@@ -18,7 +18,7 @@ function Counter({ value }: { value: number }) {
       )}
       <Digit place={10} value={value} />
       <Digit place={1} value={value} />
-      <span className="flex items-center justify-center">%</span>
+      <span className="flex items-center justify-center" style={{ color: `${color}` }}>%</span>
     </div>
   );
 }

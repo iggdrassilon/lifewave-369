@@ -34,6 +34,7 @@ export default {
         title: 'var(--titles-color)',
         description: 'var(--description-color)',
         mail: 'var(--text-color-mail)',
+        persentage: 'var(--persentage-color)',
         space: {
           dark: 'var(--space-dark)',
           medium: 'var(--space-medium)',
