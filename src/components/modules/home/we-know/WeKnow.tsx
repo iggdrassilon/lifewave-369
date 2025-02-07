@@ -1,4 +1,5 @@
 import { MotionSection } from "@/src/components/layouts/motionLayout"
+import AnimatedCounter from "@/src/components/ui/AnimatedCounter"
 import WaveText from "@/src/components/ui/waveText"
 
 const WeKnow = () => {
@@ -12,12 +13,13 @@ const WeKnow = () => {
       className='container mx-auto px-4 py-16'
     >
       <>
-        <h2 className='text-3xl font-bold text-center mb-8 text-space-medium'>
+        <h2 className='text-3xl font-bold text-center mb-8 text-title'>
           We know
         </h2>
-        <div className='prose max-w-none'>
-          <WaveText text="Content coming soon..." />
+        <div className='max-w-none flex items-center justify-center'>
+          <WaveText text="Content coming soon..." color='text-description' />
         </div>
+        <AnimatedCounter endValue={100} duration={5000} />
       </>
     </MotionSection>
   )

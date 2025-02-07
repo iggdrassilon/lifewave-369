@@ -1,4 +1,5 @@
 import { MotionSection } from "@/src/components/layouts/motionLayout"
+import WaveText from "@/src/components/ui/waveText"
 
 const Unfortunately = () => {
   return (
@@ -11,11 +12,11 @@ const Unfortunately = () => {
       className='container mx-auto px-4 py-16'
     >
       <>
-        <h2 className='text-3xl font-bold text-center mb-8 text-space-medium'>
+        <h2 className='text-3xl font-bold text-center mb-8 text-title'>
           Unfortunately
         </h2>
-        <div className='prose max-w-none'>
-          <p>Content coming soon...</p>
+        <div className='prose max-w-none flex items-center justify-center'>
+          <WaveText text="Content coming soon..." color="text-description" />
         </div>
       </>
     </MotionSection>
