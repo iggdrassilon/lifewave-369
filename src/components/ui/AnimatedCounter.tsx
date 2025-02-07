@@ -29,7 +29,7 @@ const AnimatedCounter = ({ endValue, duration }) => {
         <circle
           stroke="#e6e6e6"
           fill="transparent"
-          strokeWidth="20"
+          strokeWidth="10"
           r={radius}
           cx="110"
           cy="110"
@@ -37,13 +37,13 @@ const AnimatedCounter = ({ endValue, duration }) => {
         <motion.circle
           stroke="#4caf50"
           fill="transparent"
-          strokeWidth="20"
+          strokeWidth="10"
           r={radius}
           cx="110"
           cy="110"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.1 }}
         />
       </svg>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
