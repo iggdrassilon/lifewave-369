@@ -1,7 +1,20 @@
 {
   "ru": {
     "home": {
-      "weknow": "Мы знаем, что каждый человек обладает безграничным потенциалом и наша Миссия раскрыть его на максимум...",
+      "weknow": {
+        "we-know": "Мы знаем, ",
+        "what": "что ",
+        "every": "каждый ",
+        "human": "человек ",
+        "has": "обладает ",
+        "unlimited": "безграничным потенциалом."
+      },
+      "our": {
+        "mission": "Наша Миссия ",
+        "open": "раскрыть его ",
+        "at": "на ",
+        "max": "максимум..."
+      },
       "revol": "X39 - РЕВОЛЮЦИЯ",
       "firstinworld": "Первая в мире запатентованное нанокристаллическая технология, предназначенная для активации собственных стволовых клеток в вашем организме.",
       "enerhyuse": "X39 использует естественную энергию вашего организма для активизации внутренних процессов регенерации и омоложения.",
@@ -16,7 +29,8 @@
   },
   "en": {
     "home": {
-      "weknow": "We know that every individual has unlimited potential and our mission is to unlock it to the maximum...",
+      "weknow": "We know that every human has unlimited potential.",
+      "mission": "Our mission is to unlock it to the maximum...",
       "revol": "X39 - REVOLUTION",
       "firstinworld": "The world's first patented nanocrystalline technology designed to activate your body's own stem cells.",
       "enerhyuse": "X39 uses your body's natural energy to activate internal processes of regeneration and rejuvenation.",

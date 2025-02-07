@@ -1,5 +1,7 @@
-import { MotionHookT, MotionSectionT } from '../../types/hooks'
+import { useInView } from 'react-intersection-observer'
+import { MotionHookT, MotionSectionT, MotionTextT } from '../../types/hooks'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 const MotionLayout = (props: MotionHookT) => {
   const { children, duration, delay } = props
@@ -40,4 +42,42 @@ const MotionSection = (props: MotionSectionT) => {
   )
 }
 
-export { MotionLayout, MotionSection }
+const MotionText = (props: MotionTextT) => {
+  const {
+    children,
+    className,
+    duration,
+    delay,
+    height_initial,
+    height_viewported,
+    once,
+    variants,
+  } = props
+  const [state, setState] = useState(false)
+  const { ref, inView } = useInView({
+    triggerOnce: once,
+    threshold: 0.3,
+    delay: 0.3
+  })
+
+  useEffect(() => {
+    if (inView) {
+      setState(true)
+    }
+  }, [inView])
+
+  return (
+    <motion.text
+      ref={ref}
+      initial={{ opacity: 0, y: height_initial }}
+      animate={{ opacity: state ? 1 : 0, y: state ? height_viewported : height_initial }}
+      transition={{ duration: duration, delay: delay }}
+      variants={variants}
+      className={className}
+    >
+      {children}
+    </motion.text>
+  )
+}
+
+export { MotionLayout, MotionSection, MotionText }

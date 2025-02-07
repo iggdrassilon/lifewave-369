@@ -1,5 +1,6 @@
 import { MotionSection } from "@/src/components/layouts/motionLayout"
 import AnimatedCounter from "@/src/components/ui/AnimatedCounter"
+import TextAnimated from "@/src/components/ui/textAnimations"
 import WaveText from "@/src/components/ui/waveText"
 import useLang from "@/src/hooks/use-lang"
 
@@ -16,8 +17,8 @@ const Unfortunately = () => {
       className='container px-4 py-2'
     >
       <>
-        <h2 className='text-3xl font-bold text-center mb-8 text-title flex items-center justify-center'>
-          <WaveText text={`${content.home.unfortunately}`} color="var(--description-color)" />
+        <h2 className='text-3xl font-bold text-center mb-8 flex items-center justify-center'>
+          <TextAnimated text={`${content.home.unfortunately}`} color="text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
         </h2>
         <div className='text-2xl text-description prose max-w-none flex items-center justify-center'>
           {content.home.slowlyregenerate}

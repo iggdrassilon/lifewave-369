@@ -1,11 +1,18 @@
-import { MotionSection } from "@/src/components/layouts/motionLayout"
-import AnimatedCounter from "@/src/components/ui/AnimatedCounter"
-import WaveText from "@/src/components/ui/waveText"
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer'
+
+import { MotionSection, MotionText } from "@/src/components/layouts/motionLayout"
+
 import useLang from "@/src/hooks/use-lang"
+
 import { motion } from 'framer-motion'
 
 const WeKnow = () => {
   const content = useLang().CONTENT
+  const { ref, inView } = useInView({ threshold: 0.1 })
+  const videoRef = useRef(null);
+  const [state, setState] = useState(false)
+
   const variants = {
     hidden: { opacity: 0, scale: 0.8, rotate: -10 },
     visible: {
@@ -30,6 +37,20 @@ const WeKnow = () => {
       }
     },
   };
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      if (inView) {
+        setState(true)
+        videoElement.play();
+      } else {
+        // setState(false)
+        videoElement.pause();
+      }
+    }
+  }, [inView]);
+
   return (
     <MotionSection
       height_initial={80}
@@ -40,22 +61,44 @@ const WeKnow = () => {
       className='container mx-auto px-4 py-2'
     >
       <>
-        {/* <h2 className='text-3xl font-bold text-center mb-8 text-title'></h2> */}
         <motion.div
+          ref={ref}
           initial="hidden"
           animate="visible"
-          variants={variants}
+          className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat relative overflow-hidden"
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
+            position: 'relative',
             padding: '20px',
             borderRadius: '10px',
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
         >
-          <motion.h2 className="text-3xl font-bold text-center mb-8 text-title" variants={textVariants}>{content.home.weknow}</motion.h2>
+          <div className="absolute inset-0 z-0 opacity-30">
+            <video
+              ref={videoRef}
+              loop
+              muted
+              className="object-cover w-full h-full"
+            >
+              <source src="/video/human_meridians_rotate.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div className='h-[350px] flex items-center flex-col justify-between '>
+            <div className="relative z-10 text-center">
+              {state && Object.values(content.home.weknow).map((word: string, index: number) => (
+                <MotionText className="text-3xl font-bold text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={2 * Number(`0.${index + 3}`)} once={false}>
+                  <span>{word}</span>
+                </MotionText>
+              ))}
+            </div>
+            <div className="relative z-10 text-center">
+              {state && Object.values(content.home.our).map((word: string, index: number) => (
+                <MotionText className="text-3xl font-bold text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={2 * Number(`0.${index + 3}`)} once={false}>
+                  <span>{word}</span>
+                </MotionText>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </>
     </MotionSection>

@@ -1,4 +1,5 @@
 import { MotionSection } from "@/src/components/layouts/motionLayout"
+import TextAnimated from "@/src/components/ui/textAnimations"
 import WaveText from "@/src/components/ui/waveText"
 import useLang from "@/src/hooks/use-lang"
 
@@ -14,8 +15,8 @@ const Revolution = () => {
       className='container mx-auto px-4 py-2'
     >
       <>
-        <h2 className='text-center mb-8 text-title flex items-center justify-center'>
-          <WaveText text={`${content.home.revol}`} color="var(--description-color)" />
+        <h2 className='text-center mb-8 flex items-center justify-center'>
+          <TextAnimated mode='slide-left' text={`${content.home.revol}`} color="text-title" delay={0.4} duration={0.3} space={0.1} />
         </h2>
         <div className='text-2xl text-description prose max-w-none flex items-center justify-center'>
           {content.home.firstinworld}

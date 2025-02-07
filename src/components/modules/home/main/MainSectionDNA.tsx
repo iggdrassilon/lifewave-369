@@ -36,7 +36,6 @@ const DnaHero = () => {
       {/* bg-[url('/images/DNA.gif')] */}
       <div
         className="dna-rotate min-h-screen flex items-center justify-center bg-cover bg-no-repeat 
-          bg-[url('/images/DNA.gif')] 
         rotate-180 overfrow-hidden"
         onMouseMove={handlePointerMove}
         onTouchMove={handlePointerMove}
