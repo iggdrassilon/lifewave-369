@@ -6,6 +6,7 @@ import { MotionSection, MotionText } from "@/src/components/layouts/motionLayout
 import useLang from "@/src/hooks/use-lang"
 
 import { motion } from 'framer-motion'
+import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry';
 
 const WeKnow = () => {
   const content = useLang().CONTENT
@@ -87,7 +88,7 @@ const WeKnow = () => {
               <source src="/video/human_meridians_rotate.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className='h-[350px] w-[450px] md:w-[598px] flex items-center flex-col justify-between '>
+          <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-start flex-col justify-between '>
             <div className="relative z-10 text-center">
               {state && Object.values(content.home.weknow).map((word: string, index: number) => (
                 <MotionText className="text-3xl font-bold text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
@@ -101,6 +102,9 @@ const WeKnow = () => {
                   <span>{word}</span>
                 </MotionText>
               ))}
+            </div>
+            <div className='absolute top-[150px] w-[100%] items-center flex justify-center'>
+              <BlueRotatedFlower />
             </div>
           </div>
         </motion.div>

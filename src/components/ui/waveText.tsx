@@ -1,10 +1,11 @@
 import { ReactNode, useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer';
 
-const WaveText = ({ text, color }: { text: string, color: string }) => {
+const WaveText = ({ text, color, textSize }: { text: string, color: string, textSize: string }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.8,
+    delay: 5
   });
 
   const [startAnimation, setStartAnimation] = useState(false);
@@ -16,15 +17,19 @@ const WaveText = ({ text, color }: { text: string, color: string }) => {
   }, [inView]);
 
   return (
-    <div ref={ref} className={`flex text-2xl overflow-hidden ${color}`}>
+    <div ref={ref} className={`overflow-hidden flex ${color}`} style={{ flexWrap: 'wrap' }}>
       {Array.from(text).map((char: string, index: number) => (
-        <span
-          key={index}
-          className={`text-4xl md:text-4xl font-bold transition-opacity duration-500 ${startAnimation ? 'animate-ferrari opacity-100' : 'opacity-0'}`}
-          style={{ animationDelay: `${index * 5}ms` }}
-        >
-          {char === ' ' ? '\u00A0' : char} {/* Неразрывный пробел */}
-        </span>
+        <>
+          {startAnimation && (
+            <span
+              key={index}
+              className={`${textSize} transition-opacity duration-500 ${startAnimation ? 'animate-ferrari opacity-1' : 'opacity-0'}`}
+              style={{ animationDelay: `${index * 5}ms` }}
+            >
+              {char === ' ' ? '\u00A0' : char} {/* Неразрывный пробел */}
+            </span>
+          )}
+        </>
       ))}
     </div>
   );

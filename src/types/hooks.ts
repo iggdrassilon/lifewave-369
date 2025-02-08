@@ -28,3 +28,16 @@ export type MotionTextT = {
   variants: any
   complete: any
 }
+
+export type MotionDescriptionT = {
+  children: React.ReactElement
+  duration: number
+  color: string
+  delay: number
+  height_initial: number
+  height_viewported: number
+  once: boolean
+  className: string
+  complete: any
+  refForGirl: any
+}

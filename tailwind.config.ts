@@ -17,7 +17,15 @@ export default {
         '2xl': '1400px',
       },
     },
+    width: {
+      descr: '450px',
+      descr_md: '598px'
+    },
     extend: {
+      maxWidth: {
+        'descr': '450px',
+        'descr_md': '598px',
+      },
       fontFamily: {
         helvetica: ['Helvetica Neue', 'sans-serif'],
         kefa: ['Kefa'],

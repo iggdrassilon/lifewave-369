@@ -14,8 +14,13 @@ import SpaceBackground from '@/src/components/SpaceBackground'
 import SpaceLines from '@/src/components/SpaceLines'
 import { MotionLayout } from '../components/layouts/motionLayout'
 import WeKnow from '../components/modules/home/we-know/WeKnow'
-import Revolution from '../components/modules/home/we-know/Revolution'
+import Revolution from '../components/modules/home/we-know/Revolution/Revolution'
 import Unfortunately from '../components/modules/home/we-know/Unfortunately'
+
+// TODO 
+// weknow нужно добавить фон градиент легкий
+// revol нужно сделать на синем фоне графы полупрозрачные
+
 
 const Home = () => {
   return (
@@ -25,10 +30,10 @@ const Home = () => {
         <MotionLayout duration={0.5} delay={0.3}>
           <WeKnow />
         </MotionLayout>
-        {/* <MotionLayout duration={0.5} delay={0.3}>
+        <MotionLayout duration={0.5} delay={0.3}>
           <Revolution />
         </MotionLayout>
-        <MotionLayout duration={1} delay={0.4}>
+        {/* <MotionLayout duration={1} delay={0.4}>
           <Unfortunately />
         </MotionLayout> */}
 

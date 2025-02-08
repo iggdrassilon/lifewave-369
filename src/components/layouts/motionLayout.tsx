@@ -1,5 +1,5 @@
 import { useInView } from 'react-intersection-observer'
-import { MotionHookT, MotionSectionT, MotionTextT } from '../../types/hooks'
+import { MotionDescriptionT, MotionHookT, MotionSectionT, MotionTextT } from '../../types/hooks'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
@@ -88,4 +88,53 @@ const MotionText = (props: MotionTextT) => {
     </motion.text>
   );
 };
-export { MotionLayout, MotionSection, MotionText }
+
+const MotionDescription = (props: MotionDescriptionT) => {
+  const {
+    color,
+    children,
+    className,
+    duration,
+    delay,
+    height_initial,
+    height_viewported,
+    once,
+    complete,
+    refForGirl
+  } = props;
+
+  const [state, setState] = useState(false);
+
+  const { ref, inView } = useInView({
+    triggerOnce: once,
+    threshold: 0.3,
+    delay: 0.3
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setState(true);
+    }
+  }, [inView]);
+
+  const setComplete = () => {
+    setTimeout(() => {
+      complete()
+    }, 3000);
+  }
+
+  return (
+    <motion.text
+      ref={ref}
+      initial={{ opacity: 0, y: height_initial }}
+      animate={{ opacity: state ? 1 : 0, y: state ? height_viewported : height_initial }}
+      transition={{ duration: duration, delay: delay }}
+      className={`${className} ${color}`}
+      onAnimationComplete={() => setComplete()}
+    >
+      <div ref={refForGirl}>{children}</div>
+    </motion.text>
+  );
+}
+
+export { MotionLayout, MotionSection, MotionText, MotionDescription }
