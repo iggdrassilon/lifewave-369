@@ -63,7 +63,7 @@ const WeKnow = () => {
       duration={0.6}
       delay={0.3}
       once={true}
-      className='container mx-auto px-4 py-2'
+      className='container mx-auto px-0 py-2'
     >
       <>
         <motion.div
