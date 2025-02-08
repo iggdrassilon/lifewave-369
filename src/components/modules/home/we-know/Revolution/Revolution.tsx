@@ -13,7 +13,7 @@ const Revolution = () => {
       duration={0.6}
       delay={0.3}
       once={true}
-      className='container mx-auto px-0 py-2 flex flex-col items-center'
+      className='container mx-auto px-0 py-0 flex flex-col items-center'
     >
       <div className="bg-blue-600/80 w-[100%] overflow-hidden">
         <FirstBlock content={content} />

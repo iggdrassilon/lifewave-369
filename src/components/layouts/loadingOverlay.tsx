@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Progress } from '@/src/components/ui/progress'
 import { Loader2 } from 'lucide-react'
+import { bodyFixed, bodyUnfixed } from '@/src/hooks/dom'
 
 const LoadingOverlay = () => {
   const [progress, setProgress] = useState(0)
@@ -19,8 +20,12 @@ const LoadingOverlay = () => {
 
       if (currentProgress < 100) {
         requestAnimationFrame(updateProgress)
+        bodyFixed()
       } else {
-        setTimeout(() => setIsLoading(false), 500) // Small delay before hiding
+        setTimeout(() => {
+          setIsLoading(false)
+          bodyUnfixed()
+        }, 500) // Small delay before hiding
       }
     }
 
