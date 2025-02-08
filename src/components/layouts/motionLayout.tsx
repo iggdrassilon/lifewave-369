@@ -1,7 +1,7 @@
 import { useInView } from 'react-intersection-observer'
-import { MotionDescriptionT, MotionHookT, MotionSectionT, MotionTextT } from '../../types/hooks'
+import { MotionDescriptionT, MotionHookT, MotionPartTextT, MotionSectionT, MotionTextT } from '../../types/hooks'
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 const MotionLayout = (props: MotionHookT) => {
   const { children, duration, delay } = props
@@ -19,15 +19,7 @@ const MotionLayout = (props: MotionHookT) => {
 }
 
 const MotionSection = (props: MotionSectionT) => {
-  const {
-    children,
-    className,
-    duration,
-    delay,
-    height_initial,
-    height_viewported,
-    once,
-  } = props
+  const { children, className, duration, delay, height_initial, height_viewported, once } = props
 
   return (
     <motion.section
@@ -43,17 +35,7 @@ const MotionSection = (props: MotionSectionT) => {
 }
 
 const MotionText = (props: MotionTextT) => {
-  const {
-    children,
-    className,
-    duration,
-    delay,
-    height_initial,
-    height_viewported,
-    once,
-    variants,
-    complete
-  } = props;
+  const { children, className, duration, delay, height_initial, height_viewported, once, variants, complete } = props;
 
   const [state, setState] = useState(false);
   const { ref, inView } = useInView({
@@ -90,22 +72,11 @@ const MotionText = (props: MotionTextT) => {
 };
 
 const MotionDescription = (props: MotionDescriptionT) => {
-  const {
-    color,
-    children,
-    className,
-    duration,
-    delay,
-    height_initial,
-    height_viewported,
-    once,
-    complete,
-    refForGirl
-  } = props;
+  const { color, children, className, duration, delay, height_initial, height_viewported, once, complete, refOne } = props;
 
   const [state, setState] = useState(false);
 
-  const { ref, inView } = useInView({
+  const [ref, inView] = useInView({
     triggerOnce: once,
     threshold: 0.3,
     delay: 0.3
@@ -131,10 +102,41 @@ const MotionDescription = (props: MotionDescriptionT) => {
       transition={{ duration: duration, delay: delay }}
       className={`${className} ${color}`}
       onAnimationComplete={() => setComplete()}
+
     >
-      <div ref={refForGirl}>{children}</div>
+      <div ref={refOne}>{children}</div>
     </motion.text>
   );
+}
+
+const MotionTextPart = (props: MotionPartTextT) => {
+  const { children, duration, color, delay, right_initial, right_viewported, once, className, complete, refOutdoor } = props
+
+  const [state, setState] = useState(false)
+  const [ref, inView] = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      setState(true)
+    }
+  }, [])
+
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        translateY: '-300px',
+      }}
+      animate={{
+        opacity: state ? 1 : 0,
+        translateY: state ? 0 : '-300px'
+      }}
+      transition={{ duration: 2, delay: 0.2 }}
+      className="z-10 flex items-center justify-center mt-[50px] md:my-0 my-[50px]"
+      >
+      {children}
+    </motion.div>
+  )
 }
 
 export { MotionLayout, MotionSection, MotionText, MotionDescription }

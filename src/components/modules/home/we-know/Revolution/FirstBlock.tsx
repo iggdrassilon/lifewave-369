@@ -32,7 +32,7 @@ const FirstBlock = ({ content }: any) => {
       <div className="flex w-[100%] md:flex-row mx-0 md:mx-0 flex-col items-center md:items-start justify-center">
         {viewed.titles && (
           <MotionDescription
-            refForGirl={ref}
+            refOne={ref}
             color="text-description"
             children={content.home.firstinworld}
             className="text-2xl md:text-2xl z-10 px-2 md:mt-20 mt-0 ml-0 md:ml-10 min-w-descr sm:w-[80%] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center"

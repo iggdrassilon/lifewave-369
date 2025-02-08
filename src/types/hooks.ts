@@ -39,5 +39,18 @@ export type MotionDescriptionT = {
   once: boolean
   className: string
   complete: any
-  refForGirl: any
+  refOne: any
+}
+
+export type MotionPartTextT = {
+  children: React.ReactElement
+  duration: number
+  color: string
+  delay: number
+  right_initial: number
+  right_viewported: number
+  once: boolean
+  className: string
+  complete: any
+  refOutdoor: any
 }

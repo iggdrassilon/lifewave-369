@@ -24,7 +24,14 @@
       "slowlyregenerate": "Чем МЕНЬШЕ активности стволовых клеток, тем быстрее вы стареете и медленнее выздоравливаете.",
       "to30years": "К 30 годам вы теряете ПОЛОВИНУ активности ваших стволовых клеток.",
       "to60years": "К 60 годам вы теряете почти ВСЮ активность ваших стволовых клеток.",
-      "stemcells": "СТВОЛОВЫЕ КЛЕТКИ – это ремонтные клетки, способные трансформироваться в любую клетку вашего организма, запустив процесс регенерации и омоложения. Например, в клетку печени, сердца, мозга и т.д."
+      "stemcells": "СТВОЛОВЫЕ КЛЕТКИ – это ремонтные клетки, способные трансформироваться в любую клетку вашего организма, запустив процесс регенерации и омоложения. Например, в клетку печени, сердца, мозга и т.д.",
+      "howTo": {
+        "put": "✓ Носите пластырь X39 в течение 12 часов в дневное, затем сделайте перерыв на 12 часов в ночное время.",
+        "delete": "✓ Удалите пластырь X39 через 12 часов.",
+        "change": "✓ После 12 часов приклейте новый пластырь и повторяйте процесс ежедневно. Можно использовать несколько пластырей одновременно.",
+        "water": "✓ Пейте много воды"
+      },
+      "destination": "Продукты LifeWave не предназначены для диагностики, лечения или предотвращения каких-либо заболеваний или состояний."
     }
   },
   "en": {
@@ -52,7 +59,14 @@
       "slowlyregenerate": "The LESS activity of stem cells you have, the faster you age and the slower you recover.",
       "to30years": "By the age of 30, you lose HALF of your stem cell activity.",
       "to60years": "By the age of 60, you lose almost ALL of your stem cell activity.",
-      "stemcells": "STEM CELLS are repair cells that can transform into any cell in your body, initiating the process of regeneration and rejuvenation. For example, into liver cells, heart cells, brain cells, etc."
+      "stemcells": "STEM CELLS are repair cells that can transform into any cell in your body, initiating the process of regeneration and rejuvenation. For example, into liver cells, heart cells, brain cells, etc.",
+      "howTo": {
+        "put": "✓ Wear the X39 patch for 12 hours during the day, then take a break for 12 hours at night.",
+        "delete": "✓ Remove the X39 patch after 12 hours.",
+        "change": "✓ After 12 hours, apply a new patch and repeat the process daily. Multiple patches can be used at the same time.",
+        "water": "✓ Drink plenty of water"
+      },
+      "destination": "LifeWave products are not intended for the diagnosis, treatment, or prevention of any diseases or conditions."
     }
   }
 }

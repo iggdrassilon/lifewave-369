@@ -59,9 +59,9 @@ const SecondBlock = ({ content }: any) => {
         </motion.div>
         <div className="relative flex mx-0 pt-5 md:mx-0 items-center md:items-start justify-center xl:w-[60%] md:pr-[3rem] xl:pr-20">
           {viewed.sun && (
-            <text className='md:mt-0 ml-0 md:text-right sm:text-center max-w-descr md:max-w-descr_md xl:max-w-[100%] text-2xl text-description prose flex items-center justify-center'>
+            <div className='md:mt-0 ml-0 md:text-right sm:text-center max-w-descr md:max-w-descr_md xl:max-w-[100%] text-2xl text-description prose flex items-center justify-center'>
               <MotionDescription
-                refForGirl={ref}
+                refOne={ref}
                 color="text-description"
                 children={content.home.enerhyuse}
                 className="text-2xl md:text-2xl z-10 px-2 md:mt-10 mt-[3rem] ml-0 xl:pr-0 min-w-descr sm:w-[100%] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center text-white"
@@ -72,7 +72,7 @@ const SecondBlock = ({ content }: any) => {
                 once={true}
                 complete={() => setState(true)}
               />
-            </text>
+            </div>
           )}
         </div>
       </div >

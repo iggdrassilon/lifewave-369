@@ -16,6 +16,7 @@ import { MotionLayout } from '../components/layouts/motionLayout'
 import WeKnow from '../components/modules/home/we-know/WeKnow'
 import Revolution from '../components/modules/home/we-know/Revolution/Revolution'
 import Unfortunately from '../components/modules/home/we-know/Unfortunately'
+import HowToUse from '../components/modules/home/HowToUse'
 
 // TODO 
 // weknow нужно добавить фон градиент легкий
@@ -26,16 +27,19 @@ const Home = () => {
   return (
     <div className='min-h-screen bg-transparent relative'>
       <main>
-        {/* <DnaHero /> */}
-        {/* <MotionLayout duration={0.5} delay={0.3}>
+        {/* <DnaHero />
+        <MotionLayout duration={0.5} delay={0.3}>
           <WeKnow />
         </MotionLayout> */}
-        <MotionLayout duration={0.5} delay={0.3}>
+        {/* <MotionLayout duration={0.5} delay={0.3}>
           <Revolution />
         </MotionLayout>
-        {/* <MotionLayout duration={1} delay={0.4}>
+        <MotionLayout duration={1} delay={0.4}>
           <Unfortunately />
         </MotionLayout> */}
+        <MotionLayout duration={1} delay={0.4}>
+          <HowToUse />
+        </MotionLayout>
 
         {/* photo 3 block */}
 
