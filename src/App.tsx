@@ -25,8 +25,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AnimatePresence mode='wait'>
-          <LoadingOverlay />
-          <Header />
+          {/* <LoadingOverlay /> */}
+          {/* <Header /> */}
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/patents' element={<Patents />} />
@@ -34,7 +34,7 @@ const App = () => (
             <Route path='/research' element={<Research />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
           <BackToTop />
         </AnimatePresence>
       </BrowserRouter>

@@ -3,6 +3,7 @@ import TextAnimated from "@/src/components/ui/textAnimations"
 import WaveText from "@/src/components/ui/waveText"
 import useLang from "@/src/hooks/use-lang"
 import { FirstBlock } from "./FirstBlock"
+import { SecondBlock } from "./SecondBlock"
 
 const Revolution = () => {
   const content = useLang().CONTENT
@@ -15,9 +16,14 @@ const Revolution = () => {
       once={true}
       className='container mx-auto px-0 py-0 flex flex-col items-center'
     >
-      <div className="bg-blue-600/80 w-[100%] overflow-hidden">
-        <FirstBlock content={content} />
-      </div>
+      <>
+        <div className="bg-blue-600/80 w-[100%] overflow-hidden relative">
+          <FirstBlock content={content} />
+        </div>
+        <div className="bg-blue-600/80 w-[100%] min-h-[700px] overflow-hidden relative">
+          <SecondBlock content={content} />
+        </div>
+      </>
     </MotionSection>
   )
 }
