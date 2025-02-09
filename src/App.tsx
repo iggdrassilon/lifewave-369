@@ -15,6 +15,8 @@ import BackToTop from './components/BackToTop'
 import LoadingOverlay from './components/layouts/loadingOverlay'
 
 import './App.css'
+import Story from './pages/Story'
+import Overlay from './components/Overlay'
 
 const queryClient = new QueryClient()
 
@@ -29,13 +31,15 @@ const App = () => (
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/patents' element={<Patents />} />
+            <Route path='/patents-research' element={<Patents />} />
             <Route path='/reviews' element={<Reviews />} />
+            <Route path='/story' element={<Story />} />
             <Route path='/research' element={<Research />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
           {/* <Footer /> */}
           <BackToTop />
+          <Overlay />
         </AnimatePresence>
       </BrowserRouter>
     </TooltipProvider>

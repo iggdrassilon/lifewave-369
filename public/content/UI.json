@@ -2,8 +2,9 @@
   "en": {
     "navigation": {
       "home": "Home",
-      "patents": "Patents",
+      "patents": "Patents-Research",
       "reviews": "Reviews",
+      "story": "Story",
       "research": "Research"
     },
     "footer": {
@@ -35,8 +36,9 @@
   "ru": {
     "navigation": {
       "home": "Главная",
-      "patents": "Патенты",
+      "patents": "Патенты и Исследования",
       "reviews": "Отзывы",
+      "story": "История",
       "research": "Исследования"
     },
     "footer": {

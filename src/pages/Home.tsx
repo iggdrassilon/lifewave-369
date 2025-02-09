@@ -28,13 +28,13 @@ const Home = () => {
   return (
     <div className='min-h-screen bg-transparent relative'>
       <main>
-        {/* <DnaHero />
-        <MotionLayout duration={0.5} delay={0.3}>
+        {/* <DnaHero /> */}
+        {/* <MotionLayout duration={0.5} delay={0.3}>
           <WeKnow />
         </MotionLayout> */}
-        {/* <MotionLayout duration={0.5} delay={0.3}>
+        <MotionLayout duration={0.5} delay={0.3}>
           <Revolution />
-        </MotionLayout> */}
+        </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Unfortunately />
         </MotionLayout>

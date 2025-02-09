@@ -1,7 +1,7 @@
 DIST_DIR_CLIENT="$PWD/dist"
 REMOTE_USER="iggdrassil"
 REMOTE_HOST="91.197.98.162"
-REMOTE_DIR_CLIENT="Work/lifewave/"
+REMOTE_DIR_CLIENT="Work/Lifewave/"
 PASSWORD="From7777"
 
 echo "begin building of client..."

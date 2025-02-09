@@ -3,21 +3,45 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence, color } from 'framer-motion'
 import useLang from '@/src/hooks/use-lang'
 import SwitchLanguage from './ChangeLang'
+import { setAction } from '@/src/context/actions'
 
 import './burger-animation.css'
+import { bodyFixed, bodyUnfixed } from '@/src/hooks/dom'
+import { buffer } from 'stream/consumers'
+import useDispatch from '@/src/hooks/dispatcher'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
+  const burgerStatus = useDispatch().burgerStatus
 
   const UI = useLang().UI
 
   const links = [
     { name: UI.navigation.home, path: '/' },
-    { name: UI.navigation.patents, path: '/patents' },
+    { name: UI.navigation.patents, path: '/patents-research' },
     { name: UI.navigation.reviews, path: '/reviews' },
-    { name: UI.navigation.research, path: '/research' },
+    { name: UI.navigation.story, path: '/story' },
+    // { name: UI.navigation.research, path: '/research' },
   ]
+
+  const handleClickBurger = () => {
+    setIsOpen(!isOpen)
+    setAction({ key: 'burger', value: !isOpen })
+    bodyFixed()
+  }
+
+  const handleClickLinks = () => {
+    setIsOpen(false)
+    setAction({ key: 'burger', value: false })
+    bodyUnfixed()
+  }
+
+  useEffect(() => {
+    if (!burgerStatus.burger) {
+      setIsOpen(false)
+    }
+  }, [burgerStatus])
 
   return (
     <motion.nav
@@ -32,7 +56,11 @@ const Header = () => {
     >
       <div className='container mx-auto px-4'>
         <div className='flex items-center justify-between h-16'>
-          <Link to='/' className='text-2xl font-bold text-primary'>
+          <Link to='/' className='cursor-pointer text-2xl font-bold text-primary' onClick={() => {
+            if (location.pathname !== '/') {
+              handleClickLinks()
+            }
+          }}>
             <svg
               width='130'
               height='54'
@@ -119,7 +147,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => handleClickBurger()}
               className='md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors'
               aria-label='Toggle Menu'
             >
@@ -137,31 +165,33 @@ const Header = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className='md:hidden absolute overflow-hidden top-16 left-0 right-0 shadow-lg'
-            style={{
-              backgroundColor: 'var(--header-color)',
-              backdropFilter: 'var(--header-blur)',
-            }}
-          >
-            <div className='container mx-auto px-4 py-4 flex flex-col space-y-4 '>
-              {links.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className='hover:text-primary transition-colors flex justify-center py-2'
-                  style={{ color: 'var(--main-blue)' }}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+          <>
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className='md:hidden absolute overflow-hidden top-16 left-0 right-0 shadow-lg'
+              style={{
+                backgroundColor: 'var(--header-color)',
+                backdropFilter: 'var(--header-blur)',
+              }}
+            >
+              <div className='container mx-auto px-4 py-4 flex flex-col space-y-4 '>
+                {links.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    className='hover:text-primary transition-colors flex justify-center py-2'
+                    style={{ color: 'var(--main-blue)' }}
+                    onClick={() => handleClickLinks()}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.nav>
