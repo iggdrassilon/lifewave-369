@@ -27,7 +27,7 @@ export default OverlayModal
 
 const ModalsOverlay = styled.div<ModalsOverlayT>`
   ${(props) => css`
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;

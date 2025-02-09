@@ -26,7 +26,7 @@ import Notice from '../components/modules/home/Notice'
 
 const Home = () => {
   return (
-    <div className='min-h-screen bg-transparent relative'>
+    <div className='bg-transparent relative'>
       <main>
         {/* <DnaHero /> */}
         {/* <MotionLayout duration={0.5} delay={0.3}>

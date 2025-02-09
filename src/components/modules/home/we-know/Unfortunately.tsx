@@ -1,12 +1,15 @@
 import { MotionSection } from "@/src/components/layouts/motionLayout"
+import VideoLayout from "@/src/components/layouts/VideoLayout"
 import AnimatedCounter from "@/src/components/ui/AnimatedCounter"
 import TextAnimated from "@/src/components/ui/textAnimations"
 import WaveText from "@/src/components/ui/waveText"
 import useLang from "@/src/hooks/use-lang"
+import { useRef } from "react"
 
 const Unfortunately = () => {
   const content = useLang().CONTENT
-
+  const videoRef = useRef()
+  const chatBox = 'bg-violet-100/60 rounded-xl backdrop-blur-sm p-3'
   return (
     <MotionSection
       height_initial={80}
@@ -14,41 +17,53 @@ const Unfortunately = () => {
       duration={0.6}
       delay={0.3}
       once={true}
-      className='container px-4 py-2'
+      className='px-0 py-0'
     >
-      <div className="flex flex-col justify-center items-center">
-        <h2 className='font-bold text-center mb-8 flex items-center justify-center'>
-          <TextAnimated text={`${content.home.unfortunately}`} color="text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
-        </h2>
-        <div className='text-2xl max-w-[500px] text-description prose text-center'>
-          {content.home.slowlyregenerate}
+      <>
+        <div className="container max-w-[800px] flex flex-col justify-center items-center"
+          style={{ 
+            background: 'linear-gradient(to bottom, rgba(250,250,250, 1), rgba(0,0,0, .0), rgba(0,0,0, .0),rgba(250,250,100, .0), rgba(12, 26, 148, .8)), linear-gradient(to bottom, rgba(250,250,250, 0), rgba(0,0,0, .0), rgba(250, 250, 255, .9)), linear-gradient(to bottom, rgba(250,250,250, .4), rgba(0,0,0,.0)',
+          }}
+        >
+          <h2 className='font-bold text-center mt-10 mb-8 flex items-center justify-center'>
+            <TextAnimated text={`${content.home.unfortunately}`} color="text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
+          </h2>
+          <div className={`text-2xl max-w-[500px] text-description prose text-center ${chatBox}`}>
+            {content.home.slowlyregenerate}
+          </div>
+          <AnimatedCounter
+            endValue={50}
+            duration={3000}
+            color='var(--persentage-color)'
+            radius={50}
+            sizeBox={220}
+            delay={0.4}
+          />
+          <div className={`text-xl text-description max-w-[500px] text-center ${chatBox}`}>
+            {content.home.to30years}
+          </div>
+          <AnimatedCounter
+            endValue={90}
+            duration={3000}
+            color='var(--persentage-color)'
+            radius={50}
+            sizeBox={220}
+            delay={0.4}
+          />
+          <div className={`text-xl text-description max-w-[500px] text-center ${chatBox}`}>
+            {content.home.to60years}
+          </div>
+          <div className={`my-[80px] text-xl text-description prose max-w-[500px] text-center ${chatBox}`}>
+            {content.home.stemcells}
+          </div>
         </div>
-        <AnimatedCounter
-          endValue={50}
-          duration={3000}
-          color='var(--persentage-color)'
-          radius={50}
-          sizeBox={220}
-          delay={0.4}
+        <VideoLayout
+          link="/video/waves_purple.mp4"
+          videoRef={videoRef}
+          opacity="40"
+          cover={true}
         />
-        <div className='text-xl text-description max-w-[500px] text-center'>
-          {content.home.to30years}
-        </div>
-        <AnimatedCounter
-          endValue={90}
-          duration={3000}
-          color='var(--persentage-color)'
-          radius={50}
-          sizeBox={220}
-          delay={0.4}
-        />
-        <div className='text-xl text-description max-w-[500px] text-center'>
-          {content.home.to60years}
-        </div>
-        <div className='my-[80px] text-xl text-description prose max-w-[500px] text-center'>
-          {content.home.stemcells}
-        </div>
-      </div>
+      </>
     </MotionSection>
   )
 }

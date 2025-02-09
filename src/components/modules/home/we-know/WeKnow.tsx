@@ -7,6 +7,7 @@ import useLang from "@/src/hooks/use-lang"
 
 import { motion } from 'framer-motion'
 import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry';
+import VideoLayout from '@/src/components/layouts/VideoLayout';
 
 const WeKnow = () => {
   const content = useLang().CONTENT
@@ -78,16 +79,12 @@ const WeKnow = () => {
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
         >
-          <div className="absolute inset-0 z-0 opacity-30">
-            <video
-              ref={videoRef}
-              loop
-              muted
-              className="object-cover w-full h-full"
-            >
-              <source src="/video/human_meridians_rotate.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <VideoLayout 
+            videoRef={videoRef} 
+            opacity='30'
+            link='/video/human_meridians_rotate.mp4'
+            cover={false}
+          />
           <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-start flex-col justify-between '>
             <div className="relative z-10 text-center">
               {state && Object.values(content.home.weknow).map((word: string, index: number) => (

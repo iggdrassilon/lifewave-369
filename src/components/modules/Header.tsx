@@ -51,11 +51,10 @@ const Header = () => {
       className='shadow-md fixed z-50 w-[100%]'
       style={{
         backgroundColor: 'var(--header-color)',
-        backdropFilter: 'var(--header-blur)',
       }}
     >
       <div className='container mx-auto px-4'>
-        <div className='flex items-center justify-between h-16'>
+        <div className='backdrop-blur-md flex items-center justify-between h-16'>
           <Link to='/' className='cursor-pointer text-2xl font-bold text-primary' onClick={() => {
             if (location.pathname !== '/') {
               handleClickLinks()
@@ -171,19 +170,18 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className='md:hidden absolute overflow-hidden top-16 left-0 right-0 shadow-lg'
+              className='backdrop-blur-md md:hidden absolute overflow-hidden top-16 left-0 right-0 shadow-lg'
               style={{
                 backgroundColor: 'var(--header-color)',
-                backdropFilter: 'var(--header-blur)',
               }}
             >
-              <div className='container mx-auto px-4 py-4 flex flex-col space-y-4 '>
+              <div className='container mx-auto px-4 py-4 flex flex-col'>
                 {links.map((link) => (
                   <Link
                     key={link.name}
                     to={link.path}
-                    className='hover:text-primary transition-colors flex justify-center py-2'
-                    style={{ color: 'var(--main-blue)' }}
+                    className='hover:text-primary font-bold transition-colors flex justify-center py-4'
+                    style={{ color: 'var(--main-blue)', borderBottom: '1px solid rgba(100,100,100, .1)' }}
                     onClick={() => handleClickLinks()}
                   >
                     {link.name}

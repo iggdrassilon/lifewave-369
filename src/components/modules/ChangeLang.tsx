@@ -9,6 +9,7 @@ import OverlayModal from './overlays/OverlayModals'
 
 import styled, { css } from 'styled-components'
 import { ModalsStateT } from '@/src/types/modals'
+import { bodyFixed, bodyUnfixed } from '@/src/hooks/dom'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SwitchLanguage = ({
@@ -27,6 +28,7 @@ const SwitchLanguage = ({
 
   const openEvent = () => {
     if (context) {
+      bodyFixed()
       setActive((prev) => ({
         ...prev,
         modal: true,
@@ -36,6 +38,7 @@ const SwitchLanguage = ({
   }
 
   const closeEvent = () => {
+    bodyUnfixed()
     setActive((prev) => ({ ...prev, modal: false }))
     timeout.current = setTimeout(
       () => {
@@ -89,7 +92,7 @@ const SwitchLanguage = ({
       {active.overlay && (
         <OverlayModal
           closeEvent={() => closeEvent()}
-          holder={active.modal} // context for start rise & down overlay
+          holder={context} // context for start rise & down overlay
           context={'language'}
           timeRealeses={timeRealeses}
         />

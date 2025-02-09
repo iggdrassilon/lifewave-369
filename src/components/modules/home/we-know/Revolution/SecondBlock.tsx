@@ -40,7 +40,7 @@ const SecondBlock = ({ content }: any) => {
 
   return (
     <>
-      <div className="flex flex-col-reverse md:flex-row justify-center w-[100%]">
+      <div className="container flex flex-col-reverse md:flex-row justify-center w-[100%]">
         <motion.div
           initial={{
             opacity: 0,
