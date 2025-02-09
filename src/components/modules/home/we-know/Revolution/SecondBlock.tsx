@@ -55,7 +55,7 @@ const SecondBlock = ({ content }: any) => {
           transition={{ duration: 2, delay: 0.2 }}
           className="z-10 flex items-center justify-center mt-[50px] md:my-0 my-[50px]"
         >
-          <div className="z-10 w-full h-[350px] w-[30px] md:h-[400px] md:w-[400px] flex items-center justify-center bg-cover bg-no-repeat bg-[url('/images/sun.png')]"></div>
+          <div className="z-10 w-full h-[350px] w-[350px] md:h-[400px] md:w-[400px] flex items-center justify-center bg-cover bg-no-repeat bg-[url('/images/sun.png')]"></div>
         </motion.div>
         <div className="relative flex mx-0 pt-5 md:mx-0 items-center md:items-start justify-center xl:w-[60%] md:pr-[3rem] xl:pr-20">
           {viewed.sun && (

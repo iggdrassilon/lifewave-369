@@ -55,7 +55,7 @@ const TextAnimated = (props: TextAnimatedT) => {
       <text ref={(node: any) => {
         textRef.current = node;
         ref(node);
-      }} className={`overflow-hidden animation text-center uppercase text-3xl md:text-5xl tracking-wide ${color}`}>
+      }} className={`overflow-hidden animation text-center uppercase text-3xl md:text-4xl tracking-wide ${color}`}>
         {text}
       </text>
 

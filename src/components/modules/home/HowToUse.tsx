@@ -22,19 +22,25 @@ const HowToUse = () => {
       duration={0.6}
       delay={0.3}
       once={true}
-      className='container mx-auto px-0 py-2'
+      className='container mx-auto px-0 py-0'
     >
-      <div className='relative flex md:flex-row flex-col items-center' style={{ border: '1px solid red'}}>
+      <div className='relative flex md:flex-row flex-col items-center'
+        // style={{ border: '1px solid red'}}
+      >
         <div className='relative w-full md:h-[500px] h-[500px] xl:h-[600px]'>
           <img
             src="/images/patch_place_guy.png" 
             alt="human accupuncture" 
             className="w-auto h-full object-contain" 
-            style={{ border: '1px solid green'}}
+            // style={{ border: '1px solid green'}}
           />
         </div>
-        <div ref={ref} className='min-h-[300px] md:min-h-[500px] w-[100%] md:w-[60%] flex justify-center' style={{ border: '1px solid blue'}}>
-          <div className='overflow-hidden xl:w-[calc(100%-100px)] xl:m-[50px] m-[20px] sm:w-[523px] w-[calc(100%-40px)]' style={{ border: '1px solid yellow'}}>
+        <div ref={ref} className='min-h-[300px] md:min-h-[500px] w-[100%] md:w-[60%] flex justify-center' 
+          // style={{ border: '1px solid blue'}}
+        >
+          <div className='overflow-hidden xl:w-[calc(100%-100px)] xl:m-[50px] m-[20px] sm:w-[523px] w-[calc(100%-40px)]' 
+            // style={{ border: '1px solid yellow'}}
+          >
             {Object.values(content.home.howTo).map((value: string, index: number) => (
               <motion.div
                 initial={{ opacity: 0, translateX: '300px' }}
@@ -44,7 +50,7 @@ const HowToUse = () => {
                 }}
                 transition={{ duration: 0.8, delay: 1 * index }}
                 className="flex justify-start items-center h-[90px] md:h-[100px] text-description md:text-xl text-base sm:text-lg"
-                style={{ border: '1px solid mangeta'}}
+                // style={{ border: '1px solid mangeta'}}
               >
                 <text>{value}</text>
               </motion.div>

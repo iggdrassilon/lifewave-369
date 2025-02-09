@@ -17,6 +17,7 @@ import WeKnow from '../components/modules/home/we-know/WeKnow'
 import Revolution from '../components/modules/home/we-know/Revolution/Revolution'
 import Unfortunately from '../components/modules/home/we-know/Unfortunately'
 import HowToUse from '../components/modules/home/HowToUse'
+import Notice from '../components/modules/home/Notice'
 
 // TODO 
 // weknow нужно добавить фон градиент легкий
@@ -33,14 +34,17 @@ const Home = () => {
         </MotionLayout> */}
         {/* <MotionLayout duration={0.5} delay={0.3}>
           <Revolution />
-        </MotionLayout>
+        </MotionLayout> */}
         <MotionLayout duration={1} delay={0.4}>
           <Unfortunately />
-        </MotionLayout> */}
+        </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <HowToUse />
         </MotionLayout>
-
+        <MotionLayout duration={1} delay={0.4}>
+          <Notice />
+        </MotionLayout>
+        
         {/* photo 3 block */}
 
         {/* <MotionLayout duration={0.5} delay={0}>

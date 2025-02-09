@@ -16,11 +16,11 @@ const Unfortunately = () => {
       once={true}
       className='container px-4 py-2'
     >
-      <>
-        <h2 className='text-3xl font-bold text-center mb-8 flex items-center justify-center'>
+      <div className="flex flex-col justify-center items-center">
+        <h2 className='font-bold text-center mb-8 flex items-center justify-center'>
           <TextAnimated text={`${content.home.unfortunately}`} color="text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
         </h2>
-        <div className='text-2xl text-description prose max-w-none flex items-center justify-center'>
+        <div className='text-2xl max-w-[500px] text-description prose text-center'>
           {content.home.slowlyregenerate}
         </div>
         <AnimatedCounter
@@ -31,7 +31,7 @@ const Unfortunately = () => {
           sizeBox={220}
           delay={0.4}
         />
-        <div className='text-2xl text-description prose max-w-none flex items-center justify-center'>
+        <div className='text-xl text-description max-w-[500px] text-center'>
           {content.home.to30years}
         </div>
         <AnimatedCounter
@@ -42,13 +42,13 @@ const Unfortunately = () => {
           sizeBox={220}
           delay={0.4}
         />
-        <div className='text-2xl text-description prose max-w-none flex items-center justify-center'>
+        <div className='text-xl text-description max-w-[500px] text-center'>
           {content.home.to60years}
         </div>
-        <div className='my-[80px] text-2xl text-description prose max-w-none flex items-center justify-center'>
+        <div className='my-[80px] text-xl text-description prose max-w-[500px] text-center'>
           {content.home.stemcells}
         </div>
-      </>
+      </div>
     </MotionSection>
   )
 }
