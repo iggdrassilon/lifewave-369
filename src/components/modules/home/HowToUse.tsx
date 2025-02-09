@@ -31,14 +31,15 @@ const HowToUse = () => {
           <img
             src="/images/patch_place_guy.png" 
             alt="human accupuncture" 
-            className="w-auto h-full object-contain" 
+            className="z-10 w-auto h-full object-contain" 
             // style={{ border: '1px solid green'}}
           />
+          <div className="absolute top-[-15%] right-[50%] translate-x-[50%] bottom-[0] -z-10 w-[200px] h-[200px] object-contain bg-[url('/public/icons/golden-flower-sacral.svg')] bg-cover bg-no-repeat"></div>
         </div>
         <div ref={ref} className='min-h-[300px] md:min-h-[500px] w-[100%] md:w-[60%] flex justify-center' 
           // style={{ border: '1px solid blue'}}
         >
-          <div className='overflow-hidden xl:w-[calc(100%-100px)] xl:m-[50px] m-[20px] sm:w-[523px] w-[calc(100%-40px)]' 
+          <div className='relative overflow-hidden xl:w-[calc(100%-100px)] xl:m-[50px] m-[20px] sm:w-[523px] w-[calc(100%-40px)]' 
             // style={{ border: '1px solid yellow'}}
           >
             {Object.values(content.home.howTo).map((value: string, index: number) => (

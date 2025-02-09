@@ -26,7 +26,7 @@ const App = () => (
       <BrowserRouter>
         <AnimatePresence mode='wait'>
           {/* <LoadingOverlay /> */}
-          {/* <Header /> */}
+          <Header />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/patents' element={<Patents />} />

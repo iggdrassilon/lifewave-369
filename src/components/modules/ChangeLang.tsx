@@ -51,7 +51,7 @@ const SwitchLanguage = ({
   }, [context])
 
   return (
-    <div className='switch-wrapper w-6 h-6 relative'>
+    <div className='switch-wrapper w-[24px] h-[24px] relative'>
       <Switcher>
         <svg
           fill='var(--main-blue)'
