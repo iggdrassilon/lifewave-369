@@ -11,10 +11,15 @@ import VideoLayout from '@/src/components/layouts/VideoLayout';
 
 const WeKnow = () => {
   const content = useLang().CONTENT
+
   const { ref, inView } = useInView({ threshold: 0.1 })
+
   const videoRef = useRef(null);
+
   const [state, setState] = useState(false)
   const [isAnimating, setIsAnimating] = useState(true);
+  const [sectionMounted, setSectionMounted] = useState(false)
+
   const variants = {
     hidden: { opacity: 0, scale: 0.8, rotate: -10 },
     visible: {
@@ -43,7 +48,7 @@ const WeKnow = () => {
   useEffect(() => {
     const videoElement = videoRef.current;
     if (videoElement) {
-      if (inView) {
+      if (inView && sectionMounted) {
         setState(true)
         videoElement.play();
       } else {
@@ -51,7 +56,7 @@ const WeKnow = () => {
         videoElement.pause();
       }
     }
-  }, [inView]);
+  }, [inView, sectionMounted]);
 
   const completeAnimation = () => {
     setIsAnimating(false);
@@ -65,6 +70,7 @@ const WeKnow = () => {
       delay={0.3}
       once={true}
       className='container mx-auto px-0 py-2'
+      sectionMounted={() => setSectionMounted(true)}
     >
       <>
         <motion.div

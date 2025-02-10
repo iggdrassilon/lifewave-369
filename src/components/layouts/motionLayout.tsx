@@ -19,7 +19,7 @@ const MotionLayout = (props: MotionHookT) => {
 }
 
 const MotionSection = (props: MotionSectionT) => {
-  const { children, className, duration, delay, height_initial, height_viewported, once } = props
+  const { children, className, duration, delay, height_initial, height_viewported, once, sectionMounted } = props
 
   return (
     <motion.section
@@ -28,6 +28,7 @@ const MotionSection = (props: MotionSectionT) => {
       transition={{ duration: duration, delay: delay }}
       viewport={{ once: once }}
       className={className}
+      onAnimationComplete={() => sectionMounted()}
     >
       {children}
     </motion.section>

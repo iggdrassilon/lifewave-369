@@ -15,6 +15,7 @@ export type MotionSectionT = {
   height_viewported: number
   once: boolean
   className: string
+  sectionMounted: () => void
 }
 
 export type MotionTextT = {

@@ -11,13 +11,15 @@ const Notice = () => {
   const [ref, inView] = useInView();
 
   const [state, setState] = useState(false)
+  const [sectionMounted, setSectionMounted] = useState(false)
   const [displayedText, setDisplayedText] = useState('');
+
   // BUG IN 0 SYMBOL RENDERING
   useEffect(() => {
     setDisplayedText('')
     let index = 0;
     const typingInterval = setInterval(() => {
-      if (index < text.length && state) {
+      if (index < text.length && state, sectionMounted) {
         setDisplayedText(prev => prev + text.charAt(index));
         index++;
       } else {
@@ -26,7 +28,7 @@ const Notice = () => {
     }, 70);
 
     return () => clearInterval(typingInterval);
-  }, [text, state]);
+  }, [text, state, sectionMounted]);
 
   useEffect(() => {
     if (inView) {
@@ -42,6 +44,7 @@ const Notice = () => {
       delay={0.3}
       once={true}
       className='mx-auto px-0 py-0 overflow-hidden'
+      sectionMounted={() => setSectionMounted(true)}
     >
       <div className='relative'>
         <div className='bg-blue-700 max-h-[600px]'>

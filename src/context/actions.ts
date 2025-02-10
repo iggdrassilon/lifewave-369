@@ -7,6 +7,7 @@ const setAction = actionsDomain.createEvent<{ key: string; value: boolean }>()
 const $actions = actionsDomain
   .createStore({
     burger: false,
+    language: false,
   })
   .on(setAction, (state, {key, value}) => ({
     ...state,

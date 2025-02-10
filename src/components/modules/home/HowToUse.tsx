@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from 'react';
 import { MotionSection } from '../../layouts/motionLayout';
 import useLang from '@/src/hooks/use-lang';
@@ -7,7 +8,7 @@ import VideoLayout from '../../layouts/VideoLayout';
 
 const HowToUse = () => {
   const content = useLang().CONTENT
-  const videoRef = useRef()
+  const videoRef = useRef<any>()
 
   const bgElemsColor = 'bg-neutral-200/60'
   const shadowElems = '0 4px 15px rgba(0,0,0, .4)'
@@ -15,12 +16,18 @@ const HowToUse = () => {
 
   const [ ref, inView ] = useInView();
   const [ state, setState ] = useState(false)
+  const [sectionMounted, setSectionMounted] = useState(false)
 
   useEffect(() => {
-    if (inView) {
-      setState(true)
+    if (videoRef.current) {
+      if (inView && sectionMounted) {
+        setState(true)
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
     }
-  }, [inView]);
+  }, [inView,sectionMounted]);
 
   return (
     <MotionSection
@@ -30,13 +37,18 @@ const HowToUse = () => {
       delay={0.3}
       once={true}
       className='mx-auto px-0 py-0'
+      sectionMounted={() => setSectionMounted(true)}
     >
       <>
         <div className='container relative flex md:flex-row flex-col items-center'
           // style={{ border: '1px solid red'}}
         >
-          <div className={`relative w-full md:h-[500px] h-[500px] xl:h-[600px] ${bgElemsColor} rounded-xl backdrop-blur-sm m-5 md:m-5 lg:m-10 p-10 md:p-0 lg:p-10`}
-            style={{ boxShadow: shadowElems }}
+          <div className={`relative w-full md:h-[500px] h-[500px] xl:h-[600px] ${bgElemsColor} rounded-xl backdrop-blur-sm m-0 md:m-0 lg:m-10 p-0 md:p-0 lg:p-10`}
+            style={{ 
+              boxShadow: shadowElems, 
+              // border: '1px solid red' 
+            }}
+            
           >
             <img
               src="/images/patch_place_guy.png" 
@@ -60,8 +72,11 @@ const HowToUse = () => {
                     translateX: state ? 0 : '300px'
                   }}
                   transition={{ duration: 0.8, delay: 1 * index }}
-                  className={`flex justify-start items-center text-description md:text-xl text-base sm:text-lg text-${textColor}  align-baseline left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] ${bgElemsColor} rounded-xl backdrop-blur-sm p-3`}
-                  style={{ border: '1px solid mangeta', boxShadow: shadowElems}}
+                  className={`flex justify-start items-center text-description md:text-xl text-base font-bold sm:text-lg text-${textColor}  align-baseline left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] ${bgElemsColor} rounded-xl backdrop-blur-sm p-3`}
+                  style={{ 
+                    // border: '1px solid mangeta', 
+                    boxShadow: shadowElems
+                  }}
                 >
                   <text>{value}</text>
                 </motion.div>

@@ -114,7 +114,7 @@ const Wrapper = styled.ul`
   margin-top: 15px;
   top: 40px;
   right: 0;
-  background-color: rgba(250, 250, 250, 0.5);
+  background-color: rgba(250, 250, 250, 0.9);
   backdrop-filter: blur(4px);
 `
 

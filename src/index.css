@@ -103,7 +103,8 @@
     --titles-color: #05044e;
     --description-color: #100f75;
     --persentage-color: #0f1e7534;
-    --persentage-color: #3535cd;
+    --persentage-color: rgb(53, 53, 205);
+    --persentage-coloor: hwb(229 29% 43% / 0.569);
   }
 }
 

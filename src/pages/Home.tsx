@@ -28,10 +28,10 @@ const Home = () => {
   return (
     <div className='bg-transparent relative'>
       <main>
-        {/* <DnaHero /> */}
-        {/* <MotionLayout duration={0.5} delay={0.3}>
+        <DnaHero />
+        <MotionLayout duration={0.5} delay={0.3}>
           <WeKnow />
-        </MotionLayout> */}
+        </MotionLayout>
         <MotionLayout duration={0.5} delay={0.3}>
           <Revolution />
         </MotionLayout>

@@ -18,6 +18,7 @@ import './App.css'
 
 import Story from './pages/Story'
 import Overlay from './components/Overlay'
+import OverlayModal from './components/modules/overlays/OverlayModals'
 
 const queryClient = new QueryClient()
 
@@ -28,7 +29,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AnimatePresence mode='wait'>
-          {/* <LoadingOverlay /> */}
+          <LoadingOverlay />
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
@@ -38,9 +39,10 @@ const App = () => (
             <Route path='/research' element={<Research />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
           <BackToTop />
           <Overlay />
+          {/* <OverlayModal /> */}
         </AnimatePresence>
       </BrowserRouter>
     </TooltipProvider>
