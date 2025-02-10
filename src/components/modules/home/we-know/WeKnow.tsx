@@ -69,7 +69,7 @@ const WeKnow = () => {
       duration={0.6}
       delay={0.3}
       once={true}
-      className='container mx-auto px-0 py-2'
+      className='container z-0 mx-auto px-0 py-2 mt-[150px]'
       sectionMounted={() => setSectionMounted(true)}
     >
       <>

@@ -1,10 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Card3D from '../Card3D'
 import '../style.css'
+import VideoLayout from '@/src/components/layouts/VideoLayout'
+import { useInView } from 'react-intersection-observer'
 
 const DnaHero = () => {
+  const [ ref, inView ] = useInView();
+
+  const videoRef = useRef<any>()
+ 
   const [mousePosition, setMousePosition] = useState({
     x: window.innerWidth * 0.9,
     y: window.innerHeight * 0.5,
@@ -26,35 +32,55 @@ const DnaHero = () => {
 
     setMousePosition({ x, y })
   }
+
+    useEffect(() => {
+      if (videoRef.current) {
+        if (inView) {
+          videoRef.current.play();
+        } else {
+          videoRef.current.pause();
+        }
+      }
+    }, [inView]);
+
   return (
     <motion.div
       initial={{ filter: 'brightness(20%)', y: 20 }}
       animate={{ filter: 'brightness(100%)', y: 0 }}
       transition={{ duration: 0.8 }}
-      className='relative z-10 text-center'
+      className='relative z-999 text-center'
+
     >
       {/* bg-[url('/images/DNA.gif')] */}
       <div
-        className="dna-rotate min-h-screen flex items-center justify-center bg-cover bg-no-repeat 
-          bg-[url('/images/DNA.gif')] 
+        className="dna-rotate min-h-screen flex flex-col items-center justify-center bg-cover bg-no-repeat 
         rotate-180 overfrow-hidden"
         onMouseMove={handlePointerMove}
         onTouchMove={handlePointerMove}
         onTouchStart={handlePointerMove}
       >
+        <VideoLayout
+          link='/video/DNA.mp4'
+          opacity='10'
+          videoRef={videoRef}
+          cover={true}
+        />
         <div className=' absolute top-[60%] md:top-[60%] z-100'>
           <div className="rounded-full w-[200px] h-[200px] animate-rotate bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat"></div>
           <div className="absolute right-3 bottom-2 rotate-180 inset-0 -z-10 before:block before:content-[''] before:rounded-full before:w-[180px] before:h-[180px] before:shadow-custom before:bg-transparent before:translate-y-1"></div>
         </div>
-        <div className='rotate-180 translate-y-[-60%] w-[90vw] max-w-[500px] aspect-video'>
+        <div className='absolute top-[30%] w-[100vw] rotate-180 font-kefa text-white text-[120px] font-bold'>
+          <text ref={ref}>X39</text>
+        </div>
+        <div className='rotate-180 translate-y-[-120%] w-[90vw] max-w-[500px] aspect-video'>
           <Card3D mousePosition={mousePosition}>
-            <div className="layer-1 absolute inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat" />
+            <div className="layer-1 absolute z-[9999] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat" />
             <div
-              className="layer-2 absolute inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
+              className="layer-2 absolute z-[9999] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
               data-offset='20'
             />
             <div
-              className="layer-3 absolute inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
+              className="layer-3 absolute z-[9999] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
               data-offset='40'
             />
           </Card3D>

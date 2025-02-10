@@ -13,13 +13,13 @@ const VideoLayout = (props: ViteoLayoutT) => {
 
   return (
     <div>
-      <div className={`absolute inset-0 -z-20 opacity-${opacity}`}>
+      <div className={`absolute inset-0 -z-50 opacity-${opacity}`}>
         <video
           ref={videoRef}
           loop
           muted
           playsInline
-          className={`object-cover ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
+          className={`object-cover -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
         >
           <source src={`${link}`} type="video/mp4" />
         </video>
