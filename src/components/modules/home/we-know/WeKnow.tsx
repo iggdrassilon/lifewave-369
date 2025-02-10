@@ -89,7 +89,7 @@ const WeKnow = () => {
             videoRef={videoRef} 
             opacity='30'
             link='/video/human_meridians_rotate.mp4'
-            cover={false}
+            cover={true}
           />
           <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-start flex-col justify-between '>
             <div className="relative z-10 text-center">

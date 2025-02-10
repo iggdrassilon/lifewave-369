@@ -28,22 +28,25 @@ const Home = () => {
   return (
     <div className='bg-transparent relative'>
       <main>
-        <DnaHero />
-        <MotionLayout duration={0.5} delay={0.3}>
+        {/* <DnaHero /> */}
+        {/* <MotionLayout duration={0.5} delay={0.3}>
           <WeKnow />
-        </MotionLayout>
+        </MotionLayout> */}
         <MotionLayout duration={0.5} delay={0.3}>
           <Revolution />
+        </MotionLayout>
+        <MotionLayout duration={0.5} delay={0.3}>
+         <HowItWorks />
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Unfortunately />
         </MotionLayout>
-        <MotionLayout duration={1} delay={0.4}>
+        {/* <MotionLayout duration={1} delay={0.4}>
           <HowToUse />
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Notice />
-        </MotionLayout>
+        </MotionLayout> */}
         
         {/* photo 3 block */}
 
@@ -65,9 +68,7 @@ const Home = () => {
             ]}
           />
         </MotionLayout>
-        <MotionLayout duration={0.5} delay={0.3}>
-         <HowItWorks />
-        </MotionLayout>
+        
         <MotionLayout duration={0.5} delay={0.3}>
           <WearInstructions />
         </MotionLayout>

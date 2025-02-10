@@ -10,12 +10,13 @@ export type TextAnimatedT = {
   duration: number
   space: number
   color: string
+  textSizes: string
 }
 
 // modes:
 // slide-left, 
 const TextAnimated = (props: TextAnimatedT) => {
-  const { text, mode, delay, color, duration, space } = props
+  const { text, mode, delay, color, duration, space, textSizes } = props
   const textRef = useRef();
 
   const { ref, inView } = useInView({
@@ -55,7 +56,7 @@ const TextAnimated = (props: TextAnimatedT) => {
       <text ref={(node: any) => {
         textRef.current = node;
         ref(node);
-      }} className={`overflow-hidden animation text-center uppercase text-3xl md:text-4xl tracking-wide ${color}`}>
+      }} className={`overflow-hidden animation text-center uppercase ${textSizes} tracking-wide ${color}`}>
         {text}
       </text>
 

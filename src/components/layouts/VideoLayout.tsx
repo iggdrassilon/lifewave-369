@@ -18,6 +18,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
           ref={videoRef}
           loop
           muted
+          playsInline
           className={`object-cover ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
         >
           <source src={`${link}`} type="video/mp4" />

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import { motion } from 'framer-motion'
 import { MotionSection } from '../../layouts/motionLayout'
@@ -6,30 +7,32 @@ interface VideoSectionProps {
   title: string
   videoUrl: string
   buttons?: string[]
+  ref: any
 }
 
-const VideoSection = ({ title, videoUrl, buttons }: VideoSectionProps) => {
+const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
   return (
     <MotionSection
-      height_initial={80}
+      height_initial={0}
       height_viewported={0}
       duration={0.3}
       delay={0.2}
       once={true}
       className='max-w-4xl mx-auto'
+      sectionMounted={() => ''}
     >
       <>
-        <h2 className='text-3xl md:text-4xl font-bold text-space-dark text-center mb-8'>
+        {/* <h2 className='text-3xl md:text-4xl font-bold text-space-dark text-center mb-8'>
           {title}
-        </h2>
+        </h2> */}
 
-        <div className='aspect-w-16 aspect-h-9 mb-8'>
+        <div ref={ref} className='aspect-w-16 aspect-h-9'>
           <iframe
             src={videoUrl}
             title={title}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            className='w-full h-full rounded-lg shadow-lg'
+            className='w-[100%] h-[100%] min-h-[200px] rounded-lg shadow-lg'
           />
         </div>
 

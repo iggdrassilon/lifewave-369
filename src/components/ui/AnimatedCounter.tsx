@@ -7,7 +7,7 @@ const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox, delay }) 
   const [count, setCount] = useState(0);
   const { ref, inView } = useInView({
     threshold: 1, // 100%
-    delay: delay
+    delay
   });
 
   useEffect(() => {
@@ -33,36 +33,56 @@ const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox, delay }) 
 
   return (
     <div
-      ref={ref} // Добавляем ref для отслеживания видимости
+      ref={ref}
       className='flex items-center justify-center'
-      style={{ position: 'relative', width: `${sizeBox}`, height: `${sizeBox}` }}
+      style={{ 
+        position: 'relative',
+        width: sizeBox,
+        height: sizeBox,
+        // border: '1px solid red' 
+      }}
     >
-      <svg width={`${sizeBox}`} height={`${sizeBox}`}>
+      <svg width={sizeBox} height={sizeBox} className='absolute'
+        style={{ 
+          top: '20%', 
+          left: '20%', 
+          // transform: 'translate(-50%, -50%)', 
+          textAlign: 'center'
+        }}
+      >
         <circle
           stroke="#e6e6e6"
           fill="transparent"
-          strokeWidth="10"
+          strokeWidth="8"
           r={rd}
-          cx="110"
-          cy="110"
+          cx={rd + 4}
+          cy={rd + 4}
         />
         <motion.circle
-          stroke={`${color}`}
+          stroke={color}
           fill="transparent"
-          strokeWidth="10"
+          strokeWidth="8"
           r={rd}
-          cx="110"
-          cy="110"
+          cx={rd + 4}
+          cy={rd + 4}
           strokeDasharray={circumference}
           strokeDashoffset={offset}
+          transform={`rotate(-90 ${rd + 4} ${rd + 4})`}
           transition={{ duration: 0.1 }}
         />
       </svg>
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-        <Counter value={Math.round(count)} color={color} /> {/* Применяем округление к значению */}
+      <div 
+        style={{ 
+          position: 'absolute', 
+          top: '50%', 
+          left: '50%', 
+          transform: 'translate(-50%, -50%)', 
+          textAlign: 'center'
+        }}
+      >
+        <Counter value={Math.round(count)} color={color} />
       </div>
     </div>
   );
 };
-
 export default AnimatedCounter;

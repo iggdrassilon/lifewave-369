@@ -22,7 +22,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Share repo to remote server"
-eval sshpass -p "$PASSWORD" scp -r "$DIST_DIR_CLIENT"/* "$REMOTE_USER"@"$REMOTE_HOST":"$REMOTE_DIR_CLIENT"
+eval scp -r -i ~/.ssh/lifewave "$DIST_DIR_CLIENT"/* "$REMOTE_USER"@"$REMOTE_HOST":"$REMOTE_DIR_CLIENT"
 
 if [ $? -ne 0 ]; then
     echo "Sharing failure..."

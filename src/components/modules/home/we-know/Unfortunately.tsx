@@ -41,8 +41,8 @@ const Unfortunately = () => {
             background: 'linear-gradient(to bottom, rgba(250,250,250, 1), rgba(0,0,0, .0), rgba(0,0,0, .0),rgba(250,250,100, .0), hwb(229 29% 43% / 0)), linear-gradient(to bottom, rgba(250,250,250, 0), rgba(0,0,0, .0), rgba(250, 250, 255, .0)), linear-gradient(to bottom, rgba(250,250,250, .0), rgba(0,0,0,.0)',
           }}
         >
-          <h2 className='font-bold text-center mt-10 mb-8 flex items-center justify-center'>
-            <TextAnimated text={`${content.home.unfortunately}`} color="text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
+          <h2 className=' text-center mt-10 mb-8 flex items-center justify-center'>
+            <TextAnimated text={`${content.home.unfortunately}`} textSizes="text-3xl md:text-4xl" color="text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
           </h2>
           <div className={`text-xl max-w-[500px] text-description prose text-center ${chatBox} ${textDensity}`}>
             {content.home.slowlyregenerate}
@@ -52,7 +52,7 @@ const Unfortunately = () => {
             duration={3000}
             color='var(--persentage-color)'
             radius={50}
-            sizeBox={220}
+            sizeBox={180}
             delay={0.4}
           />
           <div className={`text-xl text-description max-w-[500px] text-center ${chatBox} ${textDensity}`}>
@@ -63,7 +63,7 @@ const Unfortunately = () => {
             duration={3000}
             color='var(--persentage-color)'
             radius={50}
-            sizeBox={220}
+            sizeBox={180}
             delay={0.4}
           />
           <div className={`text-xl text-description max-w-[500px] text-center ${chatBox} ${textDensity}`}>

@@ -27,7 +27,7 @@ const FirstBlock = ({ content }: any) => {
   return (
     <>
       <h2 className='text-center my-20 flex items-center justify-center' ref={titleRef}>
-        <TextAnimated mode='slide-left' text={`${content.home.revol}`} color="text-title z-10" delay={0.4} duration={0.3} space={0.1} />
+        <TextAnimated mode='slide-left' textSizes="text-3xl md:text-3xl" text={`${content.home.revol}`} color="text-title z-10" delay={0.4} duration={0.3} space={0.1} />
       </h2>
       <div className="flex w-[100%] md:flex-row mx-0 md:mx-0 flex-col items-center md:items-start justify-center">
         {viewed.titles && (
