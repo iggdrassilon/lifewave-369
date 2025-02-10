@@ -11,6 +11,7 @@ export type MotionSectionT = {
   children: React.ReactElement
   duration: number
   delay: number
+  opacity_initial: number
   height_initial: number
   height_viewported: number
   once: boolean

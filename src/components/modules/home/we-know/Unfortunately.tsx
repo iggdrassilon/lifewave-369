@@ -28,6 +28,7 @@ const Unfortunately = () => {
   return (
     <MotionSection
       height_initial={80}
+      opacity_initial={0}
       height_viewported={0}
       duration={0.6}
       delay={0.3}

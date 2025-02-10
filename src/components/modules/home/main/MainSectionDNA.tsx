@@ -69,23 +69,11 @@ const DnaHero = () => {
           <div className="rounded-full w-[200px] h-[200px] animate-rotate bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat"></div>
           <div className="absolute right-3 bottom-2 rotate-180 inset-0 -z-10 before:block before:content-[''] before:rounded-full before:w-[180px] before:h-[180px] before:shadow-custom before:bg-transparent before:translate-y-1"></div>
         </div>
-        <div className='absolute top-[30%] w-[100vw] rotate-180 font-kefa text-white text-[120px] font-bold'>
+        <div className='absolute top-[33%] w-[100vw] rotate-180 font-kefa text-white text-[120px] font-bold'>
           <text ref={ref}>X39</text>
         </div>
-        <div className='rotate-180 translate-y-[-120%] w-[90vw] max-w-[500px] aspect-video'>
-          <Card3D mousePosition={mousePosition}>
-            <div className="layer-1 absolute z-[9999] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat" />
-            <div
-              className="layer-2 absolute z-[9999] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
-              data-offset='20'
-            />
-            <div
-              className="layer-3 absolute z-[9999] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
-              data-offset='40'
-            />
-          </Card3D>
-        </div>
       </div>
+
     </motion.div>
   )
 }

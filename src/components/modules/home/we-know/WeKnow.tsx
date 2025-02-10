@@ -8,6 +8,7 @@ import useLang from "@/src/hooks/use-lang"
 import { motion } from 'framer-motion'
 import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry';
 import VideoLayout from '@/src/components/layouts/VideoLayout';
+import Card3D from '../Card3D';
 
 const WeKnow = () => {
   const content = useLang().CONTENT
@@ -19,6 +20,12 @@ const WeKnow = () => {
   const [state, setState] = useState(false)
   const [isAnimating, setIsAnimating] = useState(true);
   const [sectionMounted, setSectionMounted] = useState(false)
+
+  // if need this use global state for set position
+  const [mousePosition, setMousePosition] = useState({
+    x: window.innerWidth * 0.9,
+    y: window.innerHeight * 0.5,
+  })
 
   const variants = {
     hidden: { opacity: 0, scale: 0.8, rotate: -10 },
@@ -64,20 +71,21 @@ const WeKnow = () => {
 
   return (
     <MotionSection
-      height_initial={80}
+      height_initial={0}
       height_viewported={0}
-      duration={0.6}
-      delay={0.3}
+      opacity_initial={1}
+      duration={0}
+      delay={0}
       once={true}
-      className='container z-0 mx-auto px-0 py-2 mt-[150px]'
+      className='container z-0 mx-auto px-0 py-2 mt-[10px]'
       sectionMounted={() => setSectionMounted(true)}
     >
       <>
         <motion.div
           ref={ref}
-          initial="hidden"
+          initial="visible"
           animate="visible"
-          className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat relative overflow-hidden"
+          className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat relative"
           style={{
             position: 'relative',
             padding: '20px',
@@ -85,6 +93,21 @@ const WeKnow = () => {
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
         >
+          <div className='absolute top-[-45%] sm:top-[-35%] md:top-[-30%] w-[90vw] max-w-[300px] aspect-video' style={{ 
+            // border: '1px solid red' 
+          }}>
+            <Card3D mousePosition={mousePosition}>
+              <div className="layer-1 absolute z-[9999] inset-[0] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat" />
+              <div
+                className="layer-2 absolute z-[9999] inset-[0] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
+                data-offset='20'
+              />
+              <div
+                className="layer-3 absolute z-[9999] left-[2px] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
+                data-offset='40'
+              />
+            </Card3D>
+          </div>
           <VideoLayout 
             videoRef={videoRef} 
             opacity='30'

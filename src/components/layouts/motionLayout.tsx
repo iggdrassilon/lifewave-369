@@ -18,12 +18,12 @@ const MotionLayout = (props: MotionHookT) => {
   )
 }
 
-const MotionSection = (props: MotionSectionT) => {
-  const { children, className, duration, delay, height_initial, height_viewported, once, sectionMounted } = props
+export const MotionSection = (props: MotionSectionT) => {
+  const { children, className, duration, delay, height_initial, height_viewported, once, sectionMounted, opacity_initial } = props
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: height_initial }}
+      initial={{ opacity: opacity_initial, y: height_initial }}
       whileInView={{ opacity: 1, y: height_viewported }}
       transition={{ duration: duration, delay: delay }}
       viewport={{ once: once }}
@@ -140,4 +140,4 @@ const MotionTextPart = (props: MotionPartTextT) => {
   )
 }
 
-export { MotionLayout, MotionSection, MotionText, MotionDescription }
+export { MotionLayout, MotionText, MotionDescription }
