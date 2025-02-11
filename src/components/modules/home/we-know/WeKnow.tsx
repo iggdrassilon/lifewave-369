@@ -96,7 +96,7 @@ const WeKnow = () => {
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
         >
-          <div className='absolute top-[-35%] md:top-[-30%] w-[90vw] max-w-[300px] aspect-video' style={{ 
+          <div className='absolute top-[-15%] md:top-[-18%] w-[90vw] max-w-[300px] aspect-video' style={{ 
             // border: '1px solid red' 
           }}>
             <Card3D mousePosition={mousePosition}>

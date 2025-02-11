@@ -41,7 +41,10 @@ const HowItWorks = () => {
     >
       <>
         <div className='text-center mt-10 text-sm flex items-center justify-center'>
-          <TextAnimated text={`${content.home.howitworks}`} color="text-title" textSizes='text-3xl md:text-3xl' delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
+          <TextAnimated text={`${content.home.howitworks}`} color="text-title" textSizes='font-bold text-3xl md:text-3xl' delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
+          <div className="absolute select-none -z-[1] top-[-30px] w-[100%] flex justify-center items-center">
+            <img src="/images/brush_3.jpg" className="h-[70px] w-[500px]" alt="background" />
+          </div>
         </div>
         <div className='relative flex flex-col-reverse justify-around md:flex-row items-center'
           // style={{ border: '1px solid red'}}

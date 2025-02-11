@@ -46,7 +46,8 @@ const Unfortunately = () => {
           }}
         >
           <h2 className='text-center mt-20 mb-8 flex items-center justify-center'>
-            <TextAnimated text={`${content.home.unfortunately}`} textSizes="text-3xl md:text-3xl" color="text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
+            <TextAnimated text={`${content.home.unfortunately}`} textSizes="text-3xl md:text-3xl" color="font-bold text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
+
           </h2>
           <div className="sm:w-[523px] flex flex-col items-center justify-center w-[calc(100%-40px)]">
             <div className={`text-description prose ${chatBox} ${textDensity}`}

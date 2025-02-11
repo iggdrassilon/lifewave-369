@@ -19,6 +19,8 @@ const TextAnimated = (props: TextAnimatedT) => {
   const { text, mode, delay, color, duration, space, textSizes } = props
   const textRef = useRef();
 
+  const chatBox = 'bg-violet-100/5 rounded-xl backdrop-blur-[8px] p-4'
+
   const { ref, inView } = useInView({
     threshold: 1,
     triggerOnce: true,
@@ -56,7 +58,7 @@ const TextAnimated = (props: TextAnimatedT) => {
       <text ref={(node: any) => {
         textRef.current = node;
         ref(node);
-      }} className={`overflow-hidden animation text-center uppercase ${textSizes} tracking-wide ${color}`}>
+      }} className={`overflow-hidden animation text-center uppercase ${chatBox} ${textSizes} tracking-wide ${color}`}>
         {text}
       </text>
 

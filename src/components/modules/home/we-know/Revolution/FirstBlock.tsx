@@ -27,8 +27,11 @@ const FirstBlock = ({ content }: any) => {
   return (
     <>
       <div className="overflow-hidden">
-        <h2 className='text-center my-20 flex items-center justify-center overflow-hidden' ref={titleRef}>
-          <TextAnimated mode='slide-left' textSizes=" text-3xl md:text-3xl" text={`${content.home.revol}`} color="text-description z-10" delay={0.4} duration={0.3} space={0.1} />
+        <h2 className={`relative text-center my-20 flex items-center justify-center`} ref={titleRef}>
+          <TextAnimated mode='slide-left' textSizes=" text-3xl md:text-4xl" text={`${content.home.revol}`} color="text-sky-900 font-black z-10" delay={0.4} duration={0.3} space={0.1} />
+          <div className="absolute z-[9] select-none top-[-30px] w-[100%] flex justify-center items-center">
+            <img src="/images/brush_2.jpg" className="h-[70px] w-[500px]" alt="background" />
+          </div>
         </h2>
         <div className="flex w-[100%] md:flex-row mx-0 md:mx-0 flex-col items-center md:items-start justify-center">
           {viewed.titles && (
