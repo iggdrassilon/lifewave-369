@@ -67,7 +67,7 @@ const SecondBlock = ({ content }: any) => {
                 refOne={ref}
                 color="text-description"
                 children={content.home.enerhyuse}
-                className={`z-10 px-2 md:mt-10 mt-[3rem] ml-0 xl:pr-0 min-w-descr sm:w-[100%] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center text-white ${chatBox}`}
+                className={`z-10 p-[20px] md:mt-10 mt-[3rem] ml-0 min-w-descr sm:w-[100%] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center text-white ${chatBox}`}
                 style={{ boxShadow: shadowElems }}
                 duration={1}
                 delay={0.6}
