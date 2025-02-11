@@ -73,7 +73,7 @@ const MotionText = (props: MotionTextT) => {
 };
 
 const MotionDescription = (props: MotionDescriptionT) => {
-  const { color, children, className, duration, delay, height_initial, height_viewported, once, complete, refOne } = props;
+  const { color, children, className, duration, delay, height_initial, height_viewported, once, complete, refOne, style } = props;
 
   const [state, setState] = useState(false);
 
@@ -102,6 +102,7 @@ const MotionDescription = (props: MotionDescriptionT) => {
       animate={{ opacity: state ? 1 : 0, y: state ? height_viewported : height_initial }}
       transition={{ duration: duration, delay: delay }}
       className={`${className} ${color}`}
+      style={style}
       onAnimationComplete={() => setComplete()}
 
     >

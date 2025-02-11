@@ -14,6 +14,7 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
   return (
     <MotionSection
       height_initial={0}
+      opacity_initial={0}
       height_viewported={0}
       duration={0.3}
       delay={0.2}

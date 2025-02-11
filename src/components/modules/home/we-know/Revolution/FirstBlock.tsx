@@ -27,7 +27,7 @@ const FirstBlock = ({ content }: any) => {
   return (
     <>
       <h2 className='text-center my-20 flex items-center justify-center' ref={titleRef}>
-        <TextAnimated mode='slide-left' textSizes="text-3xl md:text-3xl" text={`${content.home.revol}`} color="text-title z-10" delay={0.4} duration={0.3} space={0.1} />
+        <TextAnimated mode='slide-left' textSizes=" text-3xl md:text-3xl" text={`${content.home.revol}`} color="text-description z-10" delay={0.4} duration={0.3} space={0.1} />
       </h2>
       <div className="flex w-[100%] md:flex-row mx-0 md:mx-0 flex-col items-center md:items-start justify-center">
         {viewed.titles && (
@@ -35,7 +35,8 @@ const FirstBlock = ({ content }: any) => {
             refOne={ref}
             color="text-description"
             children={content.home.firstinworld}
-            className="text-2xl md:text-2xl z-10 px-2 md:mt-20 mt-0 ml-0 md:ml-10 min-w-descr sm:w-[80%] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center"
+            className="text-xl/tight md:text-2xl/tight font-bold z-10 px-2 md:mt-20 mt-0 ml-0 md:ml-10 min-w-descr sm:w-[80%] w-[calc(100%-40px)] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center"
+            style={''}
             duration={1}
             delay={0.6}
             height_initial={60}

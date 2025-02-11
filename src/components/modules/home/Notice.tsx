@@ -3,6 +3,7 @@ import { MotionSection } from '../../layouts/motionLayout';
 import useLang from '@/src/hooks/use-lang';
 import { motion } from 'framer-motion'
 import { useInView } from "react-intersection-observer"
+import TypewriterText from '@/src/hooks/Writer';
 
 const Notice = () => {
   const content = useLang().CONTENT
@@ -12,23 +13,6 @@ const Notice = () => {
 
   const [state, setState] = useState(false)
   const [sectionMounted, setSectionMounted] = useState(false)
-  const [displayedText, setDisplayedText] = useState('');
-
-  // BUG IN 0 SYMBOL RENDERING
-  useEffect(() => {
-    setDisplayedText('')
-    let index = 0;
-    const typingInterval = setInterval(() => {
-      if (index < text.length && state, sectionMounted) {
-        setDisplayedText(prev => prev + text.charAt(index));
-        index++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 70);
-
-    return () => clearInterval(typingInterval);
-  }, [text, state, sectionMounted]);
 
   useEffect(() => {
     if (inView) {
@@ -60,7 +44,7 @@ const Notice = () => {
             }}
           ></div>
         </div>
-        <div ref={ref} className="absolute text-white align-baseline text-sm/4 sm:text-base/5 md:text-xl/5 left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] max-w-[800px] min-w-[63%] md:min-w-[40%] xl:min-w-[400px] min-h-[10%] sm:min-h-[20%] md:min-h-[10%] h-[auto] bg-slate-600/30 rounded-xl backdrop-blur-sm p-3">
+        <div ref={ref} className="absolute overflow-hidden text-white align-baseline text-sm/4 sm:text-base/5 md:text-xl/5 left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] max-w-[800px] min-w-[63%] md:min-w-[40%] xl:min-w-[400px] min-h-[10%] sm:min-h-[20%] md:min-h-[10%] h-[auto] bg-slate-600/30 rounded-xl backdrop-blur-sm p-3">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: state && 1 }}
@@ -68,7 +52,11 @@ const Notice = () => {
             id="notice"
             style={{ textAlign: "left" }}
           >
-            {displayedText}
+            {sectionMounted && (
+              <TypewriterText
+                text={text}
+              />
+            )}
           </motion.div>
         </div>
       </div>

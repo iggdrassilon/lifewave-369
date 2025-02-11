@@ -42,6 +42,7 @@ export type MotionDescriptionT = {
   className: string
   complete: any
   refOne: any
+  style: any
 }
 
 export type MotionPartTextT = {

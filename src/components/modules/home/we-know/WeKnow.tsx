@@ -12,14 +12,17 @@ import Card3D from '../Card3D';
 
 const WeKnow = () => {
   const content = useLang().CONTENT
-
   const { ref, inView } = useInView({ threshold: 0.1 })
-
+  
   const videoRef = useRef(null);
 
   const [state, setState] = useState(false)
   const [isAnimating, setIsAnimating] = useState(true);
   const [sectionMounted, setSectionMounted] = useState(false)
+  
+  // TEXT
+  const shadowElems = '0 2px 5px rgba(0,0,0, .3)'
+  const textColor = 'text-pink-700/90'
 
   // if need this use global state for set position
   const [mousePosition, setMousePosition] = useState({
@@ -88,7 +91,7 @@ const WeKnow = () => {
           className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat relative"
           style={{
             position: 'relative',
-            padding: '20px',
+            // padding: '20px',
             borderRadius: '10px',
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
@@ -114,17 +117,25 @@ const WeKnow = () => {
             link='/video/human_meridians_rotate.mp4'
             cover={true}
           />
-          <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-start flex-col justify-between '>
-            <div className="relative z-10 text-center">
+          <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-center flex-col justify-between px-[20px] md:px-0'>
+            <div className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-1"
+              style={{
+                boxShadow: shadowElems
+              }}
+            >
               {state && Object.values(content.home.weknow).map((word: string, index: number) => (
-                <MotionText className="text-3xl font-bold text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
+                <MotionText className={`text-xl/tight font-bold text-center mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
                   <span>{word}</span>
                 </MotionText>
               ))}
             </div>
-            <div className="relative z-10 text-center">
+            <div className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-1"
+              style={{
+                boxShadow: shadowElems
+              }}
+            >
               {state && !isAnimating && Object.values(content.home.our).map((word: string, index: number) => (
-                <MotionText className="text-3xl font-black text-center mb-8 text-title" variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
+                <MotionText className={`text-xl/tight font-bold text-center mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
                   <span>{word}</span>
                 </MotionText>
               ))}

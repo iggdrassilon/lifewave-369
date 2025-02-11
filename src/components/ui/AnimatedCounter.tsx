@@ -42,34 +42,32 @@ const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox, delay }) 
         // border: '1px solid red' 
       }}
     >
-      <svg width={sizeBox} height={sizeBox} className='absolute'
+      <svg width={sizeBox} height={sizeBox} className='flex items-center justify-center'
         style={{ 
-          top: '20%', 
-          left: '20%', 
           // transform: 'translate(-50%, -50%)', 
           textAlign: 'center'
         }}
       >
-        <circle
-          stroke="#e6e6e6"
-          fill="transparent"
-          strokeWidth="8"
-          r={rd}
-          cx={rd + 4}
-          cy={rd + 4}
-        />
-        <motion.circle
-          stroke={color}
-          fill="transparent"
-          strokeWidth="8"
-          r={rd}
-          cx={rd + 4}
-          cy={rd + 4}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          transform={`rotate(-90 ${rd + 4} ${rd + 4})`}
-          transition={{ duration: 0.1 }}
-        />
+      <circle
+        stroke="#e6e6e6"
+        fill="transparent"
+        strokeWidth="8"
+        r={rd}
+        cx={sizeBox / 2}
+        cy={sizeBox / 2}
+      />
+      <motion.circle
+        stroke={color}
+        fill="transparent"
+        strokeWidth="8"
+        r={rd}
+        cx={sizeBox / 2}
+        cy={sizeBox / 2}
+        strokeDasharray={circumference}
+        strokeDashoffset={offset}
+        transform={`rotate(-90 ${sizeBox / 2} ${sizeBox / 2})`}
+        transition={{ duration: 0.1 }}
+      />
       </svg>
       <div 
         style={{ 
