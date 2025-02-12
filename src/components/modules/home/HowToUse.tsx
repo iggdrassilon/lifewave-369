@@ -91,6 +91,7 @@ const HowToUse = () => {
           </div>
         </div>
         <VideoLayout
+          preview={links.previews.howToUse}
           link={links.videos.howToUse}
           opacity='10'
           videoRef={videoRef}

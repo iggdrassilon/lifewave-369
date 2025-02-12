@@ -100,8 +100,9 @@ const Unfortunately = () => {
           </div>
           </div>
         <VideoLayout
-          link={links.videos.unfortunately}
+          preview={links.previews.unfortunately}
           videoRef={videoRef}
+          link={links.videos.unfortunately}
           opacity="40"
           cover={true}
         />

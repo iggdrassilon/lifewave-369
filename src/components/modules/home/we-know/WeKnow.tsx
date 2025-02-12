@@ -113,6 +113,7 @@ const WeKnow = () => {
             </Card3D>
           </div>
           <VideoLayout 
+            preview={links.previews.weKnow}
             videoRef={videoRef} 
             opacity='30'
             link={links.videos.weKnow}

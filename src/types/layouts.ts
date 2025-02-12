@@ -4,4 +4,5 @@ export type ViteoLayoutT = {
   link: string
   opacity: string
   cover: boolean
+  preview: string
 }

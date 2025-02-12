@@ -50,7 +50,7 @@ const DnaHero = () => {
     <motion.div
       initial={{ filter: 'brightness(20%)', y: 20 }}
       animate={{ filter: 'brightness(100%)', y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1 }}
       className='relative z-999 text-center'
 
     >
@@ -63,6 +63,7 @@ const DnaHero = () => {
         onTouchStart={handlePointerMove}
       >
         <VideoLayout
+          preview={links.previews.dna}
           link={links.videos.dna}
           opacity='10'
           videoRef={videoRef}

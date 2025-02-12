@@ -11,7 +11,7 @@ const LoadingOverlay = () => {
   useEffect(() => {
     // Simulate initial load progress
     const startTime = Date.now()
-    const duration = 2222
+    const duration = 777
 
     const updateProgress = () => {
       const elapsed = Date.now() - startTime
@@ -26,7 +26,7 @@ const LoadingOverlay = () => {
         setTimeout(() => {
           setIsLoading(false)
           bodyUnfixed()
-        }, 500) // Small delay before hiding
+        }, 77) // Small delay before hiding
       }
     }
 

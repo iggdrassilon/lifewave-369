@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react'
 import { motion } from 'framer-motion'
 import { MotionSection } from '../../layouts/motionLayout'
 
@@ -39,7 +38,7 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
 
         {buttons && (
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-            {buttons.map((button, index) => (
+            {buttons.map((button) => (
               <motion.button
                 key={button}
                 whileHover={{ scale: 1.05 }}
