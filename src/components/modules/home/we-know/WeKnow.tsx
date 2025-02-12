@@ -1,19 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
 
 import { MotionSection, MotionText } from "@/src/components/layouts/motionLayout"
 
-import useLang from "@/src/hooks/use-lang"
-
-import { motion } from 'framer-motion'
 import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry';
+
 import VideoLayout from '@/src/components/layouts/VideoLayout';
-import Card3D from '../Card3D';
+import Card3D from '@/src/components/modules/home/Card3D';
+import usePublic from '@/src/hooks/use-lang';
 
 const WeKnow = () => {
-  const content = useLang().CONTENT
-  const { ref, inView } = useInView({ threshold: 0.1 })
-  
+  const content = usePublic().CONTENT
+  const links = usePublic().LINKS;
+
+  const { ref, inView } = useInView({ threshold: 0.1 })  
   const videoRef = useRef(null);
 
   const [state, setState] = useState(false)
@@ -114,7 +115,7 @@ const WeKnow = () => {
           <VideoLayout 
             videoRef={videoRef} 
             opacity='30'
-            link='/video/human_meridians_rotate.mp4'
+            link={links.videos.weKnow}
             cover={true}
           />
           <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-center flex-col justify-between px-[20px] md:px-0'>

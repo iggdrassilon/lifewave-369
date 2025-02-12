@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Progress } from '@/src/components/ui/progress'
 import { Loader2 } from 'lucide-react'
+
+import { Progress } from '@/src/components/ui/progress'
 import { bodyFixed, bodyUnfixed } from '@/src/hooks/dom'
 
 const LoadingOverlay = () => {
@@ -10,7 +11,7 @@ const LoadingOverlay = () => {
   useEffect(() => {
     // Simulate initial load progress
     const startTime = Date.now()
-    const duration = 1000
+    const duration = 2222
 
     const updateProgress = () => {
       const elapsed = Date.now() - startTime

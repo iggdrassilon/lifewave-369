@@ -1,18 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useRef, useState } from "react"
+import { useInView } from "react-intersection-observer"
+
 import { MotionSection } from "@/src/components/layouts/motionLayout"
 import VideoLayout from "@/src/components/layouts/VideoLayout"
 import AnimatedCounter from "@/src/components/ui/AnimatedCounter"
 import TextAnimated from "@/src/components/ui/textAnimations"
-import WaveText from "@/src/components/ui/waveText"
-import useLang from "@/src/hooks/use-lang"
-import { useEffect, useRef, useState } from "react"
-import { useInView } from "react-intersection-observer"
+import usePublic from "@/src/hooks/use-lang"
 
 const Unfortunately = () => {
-  const content = useLang().CONTENT
-  const [sectionMounted, setSectionMounted] = useState(false)
+  const content = usePublic().CONTENT
+  const links = usePublic().LINKS;
+
   const videoRef = useRef<any>()
   const [ref, inView] = useInView()
+
+  const [sectionMounted, setSectionMounted] = useState(false)
 
   const chatBox = 'bg-violet-100/60 rounded-xl backdrop-blur-sm p-3'
   const textDensity = 'md:text-xl text-base font-bold sm:text-lg text-description overflow-hidden'
@@ -97,7 +100,7 @@ const Unfortunately = () => {
           </div>
           </div>
         <VideoLayout
-          link="/video/waves_purple.mp4"
+          link={links.videos.unfortunately}
           videoRef={videoRef}
           opacity="40"
           cover={true}

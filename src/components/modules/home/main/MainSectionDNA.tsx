@@ -1,14 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import Card3D from '../Card3D'
-import '../style.css'
-import VideoLayout from '@/src/components/layouts/VideoLayout'
 import { useInView } from 'react-intersection-observer'
 
-const DnaHero = () => {
-  const [ ref, inView ] = useInView();
+import VideoLayout from '@/src/components/layouts/VideoLayout'
+import usePublic from '@/src/hooks/use-lang'
 
+import '../style.css'
+
+const DnaHero = () => {
+  const links = usePublic().LINKS;
+
+  const [ ref, inView ] = useInView();
   const videoRef = useRef<any>()
  
   const [mousePosition, setMousePosition] = useState({
@@ -60,7 +63,7 @@ const DnaHero = () => {
         onTouchStart={handlePointerMove}
       >
         <VideoLayout
-          link='/video/DNA.mp4'
+          link={links.videos.dna}
           opacity='10'
           videoRef={videoRef}
           cover={true}
@@ -89,3 +92,4 @@ export default DnaHero
           Advanced Stem Cell Activation Technology
         </p> */
 }
+

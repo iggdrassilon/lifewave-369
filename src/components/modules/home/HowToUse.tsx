@@ -1,22 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from 'react';
-import { MotionSection } from '../../layouts/motionLayout';
-import useLang from '@/src/hooks/use-lang';
-import { motion } from 'framer-motion'
 import { useInView } from "react-intersection-observer"
-import VideoLayout from '../../layouts/VideoLayout';
+import { motion } from 'framer-motion'
+
+import { MotionSection } from '@/src/components/layouts/motionLayout';
+import VideoLayout from '@/src/components/layouts/VideoLayout';
+
+import usePublic from '@/src/hooks/use-lang';
 
 const HowToUse = () => {
-  const content = useLang().CONTENT;
+  const content = usePublic().CONTENT;
+  const links = usePublic().LINKS;
+
   const videoRef = useRef<any>();
+
+  const [ ref, inView ] = useInView();
+  const [ state, setState ] = useState(false);
+  const [sectionMounted, setSectionMounted] = useState(false);
 
   const bgElemsColor = 'bg-neutral-200/60';
   const shadowElems = '0 4px 15px rgba(0,0,0, .4)';
   const textColor = 'titles';
   const fontParams = 'md:text-xl text-base font-bold sm:text-lg';
-  const [ ref, inView ] = useInView();
-  const [ state, setState ] = useState(false);
-  const [sectionMounted, setSectionMounted] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -86,7 +91,7 @@ const HowToUse = () => {
           </div>
         </div>
         <VideoLayout
-          link='/video/source_of_light.mp4'
+          link={links.videos.howToUse}
           opacity='10'
           videoRef={videoRef}
           cover={true}
