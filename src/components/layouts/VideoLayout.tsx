@@ -12,7 +12,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
   useEffect(() => {
     const videoElement = videoRef.current;
 
-    if (inView) {
+    if (inView && !isVideoLoaded) {
       console.log('video action');
       videoElement.src = link;
       videoElement.load();
@@ -20,10 +20,10 @@ const VideoLayout = (props: ViteoLayoutT) => {
         setIsVideoLoaded(true);
       };
 
-      return () => {
-        videoElement.src = '';
-        videoElement.onloadeddata = null;
-      };
+      // return () => {
+      //   videoElement.src = '';
+      //   videoElement.onloadeddata = null;
+      // };
     }
   }, [inView]);
 

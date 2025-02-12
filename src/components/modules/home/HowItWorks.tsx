@@ -1,17 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { MotionSection } from '../../layouts/motionLayout';
 import useLang from '@/src/hooks/use-lang';
 import { motion } from 'framer-motion'
 import { useInView } from "react-intersection-observer"
-import VideoLayout from '../../layouts/VideoLayout';
 import TextAnimated from '../../ui/textAnimations';
 import VideoSection from './VideoSection';
 
 const HowItWorks = () => {
   const content = useLang().CONTENT
   const videoRef = useRef<any>()
-
+  
+  const videoSourceLink = 'https://kinescope.io/embed/axnpCT8eeYFrWsPTfQwStr'
+  
   const bgElemsColor = 'bg-neutral-200/60'
   const shadowElems = '0 4px 15px rgba(0,0,0, .4)'
   const textColor = 'titles'
@@ -59,7 +60,7 @@ const HowItWorks = () => {
             <VideoSection
               title=''
               ref={videoRef}
-              videoUrl='https://www.youtube.com/embed/lMESLSNnauA'
+              videoUrl={videoSourceLink}
             />
           </div>
           <div ref={ref} className='overflow-hidden min-h-[300px] md:min-h-[500px] w-[100%] md:w-[60%] flex justify-center' 

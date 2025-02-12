@@ -137,7 +137,7 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className='text-blue-900 hover:text-indigo-600 transition-colors content-center py-2.5'
+                  className='text-blue-900 font-bold hover:text-indigo-600 transition-colors content-center py-2.5'
                 >
                   {link.name}
                 </Link>

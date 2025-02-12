@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'LifeWave',
       script: 'http-server',
-      args: '-p 8088',
+      args: '--no-dotfiles -p 8088',
       exec_mode: 'fork',
       instances: '1',
       autorestart: true,
