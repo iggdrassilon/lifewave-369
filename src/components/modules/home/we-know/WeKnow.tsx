@@ -120,28 +120,40 @@ const WeKnow = () => {
             cover={true}
           />
           <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-center flex-col justify-between px-[20px] md:px-0'>
-            <div className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-1"
-              style={{
-                boxShadow: shadowElems
-              }}
-            >
-              {state && Object.values(content.home.weknow).map((word: string, index: number) => (
+            {state && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-1"
+                style={{
+                  boxShadow: shadowElems
+                }}
+              >
+                {state && Object.values(content.home.weknow).map((word: string, index: number) => (
+                  <MotionText className={`text-xl/tight font-bold text-center mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
+                    <span>{word}</span>
+                  </MotionText>
+                ))}
+              </motion.div>
+            )}
+            {state && !isAnimating && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-4"
+                style={{
+                  boxShadow: shadowElems
+                }}
+              >
+              {!isAnimating && Object.values(content.home.our).map((word: string, index: number) => (
                 <MotionText className={`text-xl/tight font-bold text-center mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
                   <span>{word}</span>
                 </MotionText>
               ))}
-            </div>
-            <div className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-1"
-              style={{
-                boxShadow: shadowElems
-              }}
-            >
-              {state && !isAnimating && Object.values(content.home.our).map((word: string, index: number) => (
-                <MotionText className={`text-xl/tight font-bold text-center mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
-                  <span>{word}</span>
-                </MotionText>
-              ))}
-            </div>
+            </motion.div>
+            )}
             <div className='absolute top-[150px] w-[100%] items-center flex justify-center'>
               <BlueRotatedFlower />
             </div>
