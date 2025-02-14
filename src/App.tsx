@@ -39,7 +39,7 @@ const App = () => (
             <Route path='/research' element={<Research />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
           <BackToTop />
           <Overlay />
           {/* <OverlayModal /> */}

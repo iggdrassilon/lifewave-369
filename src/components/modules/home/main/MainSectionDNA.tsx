@@ -20,17 +20,17 @@ const DnaHero = () => {
   })
 
   const handlePointerMove = (
-    e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
+    event: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
   ) => {
-    const rect = e.currentTarget.getBoundingClientRect()
+    const rect = event.currentTarget.getBoundingClientRect()
     let x: any, y: any
 
-    if ('touches' in e) {
-      x = e.touches[0].clientX - rect.left
-      y = e.touches[0].clientY - rect.top
+    if ('touches' in event) {
+      x = event.touches[0].clientX - rect.left
+      y = event.touches[0].clientY - rect.top
     } else {
-      x = e.clientX - rect.left
-      y = e.clientY - rect.top
+      x = event.clientX - rect.left
+      y = event.clientY - rect.top
     }
 
     setMousePosition({ x, y })
@@ -81,14 +81,3 @@ const DnaHero = () => {
 }
 
 export default DnaHero
-// bg-gradient-to-b from-[#f6f7fc] to-[#d5e1e8]
-
-{
-  /* <h1 className="text-5xl md:text-7xl font-bold text-space-dark mb-6">
-          Transform Your Health
-        </h1>
-        <p className="text-xl md:text-2xl text-space-medium max-w-2xl mx-auto">
-          Advanced Stem Cell Activation Technology
-        </p> */
-}
-
