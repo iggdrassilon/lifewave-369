@@ -20,9 +20,8 @@ import HowToUse from '../components/modules/home/HowToUse'
 import Notice from '../components/modules/home/Notice'
 
 // TODO 
-// weknow нужно добавить фон градиент легкий
-// revol нужно сделать на синем фоне графы полупрозрачные
-
+// 1 пачку удлинить под ориг
+// 
 
 const Home = () => {
   return (

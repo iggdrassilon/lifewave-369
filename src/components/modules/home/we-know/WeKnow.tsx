@@ -23,11 +23,12 @@ const WeKnow = () => {
   
   // TEXT
   const shadowElems = '0 2px 5px rgba(0,0,0, .3)'
+  // const textColor = 'text-pink-700/90'
   const textColor = 'text-pink-700/90'
 
   // if need this use global state for set position
   const [mousePosition, setMousePosition] = useState({
-    x: window.innerWidth * 0.9,
+    x: window.innerWidth * 0.8,
     y: window.innerHeight * 0.5,
   })
 
@@ -97,7 +98,7 @@ const WeKnow = () => {
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
         >
-          <div className='absolute top-[-15%] md:top-[-18%] w-[90vw] max-w-[300px] aspect-video' style={{ 
+          <div className='absolute top-[-15%] md:top-[-18%] w-[100vw] max-w-[410px] aspect-video' style={{ 
             // border: '1px solid red' 
           }}>
             <Card3D mousePosition={mousePosition}>
@@ -107,18 +108,18 @@ const WeKnow = () => {
                 data-offset='20'
               />
               <div
-                className="layer-3 absolute z-[9999] left-[2px] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
+                className="layer-3 absolute z-[9999] left-[0] inset-[0] bg-[url('/public/images/X39-card.png')] bg-cover bg-no-repeat"
                 data-offset='40'
               />
             </Card3D>
           </div>
-          <VideoLayout 
+          {/* <VideoLayout 
             preview={links.previews.weKnow}
             videoRef={videoRef} 
             opacity='30'
             link={links.videos.weKnow}
             cover={true}
-          />
+          /> */}
           <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-center flex-col justify-between px-[20px] md:px-0'>
             {state && (
               <motion.div
@@ -136,23 +137,6 @@ const WeKnow = () => {
                   </MotionText>
                 ))}
               </motion.div>
-            )}
-            {state && !isAnimating && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-4"
-                style={{
-                  boxShadow: shadowElems
-                }}
-              >
-              {!isAnimating && Object.values(content.home.our).map((word: string, index: number) => (
-                <MotionText className={`text-xl/tight font-bold text-center mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
-                  <span>{word}</span>
-                </MotionText>
-              ))}
-            </motion.div>
             )}
             <div className='absolute top-[150px] w-[100%] items-center flex justify-center'>
               <BlueRotatedFlower />

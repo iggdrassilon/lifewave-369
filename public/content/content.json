@@ -16,14 +16,10 @@
         "max": "максимум."
       },
       "revol": "X39 - РЕВОЛЮЦИЯ",
-      "firstinworld": "Первая в мире запатентованная нанокристаллическая технология, предназначенная для активации собственных стволовых клеток в вашем организме.",
+      "firstinworld": "Первая в мире запатентованная нанокристаллическая технология, предназначенная для активации собственных стволовых клеток вашего организма.",
       "enerhyuse": "X39 использует естественную энергию вашего организма для активизации внутренних процессов регенерации и омоложения.",
       "howitworks": "Как это работает?",
-      "aboutX39": {
-        "1": "Технология х39 состоит из сетки спирально размещенных нанокристаллов органического происхождения.",
-        "2": "Нанокристаллы улавливают свет, который исходит из нашего тела и возвращают его обратно на кожу.",
-        "3": "Отражающий свет возбуждает рецепторы на нашей коже, активируя биологические процессы в организме. Таким образом, начинается выработка пептида меди, а затем и СТВОЛОВЫХ КЛЕТОК."
-      },
+      "aboutX39": "Технология х39 состоит из сетки спирально размещенных нанокристаллов органического происхождения.<br><br>Нанокристаллы улавливают свет, который исходит из нашего тела и возвращают его обратно на кожу.<br><br>Отражающий свет возбуждает рецепторы на нашей коже, активируя биологические процессы в организме.<br><br>Таким образом, начинается выработка пептида меди, а затем и СТВОЛОВЫХ КЛЕТОК.",
       "unfortunately": "К СОЖАЛЕНИЮ:",
       "slowlyregenerate": "Чем МЕНЬШЕ активность стволовых клеток, тем быстрее вы стареете и медленнее выздоравливаете.",
       "to30years": "К 30 годам вы теряете ПОЛОВИНУ активности ваших стволовых клеток.",
@@ -58,11 +54,12 @@
       "firstinworld": "The world's first patented nanocrystalline technology designed to activate your body's own stem cells.",
       "enerhyuse": "X39 uses your body's natural energy to activate internal processes of regeneration and rejuvenation.",
       "howitworks": "How does it work?",
-      "aboutX39": {
+      "_aboutX39": {
         "1": "The X39 technology consists of a grid of spirally arranged organic nanocrystals.",
         "2": "The nanocrystals capture the light emitted from our bodies and return it back to the skin.",
         "3": "The reflected light stimulates receptors on our skin, activating biological processes in the body. This initiates the production of copper peptides, and then STEM CELLS."
       },
+      "aboutX39": "The X39 technology consists of a grid of spirally arranged organic nanocrystals. The nanocrystals capture the light emitted from our bodies and return it back to the skin. The reflected light stimulates receptors on our skin, activating biological processes in the body. This initiates the production of copper peptides, and then STEM CELLS.",
       "unfortunately": "UNFORTUNATELY:",
       "slowlyregenerate": "The LESS activity of stem cells you have, the faster you age and the slower you recover.",
       "to30years": "By the age of 30, you lose HALF of your stem cell activity.",
