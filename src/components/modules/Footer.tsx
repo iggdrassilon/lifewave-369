@@ -1,13 +1,14 @@
 import useLang from '@/src/hooks/use-lang'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import SpaceBackground from '../SpaceBackground'
 import SpaceLines from '../SpaceLines'
+import { useInView } from 'react-intersection-observer'
 
 const Footer = () => {
   const UI = useLang().UI
-  const CONTENT = useLang().CONTENT
   const footerRef = useRef(null)
+  const { ref, inView } = useInView()
 
   const links = [
     { name: UI.footer.links.about, path: '/about' },
@@ -33,8 +34,8 @@ const Footer = () => {
       className='relative overflow-hidden py-12'
       style={{ filter: 'hue-rotate(-10deg)' }}
     >
-      <SpaceBackground ref={footerRef} />
-      <SpaceLines />
+      <SpaceBackground ref={footerRef} inView={inView} />
+      <SpaceLines inView={inView} />
       <div className='txt-shadow-light container mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           <div>
@@ -97,7 +98,7 @@ const Footer = () => {
             <h3 className='text-space-dark font-bold text-lg mb-4'>
               {UI.footer.titles.contact}
             </h3>
-            <p className='text-space-medium'>
+            <p ref={ref} className='text-space-medium'>
               {UI.footer.links.if_owner}
               <br />
               <a

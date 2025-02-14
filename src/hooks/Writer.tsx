@@ -1,6 +1,7 @@
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/src/lib/utils";
+import { useInView } from "react-intersection-observer";
 
 interface TypewriterTextProps {
   text: string;
@@ -15,25 +16,30 @@ const TypewriterText = ({
   speed = 50,
   delay = 0,
 }: TypewriterTextProps) => {
-  const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTyping, setIsTyping] = useState(true);
+  const [ displayText, setDisplayText ] = useState("");
+  const [ currentIndex, setCurrentIndex ] = useState(0);
+  const [ isTyping, setIsTyping ] = useState(true);
+
+  const timer = useRef<NodeJS.Timeout | null>(null)
+  const [ ref, inView ] = useInView()
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (currentIndex < text.length) {
-        setDisplayText((prev) => prev + text[currentIndex]);
-        setCurrentIndex((prev) => prev + 1);
-      } else {
-        setIsTyping(false);
-      }
-    }, currentIndex === 0 ? delay : speed);
+    if (inView) {
+      timer.current = setTimeout(() => {
+        if (currentIndex < text.length) {
+          setDisplayText((prev) => prev + text[currentIndex]);
+          setCurrentIndex((prev) => prev + 1);
+        } else {
+          setIsTyping(false);
+        }
+      }, currentIndex === 0 ? delay : speed);
+    }
   
-    return () => clearTimeout(timeout);
-  }, [currentIndex, text, speed, delay]);
+    return () => clearTimeout(timer.current);
+  }, [currentIndex, text, speed, delay, inView]);
 
   return (
-    <div className={cn("relative inline-block", className)}>
+    <div ref={ref} className={cn("relative inline-block", className)}>
       {displayText}
       <span
         className={cn(

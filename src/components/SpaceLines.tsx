@@ -1,7 +1,7 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 
-const SpaceLines = () => {
+const SpaceLines = ({inView}: {inView: boolean}) => {
+
   return (
     <div
       className='absolute inset-0 pointer-events-none z-10 overflow-hidden'
@@ -10,13 +10,13 @@ const SpaceLines = () => {
         width: '100%',
       }}
     >
-      {[...Array(5)].map((_, i) => (
+      {inView && [...Array(5)].map((_, index) => (
         <motion.div
-          key={i}
+          key={index}
           className='absolute h-[1px] bg-blue-600/20'
           style={{
             width: '100%',
-            top: `${20 + i * 15}%`,
+            top: `${20 + index * 15}%`,
             left: '-100%',
           }}
           animate={{
@@ -24,20 +24,20 @@ const SpaceLines = () => {
             opacity: [0, 1, 0],
           }}
           transition={{
-            duration: 8 + i * 2,
+            duration: 8 + index * 2,
             repeat: Infinity,
             ease: 'linear',
-            delay: i * 0.5,
+            delay: index * 0.5,
           }}
         />
       ))}
-      {[...Array(5)].map((_, i) => (
+      {inView && [...Array(5)].map((_, index) => (
         <motion.div
-          key={`vertical-${i}`}
+          key={`vertical-${index}`}
           className='absolute w-[1px] bg-blue-400/20'
           style={{
             height: '100%',
-            left: `${20 + i * 15}%`,
+            left: `${20 + index * 15}%`,
             top: '-100%',
           }}
           animate={{
@@ -45,10 +45,10 @@ const SpaceLines = () => {
             opacity: [0, 1, 0],
           }}
           transition={{
-            duration: 10 + i * 2,
+            duration: 10 + index * 2,
             repeat: Infinity,
             ease: 'linear',
-            delay: i * 0.7,
+            delay: index * 0.7,
           }}
         />
       ))}

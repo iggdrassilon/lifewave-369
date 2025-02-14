@@ -2,19 +2,21 @@
 import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
-const SpaceBackground = React.forwardRef((props, ref: any) => {
+const SpaceBackground = React.forwardRef(({ inView }: any , ref: any) => {
   const containerRef = useRef(null)
   const sceneRef = useRef(null)
   const cameraRef = useRef(null)
   const rendererRef = useRef(null)
   const starsRef = useRef(null)
 
-  const starCount = 1000 // Количество звезд
-  const starLimit = 1000 // Ограничение по расстоянию для звезд
+  const container = containerRef.current
+
+  const starCount = 1000
+  const starLimit = 1000
 
   useEffect(() => {
-    if (!containerRef.current || !ref.current) return
-
+    if (!container || !ref.current || !inView) return
+    console.log(inView)
     const parentH = ref.current.offsetHeight
     const parentW = ref.current.offsetWidth
 
@@ -29,11 +31,11 @@ const SpaceBackground = React.forwardRef((props, ref: any) => {
 
     const renderer = rendererRef.current
     renderer.setSize(parentW, parentH)
-    containerRef.current.appendChild(renderer.domElement)
+    container.appendChild(renderer.domElement)
 
     const createStars = () => {
       if (starsRef.current) {
-        sceneRef.current.remove(starsRef.current) // Удаляем предыдущие звезды
+        sceneRef.current.remove(starsRef.current)
       }
 
       const starsGeometry = new THREE.BufferGeometry()
@@ -60,12 +62,10 @@ const SpaceBackground = React.forwardRef((props, ref: any) => {
       sceneRef.current.add(starsRef.current)
     }
 
-    createStars() // Создаем звезды при первом рендере
+    createStars()
 
-    // Позиция камеры
     cameraRef.current.position.z = 5
 
-    // Анимация
     const animate = () => {
       requestAnimationFrame(animate)
       if (starsRef.current) {
@@ -77,29 +77,32 @@ const SpaceBackground = React.forwardRef((props, ref: any) => {
         rendererRef.current.render(sceneRef.current, cameraRef.current)
       }
     }
-
-    animate()
-
-    // Обработка события изменения размера
+    
+    
     const handleResize = () => {
       const newParentH = ref.current.offsetHeight
       const newParentW = ref.current.offsetWidth
-
+      
       cameraRef.current.aspect = newParentW / newParentH
       cameraRef.current.updateProjectionMatrix()
       rendererRef.current.setSize(newParentW, newParentH)
-
-      createStars() // Пересоздаем звезды при изменении размера
+      
+      createStars()
     }
-
+    
     window.addEventListener('resize', handleResize)
+
+    if (inView) {
+      animate()
+    }
 
     return () => {
       window.removeEventListener('resize', handleResize)
-      containerRef.current?.removeChild(renderer.domElement)
+      container.removeChild(renderer.domElement)
       renderer.dispose()
     }
-  }, [ref])
+
+  }, [ref, container, inView])
 
   return (
     <div

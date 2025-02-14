@@ -175,7 +175,7 @@ const Header = () => {
                 backgroundColor: 'var(--header-color)',
               }}
             >
-              <div className='container mx-auto px-4 py-4 flex flex-col'>
+              <div className='mx-auto px-4 py-4 flex flex-col'>
                 {links.map((link) => (
                   <Link
                     key={link.name}
