@@ -102,6 +102,7 @@ const Unfortunately = () => {
         <VideoLayout
           preview={links.previews.unfortunately}
           videoRef={videoRef}
+          customClass=""
           link={links.videos.unfortunately}
           opacity="40"
           cover={true}

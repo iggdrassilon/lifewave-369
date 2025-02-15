@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { useInView } from "react-intersection-observer"
 import TextAnimated from '../../ui/textAnimations';
 import VideoSection from './VideoSection';
+import VideoLayout from '../../layouts/VideoLayout';
 
 const HowItWorks = () => {
   const content = useLang().CONTENT
@@ -50,7 +51,7 @@ const HowItWorks = () => {
         <div className='relative flex flex-col justify-around md:flex-col items-center'
           // style={{ border: '1px solid red'}}
         >
-          <div className={`relative w-[calc(100%-40px)] md:w-[40%] md:h-[100%] ${bgElemsColor} rounded-xl backdrop-blur-sm max-w-[400px] min-w-[60%] md:min-w-[0] md:max-w-[400px] mt-10`}
+          <div className={`relative w-[calc(100%-40px)] md:w-[60%] md:h-[400px] ${bgElemsColor} rounded-xl backdrop-blur-sm max-w-[400px] min-w-[60%] mt-10`}
             style={{ 
               boxShadow: shadowElems, 
               // border: '1px solid red' 
@@ -63,13 +64,13 @@ const HowItWorks = () => {
               videoUrl={videoSourceLink}
             />
           </div>
-          <h2 className='text-md md:text-md font-normal text-space-dark text-center mb-8'>
-            <text>Время просмотра 1:22</text>
+          <h2 className='text-md md:text-md font-normal text-space-dark text-center mb-8 mt-1 overflow-hidden'>
+            <text>{content.home.videoTime} 1:22</text>
           </h2>
           <div ref={ref} className='overflow-hidden min-h-[300px] md:min-h-[500px] w-[100%] md:w-[60%] flex justify-center' 
             // style={{ border: '1px solid blue'}}
           >
-            <div className='relative flex flex-col items-center justify-center gap-5 xl:w-[calc(100%-100px)] xl:m-[50px] my-[20px] md:m-[20px] sm:w-[523px] w-[calc(100%-40px)] space-y-4'
+            <div className='relative text-2xl/tight flex flex-col items-center text-center justify-center gap-5 xl:w-[calc(100%-100px)] xl:m-[50px] my-[20px] md:w-[100%] sm:w-[523px] w-[calc(100%-40px)] space-y-4'
             >
               <div dangerouslySetInnerHTML={{ __html: content.home.aboutX39 }} />
             </div>
@@ -77,10 +78,12 @@ const HowItWorks = () => {
           
         </div>
         {/* <VideoLayout
-          link='/video/source_of_light.mp4'
+          link={videoSourceLink}
           opacity='10'
           videoRef={videoRef}
-          cover={true}
+          cover={true} 
+          preview={''}
+          customClass={''}
         /> */}
       </>
     </MotionSection>

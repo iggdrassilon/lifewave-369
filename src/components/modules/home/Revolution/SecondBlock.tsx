@@ -43,7 +43,7 @@ const SecondBlock = ({ content }: any) => {
 
   return (
     <>
-      <div className="container flex flex-col-reverse md:flex-row justify-center w-[100%]">
+      <div className="md:container flex flex-col-reverse md:flex-row justify-center w-[100%]">
         <motion.div
           initial={{
             opacity: 0,
@@ -60,16 +60,14 @@ const SecondBlock = ({ content }: any) => {
         >
           <div className="z-10 w-full h-[350px] w-[350px] md:h-[400px] md:w-[400px] flex items-center justify-center bg-cover bg-no-repeat bg-[url('/images/sun.png')]"></div>
         </motion.div>
-        <div className="relative flex mx-0 pt-5 md:mx-0 items-center md:items-start justify-end xl:w-[60%] md:pr-[3rem] xl:pr-0">
+        <div className="relative flex mx-0 pt-5 px-[20px] md:mx-0 items-center md:items-start justify-end xl:w-[60%] md:pr-[3rem] xl:pr-0">
           {viewed.sun && (
-            <div className='md:mt-0 ml-0 md:text-right sm:text-center max-w-descr rounded-lg md:max-w-descr_md xl:max-w-[100%] text-xl/tight md:text-2xl/tight font-normal text-description prose flex items-center justify-center'
-              style={{ boxShadow: shadowElems }}
-            >
+            <div className='ml-0 md:text-right md:mt-[250px] sm:text-center max-w-descr rounded-lg md:max-w-descr_md xl:max-w-[100%] text-xl/tight md:text-2xl/tight font-normal text-description prose flex items-center justify-center'>
               <MotionDescription
                 refOne={ref}
                 color="text-description"
                 children={content.home.enerhyuse}
-                className={`z-10 p-[20px] md:mt-[250px] mt-[3rem] ml-0 min-w-descr sm:w-[100%] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center text-black ${chatBox}`}
+                className={`z-10 p-[20px] ml-0 min-w-descr sm:w-[100%] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center text-black ${chatBox}`}
                 style={{ boxShadow: shadowElems }}
                 duration={1}
                 delay={0.6}

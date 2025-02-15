@@ -7,13 +7,13 @@
         "every": "каждый ",
         "human": "человек ",
         "has": "обладает ",
-        "unlimited": "безграничным потенциалом."
-      },
-      "our": {
+        "unlimited": "безграничным потенциалом. ",
         "mission": "Наша Миссия ",
         "open": "раскрыть его ",
         "at": "на ",
         "max": "максимум."
+      },
+      "our": {
       },
       "revol": "X39 - РЕВОЛЮЦИЯ",
       "firstinworld": "Первая в мире запатентованная нанокристаллическая технология, предназначенная для активации собственных стволовых клеток вашего организма.",
@@ -31,7 +31,8 @@
         "change": "✓ После 12 часов приклейте новый пластырь и повторяйте процесс ежедневно. Можно использовать несколько пластырей одновременно.",
         "water": "✓ Пейте много воды"
       },
-      "notice": "Продукты LifeWave не предназначены для диагностики, лечения или предотвращения каких-либо заболеваний или состояний."
+      "notice": "Продукты LifeWave не предназначены для диагностики, лечения или предотвращения каких-либо заболеваний или состояний.",
+      "videoTime": "Время просмотра"
     }
   },
   "en": {
@@ -71,7 +72,8 @@
         "change": "✓ After 12 hours, apply a new patch and repeat the process daily. Multiple patches can be used at the same time.",
         "water": "✓ Drink plenty of water"
       },
-      "notice": "LifeWave products are not intended for the diagnosis, treatment, or prevention of any diseases or conditions."
+      "notice": "LifeWave products are not intended for the diagnosis, treatment, or prevention of any diseases or conditions.",
+      "videoTime": "Watch time"
     }
   }
 }

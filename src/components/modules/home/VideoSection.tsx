@@ -10,6 +10,9 @@ interface VideoSectionProps {
 }
 
 const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
+  const min_height = 'min-h-[200px]'
+  const height = 'h-[100%]'
+
   return (
     <MotionSection
       height_initial={0}
@@ -18,7 +21,7 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
       duration={0.3}
       delay={0.2}
       once={true}
-      className='max-w-4xl mx-auto'
+      className='max-w-4xl mx-auto h-[100%]'
       sectionMounted={() => ''}
     >
       <>
@@ -26,13 +29,13 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
           {title}
         </h2> */}
 
-        <div ref={ref} className='aspect-w-16 aspect-h-9'>
+        <div ref={ref} className={`aspect-w-16 aspect-h-9 h-[100%] ${min_height}`}>
           <iframe
             src={videoUrl}
             title={title}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            className='w-[100%] h-[100%] min-h-[200px] rounded-lg shadow-lg'
+            className={`w-[100%] h-[100%] rounded-xl shadow-lg ${min_height}`}
           />
         </div>
 
