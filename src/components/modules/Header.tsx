@@ -62,7 +62,10 @@ const Header = () => {
               handleClickLinks()
             }
           }}>
-            эмблема цветка + X39
+            <div className='relative w-[200px] h-[56px] flex items-center rounded-[50px]'>
+              <img src="/images/standart_blue.png" className='h-[100%] w-[56px]' alt="" />
+              <img src="/images/22.webp" className='rounded-[50px] h-[80%]' alt="" />
+            </div>
           </Link>
           <nav className='flex'>
             <button
