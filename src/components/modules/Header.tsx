@@ -50,7 +50,7 @@ const Header = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className='shadow-md fixed z-50 w-[100%]'
+      className='shadow-md fixed z-[49] w-[100%]'
       style={{
         backgroundColor: 'var(--header-color)',
       }}
@@ -120,7 +120,7 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className='backdrop-blur-md md:hidden absolute overflow-hidden top-16 left-0 right-0 shadow-lg'
+              className='backdrop-blur-md md:hidden -z-[1] absolute overflow-hidden top-16 left-0 right-0 shadow-lg'
               style={{
                 backgroundColor: 'var(--header-color)',
               }}

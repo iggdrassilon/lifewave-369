@@ -64,7 +64,7 @@ const Card3D: React.FC<Card3DProps> = ({
     <div
       ref={posterRef}
       className={cn(
-        'z-[9] w-[100%] h-[90%] relative shadow-[0_45px_150px_rgba(0,0,0,.8)] overflow-hidden transition-transform duration-100 ease-out touch-nones',
+        'w-[100%] h-[90%] relative shadow-[0_45px_150px_rgba(0,0,0,.8)] overflow-hidden transition-transform duration-100 ease-out touch-nones',
         className
       )}
     >

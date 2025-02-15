@@ -26,7 +26,7 @@ const Overlay = () => {
       {state && (
         <div
           onClick={() => handleClick()}
-          className='fixed top-[0] z-[10] left-0 w-[100vw] h-[100vh]'
+          className='fixed top-[0] z-[1] left-0 w-[100vw] h-[100vh]'
         ></div>
       )}
     </>
