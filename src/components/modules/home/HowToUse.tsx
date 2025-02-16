@@ -85,6 +85,7 @@ const HowToUse = () => {
                     // border: '1px solid mangeta', 
                     boxShadow: shadowElems
                   }}
+                  key={index}
                 >
                   <text>{value}</text>
                 </motion.div>

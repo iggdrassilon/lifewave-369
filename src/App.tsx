@@ -30,7 +30,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AnimatePresence mode='wait'>
-          <LoadingOverlay />
+          {/* <LoadingOverlay /> */}
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />

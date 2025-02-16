@@ -49,7 +49,7 @@ const DnaHero = () => {
 
   return (
     <motion.div
-      initial={{ y: 20 }}
+      initial={{ y: 60 }}
       animate={{ y: 0 }}
       transition={{ duration: 5 }}
       className='relative z-999 text-center'

@@ -117,7 +117,7 @@ const WeKnow = () => {
               }}
             >
               {Object.values(content.home.weknow).map((word: string, index: number) => (
-                <MotionText className={`${text} mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={index * 0.3} delay={index * 0.3} once={false} complete={completeAnimation}>
+                <MotionText key={index} className={`${text} mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={index * 0.3} delay={index * 0.3} once={false} complete={completeAnimation}>
                   <span>{word}</span>
                 </MotionText>
               ))}
