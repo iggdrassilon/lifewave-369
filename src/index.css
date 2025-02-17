@@ -92,7 +92,7 @@
 
 @layer colors {
   :root {
-    --main-blue: #194f90;
+    --main-blue: rgba(4,103,150);
     --header-color: #f6f7fce1;
     --header-blur: blur(20px);
 

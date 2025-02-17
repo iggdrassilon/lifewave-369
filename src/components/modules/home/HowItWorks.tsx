@@ -11,18 +11,19 @@ import VideoLayout from '../../layouts/VideoLayout';
 const HowItWorks = () => {
   const content = useLang().CONTENT
   const videoRef = useRef<any>()
-  
+
   const videoSourceLink = 'https://kinescope.io/embed/axnpCT8eeYFrWsPTfQwStr'
-  
+
   const bgElemsColor = 'bg-neutral-200/60'
   const shadowElems = '0 4px 15px rgba(0,50,250, .4)'
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
 
   const [ ref, inView ] = useInView();
-  const refVideo = useRef()
   const [ state, setState ] = useState(false)
   const [sectionMounted, setSectionMounted] = useState(false)
+
+  const refVideo = useRef()
 
   useEffect(() => {
     if (inView && sectionMounted) {

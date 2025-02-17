@@ -57,7 +57,7 @@ const Header = () => {
     >
       <div className='mx-auto px-4 backdrop-blur-md'>
         <div className='flex items-center justify-between h-16'>
-          <Link to='/' className='cursor-pointer text-2xl font-bold text-primary' onClick={() => {
+          <Link to='/' className='cursor-pointer text-2xl font-bold text-[rgba(4,103,150)]' onClick={() => {
             if (location.pathname !== '/') {
               handleClickLinks()
             }
@@ -87,7 +87,7 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className='text-blue-900 font-bold hover:text-indigo-600 transition-colors content-center py-2.5'
+                  className='text-[rgba(4,103,150)] font-normal hover:text-indigo-600 transition-colors content-center py-2.5'
                 >
                   {link.name}
                 </Link>
@@ -102,9 +102,9 @@ const Header = () => {
             >
               {/* <Menu className="h-6 w-6 text-primary" /> */}
               <div className={`hamburger ${isOpen ? 'change' : ''}`}>
-                <div className={`bar bar1 text-primary`}></div>
-                <div className={`bar bar2 text-primary`}></div>
-                <div className={`bar bar3 text-primary`}></div>
+                <div className={`bar bar1 text-[rgba(4,103,150)]`}></div>
+                <div className={`bar bar2 text-[rgba(4,103,150)]`}></div>
+                <div className={`bar bar3 text-[rgba(4,103,150)]`}></div>
               </div>
             </button>
           </nav>
