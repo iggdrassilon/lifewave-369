@@ -27,19 +27,19 @@ const FirstBlock = ({ content }: any) => {
   return (
     <>
       <div className="overflow-hidden">
-        <h2 className={`relative text-center my-20 flex items-center justify-center`} ref={titleRef}>
-          <TextAnimated mode='slide-left' textSizes=" text-3xl md:text-4xl" text={`${content.home.revol}`} color="text-sky-900 font-black z-10" delay={0.4} duration={0.3} space={0.1} />
-          <div className="absolute z-[9] select-none top-[-30px] w-[100%] flex justify-center items-center">
+        <h2 className={`relative text-center my-20 flex items-center justify-center overflow-hidden`} ref={titleRef}>
+          <TextAnimated mode='slide-left' textSizes=" text-3xl md:text-5xl" text={`${content.home.revol}`} color="text-black  font-normal z-10" delay={0.4} duration={0.3} space={0.1} />
+          {/* <div className="absolute z-[9] select-none top-[-30px] w-[100%] flex justify-center items-center">
             <img src="/images/brush_2.jpg" className="h-[70px] w-[500px]" alt="background" />
-          </div>
+          </div> */}
         </h2>
         <div className="flex w-[100%] md:flex-row mx-0 md:mx-0 flex-col items-center md:items-start justify-center">
           {viewed.titles && (
             <MotionDescription
               refOne={ref}
-              color="text-description"
+              color="text-neutral-700"
               children={content.home.firstinworld}
-              className="text-xl/tight md:text-2xl/tight font-bold z-10 px-2 md:mt-20 mt-0 ml-0 md:ml-10 min-w-descr sm:w-[80%] w-[calc(100%-40px)] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center"
+              className="text-xl/tight md:text-[26px]/tight font-normal z-10 px-2 md:mt-[50px] mt-0 ml-0 md:ml-10 min-w-descr sm:w-[80%] w-[calc(100%-40px)] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center"
               style={''}
               duration={1}
               delay={0.6}

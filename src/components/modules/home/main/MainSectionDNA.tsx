@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Card3D from '@/src/components/modules/home/Card3D';
 
 import VideoLayout from '@/src/components/layouts/VideoLayout'
 import usePublic from '@/src/hooks/use-lang'
@@ -15,7 +16,7 @@ const DnaHero = () => {
   const videoRef = useRef<any>()
  
   const [mousePosition, setMousePosition] = useState({
-    x: window.innerWidth * 0.9,
+    x: window.innerWidth * 0.8,
     y: window.innerHeight * 0.5,
   })
 
@@ -53,28 +54,42 @@ const DnaHero = () => {
       transition={{ duration: 5 }}
       className='relative z-999 text-center'
     >
-      {/* bg-[url('/images/DNA.gif')] */}
       <div
-        className="dna-rotate min-h-screen flex flex-col items-center justify-center bg-cover bg-no-repeat 
-        rotate-180 overfrow-hidden"
-        onMouseMove={handlePointerMove}
-        onTouchMove={handlePointerMove}
-        onTouchStart={handlePointerMove}
+        className="flex flex-col items-center justify-center bg-cover bg-no-repeat overfrow-hidden"
+        // onMouseMove={handlePointerMove}
+        // onTouchMove={handlePointerMove}
+        // onTouchStart={handlePointerMove}
       >
         <VideoLayout
           preview={links.previews.dna}
           link={links.videos.dna}
           opacity='10'
+          customClass='rotate-[180deg]'
           videoRef={videoRef}
-          cover={true}
+          cover={true} 
         />
-        <div className=' absolute top-[50%] md:top-[50%] z-100'>
+        <div className='relative mt-[100px] overflow-hidden'>
           <div className="rounded-full w-[270px] h-[270px] animate-rotate bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat"></div>
-          <div className="absolute right-3 bottom-2 rotate-180 inset-0 -z-10 before:block before:content-[''] before:rounded-full before:w-[250px] before:h-[250px] before:shadow-custom before:bg-transparent before:translate-y-1"></div>
+          <div className="absolute before:top-[5px] before:left-[10px] before:absolute before:w-[250px] before:h-[250px] inset-0 z-[9] before:rounded-full before:shadow-custom before:translate-y-1"></div>
         </div>
-        <div className='absolute top-[18%] w-[100%] rotate-180 font-kefa text-white text-[150px] font-bold'>
+        <div className='w-[100%] pb-[100px] font-kefa text-white text-[120px] font-bold'>
           <text ref={ref}>X39</text>
         </div>
+        <div className='absolute mr-[20px] top-[545px] w-[100vw] max-w-[410px] aspect-video' style={{ 
+            // border: '1px solid red' 
+          }}>
+            <Card3D mousePosition={mousePosition}>
+              <div className="layer-1 absolute -z-[1] inset-[0] bg-[url('/public/images/X39-card.jpg')] bg-cover bg-no-repeat" />
+              <div
+                className="layer-2 absolute -z-[1] inset-[0] bg-[url('/public/images/X39-card.jpg')] bg-cover bg-no-repeat"
+                data-offset='20'
+              />
+              <div
+                className="layer-3 absolute -z-[1] left-[0] inset-[0] bg-[url('/public/images/X39-card.jpg')] bg-cover bg-no-repeat"
+                data-offset='40'
+              />
+            </Card3D>
+          </div>
       </div>
     </motion.div>
   )

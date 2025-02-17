@@ -24,9 +24,11 @@ const HowToUse = () => {
   const fontParams = 'md:text-xl text-base font-bold sm:text-lg';
 
   useEffect(() => {
+    if (inView) {
+      setState(true)
+    }
     if (videoRef.current) {
       if (inView && sectionMounted) {
-        setState(true)
         videoRef.current.play();
       } else {
         videoRef.current.pause();
@@ -94,6 +96,7 @@ const HowToUse = () => {
           preview={links.previews.howToUse}
           link={links.videos.howToUse}
           opacity='10'
+          customClass=''
           videoRef={videoRef}
           cover={true}
         />

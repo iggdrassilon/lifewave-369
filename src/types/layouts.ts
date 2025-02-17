@@ -5,4 +5,5 @@ export type ViteoLayoutT = {
   opacity: string
   cover: boolean
   preview: string
+  customClass: string
 }

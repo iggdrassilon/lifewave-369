@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Dexie from 'dexie';
 
-// Create or open an IndexedDB database
 const db = new Dexie('VideoCacheDB');
 db.version(1).stores({
-  videos: 'url, data' // Define the schema for the videos store
+  videos: 'url, data'
 });
 
 const VideoLayout = (props: ViteoLayoutT) => {
-  const { videoRef, link, opacity, cover, preview } = props;
+  const { videoRef, link, opacity, cover, preview, customClass } = props;
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [videoBlobUrl, setVideoBlobUrl] = useState(null);
@@ -19,16 +18,13 @@ const VideoLayout = (props: ViteoLayoutT) => {
   useEffect(() => {
     const cacheVideo = async () => {
       try {
-        // Check if the video is already in the cache
         const cachedVideo = await db.table('videos').get(link);
         if (cachedVideo) {
           console.log(cachedVideo);
-          // If the video is cached, create a blob URL and set it as the video source
           const blobUrl = URL.createObjectURL(cachedVideo.data);
           setVideoBlobUrl(blobUrl);
           setIsVideoLoaded(true);
         } else {
-          // If the video is not cached, download it and store it in the cache
           const response = await fetch(link);
           const videoBlob = await response.blob();
           await db.table('videos').put({ url: link, data: videoBlob });
@@ -49,7 +45,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
   return (
     <div>
       <div ref={ref} className={`absolute inset-0 -z-50 opacity-${opacity}`}>
-        <video
+        {/* <video
           ref={videoRef}
           loop
           muted
@@ -57,17 +53,17 @@ const VideoLayout = (props: ViteoLayoutT) => {
           playsInline // for ios
           webkit-playsinline // for chrome
           disablePictureInPicture
-          className={`object-cover -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
+          className={`object-cover ${customClass} -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
           controls={false}
           tabIndex={-1} // turn off navigation
           onContextMenu={(e) => e.preventDefault()} // turn off context menu
         >
           {videoBlobUrl && <source src={videoBlobUrl} type="video/mp4" />}
-        </video>
+        </video> */}
         <img
           src={preview}
           alt="Previews not available"
-          className={`object-cover absolute top-0 left-0 -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
+          className={`object-cover ${customClass} absolute top-0 left-0 -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
         />
       </div>
     </div>

@@ -7,7 +7,6 @@ import { MotionSection, MotionText } from "@/src/components/layouts/motionLayout
 import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry';
 
 import VideoLayout from '@/src/components/layouts/VideoLayout';
-import Card3D from '@/src/components/modules/home/Card3D';
 import usePublic from '@/src/hooks/use-lang';
 
 const WeKnow = () => {
@@ -23,11 +22,14 @@ const WeKnow = () => {
   
   // TEXT
   const shadowElems = '0 2px 5px rgba(0,0,0, .3)'
-  const textColor = 'text-pink-700/90'
+  // const textColor = 'text-pink-700/90'
+  const textColor = 'text-black/90'
+  const bgRules = 'bg-neutral-100/60 rounded-xl backdrop-blur-sm'
+  const text = 'text-2xl/tight'
 
   // if need this use global state for set position
   const [mousePosition, setMousePosition] = useState({
-    x: window.innerWidth * 0.9,
+    x: window.innerWidth * 0.8,
     y: window.innerHeight * 0.5,
   })
 
@@ -81,7 +83,7 @@ const WeKnow = () => {
       duration={0}
       delay={0}
       once={true}
-      className='container z-0 mx-auto px-0 py-2 mt-[10px]'
+      className='container z-0 mx-auto px-0'
       sectionMounted={() => setSectionMounted(true)}
     >
       <>
@@ -89,74 +91,40 @@ const WeKnow = () => {
           ref={ref}
           initial="visible"
           animate="visible"
-          className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat relative"
+          className="flex items-center justify-center bg-cover bg-no-repeat relative"
           style={{
             position: 'relative',
             // padding: '20px',
             borderRadius: '10px',
-            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
         >
-          <div className='absolute top-[-15%] md:top-[-18%] w-[90vw] max-w-[300px] aspect-video' style={{ 
-            // border: '1px solid red' 
-          }}>
-            <Card3D mousePosition={mousePosition}>
-              <div className="layer-1 absolute z-[9999] inset-[0] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat" />
-              <div
-                className="layer-2 absolute z-[9999] inset-[0] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
-                data-offset='20'
-              />
-              <div
-                className="layer-3 absolute z-[9999] left-[2px] inset-[-10px] bg-[url('/public/images/X39-card1.png')] bg-cover bg-no-repeat"
-                data-offset='40'
-              />
-            </Card3D>
-          </div>
-          <VideoLayout 
+          {/* <VideoLayout 
             preview={links.previews.weKnow}
             videoRef={videoRef} 
             opacity='30'
+            customClass=''
             link={links.videos.weKnow}
             cover={true}
-          />
-          <div className='relative h-[350px] w-[450px] md:w-[598px] flex items-center flex-col justify-between px-[20px] md:px-0'>
-            {state && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-1"
-                style={{
-                  boxShadow: shadowElems
-                }}
-              >
-                {state && Object.values(content.home.weknow).map((word: string, index: number) => (
-                  <MotionText className={`text-xl/tight font-bold text-center mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
-                    <span>{word}</span>
-                  </MotionText>
-                ))}
-              </motion.div>
-            )}
-            {state && !isAnimating && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="relative z-10 text-center overflow-hidden bg-neutral-100/60 rounded-xl backdrop-blur-sm p-4"
-                style={{
-                  boxShadow: shadowElems
-                }}
-              >
-              {!isAnimating && Object.values(content.home.our).map((word: string, index: number) => (
-                <MotionText className={`text-xl/tight font-bold text-center mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={4 * Number(`0.${index + 1}`)} delay={3 * Number(`0.${index + 3}`)} once={false} complete={completeAnimation}>
+          /> */}
+          <div className='relative w-[450px] md:w-[598px] flex flex-col justify-center items-center px-[20px] md:px-0'>  
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className={`relative z- overflow-hidden mt-[300px] mb-[150px]`}
+              style={{
+                // boxShadow: shadowElems
+              }}
+            >
+              {Object.values(content.home.weknow).map((word: string, index: number) => (
+                <MotionText className={`${text} mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={index * 0.3} delay={index * 0.3} once={false} complete={completeAnimation}>
                   <span>{word}</span>
                 </MotionText>
               ))}
             </motion.div>
-            )}
-            <div className='absolute top-[150px] w-[100%] items-center flex justify-center'>
+            {/* <div className='absolute top-[150px] w-[100%] items-center flex justify-center'>
               <BlueRotatedFlower />
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </>
