@@ -13,6 +13,7 @@ const DnaHero = () => {
   const links = usePublic().LINKS;
 
   const [ ref, inView ] = useInView();
+  const [ rotate, setRotate ] = useState(false)
   const videoRef = useRef<any>()
  
   const [mousePosition, setMousePosition] = useState({
@@ -38,6 +39,8 @@ const DnaHero = () => {
   }
 
     useEffect(() => {
+      inView ? setRotate(true) : setRotate(false)
+
       if (videoRef.current) {
         if (inView) {
           videoRef.current.play();
@@ -68,9 +71,9 @@ const DnaHero = () => {
           videoRef={videoRef}
           cover={true} 
         />
-        <div className='relative mt-[100px] overflow-hidden'>
-          <div className="rounded-full w-[270px] h-[270px] animate-rotate bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat"></div>
-          <div className="absolute before:top-[5px] before:left-[10px] before:absolute before:w-[250px] before:h-[250px] inset-0 z-[9] before:rounded-full before:shadow-custom before:translate-y-1"></div>
+        <div className='relative mt-[100px] p-[10px] overflow-hidden'>
+          <div className={`${rotate ? 'animate-rotate' : ''} rounded-full w-[270px] h-[270px] bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat`}></div>
+          <div className="absolute before:top-[15px] before:left-[18px] before:absolute before:w-[252px] before:h-[252px] inset-0 z-[9] before:rounded-full before:shadow-custom before:translate-y-1"></div>
         </div>
         <div className='w-[100%] pb-[100px] font-kefa text-white text-[120px] font-bold'>
           <text ref={ref}>X39</text>
