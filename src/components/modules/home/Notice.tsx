@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { MotionSection } from '../../layouts/motionLayout';
-import useLang from '@/src/hooks/use-lang';
+import React, { useEffect, useState } from 'react'
+import { MotionSection } from '../../layouts/motionLayout'
+import useLang from '@/src/hooks/use-lang'
 import { motion } from 'framer-motion'
 import { useInView } from "react-intersection-observer"
-import TypewriterText from '@/src/hooks/Writer';
+import TypewriterText from '@/src/hooks/Writer'
 
 const Notice = () => {
   const content = useLang().CONTENT
-  const text = content.home.notice;
+  const text = content.home.notice
 
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView()
 
   const [state, setState] = useState(false)
   const [sectionMounted, setSectionMounted] = useState(false)
@@ -18,7 +18,7 @@ const Notice = () => {
     if (inView) {
       setState(true)
     }
-  }, [inView]);
+  }, [inView])
 
   return (
     <MotionSection
@@ -40,6 +40,7 @@ const Notice = () => {
           />
           <div className='absolute top-0 w-[100%] h-[100%]' 
             style={{ 
+              // eslint-disable-next-line max-len
               background: 'linear-gradient(to bottom, rgba(250,120,250, .3), rgba(0,0,0, .0), rgba(0,0,0, .0), black), radial-gradient(circle, rgba(250,120,250, .0), rgba(0,0,0, .0), rgba(0,0,0, .0), black)',
             }}
           ></div>
@@ -61,7 +62,7 @@ const Notice = () => {
         </div>
       </div>
     </MotionSection>
-  );
+  )
 }
 
-export default Notice;
+export default Notice

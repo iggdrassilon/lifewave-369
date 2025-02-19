@@ -10,16 +10,16 @@ import usePublic from "@/src/hooks/use-lang"
 
 const Unfortunately = () => {
   const content = usePublic().CONTENT
-  const links = usePublic().LINKS;
+  const links = usePublic().LINKS
 
   const videoRef = useRef<any>()
   const [ref, inView] = useInView()
 
   const [sectionMounted, setSectionMounted] = useState(false)
 
-  const chatBox = 'bg-violet-100/60 rounded-xl backdrop-blur-sm p-3'
-  const textDensity = 'md:text-xl text-base font-bold sm:text-lg text-description overflow-hidden'
-  const shadowElems = '0 4px 15px rgba(0,0,0, .4)'
+  const chatBox = 'bg-violet-100 rounded-xl backdrop-blur-sm p-3'
+  const textDensity = 'md:w-[100%] md:text-[25px] text-base text-center sm:text-lg text-description overflow-hidden'
+  const shadowElems = '0 4px 15px rgba(0,0,0, .2)'
 
   useEffect(() => {
     if (videoRef.current) {
@@ -29,7 +29,7 @@ const Unfortunately = () => {
         videoRef.current.pause()
       }
     }
-  }, [inView, sectionMounted]);
+  }, [inView, sectionMounted])
 
   return (
     <MotionSection
@@ -43,23 +43,31 @@ const Unfortunately = () => {
       sectionMounted={() => setSectionMounted(true)}
     >
       <>
-        <div ref={ref} className="px-0 md:px-[20px] flex flex-col justify-center items-center"
+        <div ref={ref} className="px-0 flex flex-col justify-center items-center"
           style={{ 
             background: 'linear-gradient(to bottom, rgba(250,250,250, 1), rgba(0,0,0, .0), rgba(0,0,0, .0),rgba(250,250,100, .0), hwb(229 29% 43% / 0)), linear-gradient(to bottom, rgba(250,250,250, 0), rgba(0,0,0, .0), rgba(250, 250, 255, .0)), linear-gradient(to bottom, rgba(250,250,250, .0), rgba(0,0,0,.0)',
           }}
         >
           <h2 className='text-center mt-20 mb-8 flex items-center justify-center'>
-            <TextAnimated text={`${content.home.unfortunately}`} textSizes="text-3xl md:text-3xl" color="font-bold text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
+            <TextAnimated text={`${content.home.unfortunately}`} textSizes="text-3xl md:text-4xl" color="font-bold text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
 
           </h2>
-          <div className="sm:w-[523px] flex flex-col items-center justify-center w-[calc(100%-40px)]">
-            <div className={`text-description prose ${chatBox} ${textDensity}`}
+          <div className="sm:w-[523px] pb-[100px] md:w-[60%] mb-[10 0px] flex flex-col items-center justify-center w-[calc(100%-40px)]">
+            <div className={`text-description prose font-bold ${chatBox} ${textDensity} sm:text-3xl`}
               style={{
                 boxShadow: shadowElems
               }}
             >
               {content.home.slowlyregenerate}
             </div>
+            <AnimatedCounter
+              endValue={50}
+              duration={3000}
+              color='var(--persentage-color)'
+              radius={50}
+              sizeBox={180}
+              delay={0.4}
+            />
             <div className={`mt-5 text-description ${chatBox} ${textDensity}`}
               style={{
                 boxShadow: shadowElems
@@ -68,7 +76,7 @@ const Unfortunately = () => {
               {content.home.to30years}
             </div>
             <AnimatedCounter
-              endValue={50}
+              endValue={90}
               duration={3000}
               color='var(--persentage-color)'
               radius={50}
@@ -82,21 +90,13 @@ const Unfortunately = () => {
             >
               {content.home.to60years}
             </div>
-            <AnimatedCounter
-              endValue={90}
-              duration={3000}
-              color='var(--persentage-color)'
-              radius={50}
-              sizeBox={180}
-              delay={0.4}
-            />
-            <div className={`mb-[100px] text-description prose ${chatBox} ${textDensity}`}
+            {/* <div className={`mb-[100px] text-description prose ${chatBox} ${textDensity}`}
               style={{
                 boxShadow: shadowElems
               }}
             >
               {content.home.stemcells}
-            </div>
+            </div> */}
           </div>
           </div>
         <VideoLayout

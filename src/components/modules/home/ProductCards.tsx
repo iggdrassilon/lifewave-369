@@ -3,11 +3,13 @@ import { MotionSection } from '../../layouts/motionLayout'
 const ProductCards = () => {
   return (
     <MotionSection
+      opacity_initial={0}
       height_initial={80}
       height_viewported={0}
       duration={0.3}
       delay={0.2}
       once={true}
+      sectionMounted={() => ''}
       className='container mx-auto px-4 py-16'
     >
       <>

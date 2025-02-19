@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import Card3D from '@/src/components/modules/home/Card3D';
+import Card3D from '@/src/components/modules/home/Card3D'
 
 import VideoLayout from '@/src/components/layouts/VideoLayout'
 import usePublic from '@/src/hooks/use-lang'
@@ -10,9 +10,9 @@ import usePublic from '@/src/hooks/use-lang'
 import '../style.css'
 
 const DnaHero = () => {
-  const links = usePublic().LINKS;
+  const links = usePublic().LINKS
 
-  const [ ref, inView ] = useInView();
+  const [ ref, inView ] = useInView()
   const [ rotate, setRotate ] = useState(false)
   const videoRef = useRef<any>()
  
@@ -43,12 +43,12 @@ const DnaHero = () => {
 
       if (videoRef.current) {
         if (inView) {
-          videoRef.current.play();
+          videoRef.current.play()
         } else {
-          videoRef.current.pause();
+          videoRef.current.pause()
         }
       }
-    }, [inView]);
+    }, [inView])
 
   return (
     <motion.div

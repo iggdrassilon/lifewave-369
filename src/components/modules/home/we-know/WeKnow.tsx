@@ -9,6 +9,8 @@ import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry';
 import VideoLayout from '@/src/components/layouts/VideoLayout';
 import usePublic from '@/src/hooks/use-lang';
 
+import './style.css'
+
 const WeKnow = () => {
   const content = usePublic().CONTENT
   const links = usePublic().LINKS;
@@ -106,21 +108,24 @@ const WeKnow = () => {
             link={links.videos.weKnow}
             cover={true}
           /> */}
-          <div className='relative w-[450px] md:w-[598px] flex flex-col justify-center items-center px-[20px] md:px-0'>  
+          <div className='relative w-[450px] md:w-[100%] flex mt-[200px] flex-col justify-center items-center px-[20px] md:px-0'>  
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className={`relative z- overflow-hidden mt-[300px] mb-[150px]`}
+              className={`relative z- overflow-hidden p-[50px]`}
               style={{
+                // borderTop: '1px solid rgba(1,1,1,.2)',
+                // borderBottom: '1px solid rgba(1,1,1,.2)'
                 // boxShadow: shadowElems
               }}
             >
-              {Object.values(content.home.weknow).map((word: string, index: number) => (
+              {/* {Object.values(content.home.weknow).map((word: string, index: number) => (
                 <MotionText key={index} className={`${text} mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={index * 0.3} delay={index * 0.3} once={false} complete={completeAnimation}>
                   <span>{word}</span>
                 </MotionText>
-              ))}
+              ))} */}
+              {/* <text className={`${text} mb-8 ${textColor} flex text-center`} dangerouslySetInnerHTML={{ __html: content.home.weknow.we }}></text> */}
             </motion.div>
             {/* <div className='absolute top-[150px] w-[100%] items-center flex justify-center'>
               <BlueRotatedFlower />

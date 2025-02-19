@@ -1,7 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useRef, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
+import React, { useEffect, useRef, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 export type TextAnimatedT = {
   text: string
@@ -17,7 +16,7 @@ export type TextAnimatedT = {
 // slide-left, 
 const TextAnimated = (props: TextAnimatedT) => {
   const { text, mode, delay, color, duration, space, textSizes } = props
-  const textRef = useRef();
+  const textRef = useRef()
 
   const chatBox = 'bg-violet-100/5 rounded-xl backdrop-blur-[8px] p-4'
 
@@ -25,40 +24,40 @@ const TextAnimated = (props: TextAnimatedT) => {
     threshold: 1,
     triggerOnce: true,
     delay: delay
-  });
+  })
 
   useEffect(() => {
     const spanText = (textElement: any) => {
-      const string = textElement.innerText;
-      let spaned = '';
+      const string = textElement.innerText
+      let spaned = ''
       for (let i = 0; i < string.length; i++) {
         if (string.substring(i, i + 1) === ' ') {
-          spaned += string.substring(i, i + 1);
+          spaned += string.substring(i, i + 1)
         } else {
-          spaned += `<span class="inline-block opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.075,0.82,0.165,1)]">${string.substring(i, i + 1)}</span>`;
+          spaned += `<span class="inline-block opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.075,0.82,0.165,1)]">${string.substring(i, i + 1)}</span>`
         }
       }
-      textElement.innerHTML = spaned;
-    };
+      textElement.innerHTML = spaned
+    }
 
-    const headline: any = textRef.current;
-    spanText(headline);
+    const headline: any = textRef.current
+    spanText(headline)
 
-    const animations = headline.querySelectorAll('span');
+    const animations = headline.querySelectorAll('span')
     if (inView) {
       animations.forEach((letter: any, i: number) => {
-        letter.style.animationDelay = (i * space) + 's';
-        letter.classList.add(`${mode}`);
-      });
+        letter.style.animationDelay = (i * space) + 's'
+        letter.classList.add(`${mode}`)
+      })
     }
-  }, [inView, text]);
+  }, [inView, text])
 
   return (
     <>
       <text ref={(node: any) => {
-        textRef.current = node;
-        ref(node);
-      }} className={`overflow-hidden animation text-center uppercase ${chatBox} ${textSizes} tracking-wide ${color}`}>
+        textRef.current = node
+        ref(node)
+      }} className={`overflow-hidden animation text-center uppercase ${textSizes} tracking-wide ${color}`}>
         {text}
       </text>
 
@@ -80,7 +79,7 @@ const TextAnimated = (props: TextAnimatedT) => {
         `}
       </style>
     </>
-  );
-};
+  )
+}
 
-export default TextAnimated;
+export default TextAnimated

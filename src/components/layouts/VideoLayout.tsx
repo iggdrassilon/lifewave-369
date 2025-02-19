@@ -1,46 +1,46 @@
-import { ViteoLayoutT } from "@/src/types/layouts";
-import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
-import Dexie from 'dexie';
+import { ViteoLayoutT } from "@/src/types/layouts"
+import { useEffect, useState } from "react"
+import { useInView } from "react-intersection-observer"
+import Dexie from 'dexie'
 
-const db = new Dexie('VideoCacheDB');
+const db = new Dexie('VideoCacheDB')
 db.version(1).stores({
   videos: 'url, data'
-});
+})
 
 const VideoLayout = (props: ViteoLayoutT) => {
-  const { videoRef, link, opacity, cover, preview, customClass } = props;
+  const { videoRef, link, opacity, cover, preview, customClass } = props
 
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [videoBlobUrl, setVideoBlobUrl] = useState(null);
-  const [ref, inView] = useInView();
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
+  const [videoBlobUrl, setVideoBlobUrl] = useState(null)
+  const [ref, inView] = useInView()
 
   useEffect(() => {
     const cacheVideo = async () => {
       try {
-        const cachedVideo = await db.table('videos').get(link);
+        const cachedVideo = await db.table('videos').get(link)
         if (cachedVideo) {
-          console.log(cachedVideo);
-          const blobUrl = URL.createObjectURL(cachedVideo.data);
-          setVideoBlobUrl(blobUrl);
-          setIsVideoLoaded(true);
+          console.log(cachedVideo)
+          const blobUrl = URL.createObjectURL(cachedVideo.data)
+          setVideoBlobUrl(blobUrl)
+          setIsVideoLoaded(true)
         } else {
-          const response = await fetch(link);
-          const videoBlob = await response.blob();
-          await db.table('videos').put({ url: link, data: videoBlob });
-          const blobUrl = URL.createObjectURL(videoBlob);
-          setVideoBlobUrl(blobUrl);
-          setIsVideoLoaded(true);
+          const response = await fetch(link)
+          const videoBlob = await response.blob()
+          await db.table('videos').put({ url: link, data: videoBlob })
+          const blobUrl = URL.createObjectURL(videoBlob)
+          setVideoBlobUrl(blobUrl)
+          setIsVideoLoaded(true)
         }
       } catch (error) {
-        console.error('Error caching the video:', error);
+        console.error('Error caching the video:', error)
       }
-    };
+    }
 
     if (inView && !isVideoLoaded) {
-      cacheVideo();
+      cacheVideo()
     }
-  }, [inView, link, isVideoLoaded]);
+  }, [inView, link, isVideoLoaded])
 
   return (
     <div>
@@ -51,6 +51,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
           muted
           autoPlay
           playsInline // for ios
+          // eslint-disable-next-line react/no-unknown-property
           webkit-playsinline // for chrome
           disablePictureInPicture
           className={`object-cover ${customClass} -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
@@ -67,7 +68,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default VideoLayout;
+export default VideoLayout

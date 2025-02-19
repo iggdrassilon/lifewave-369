@@ -1,0 +1,18 @@
+.bordered-element::before,
+.bordered-element::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: rgba(1,1,1, .3);
+}
+
+.bordered-element::before {
+  top: 0;
+}
+
+.bordered-element::after {
+  bottom: 0;
+}

@@ -1,27 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react'
 import { useInView } from "react-intersection-observer"
 import { motion } from 'framer-motion'
 
-import { MotionSection } from '@/src/components/layouts/motionLayout';
-import VideoLayout from '@/src/components/layouts/VideoLayout';
+import { MotionSection } from '@/src/components/layouts/motionLayout'
+import VideoLayout from '@/src/components/layouts/VideoLayout'
 
-import usePublic from '@/src/hooks/use-lang';
+import usePublic from '@/src/hooks/use-lang'
 
 const HowToUse = () => {
-  const content = usePublic().CONTENT;
-  const links = usePublic().LINKS;
+  const content = usePublic().CONTENT
+  const links = usePublic().LINKS
 
-  const videoRef = useRef<any>();
+  const videoRef = useRef<any>()
 
-  const [ ref, inView ] = useInView();
-  const [ state, setState ] = useState(false);
-  const [sectionMounted, setSectionMounted] = useState(false);
+  const [ ref, inView ] = useInView()
+  const [ state, setState ] = useState(false)
+  const [sectionMounted, setSectionMounted] = useState(false)
 
-  const bgElemsColor = 'bg-neutral-200/60';
-  const shadowElems = '0 4px 15px rgba(0,0,0, .4)';
-  const textColor = 'titles';
-  const fontParams = 'md:text-xl text-base font-bold sm:text-lg';
+  const bgElemsColor = 'bg-neutral-200/60'
+  const shadowElems = '0 4px 15px rgba(0,0,0, .4)'
+  const textColor = 'titles'
+  const fontParams = 'md:text-xl text-base font-bold sm:text-lg'
 
   useEffect(() => {
     if (inView) {
@@ -29,12 +29,12 @@ const HowToUse = () => {
     }
     if (videoRef.current) {
       if (inView && sectionMounted) {
-        videoRef.current.play();
+        videoRef.current.play()
       } else {
-        videoRef.current.pause();
+        videoRef.current.pause()
       }
     }
-  }, [inView,sectionMounted]);
+  }, [inView,sectionMounted])
 
   return (
     <MotionSection
@@ -103,7 +103,7 @@ const HowToUse = () => {
         />
       </>
     </MotionSection>
-  );
+  )
 }
 
-export default HowToUse;
+export default HowToUse
