@@ -34,6 +34,7 @@ const TextAnimated = (props: TextAnimatedT) => {
         if (string.substring(i, i + 1) === ' ') {
           spaned += string.substring(i, i + 1)
         } else {
+          // eslint-disable-next-line max-len
           spaned += `<span class="inline-block opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.075,0.82,0.165,1)]">${string.substring(i, i + 1)}</span>`
         }
       }

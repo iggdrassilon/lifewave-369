@@ -33,26 +33,29 @@ const Unfortunately = () => {
 
   return (
     <MotionSection
+      
       height_initial={80}
       opacity_initial={0}
       height_viewported={0}
       duration={0.6}
       delay={0.3}
       once={true}
-      className='px-0 py-0'
+      className='px-0 py-0 overflow-hidden'
       sectionMounted={() => setSectionMounted(true)}
     >
       <>
         <div ref={ref} className="px-0 flex flex-col justify-center items-center"
           style={{ 
-            background: 'linear-gradient(to bottom, rgba(250,250,250, 1), rgba(0,0,0, .0), rgba(0,0,0, .0),rgba(250,250,100, .0), hwb(229 29% 43% / 0)), linear-gradient(to bottom, rgba(250,250,250, 0), rgba(0,0,0, .0), rgba(250, 250, 255, .0)), linear-gradient(to bottom, rgba(250,250,250, .0), rgba(0,0,0,.0)',
+            // eslint-disable-next-line max-len
+            background: 'linear-gradient(to bottom, rgba(250,250,250, 1), rgba(0,0,0, .0), rgba(0,0,0, .0),rgba(250,250,100, .0), hwb(229 29% 43% / 0)), linear-gradient(to bottom, rgba(250,250,250, 0), rgba(0,0,0, .0), rgba(250,250,250, 1)), linear-gradient(to bottom, rgba(250,250,250, .0), rgba(0,0,0,.0)',
           }}
         >
           <h2 className='text-center mt-20 mb-8 flex items-center justify-center'>
+            {/* eslint-disable-next-line max-len */}
             <TextAnimated text={`${content.home.unfortunately}`} textSizes="text-3xl md:text-4xl" color="font-bold text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
 
           </h2>
-          <div className="sm:w-[523px] pb-[100px] md:w-[60%] mb-[10 0px] flex flex-col items-center justify-center w-[calc(100%-40px)]">
+          <div className="sm:w-[523px] pb-[100px] md:w-[60%] mb-[10 0px] max-w-[800px] flex flex-col items-center justify-center w-[calc(100%-40px)]">
             <div className={`text-description prose font-bold ${chatBox} ${textDensity} sm:text-3xl`}
               style={{
                 boxShadow: shadowElems
@@ -107,6 +110,9 @@ const Unfortunately = () => {
           opacity="40"
           cover={true}
         />
+        <div className='absolute z-10 opacity-20 right-[-50px] md:right-[-120px] bottom-[-440px]'>
+          <div className={` rounded-full w-[600px] h-[600px] bg-[url('/public/images/standart_blue.png')] bg-cover bg-no-repeat`}></div>
+        </div>
       </>
     </MotionSection>
   )

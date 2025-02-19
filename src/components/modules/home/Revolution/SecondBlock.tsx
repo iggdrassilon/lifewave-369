@@ -1,45 +1,46 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import WaveText from "@/src/components/ui/waveText"
-import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react"
+import { useInView } from "react-intersection-observer"
 import { motion } from "framer-motion"
-import { MotionDescription } from "@/src/components/layouts/motionLayout";
+import { MotionDescription } from "@/src/components/layouts/motionLayout"
 
 const SecondBlock = ({ content }: any) => {
-  const smScreen = 768;
-  const xlScreen = 1200;
-  const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen);
-  const [isSmScreen, setIsSmScreen] = useState(window.innerWidth < smScreen);
+  const smScreen = 768
+  const xlScreen = 1200
+  const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen)
+  const [isSmScreen, setIsSmScreen] = useState(window.innerWidth < smScreen)
+
   const [state, setState] = useState(false)
   const [viewed, setViewed] = useState({
     sun: false,
     description: false
-  });
-  
+  })
+
   const chatBox = 'bg-violet-100 rounded-xl backdrop-blur-md p-3'
   const shadowElems = '0 4px 15px rgba(0,0,0, .4)'
 
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView()
   // const [titleRef, titleInView] = useInView();
 
   useEffect(() => {
     const handleResize = () => {
-      setIsXlScreen(window.innerWidth < xlScreen);
+      setIsXlScreen(window.innerWidth < xlScreen)
       setIsSmScreen(window.innerWidth < smScreen)
-    };
+    }
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   useEffect(() => {
     setViewed((prev) => ({
       sun: prev.sun || inView,
       description: prev.description || inView
-    }));
-  }, [inView]);
+    }))
+  }, [inView])
 
   return (
     <>
@@ -66,7 +67,6 @@ const SecondBlock = ({ content }: any) => {
               <MotionDescription
                 refOne={ref}
                 color="text-description"
-                children={content.home.enerhyuse}
                 className={`z-10 p-[20px] ml-0 min-w-descr sm:w-[100%] md:min-w-0 md:max-w-descr_md prose flex items-center justify-center text-black ${chatBox}`}
                 style={{ boxShadow: shadowElems }}
                 duration={1}
@@ -75,7 +75,9 @@ const SecondBlock = ({ content }: any) => {
                 height_viewported={0}
                 once={true}
                 complete={() => setState(true)}
-              />
+              >
+                {content.home.enerhyuse}
+              </MotionDescription>
             </div>
           )}
         </div>

@@ -18,6 +18,7 @@ import Revolution from '../components/modules/home/Revolution/Revolution'
 import Unfortunately from '../components/modules/home/we-know/Unfortunately'
 import HowToUse from '../components/modules/home/HowToUse'
 import Notice from '../components/modules/home/Notice'
+import ActivateDNA from '../components/modules/home/ActivateDNA'
 
 // TODO 
 // 1 пачку удлинить под ориг
@@ -39,6 +40,9 @@ const Home = () => {
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Unfortunately />
+        </MotionLayout>
+        <MotionLayout duration={1} delay={0.4}>
+          <ActivateDNA />
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <HowToUse />

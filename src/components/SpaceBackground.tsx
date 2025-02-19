@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
+// eslint-disable-next-line react/display-name
 const SpaceBackground = React.forwardRef(({ inView }: any , ref: any) => {
   const containerRef = useRef(null)
   const sceneRef = useRef(null)
