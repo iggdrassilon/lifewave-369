@@ -22,7 +22,6 @@ const SecondBlock = ({ content }: any) => {
   const shadowElems = '0 4px 15px rgba(0,0,0, .4)'
 
   const [ref, inView] = useInView()
-  // const [titleRef, titleInView] = useInView();
 
   useEffect(() => {
     const handleResize = () => {
@@ -63,7 +62,7 @@ const SecondBlock = ({ content }: any) => {
             translateY: viewed.sun ? !isSmScreen ? '50px' : '-50px' : '250px',
           }}
           transition={{ duration: 2, delay: 0.2 }}
-          className="z-10 flex items-center justify-center mt-[90px] md:my-0 my-[50px]"
+          className="z-10 flex items-center justify-center md:mt-[90px] md:my-0 my-[50px]"
         >
           <div 
             className={cn(
@@ -78,7 +77,7 @@ const SecondBlock = ({ content }: any) => {
         <div className={cn(
           'xl:w-[60%]',
           'relative flex items-center md:items-start justify-end',
-          'md:pr-[3rem] xl:pr-0 mx-0 pt-[160px] md:pt-5 px-[20px] md:mx-0'
+          'md:pr-[3rem] xl:pr-0 mx-0  pt-[180px] md:pt-5 px-[20px] md:mx-0'
         )}>
           {viewed.sun && (
             <div className={cn(
@@ -111,7 +110,7 @@ const SecondBlock = ({ content }: any) => {
         </div>
       </div >
       <div ref={ref} className={cn(
-        "absolute rotate-180 top-[50%] right-0 -z-1",
+        "absolute rotate-180 top-[60%] md:top-[50%] lg:top-[40%] right-0 -z-1",
         'w-[100%] h-[100%] min-h-[530px] md:w-[101%] md:h-[100%] lg:h-[120%]',
         'flex items-center justify-center',
         'bg-cover bg-no-repeat',

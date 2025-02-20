@@ -59,6 +59,7 @@ const HowToUse = () => {
             header: '',
             body: '',
             wrapper: cn(
+              'pt-2'
               // `${borderDev}`
             )
           }}
@@ -67,21 +68,12 @@ const HowToUse = () => {
           image={{
             src: '/images/patch_place_guy.png',
             alt: 'human accupuncture',
+            artefact: '',
             customCl: cn(
               shadowElems,
               bgElemsColor,
               'm-4 md:m-0'
             ),
-            artefact: (
-              <div className={cn(
-                // "-z-10",
-                'absolute z-[9999]',
-                "w-[50%] h-[50%] sm:w-[350px] sm:h-[350px] md:w-[60%] md:h-[60%]",
-                "top-[-35%] sm:top-[-40%] md:top-[-50%] lg:top-[-240px] bottom-[0] right-[50%] translate-x-[50%]",
-                "bg-[url('/public/icons/golden-flower-sacral.svg')]",
-                "object-contain bg-cover bg-no-repeat"
-              )}></div>
-            )
           }}
           content={
             Object.values(content.home.howTo).map((value: string, index: number) => (
@@ -121,3 +113,15 @@ const HowToUse = () => {
 }
 
 export default HowToUse
+
+
+// artefact: (
+//   <div className={cn(
+//     // "-z-10",
+//     'absolute z-[9999]',
+//     "w-[50%] h-[50%] sm:w-[350px] sm:h-[350px] md:w-[60%] md:h-[60%]",
+//     "top-[-35%] sm:top-[-40%] md:top-[-50%] lg:top-[-240px] bottom-[0] right-[50%] translate-x-[50%]",
+//     "bg-[url('/public/icons/golden-flower-sacral.svg')]",
+//     "object-contain bg-cover bg-no-repeat"
+//   )}></div>
+// )

@@ -72,7 +72,7 @@ const GridSection = ({
             alt={image.alt}
             className={cn(
               'w-full h-auto object-cover -z-[99]',
-              'aspect-video',
+              // 'aspect-video',
               `${paddingBody}`,
             )}
             loading="lazy"

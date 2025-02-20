@@ -115,7 +115,7 @@ const FirstBlock = ({ content }: any) => {
       </div>
       <div 
         className={cn(
-          'absolute z-[9] top-[83%] md:top-[84%] w-[100%]',
+          'absolute z-[9] top-[84%] se:top-[82%] sm:top-[80%] md:top-[82%] w-[100%]',
           'flex justify-center items-center'
         )}
       >

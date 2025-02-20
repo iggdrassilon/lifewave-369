@@ -78,10 +78,13 @@ const HowItWorks = () => {
             <div className={cn(
               'rounded-xl text-2xl/tight',
               'flex flex-col items-center text-center justify-center',
-              'relative gap-5 my-[50px] py-[30px] space-y-4 px-[20px]',
+              'relative gap-5 my-[50px] py-[30px] space-y-4',
               'md:w-[100%] sm:w-[523px] w-[calc(100%-40px)]',
               `${shadowElems}`
             )}
+              style={{
+                boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
+              }}
             >
               <div dangerouslySetInnerHTML={{ __html: content.home.aboutX39 }} />
             </div>

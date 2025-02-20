@@ -71,7 +71,7 @@ const ActivateDNA = () => {
         }}
         title={
           <div className={cn(
-            'mt-20', // CORDS
+            'md:mt-20', // CORDS
             'flex items-center justify-center', // CTR
             'text-center text-sm', // FONT
             'text-description' // COLOR
@@ -81,7 +81,8 @@ const ActivateDNA = () => {
                 text={`${content.home.activateDNA_md}`} 
                 color="" 
                 textSizes={`font-bold ${textTitle}`} 
-                delay={0.3} 
+                delay={0.3}          
+
                 duration={0.1} 
                 space={0.02} 
                 mode='slide-left' />
@@ -123,26 +124,8 @@ const ActivateDNA = () => {
         image={{
           src: "/images/ActivateDNA.png", // IMG OF STEM SELS
           alt: "steem sels for every neuron",
-          customCl: "",
-          artefact: (
-            <div
-              className={cn(
-                'absolute -z-[1]',
-                'opacity-20 overflow-hidden',
-                'top-[-200px] sm:top-[-300px] md:top-[-400px] lg:top-[-300px]',
-                'left-[-100px] sm:left-[-200px] md:left-[-100%]'
-              )}
-            >
-              <div
-                className={cn(
-                  'w-[300px] h-[300px] se:w-[400px] se:h-[400px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px]',
-                  "bg-[url('/public/images/standart_blue.png')]", // IMG OF FLOWER
-                  'rounded-full bg-cover bg-no-repeat',
-                  'animate-rotate',
-                )}
-              />
-            </div>
-          )
+          customCl: '',
+          artefact: ''
         }}
         content={
           <div 
@@ -157,3 +140,25 @@ const ActivateDNA = () => {
 }
 
 export default ActivateDNA
+
+
+ // artefact: (
+          //   <div
+          //     className={cn(
+          //       'absolute -z-[1]',
+          //       'opacity-20 overflow-hidden',
+          //       'top-[-200px] sm:top-[-300px] md:top-[-400px] lg:top-[-300px]',
+          //       'left-[-100px] sm:left-[-200px] md:left-[-100%]'
+          //     )}
+          //   >
+          //     <div
+          //       className={cn(
+          // eslint-disable-next-line max-len
+          //         'w-[300px] h-[300px] se:w-[400px] se:h-[400px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px]',
+          //         "bg-[url('/public/images/standart_blue.png')]", // IMG OF FLOWER
+          //         'rounded-full bg-cover bg-no-repeat',
+          //         'animate-rotate',
+          //       )}
+          //     />
+          //   </div>
+          // )

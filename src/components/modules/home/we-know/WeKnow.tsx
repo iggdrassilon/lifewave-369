@@ -1,25 +1,25 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 
 import { MotionSection, MotionText } from "@/src/components/layouts/motionLayout"
 
-import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry';
+import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry'
 
-import VideoLayout from '@/src/components/layouts/VideoLayout';
-import usePublic from '@/src/hooks/use-lang';
+import VideoLayout from '@/src/components/layouts/VideoLayout'
+import usePublic from '@/src/hooks/use-lang'
 
 import './style.css'
 
 const WeKnow = () => {
   const content = usePublic().CONTENT
-  const links = usePublic().LINKS;
+  const links = usePublic().LINKS
 
   const { ref, inView } = useInView({ threshold: 0.1 })  
-  const videoRef = useRef(null);
+  const videoRef = useRef(null)
 
   const [state, setState] = useState(false)
-  const [isAnimating, setIsAnimating] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(true)
   const [sectionMounted, setSectionMounted] = useState(false)
   
   // TEXT
@@ -46,7 +46,7 @@ const WeKnow = () => {
         ease: "easeInOut",
       }
     },
-  };
+  }
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -58,24 +58,24 @@ const WeKnow = () => {
         ease: "easeInOut",
       }
     },
-  };
+  }
 
   useEffect(() => {
-    const videoElement = videoRef.current;
+    const videoElement = videoRef.current
     if (videoElement) {
       if (inView && sectionMounted) {
         setState(true)
-        videoElement.play();
+        videoElement.play()
       } else {
         // setState(false)
-        videoElement.pause();
+        videoElement.pause()
       }
     }
-  }, [inView, sectionMounted]);
+  }, [inView, sectionMounted])
 
   const completeAnimation = () => {
-    setIsAnimating(false);
-  };
+    setIsAnimating(false)
+  }
 
   return (
     <MotionSection
