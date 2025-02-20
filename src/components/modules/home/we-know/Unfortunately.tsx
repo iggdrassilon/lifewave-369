@@ -110,9 +110,9 @@ const Unfortunately = () => {
           opacity="40"
           cover={true}
         />
-        <div className='absolute z-10 opacity-20 right-[-50px] md:right-[-120px] bottom-[-440px]'>
+        {/* <div className='absolute z-10 opacity-20 right-[-50px] md:right-[-120px] bottom-[-440px]'>
           <div className={` rounded-full w-[600px] h-[600px] bg-[url('/public/images/standart_blue.png')] bg-cover bg-no-repeat`}></div>
-        </div>
+        </div> */}
       </>
     </MotionSection>
   )

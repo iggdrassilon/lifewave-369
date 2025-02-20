@@ -72,7 +72,7 @@ const DnaHero = () => {
           cover={true} 
         />
         <div className='relative mt-[100px] p-[10px] overflow-hidden'>
-          <div className={`${rotate ? '' : ''} rounded-full w-[270px] h-[270px] bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat`}></div>
+          <div className={`${rotate ? 'animate-rotate' : ''} rounded-full w-[270px] h-[270px] bg-[url('/public/images/standart_white_2.png')] bg-cover bg-no-repeat`}></div>
           <div className="absolute before:top-[15px] before:left-[18px] before:absolute before:w-[252px] before:h-[252px] inset-0 z-[9] before:rounded-full before:shadow-custom before:translate-y-1"></div>
         </div>
         <div className='w-[100%] pb-[100px] font-kefa text-white text-[120px] font-bold'>

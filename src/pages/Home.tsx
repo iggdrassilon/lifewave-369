@@ -16,9 +16,9 @@ import { MotionLayout } from '../components/layouts/motionLayout'
 import WeKnow from '../components/modules/home/we-know/WeKnow'
 import Revolution from '../components/modules/home/Revolution/Revolution'
 import Unfortunately from '../components/modules/home/we-know/Unfortunately'
-import HowToUse from '../components/modules/home/HowToUse'
+import HowToUse from '../components/modules/home/HowToUse/HowToUse'
 import Notice from '../components/modules/home/Notice'
-import ActivateDNA from '../components/modules/home/ActivateDNA'
+import ActivateDNA from '../components/modules/home/ActivateDNA/ActivateDNA'
 
 // TODO 
 // 1 пачку удлинить под ориг

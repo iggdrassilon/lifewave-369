@@ -36,25 +36,25 @@ export const MotionSection = (props: MotionSectionT) => {
 }
 
 const MotionText = (props: MotionTextT) => {
-  const { children, className, duration, delay, height_initial, height_viewported, once, variants, complete } = props;
+  const { children, className, duration, delay, height_initial, height_viewported, once, variants, complete } = props
 
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(false)
   const { ref, inView } = useInView({
     triggerOnce: once,
     threshold: 0.3,
     delay: 0.3
-  });
+  })
 
   useEffect(() => {
     if (inView) {
-      setState(true);
+      setState(true)
     }
-  }, [inView]);
+  }, [inView])
 
   const setComplete = () => {
     setTimeout(() => {
       complete()
-    }, 3000);
+    }, 3000)
   }
 
   return (
@@ -69,30 +69,30 @@ const MotionText = (props: MotionTextT) => {
     >
       {children}
     </motion.text>
-  );
-};
+  )
+}
 
 const MotionDescription = (props: MotionDescriptionT) => {
-  const { color, children, className, duration, delay, height_initial, height_viewported, once, complete, refOne, style } = props;
+  const { color, children, className, duration, delay, height_initial, height_viewported, once, complete, refOne, style } = props
 
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(false)
 
   const [ref, inView] = useInView({
     triggerOnce: once,
     threshold: 0.3,
     delay: 0.3
-  });
+  })
 
   useEffect(() => {
     if (inView) {
-      setState(true);
+      setState(true)
     }
-  }, [inView]);
+  }, [inView])
 
   const setComplete = () => {
     setTimeout(() => {
       complete()
-    }, 3000);
+    }, 3000)
   }
 
   return (
@@ -108,7 +108,7 @@ const MotionDescription = (props: MotionDescriptionT) => {
     >
       <div ref={refOne}>{children}</div>
     </motion.text>
-  );
+  )
 }
 
 const MotionTextPart = (props: MotionPartTextT) => {

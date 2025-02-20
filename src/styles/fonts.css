@@ -35,3 +35,84 @@
   font-weight: 400;
   src: url('/public/fonts/Kefa-Regular.TTF');
 }
+
+@font-face {
+  font-family: 'Magistral B';
+  font-display: swap;
+  font-style: light;
+  font-weight: 100;
+  src: url('/public/fonts/MagistralBlC.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral B';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+  src: url('/public/fonts/MagistralBlC.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral B';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/public/fonts/MagistralBlC.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral B';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/public/fonts/MagistralBlC.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral B';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 800;
+  src: url('/public/fonts/MagistralBlC.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral C';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100;
+  src: url('/public/fonts/MagistralC_0.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral C';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+  src: url('/public/fonts/MagistralC_0.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral C';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/public/fonts/MagistralC_0.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral C';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/public/fonts/MagistralC_0.ttf');
+}
+
+@font-face {
+  font-family: 'Magistral C';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+  src: url('/public/fonts/MagistralC_0.ttf');
+}
+

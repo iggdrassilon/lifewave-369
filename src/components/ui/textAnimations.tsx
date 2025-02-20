@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 export type TextAnimatedT = {
@@ -12,8 +12,6 @@ export type TextAnimatedT = {
   textSizes: string
 }
 
-// modes:
-// slide-left, 
 const TextAnimated = (props: TextAnimatedT) => {
   const { text, mode, delay, color, duration, space, textSizes } = props
   const textRef = useRef()
@@ -28,23 +26,27 @@ const TextAnimated = (props: TextAnimatedT) => {
 
   useEffect(() => {
     const spanText = (textElement: any) => {
-      const string = textElement.innerText
+      const words = textElement.innerText.split(' ')
       let spaned = ''
-      for (let i = 0; i < string.length; i++) {
-        if (string.substring(i, i + 1) === ' ') {
-          spaned += string.substring(i, i + 1)
-        } else {
+      words.forEach((word, index) => {
+        let wordSpan = `<span class="word-wrapper inline-block">`
+        for (let i = 0; i < word.length; i++) {
           // eslint-disable-next-line max-len
-          spaned += `<span class="inline-block opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.075,0.82,0.165,1)]">${string.substring(i, i + 1)}</span>`
+          wordSpan += `<span class="inline-block opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.075,0.82,0.165,1)]">${word.substring(i, i + 1)}</span>`
         }
-      }
+        wordSpan += `</span>`
+        spaned += wordSpan
+        if (index < words.length - 1) {
+          spaned += ' '
+        }
+      })
       textElement.innerHTML = spaned
     }
 
     const headline: any = textRef.current
     spanText(headline)
 
-    const animations = headline.querySelectorAll('span')
+    const animations = headline.querySelectorAll('span.word-wrapper span')
     if (inView) {
       animations.forEach((letter: any, i: number) => {
         letter.style.animationDelay = (i * space) + 's'
@@ -58,7 +60,7 @@ const TextAnimated = (props: TextAnimatedT) => {
       <text ref={(node: any) => {
         textRef.current = node
         ref(node)
-      }} className={`overflow-hidden animation text-center uppercase ${textSizes} tracking-wide ${color}`}>
+      }} className={`overflow-hidden animation text-center uppercase ${textSizes} tracking-wide ${color} word-wrap`}>
         {text}
       </text>
 
@@ -76,6 +78,10 @@ const TextAnimated = (props: TextAnimatedT) => {
           }
           .slide-left {
             animation: slideLeft ${duration}s forwards;
+          }
+          .word-wrap {
+            white-space: normal;
+            word-break: break-word;
           }
         `}
       </style>

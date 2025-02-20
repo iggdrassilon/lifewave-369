@@ -26,6 +26,9 @@ export default {
         'descr': '450px',
         'descr_md': '598px',
       },
+      screens: {
+        'se': "370px",
+      },
       fontFamily: {
         helvetica: ['Helvetica Neue', 'sans-serif'],
         kefa: ['Kefa'],

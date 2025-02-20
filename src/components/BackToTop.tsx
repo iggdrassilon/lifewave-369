@@ -40,6 +40,7 @@ const BackToTop = () => {
           onClick={scrollToTop}
           className='fixed bottom-[40px] right-[40px] z-50 p-4 rounded-full bg-primary/40 hover:bg-primary/60 text-white backdrop-blur-sm transition-colors duration-300'
           style={{
+            // eslint-disable-next-line max-len
             boxShadow: '0 5px 10px rgba(0, 0, 150, 0.3), inset 0 5px 10px rgba(250, 250, 250, .2), inset 0 2px 4px rgba(0, 0, 150, .3)',
           }}
           aria-label='Back to top'
