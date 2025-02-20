@@ -52,42 +52,44 @@ const HowItWorks = () => {
             space={0.1} 
             mode='slide-left' />
         </div>
-        <div className='relative flex flex-col justify-around md:flex-col items-center'>
+        <div className='flex flex-col items-center'>
           <h2 className='text-md md:text-md font-normal text-space-dark text-center mt-10 overflow-hidden'>
             <text>{content.home.videoTime} 1:22</text>
           </h2>
-          <div className={cn(
-            'max-w-[400px] min-w-[60%] md:w-[60%] md:h-[400px]',
-            `${shadowElems}`,
-            `relative w-[calc(100%-40px)] ${bgElemsColor}`
-          )}
-          >
-            <VideoSection
-              title=''
-              ref={videoRef}
-              videoUrl={videoSourceLink}
-            />
-          </div>
-          <div ref={ref} className={cn(
-            'flex justify-center',
-            'min-h-[300px] md:min-h-[500px] w-[100%] md:w-[60%]',
-            // 'overflow-hidden'
-          )}
-            // style={{ border: '1px solid blue'}}
-          >
+          <div className='relative w-[calc(100%-40px)] md:w-[80%] flex flex-col justify-center items-center'>
             <div className={cn(
-              'rounded-xl text-2xl/tight',
-              'flex flex-col items-center text-center justify-center',
-              'relative gap-5 my-[50px] py-[30px] space-y-4',
-              'md:w-[100%] sm:w-[523px] w-[calc(100%-40px)]',
-              `${shadowElems}`
+              'w-[100%] md:w-[80%]',
+              `${shadowElems}`,
+              `relative] ${bgElemsColor}`
             )}
-              style={{
-                boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
-              }}
             >
-              <div dangerouslySetInnerHTML={{ __html: content.home.aboutX39 }} />
+              <VideoSection
+                title=''
+                ref={videoRef}
+                videoUrl={videoSourceLink}
+              />
             </div>
+            <div ref={ref} className={cn(
+              'flex justify-center',
+              'min-h-[300px] md:min-h-[500px] w-[100%] md:w-[80%]',
+              // 'overflow-hidden'
+            )}
+              // style={{ border: '1px solid blue'}}
+            >
+              <div className={cn(
+                'rounded-xl text-2xl/tight',
+                'flex flex-col items-center text-center justify-center',
+                'relative gap-5 my-[50px] py-[30px] space-y-4',
+                'md:w-[100%]',
+                `${shadowElems}`
+              )}
+                style={{
+                  boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
+                }}
+              >
+                <div dangerouslySetInnerHTML={{ __html: content.home.aboutX39 }} />
+              </div>
+          </div>
           </div>
         </div>
         {/* <VideoLayout

@@ -81,7 +81,7 @@ const SecondBlock = ({ content }: any) => {
         )}>
           {viewed.sun && (
             <div className={cn(
-              'ml-0 md:mt-[250px] text-center rounded-lg',
+              'ml-0 md:mt-[250px] text-right rounded-lg',
               'text-xl/tight md:text-2xl/tight font-normal text-description',
               'max-w-descr md:max-w-descr_md xl:max-w-[100%]',
               'flex items-center justify-center',

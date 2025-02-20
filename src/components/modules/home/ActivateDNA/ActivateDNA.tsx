@@ -22,7 +22,7 @@ const ActivateDNA = () => {
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
   const textDescr = 'font-bold text-xl text-description'
-  const textContent = 'text-xl md:text-2xl text-description'
+  const textContent = 'text-xl md:text-2xl text-description text-center'
   const shadowElems = 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]'
   const borderDev = 'border border-solid border-red-500 border-[1px]' 
 

@@ -11,7 +11,7 @@ interface VideoSectionProps {
 }
 
 const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
-  const min_height = 'min-h-[200px]'
+  const min_height = 'min-h-[320px] lg:h-[500px]'
   const height = 'h-[100%]'
 
   return (
@@ -22,7 +22,7 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
       duration={0.3}
       delay={0.2}
       once={true}
-      className='max-w-4xl mx-auto h-[100%]'
+      className='max-w-4xl mx-auto h-auto'
       sectionMounted={() => ''}
     >
       <>
@@ -36,7 +36,7 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
             title={title}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            className={`w-[100%] h-[100%] ${min_height}`}
+            className={`w-[100%] h-auto ${min_height}`}
           />
         </div>
 
