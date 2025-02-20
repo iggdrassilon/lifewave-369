@@ -16,7 +16,7 @@ const HowToUse = () => {
   const content = usePublic().CONTENT
   const links = usePublic().LINKS
 
-  const videoRef = useRef<any>()
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   const [ ref, inView ] = useInView()
   const [ state, setState ] = useState(false)
@@ -31,6 +31,7 @@ const HowToUse = () => {
   useEffect(() => {
     if (inView) {
       setState(true)
+      console.log('onVIew')
     }
     if (videoRef.current) {
       if (inView && sectionMounted) {
@@ -54,6 +55,7 @@ const HowToUse = () => {
     >
       <>
         <GridSection
+          ref={ref}
           imageOnRight={true}
           customClasses={{
             header: '',
@@ -78,7 +80,6 @@ const HowToUse = () => {
           content={
             Object.values(content.home.howTo).map((value: string, index: number) => (
               <motion.div
-                ref={ref}
                 initial={{ opacity: 0, translateX: '300px' }}
                 animate={{
                   opacity: state ? 1 : 0,

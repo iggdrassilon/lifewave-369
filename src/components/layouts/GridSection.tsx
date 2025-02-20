@@ -1,7 +1,9 @@
 
 import { cn } from "@/src/lib/utils"
+import React, { Ref } from "react"
 
 interface GridSectionProps {
+  ref: Ref<HTMLElement>;
   title: React.ReactNode | null;
   customClasses: {
     header: string;
@@ -22,30 +24,34 @@ interface GridSectionProps {
   imageOnRight?: boolean;
 }
 
-const GridSection = ({
-  title,
-  customClasses,
-  description,
-  image,
-  content,
-  imageOnRight,
-}: GridSectionProps) => {
+const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, ref) => {
+  const {
+    title,
+    customClasses,
+    description,
+    image,
+    content,
+    imageOnRight,
+  } = props
+
   const paddingBody = 'p-4'
 
   return (
-    <section className={cn(
-      "relative w-full max-w-7xl mx-auto px-4 py-16 space-y-8",
-      `${customClasses.wrapper}`
-    )}>
+    <section
+      ref={ref}
+      className={cn(
+        "relative w-full max-w-7xl mx-auto px-4 py-16 space-y-8",
+        customClasses.wrapper
+      )}>
       <div className={cn(
         "text-center max-w-3xl md:max-w-[100%] mx-auto",
-        `${customClasses.header}`
+        customClasses.header
       )}>
         {title && <h2 className="text-3xl font-semibold tracking-tight overflow-hidden">{title}</h2>}
         {description && (
           <p className={cn(
             'text-muted-foreground leading-relaxed overflow-hidden',
-            `${description.customCl}`
+            description.customCl
           )}>
             {description.description}
           </p>
@@ -55,7 +61,7 @@ const GridSection = ({
         className={cn(
           "grid gap-5 items-center",
           "md:grid-cols-2",
-          `${customClasses.body}`,
+          customClasses.body,
           imageOnRight ? "md:grid-flow-row" : "md:grid-flow-row-dense"
         )}
       >
@@ -63,7 +69,7 @@ const GridSection = ({
           className={cn(
             "relative",
             "space-y-4",
-            `${image.customCl}`,
+            image.customCl,
             imageOnRight ? "md:order-1" : "md:order-2"
           )}
         >
@@ -72,17 +78,16 @@ const GridSection = ({
             alt={image.alt}
             className={cn(
               'w-full h-auto object-cover -z-[99]',
-              // 'aspect-video',
-              `${paddingBody}`,
+              paddingBody,
             )}
             loading="lazy"
           />
-          {image.artefact && (image.artefact)}
+          {image.artefact && image.artefact}
         </div>
         <div
           className={cn(
             "space-y-4 overflow-hidden",
-            `${paddingBody}`,
+            paddingBody,
             imageOnRight ? "md:order-2" : "md:order-1"
           )}
         >
@@ -91,6 +96,8 @@ const GridSection = ({
       </div>
     </section>
   )
-}
+})
+
+GridSection.displayName = 'GridSection'
 
 export default GridSection
