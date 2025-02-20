@@ -79,7 +79,7 @@ const HowItWorks = () => {
               <div className={cn(
                 'rounded-xl text-2xl/tight',
                 'flex flex-col items-center text-center justify-center',
-                'relative gap-5 my-[50px] py-[30px] space-y-4',
+                'relative gap-5 my-[50px] py-[30px] px-[20px] md:px-[30px] space-y-4',
                 'md:w-[100%]',
                 `${shadowElems}`
               )}
