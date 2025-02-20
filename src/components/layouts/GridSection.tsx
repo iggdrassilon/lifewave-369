@@ -44,7 +44,7 @@ const GridSection = ({
         {title && <h2 className="text-3xl font-semibold tracking-tight overflow-hidden">{title}</h2>}
         {description && (
           <p className={cn(
-            'text-muted-foreground leading-relaxed',
+            'text-muted-foreground leading-relaxed overflow-hidden',
             `${description.customCl}`
           )}>
             {description.description}
@@ -71,7 +71,7 @@ const GridSection = ({
             src={image.src}
             alt={image.alt}
             className={cn(
-              'w-full h-auto object-cover',
+              'w-full h-auto object-cover -z-[99]',
               'aspect-video',
               `${paddingBody}`,
             )}

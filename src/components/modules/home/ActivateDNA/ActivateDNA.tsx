@@ -1,12 +1,12 @@
-/* eslint-disable max-len */
 import { useEffect, useRef, useState } from 'react'
-import { MotionSection } from '../../../layouts/motionLayout'
-import useLang from '@/src/hooks/use-lang'
 import { useInView } from "react-intersection-observer"
-import TextAnimated from '../../../ui/textAnimations'
-import VideoSection from '../VideoSection'
-import VideoLayout from '../../../layouts/VideoLayout'
+
+import { MotionSection } from '@/src/components/layouts/motionLayout'
+import TextAnimated from '@/src/components/ui/textAnimations'
 import GridSection from '@/src/components/layouts/GridSection'
+
+import useLang from '@/src/hooks/use-lang'
+
 import { cn } from '@/src/lib/utils'
 
 const ActivateDNA = () => {
@@ -17,11 +17,14 @@ const ActivateDNA = () => {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen)
   const [isSmScreen, setIsSmScreen] = useState(window.innerWidth < smScreen)
 
-  const bgElemsColor = 'bg-neutral-200/60'
+  const bgElemsColor = 'rounded-xl backdrop-blur-sm'
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
-  const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold' 
- 
+  const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
+  const textDescr = 'font-bold text-xl text-description'
+  const textContent = 'text-xl md:text-2xl text-description'
+  const shadowElems = 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]'
+  const borderDev = 'border border-solid border-red-500 border-[1px]' 
 
   const [ ref, inView ] = useInView()
   const [ state, setState ] = useState(false)
@@ -62,7 +65,7 @@ const ActivateDNA = () => {
     >
       <GridSection
         customClasses={{
-          header: 'space-y-4',
+          header: `space-y-4 px-[10px] ${bgElemsColor}`,
           body: '',
           wrapper: ''
         }}
@@ -71,7 +74,7 @@ const ActivateDNA = () => {
             'mt-20', // CORDS
             'flex items-center justify-center', // CTR
             'text-center text-sm', // FONT
-            'text-title' // COLOR
+            'text-description' // COLOR
           )}>
             {!isSmScreen && (
               <TextAnimated 
@@ -106,29 +109,49 @@ const ActivateDNA = () => {
           </div>
         }
         description={{
-          description: <div dangerouslySetInnerHTML={{ __html: content.home.patches }} />,
-          customCl: ''
+          customCl: cn(
+            'flex justify-center',
+            `${textDescr}`
+          ), // PARENT
+          description: <div 
+            dangerouslySetInnerHTML={{ __html: content.home.patches }} // CHILD
+            className={cn(
+              'mt-[50px] mb-[20px]',
+              'md:max-w-[80%] lg:max-w-[60%]',
+            )} />,
         }}
         image={{
-          src: "/images/ActivateDNA.JPG",
+          src: "/images/ActivateDNA.png", // IMG OF STEM SELS
           alt: "steem sels for every neuron",
           customCl: "",
-          artefact: null
+          artefact: (
+            <div
+              className={cn(
+                'absolute -z-[1]',
+                'opacity-20 overflow-hidden',
+                'top-[-200px] sm:top-[-300px] md:top-[-400px] lg:top-[-300px]',
+                'left-[-100px] sm:left-[-200px] md:left-[-100%]'
+              )}
+            >
+              <div
+                className={cn(
+                  'w-[300px] h-[300px] se:w-[400px] se:h-[400px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px]',
+                  "bg-[url('/public/images/standart_blue.png')]", // IMG OF FLOWER
+                  'rounded-full bg-cover bg-no-repeat',
+                  'animate-rotate',
+                )}
+              />
+            </div>
+          )
         }}
         content={
-          <div ref={ref} dangerouslySetInnerHTML={{ __html: content.home.stemcells }} />
+          <div 
+            ref={ref}
+            className={textContent}
+            dangerouslySetInnerHTML={{ __html: content.home.stemcells }} 
+          />
         }
       />
-      {/* <div className='relative flex flex-col justify-center items-center' >
-        <div className='relative flex flex-col md:flex-row mb-[50px] justify-center md:mt-[20px] items-center px-[10px]'>
-          <div className={`md:mt-[0] ${bgElemsColor} rounded-xl backdrop-blur-sm sm:m-[100px] md:m-[30px] overflow-hidden`}></div>
-          <div ref={ref} className='overflow-hidden min-h-[300px] w-[100%] flex justify-center px-[10px]' >
-            <div className={`relative text-2xl/tight md:m-[30px] flex flex-col items-center text-center justify-center gap-5 my-[50px] md:w-[100%] space-y-4 rounded-xl px-[10px] py-[20px] mb-[100px]`}>
-              
-            </div>
-          </div>
-        </div>
-      </div> */}
     </MotionSection>
   )
 }

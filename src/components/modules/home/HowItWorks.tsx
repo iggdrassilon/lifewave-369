@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer"
 import TextAnimated from '../../ui/textAnimations'
 import VideoSection from './VideoSection'
 import VideoLayout from '../../layouts/VideoLayout'
+import { cn } from '@/src/lib/utils'
 
 const HowItWorks = () => {
   const content = useLang().CONTENT
@@ -14,10 +15,9 @@ const HowItWorks = () => {
   const videoSourceLink = 'https://kinescope.io/embed/axnpCT8eeYFrWsPTfQwStr'
 
   const bgElemsColor = 'bg-neutral-200/60'
-  const shadowElems = '0 4px 15px rgba(0,50,250, .4)'
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
-
+  const shadowElems = 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
   const [ ref, inView ] = useInView()
   const [ state, setState ] = useState(false)
   const [sectionMounted, setSectionMounted] = useState(false)
@@ -43,24 +43,24 @@ const HowItWorks = () => {
     >
       <>
         <div className='text-center mt-10 text-sm flex items-center justify-center'>
-          {/* eslint-disable-next-line max-len */}
-          <TextAnimated text={`${content.home.howitworks}`} color="text-black" textSizes='font-normal text-3xl md:text-5xl' delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
-          {/* <div className="absolute select-none -z-[1] top-[-30px] w-[100%] flex justify-center items-center">
-            <img src="/images/brush_3.jpg" className="h-[70px] w-[500px]" alt="background" />
-          </div> */}
+          <TextAnimated 
+            text={`${content.home.howitworks}`} 
+            color="text-black" 
+            textSizes='font-normal text-3xl md:text-5xl' 
+            delay={0.3} 
+            duration={0.1} 
+            space={0.1} 
+            mode='slide-left' />
         </div>
-        <div className='relative flex flex-col justify-around md:flex-col items-center'
-          // style={{ border: '1px solid red'}}
-        >
+        <div className='relative flex flex-col justify-around md:flex-col items-center'>
           <h2 className='text-md md:text-md font-normal text-space-dark text-center mt-10 overflow-hidden'>
             <text>{content.home.videoTime} 1:22</text>
           </h2>
-          <div className={`relative w-[calc(100%-40px)] md:w-[60%] md:h-[400px] ${bgElemsColor} rounded-xl backdrop-blur-sm max-w-[400px] min-w-[60%]`}
-            style={{ 
-              boxShadow: shadowElems, 
-              // border: '1px solid red' 
-            }}
-            
+          <div className={cn(
+            'max-w-[400px] min-w-[60%] md:w-[60%] md:h-[400px]',
+            `${shadowElems}`,
+            `relative w-[calc(100%-40px)] ${bgElemsColor}`
+          )}
           >
             <VideoSection
               title=''
@@ -68,13 +68,20 @@ const HowItWorks = () => {
               videoUrl={videoSourceLink}
             />
           </div>
-          <div ref={ref} className='overflow-hidden min-h-[300px] md:min-h-[500px] w-[100%] md:w-[60%] flex justify-center' 
+          <div ref={ref} className={cn(
+            'flex justify-center',
+            'min-h-[300px] md:min-h-[500px] w-[100%] md:w-[60%]',
+            // 'overflow-hidden'
+          )}
             // style={{ border: '1px solid blue'}}
           >
-            <div className='relative text-2xl/tight flex flex-col items-center text-center justify-center gap-5 my-[50px] md:w-[100%] sm:w-[523px] w-[calc(100%-40px)] space-y-4 rounded-xl px-[20px]'
-            style={{
-              border: '1px solid rgba(1,1,1, .2)'
-            }}
+            <div className={cn(
+              'rounded-xl text-2xl/tight',
+              'flex flex-col items-center text-center justify-center',
+              'relative gap-5 my-[50px] py-[30px] space-y-4 px-[20px]',
+              'md:w-[100%] sm:w-[523px] w-[calc(100%-40px)]',
+              `${shadowElems}`
+            )}
             >
               <div dangerouslySetInnerHTML={{ __html: content.home.aboutX39 }} />
             </div>

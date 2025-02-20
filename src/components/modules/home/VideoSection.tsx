@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from 'framer-motion'
-import { MotionSection } from '../../layouts/motionLayout'
+import { MotionSection } from '@/src/components/layouts/motionLayout'
+import { cn } from '@/src/lib/utils'
 
 interface VideoSectionProps {
   title: string
@@ -35,7 +36,7 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
             title={title}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            className={`w-[100%] h-[100%] rounded-xl shadow-lg ${min_height}`}
+            className={`w-[100%] h-[100%] ${min_height}`}
           />
         </div>
 
@@ -46,7 +47,11 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
                 key={button}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className='bg-primary text-white py-2 px-4 rounded-lg hover:bg-space-light transition-colors'
+                className={cn(
+                  'py-2 px-4',
+                  'bg-primary text-white',
+                  'hover:bg-space-light transition-colors'
+                )}
               >
                 {button}
               </motion.button>
