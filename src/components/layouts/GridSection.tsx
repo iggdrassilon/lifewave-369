@@ -37,7 +37,7 @@ interface GridSectionProps {
       }
     }
     artefact: React.ReactNode | null;
-  };
+  } | null;
   content: {
     text: React.ReactNode,
     motion: {
@@ -56,8 +56,10 @@ interface GridSectionProps {
         delay: number | null;
       }
     }
-  };
+  } | null;
   imageOnRight?: boolean;
+  imageOnTop?: boolean;
+  headerOnTop?: boolean;
 }
 
 const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, ref) => {
@@ -76,6 +78,8 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
     image,
     content,
     imageOnRight,
+    imageOnTop,
+    headerOnTop
   } = props
 
   const paddingBody = 'p-4'
@@ -84,18 +88,19 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
     <section
       ref={ref}
       className={cn(
-        "relative w-full max-w-7xl mx-auto px-4 py-16 space-y-8",
+        "relative w-full max-w-7xl mx-auto px-4 py-16 flex flex-col gap-8",
         customClasses.wrapper
       )}>
+      {title && (
+        <h2 className="text-3xl font-semibold tracking-tight overflow-hidden">
+          {title}
+        </h2>
+      )}
       <div className={cn(
         "text-center max-w-3xl md:max-w-[100%] mx-auto",
-        customClasses.header
+        customClasses.header,
+        headerOnTop ? "order-1" : "order-2"
       )}>
-        {title && (
-          <h2 className="text-3xl font-semibold tracking-tight overflow-hidden">
-            {title}
-          </h2>
-        )}
         {description && (
           <p className={cn(
             'text-muted-foreground leading-relaxed overflow-hidden',
@@ -110,14 +115,17 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
           "grid gap-5 items-center",
           "md:grid-cols-2",
           customClasses.body,
-          imageOnRight ? "md:grid-flow-row" : "md:grid-flow-row-dense"
+          imageOnRight ? "md:grid-flow-row" : "md:grid-flow-row-dense",
+          headerOnTop ? "order-2" : "order-1"
         )}
       >
-        <div
+        {image && (
+          <div
           className={cn(
             "relative",
             "space-y-4",
             image.customCl,
+            imageOnTop ? "order-1" : "order-2",
             imageOnRight ? "md:order-1" : "md:order-2"
           )}
         >
@@ -145,35 +153,39 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
             )}
             loading="lazy"
           />
-          {image.artefact && image.artefact}
-        </div>
-        <motion.div
-          ref={contentRef}
-          initial={{ 
-            opacity: content.motion.init.opacity,
-            translateX: content.motion.init.translateX,
-            translateY: content.motion.init.translateY
-          }}
-          animate={{
-            opacity: 
-              contentRefInView ? content.motion.animate.opacity : content.motion.init.opacity,
-            translateX: 
-              contentRefInView ? content.motion.animate.translateX : content.motion.init.translateX,
-            translateY: 
-              contentRefInView ? content.motion.animate.translateY : content.motion.init.translateY
-          }}
-          transition={{ 
-            duration: content.motion.transition.duration,
-            delay: content.motion.transition.delay
-          }}
-          className={cn(
-            "space-y-4",
-            paddingBody,
-            imageOnRight ? "md:order-2" : "md:order-1"
-          )}
-        >
-          {content.text}
-        </motion.div>
+            {image.artefact && image.artefact}
+          </div>
+        )}
+        {content && (
+          <motion.div
+            ref={contentRef}
+            initial={{ 
+              opacity: content.motion.init.opacity,
+              translateX: content.motion.init.translateX,
+              translateY: content.motion.init.translateY
+            }}
+            animate={{
+              opacity: 
+                contentRefInView ? content.motion.animate.opacity : content.motion.init.opacity,
+              translateX: 
+                contentRefInView ? content.motion.animate.translateX : content.motion.init.translateX,
+              translateY: 
+                contentRefInView ? content.motion.animate.translateY : content.motion.init.translateY
+            }}
+            transition={{ 
+              duration: content.motion.transition.duration,
+              delay: content.motion.transition.delay
+            }}
+            className={cn(
+              "space-y-4",
+              paddingBody,
+              imageOnTop ? "order-2" : "order-1",
+              imageOnRight ? "md:order-2" : "md:order-1"
+            )}
+          >
+            {content.text}
+          </motion.div>
+        )}
       </div>
     </section>
   )

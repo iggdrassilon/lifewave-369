@@ -2,7 +2,7 @@ import { Toaster } from '@/src/components/ui/toaster'
 import { Toaster as Sonner } from '@/src/components/ui/sonner'
 import { TooltipProvider } from '@/src/components/ui/tooltip'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Home from './pages/Home'
 import Patents from './pages/Patents'
@@ -20,8 +20,17 @@ import Story from './pages/Story'
 import Overlay from './components/Overlay'
 import OverlayModal from './components/modules/overlays/OverlayModals'
 import FullScreenBackground from './pages/ComingSoon'
+import { useEffect } from 'react'
 
 const queryClient = new QueryClient()
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -29,6 +38,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop />
         <AnimatePresence mode='wait'>
           {/* <LoadingOverlay /> */}
           <Header />

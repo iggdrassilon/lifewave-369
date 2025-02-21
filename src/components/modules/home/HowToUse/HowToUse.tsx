@@ -88,6 +88,8 @@ const HowToUse = () => {
           <GridSection
             ref={ref}
             imageOnRight={true}
+            imageOnTop={true}
+            headerOnTop={true}
             customClasses={{
               header: '',
               body: '',

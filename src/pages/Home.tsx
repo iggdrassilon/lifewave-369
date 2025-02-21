@@ -8,6 +8,8 @@ import Unfortunately from '@/src/components/modules/home/we-know/Unfortunately'
 import HowToUse from '@/src/components/modules/home/HowToUse/HowToUse'
 import Notice from '@/src/components/modules/home/Notice'
 import ActivateDNA from '@/src/components/modules/home/ActivateDNA/ActivateDNA'
+import BreakThrough from '@/src/components/modules/home/BreakThrough'
+import Patents from '@/src/components/modules/home/Patents'
 
 const Home = () => {
   return (
@@ -31,6 +33,12 @@ const Home = () => {
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <HowToUse />
+        </MotionLayout>
+        <MotionLayout duration={1} delay={0.4}>
+          <BreakThrough />
+        </MotionLayout>
+        <MotionLayout duration={1} delay={0.4}>
+          <Patents />
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Notice />

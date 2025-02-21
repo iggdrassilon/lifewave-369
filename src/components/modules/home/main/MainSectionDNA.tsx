@@ -78,7 +78,7 @@ const DnaHero = () => {
         <div className='relative mt-[100px] p-[10px] overflow-hidden'>
           <div className={cn(
             'w-[270px] h-[270px]',
-            `${rotate ? 'animate-rotat' : ''} rounded-full`,
+            `${rotate ? 'animate-rotate' : ''} rounded-full`,
             'bg-cover bg-no-repeat',
             "bg-[url('/public/images/standart_white_2.png')]"
           )} />
