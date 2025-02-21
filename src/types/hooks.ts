@@ -16,8 +16,9 @@ export type MotionSectionT = {
   height_viewported: number
   once: boolean
   className: string
+  style: object
   sectionMounted: () => void
-}
+} 
 
 export type MotionTextT = {
   children: React.ReactElement

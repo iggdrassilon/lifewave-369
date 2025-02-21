@@ -1,6 +1,4 @@
 import { MotionSection } from "@/src/components/layouts/motionLayout"
-import TextAnimated from "@/src/components/ui/textAnimations"
-import WaveText from "@/src/components/ui/waveText"
 import useLang from "@/src/hooks/use-lang"
 import { FirstBlock } from "./FirstBlock"
 import { SecondBlock } from "./SecondBlock"
@@ -16,6 +14,7 @@ const Revolution = () => {
       delay={0.3}
       once={true}
       className='mx-auto px-0 py-0 flex flex-col items-center'
+      style={{}}
       sectionMounted={() => ''}
     >
       <>

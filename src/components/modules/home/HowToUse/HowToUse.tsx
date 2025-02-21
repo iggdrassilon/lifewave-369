@@ -19,6 +19,12 @@ const HowToUse = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const [ ref, inView ] = useInView()
+
+  const [ gridRef, gridInView ] = useInView({
+    triggerOnce: true
+  })
+
+  const [ status, setStatus ] = useState(false)
   const [ state, setState ] = useState(false)
   const [sectionMounted, setSectionMounted] = useState(false)
 
@@ -26,12 +32,27 @@ const HowToUse = () => {
   const shadowElems = 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]'
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-bold sm:text-lg'
-  const borderDev = 'border border-solid border-red-500 border-[1px]'
+
+  const motionSetup = {
+    init: {
+      opacity: 1,
+      translateX: '0',
+      translateY: '0'
+    },
+    animate: {
+      opacity: 1,
+      translateX: '0',
+      translateY: '0'
+    },
+    transition: {
+      duration: 0,
+      delay: 0
+    }
+  }
 
   useEffect(() => {
     if (inView) {
       setState(true)
-      console.log('onVIew')
     }
     if (videoRef.current) {
       if (inView && sectionMounted) {
@@ -40,7 +61,14 @@ const HowToUse = () => {
         videoRef.current.pause()
       }
     }
-  }, [inView,sectionMounted])
+  }, [inView, sectionMounted])
+
+  useEffect(() => {
+    if (gridInView) {
+      console.log('HOWTOUSE SHOWED!')
+      setStatus(true)
+    }
+  }, [gridInView])
 
   return (
     <MotionSection
@@ -50,79 +78,74 @@ const HowToUse = () => {
       duration={0.6}
       delay={0.3}
       once={true}
+      style={{}}
+      ref={gridRef}
       className='mx-auto px-0 py-0 x-clip'
       sectionMounted={() => setSectionMounted(true)}
     >
-      <>
-        <GridSection
-          ref={ref}
-          imageOnRight={true}
-          customClasses={{
-            header: '',
-            body: '',
-            wrapper: cn(
-              'pt-2'
-              // `${borderDev}`
-            )
-          }}
-          title={null}
-          description={null}
-          image={{
-            src: '/images/patch_place_guy.png',
-            alt: 'human accupuncture',
-            artefact: '',
-            customCl: cn(
-              shadowElems,
-              bgElemsColor,
-              'm-4 md:m-0'
-            ),
-          }}
-          content={
-            Object.values(content.home.howTo).map((value: string, index: number) => (
-              <motion.div
-                initial={{ opacity: 0, translateX: '300px' }}
-                animate={{
-                  opacity: state ? 1 : 0,
-                  translateX: state ? 0 : '300px'
-                }}
-                transition={{ duration: 0.8, delay: 1 * index }}
-                className={cn(
-                  // `${borderDev}`,
-                  "max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] p-3",
-                  "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
-                  `flex justify-start items-center`,
-                  `${fontParams} text-${textColor} text-description align-baseline`,
-                  `${bgElemsColor} ${shadowElems} backdrop-blur-sm`,
-                )}
-                key={index}
-              >
-                <text>{value}</text>
-              </motion.div>
-            ))}
-        />
-        <VideoLayout
-          preview={links.previews.howToUse}
-          link={links.videos.howToUse}
-          opacity='10'
-          customClass=''
-          videoRef={videoRef}
-          cover={true}
-        />
-      </>
+      {status && (
+        <>
+          <GridSection
+            ref={ref}
+            imageOnRight={true}
+            customClasses={{
+              header: '',
+              body: '',
+              wrapper: cn(
+                'pt-2'
+              )
+            }}
+            title={null}
+            description={null}
+            image={{
+              src: '/images/patch_place_guy.png',
+              alt: 'human accupuncture',
+              artefact: '',
+              customCl: cn(
+                shadowElems,
+                bgElemsColor,
+                'm-4 md:m-'
+              ),
+              motion: motionSetup
+            }}
+            content={{
+              text: (
+                Object.values(content.home.howTo).map((value: string, index: number) => (
+                  <motion.div
+                    initial={{ opacity: 0, translateX: '300px' }}
+                    animate={{
+                      opacity: state ? 1 : 0,
+                      translateX: state ? 0 : '300px'
+                    }}
+                    transition={{ duration: 0.8, delay: 1 * index }}
+                    className={cn(
+                      "max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] p-3",
+                      "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
+                      `flex justify-start items-center`,
+                      `${fontParams} text-${textColor} text-description align-baseline`,
+                      `${bgElemsColor} ${shadowElems} backdrop-blur-sm`,
+                    )}
+                    key={index}
+                  >
+                    <text>{value}</text>
+                  </motion.div>
+                ))
+              ),
+              motion: motionSetup
+            }}
+          />
+          <VideoLayout
+            preview={links.previews.howToUse}
+            link={links.videos.howToUse}
+            opacity='10'
+            customClass=''
+            videoRef={videoRef}
+            cover={true}
+          />
+        </>
+      )}
     </MotionSection>
   )
 }
 
 export default HowToUse
-
-
-// artefact: (
-//   <div className={cn(
-//     // "-z-10",
-//     'absolute z-[9999]',
-//     "w-[50%] h-[50%] sm:w-[350px] sm:h-[350px] md:w-[60%] md:h-[60%]",
-//     "top-[-35%] sm:top-[-40%] md:top-[-50%] lg:top-[-240px] bottom-[0] right-[50%] translate-x-[50%]",
-//     "bg-[url('/public/icons/golden-flower-sacral.svg')]",
-//     "object-contain bg-cover bg-no-repeat"
-//   )}></div>
-// )

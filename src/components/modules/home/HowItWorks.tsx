@@ -5,12 +5,11 @@ import useLang from '@/src/hooks/use-lang'
 import { useInView } from "react-intersection-observer"
 import TextAnimated from '../../ui/textAnimations'
 import VideoSection from './VideoSection'
-import VideoLayout from '../../layouts/VideoLayout'
 import { cn } from '@/src/lib/utils'
 
 const HowItWorks = () => {
   const content = useLang().CONTENT
-  const videoRef = useRef<any>()
+  const videoRef = useRef<any>(null)
 
   const videoSourceLink = 'https://kinescope.io/embed/axnpCT8eeYFrWsPTfQwStr'
 
@@ -22,7 +21,7 @@ const HowItWorks = () => {
   const [ state, setState ] = useState(false)
   const [sectionMounted, setSectionMounted] = useState(false)
 
-  const refVideo = useRef()
+  const refVideo = useRef(null)
 
   useEffect(() => {
     if (inView && sectionMounted) {
@@ -39,6 +38,7 @@ const HowItWorks = () => {
       delay={0.3}
       once={true}
       className='container mx-auto px-0 py-0'
+      style={{}}
       sectionMounted={() => setSectionMounted(true)}
     >
       <>
@@ -53,14 +53,23 @@ const HowItWorks = () => {
             mode='slide-left' />
         </div>
         <div className='flex flex-col items-center'>
-          <h2 className='text-md md:text-md font-normal text-space-dark text-center mt-10 overflow-hidden'>
+          <h2 className={cn(
+            'mt-10',
+            'overflow-hidden',
+            'text-md md:text-md font-normal text-space-dark text-center'
+          )}>
             <text>{content.home.videoTime} 1:22</text>
           </h2>
-          <div className='relative w-[calc(100%-40px)] md:w-[80%] flex flex-col justify-center items-center'>
+          <div className={cn(
+            'relative',
+            'w-[calc(100%-40px)] md:w-[80%]',
+            'flex flex-col justify-center items-center',
+          )}>
             <div className={cn(
+              'relative',
               'w-[100%] md:w-[80%]',
               `${shadowElems}`,
-              `relative] ${bgElemsColor}`
+              `${bgElemsColor}`
             )}
             >
               <VideoSection
@@ -72,34 +81,32 @@ const HowItWorks = () => {
             <div ref={ref} className={cn(
               'flex justify-center',
               'min-h-[300px] md:min-h-[500px] w-[100%] md:w-[80%]',
-              // 'overflow-hidden'
-            )}
-              // style={{ border: '1px solid blue'}}
-            >
-              <div className={cn(
-                'rounded-xl text-2xl/tight',
-                'flex flex-col items-center text-center justify-center',
-                'relative gap-5 my-[50px] py-[30px] px-[20px] md:px-[30px] space-y-4',
-                'md:w-[100%]',
-                `${shadowElems}`
-              )}
+            )}>
+              <MotionSection
+                height_initial={100}
+                opacity_initial={0}
+                height_viewported={0}
+                duration={0.6}
+                delay={0.4}
+                once={true}
+                className={cn(
+                  'relative',
+                  'rounded-xl text-2xl/tight',
+                  'flex flex-col items-center text-center justify-center',
+                  'gap-5 my-[50px] py-[30px] px-[20px] md:px-[30px] space-y-4',
+                  'md:w-[100%]',
+                  `${shadowElems}`
+                )}
                 style={{
                   boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
                 }}
+                sectionMounted={() => ''}
               >
                 <div dangerouslySetInnerHTML={{ __html: content.home.aboutX39 }} />
-              </div>
-          </div>
+              </MotionSection>
+            </div>
           </div>
         </div>
-        {/* <VideoLayout
-          link={videoSourceLink}
-          opacity='10'
-          videoRef={videoRef}
-          cover={true} 
-          preview={''}
-          customClass={''}
-        /> */}
       </>
     </MotionSection>
   )

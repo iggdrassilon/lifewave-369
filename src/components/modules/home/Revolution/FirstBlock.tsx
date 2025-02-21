@@ -130,3 +130,59 @@ const FirstBlock = ({ content }: any) => {
 }
 
 export { FirstBlock }
+
+
+
+
+
+
+
+
+// const FirstBlock = ({ content }: any) => {
+//   const [state, setState] = useState(false)
+//   const [description, setDescription] = useState(false)
+//   const [titleRef, titleInView] = useInView()
+
+//   useEffect(() => {
+//     if (titleInView) {
+//       setDescription(true)
+//     }
+//   }, [titleInView])
+
+//   return (
+//     <>
+//       <div className="overflow-hidden">
+//         <h2
+//           className={cn(
+//             'mb-20',
+//             'text-center',
+//             'flex items-center justify-center',
+//             'relative overflow-hidden'
+//           )} 
+//           ref={titleRef}
+//         >
+//         </h2>
+//         {description && (
+//           <MotionDescription
+//             color="text-neutral-700"
+//             className={cn(
+//               "z-10 px-2 md:mt-[50px] mt-0 ml-0 md:ml-10",
+//               'text-xl/tight md:text-[26px]/tight font-normal',
+//               'flex items-center justify-center',
+//               'min-w-descr sm:w-[80%] w-[calc(100%-40px)] md:min-w-0 md:max-w-descr_md',
+//             )}
+//             style={''}
+//             duration={1}
+//             delay={0.6}
+//             height_initial={60}
+//             height_viewported={0}
+//             once={true}
+//             complete={() => setState(true)}
+//           >
+//             {content.home.firstinworld}
+//           </MotionDescription>
+//         )}
+//       </div>
+//     </>
+//   )
+// }

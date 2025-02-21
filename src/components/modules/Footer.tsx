@@ -1,5 +1,5 @@
 import useLang from '@/src/hooks/use-lang'
-import { useRef } from 'react'
+import { Ref, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import SpaceBackground from '../SpaceBackground'
 import SpaceLines from '../SpaceLines'
@@ -28,9 +28,14 @@ const Footer = () => {
     { name: UI.footer.links.rutube, url: '#' },
   ]
 
+  const setOfRefs = (node: Element) => {
+    footerRef.current = node
+    ref(node)
+  }
+
   return (
     <footer
-      ref={footerRef}
+      ref={setOfRefs}
       className='relative overflow-hidden py-12'
       style={{ filter: 'hue-rotate(-10deg)' }}
     >
@@ -98,7 +103,7 @@ const Footer = () => {
             <h3 className='text-space-dark font-bold text-lg mb-4'>
               {UI.footer.titles.contact}
             </h3>
-            <p ref={ref} className='text-space-medium'>
+            <p className='text-space-medium'>
               {UI.footer.links.if_owner}
               <br />
               <a

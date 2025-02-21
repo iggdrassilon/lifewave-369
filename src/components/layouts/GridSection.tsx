@@ -1,6 +1,8 @@
 
 import { cn } from "@/src/lib/utils"
+import { motion } from "framer-motion"
 import React, { Ref } from "react"
+import { useInView } from "react-intersection-observer"
 
 interface GridSectionProps {
   ref: Ref<HTMLElement>;
@@ -18,14 +20,56 @@ interface GridSectionProps {
     src: string;
     alt: string;
     customCl: string;
+    motion: {
+      init: {
+        opacity: number | null;
+        translateX: string;
+        translateY: string;
+      };
+      animate: {
+        opacity: number | null;
+        translateX: string;
+        translateY: string;
+      };
+      transition: {
+        duration: number | null;
+        delay: number | null;
+      }
+    }
     artefact: React.ReactNode | null;
   };
-  content: React.ReactNode;
+  content: {
+    text: React.ReactNode,
+    motion: {
+      init: {
+        opacity: number | null;
+        translateX: string;
+        translateY: string;
+      };
+      animate: {
+        opacity: number | null;
+        translateX: string;
+        translateY: string;
+      };
+      transition: {
+        duration: number | null;
+        delay: number | null;
+      }
+    }
+  };
   imageOnRight?: boolean;
 }
 
 const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, ref) => {
-  const {
+
+  const [ imgRef, imgRefInView ] = useInView({
+    triggerOnce: true
+  })
+  const [ contentRef, contentRefInView ] = useInView({
+    triggerOnce: true
+  })
+
+  const { 
     title,
     customClasses,
     description,
@@ -47,7 +91,11 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
         "text-center max-w-3xl md:max-w-[100%] mx-auto",
         customClasses.header
       )}>
-        {title && <h2 className="text-3xl font-semibold tracking-tight overflow-hidden">{title}</h2>}
+        {title && (
+          <h2 className="text-3xl font-semibold tracking-tight overflow-hidden">
+            {title}
+          </h2>
+        )}
         {description && (
           <p className={cn(
             'text-muted-foreground leading-relaxed overflow-hidden',
@@ -73,7 +121,22 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
             imageOnRight ? "md:order-1" : "md:order-2"
           )}
         >
-          <img
+          <motion.img
+            ref={imgRef}
+            initial={{ 
+              opacity: image.motion.init.opacity,
+              translateX: image.motion.init.translateX 
+            }}
+            animate={{
+              opacity: 
+                imgRefInView ? image.motion.animate.opacity : image.motion.init.opacity,
+              translateX: 
+                imgRefInView ? image.motion.animate.translateX : image.motion.init.translateX
+            }}
+            transition={{ 
+              duration: image.motion.transition.duration,
+              delay: image.motion.transition.delay
+            }}
             src={image.src}
             alt={image.alt}
             className={cn(
@@ -84,15 +147,33 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
           />
           {image.artefact && image.artefact}
         </div>
-        <div
+        <motion.div
+          ref={contentRef}
+          initial={{ 
+            opacity: content.motion.init.opacity,
+            translateX: content.motion.init.translateX,
+            translateY: content.motion.init.translateY
+          }}
+          animate={{
+            opacity: 
+              contentRefInView ? content.motion.animate.opacity : content.motion.init.opacity,
+            translateX: 
+              contentRefInView ? content.motion.animate.translateX : content.motion.init.translateX,
+            translateY: 
+              contentRefInView ? content.motion.animate.translateY : content.motion.init.translateY
+          }}
+          transition={{ 
+            duration: content.motion.transition.duration,
+            delay: content.motion.transition.delay
+          }}
           className={cn(
-            "space-y-4 overflow-hidden",
+            "space-y-4",
             paddingBody,
             imageOnRight ? "md:order-2" : "md:order-1"
           )}
         >
-          {content}
-        </div>
+          {content.text}
+        </motion.div>
       </div>
     </section>
   )

@@ -12,6 +12,15 @@ import { cn } from '@/src/lib/utils'
 const ActivateDNA = () => {
   const content = useLang().CONTENT
 
+  const [ state, setState ] = useState(false)
+  const [ status, setStatus ] = useState(false)
+  const [ sectionMounted, setSectionMounted ] = useState(false)
+
+  const [ ref, inView ] = useInView()
+  const [ gridRef, gridInView ] = useInView({
+    triggerOnce: true
+  })
+
   const smScreen = 768
   const xlScreen = 1200
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen)
@@ -25,12 +34,6 @@ const ActivateDNA = () => {
   const textContent = 'text-xl md:text-2xl text-description text-center'
   const shadowElems = 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]'
   const borderDev = 'border border-solid border-red-500 border-[1px]' 
-
-  const [ ref, inView ] = useInView()
-  const [ state, setState ] = useState(false)
-  const [ sectionMounted, setSectionMounted ] = useState(false)
-
-  const refVideo = useRef()
 
   useEffect(() => {
     if (inView && sectionMounted) {
@@ -48,6 +51,13 @@ const ActivateDNA = () => {
     }
   }, [inView, sectionMounted])
 
+  useEffect(() => {
+    if (gridInView) {
+      console.log('ACTIVATE_DNA SHOWED!')
+      setStatus(true)
+    }
+  }, [gridInView])
+
   return (
     <MotionSection
       height_initial={80}
@@ -56,85 +66,124 @@ const ActivateDNA = () => {
       duration={0.6}
       delay={0.3}
       once={true}
+      style={{}}
+      ref={gridRef}
       className={cn(
-        'mx-auto px-0 py-0',
+        'activate_dna mx-auto px-0 py-0',
         // 'md:container',
         // 'overflow-y-visible overflow-x-hidden'
       )}
       sectionMounted={() => setSectionMounted(true)}
     >
-      <GridSection
-        customClasses={{
-          header: `space-y-4 px-[10px] ${bgElemsColor}`,
-          body: '',
-          wrapper: ''
-        }}
-        title={
-          <div className={cn(
-            'md:mt-20', // CORDS
-            'flex items-center justify-center', // CTR
-            'text-center text-sm', // FONT
-            'text-description' // COLOR
-          )}>
-            {!isSmScreen && (
-              <TextAnimated 
-                text={`${content.home.activateDNA_md}`} 
-                color="" 
-                textSizes={`font-bold ${textTitle}`} 
-                delay={0.3}          
+      {status && (
+        <GridSection
+          customClasses={{
+            header: `space-y-4 px-[10px] ${bgElemsColor}`,
+            body: '',
+            wrapper: ''
+          }}
+          title={
+            <div className={cn(
+              'md:mt-20', // CORDS
+              'flex items-center justify-center', // CTR
+              'text-center text-sm', // FONT
+              'text-description' // COLOR
+            )}>
+              {!isSmScreen && (
+                <TextAnimated 
+                  text={`${content.home.activateDNA_md}`} 
+                  color="" 
+                  textSizes={`font-bold ${textTitle}`} 
+                  delay={0.3}          
+  
+                  duration={0.1} 
+                  space={0.02} 
+                  mode='slide-left' />
+              )}
+              {isSmScreen && (
+                <div className='flex flex-col'>
+                  <TextAnimated 
+                    text={`${content.home.activateDNA_sm.one}`} 
+                    color="" 
+                    textSizes={`font-bold ${textTitle}`} 
+                    delay={0.3} 
+                    duration={0.1} 
+                    space={0.01} 
+                    mode='slide-left' />
+                  <TextAnimated 
+                    text={`${content.home.activateDNA_sm.two}`} 
+                    color="" 
+                    textSizes={`font-bold ${textTitle}`} 
+                    delay={0.3} 
+                    duration={0.1} 
+                    space={0.01} 
+                    mode='slide-left' />
+                </div>
+              )}
+            </div>
+          }
+          description={{
+            customCl: cn(
+              'flex justify-center',
+              `${textDescr}`
+            ), // PARENT
+            description: <div 
+              dangerouslySetInnerHTML={{ __html: content.home.patches }} // CHILD
+              className={cn(
+                'mt-[50px] mb-[20px]',
+                'md:max-w-[80%] lg:max-w-[60%]',
+              )} />,
+          }}
+          image={{
+            src: "/images/ActivateDNA.png", // IMG OF STEM SELS
+            alt: "steem sels for every neuron",
+            customCl: '',
+            artefact: '',
+            motion: {
+              init: {
+                opacity: 0,
+                translateX: '200px',
+                translateY: ''
+              },
+              animate: {
+                opacity: 1,
+                translateX: '0',
+                translateY: '0'
+              },
+              transition: {
+                duration: 0.6,
+                delay: 0.6
+              }
+            }
+          }}
+          content={{
+            text: (
+              <div 
+                ref={ref}
+                className={textContent}
+                dangerouslySetInnerHTML={{ __html: content.home.stemcells }} 
+              />
+            ),
+            motion: {
+              init: {
+                opacity: 0,
+                translateX: '0',
+                translateY: '200px'
+              },
+              animate: {
+                opacity: 1,
+                translateX: '0',
+                translateY: '0'
+              },
+              transition: {
+                duration: 0.6,
+                delay: 0.6
 
-                duration={0.1} 
-                space={0.02} 
-                mode='slide-left' />
-            )}
-            {isSmScreen && (
-              <div className='flex flex-col'>
-                <TextAnimated 
-                  text={`${content.home.activateDNA_sm.one}`} 
-                  color="" 
-                  textSizes={`font-bold ${textTitle}`} 
-                  delay={0.3} 
-                  duration={0.1} 
-                  space={0.01} 
-                  mode='slide-left' />
-                <TextAnimated 
-                  text={`${content.home.activateDNA_sm.two}`} 
-                  color="" 
-                  textSizes={`font-bold ${textTitle}`} 
-                  delay={0.3} 
-                  duration={0.1} 
-                  space={0.01} 
-                  mode='slide-left' />
-              </div>
-            )}
-          </div>
-        }
-        description={{
-          customCl: cn(
-            'flex justify-center',
-            `${textDescr}`
-          ), // PARENT
-          description: <div 
-            dangerouslySetInnerHTML={{ __html: content.home.patches }} // CHILD
-            className={cn(
-              'mt-[50px] mb-[20px]',
-              'md:max-w-[80%] lg:max-w-[60%]',
-            )} />,
-        }}
-        image={{
-          src: "/images/ActivateDNA.png", // IMG OF STEM SELS
-          alt: "steem sels for every neuron",
-          customCl: '',
-          artefact: ''
-        }}
-        content={
-          <div 
-            ref={ref}
-            className={textContent}
-            dangerouslySetInnerHTML={{ __html: content.home.stemcells }} 
-          />
-        }
-      />
+              }
+            }
+          }}
+        />
+      )}
     </MotionSection>
   )
 }

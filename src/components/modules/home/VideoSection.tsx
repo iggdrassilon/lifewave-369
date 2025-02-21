@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { MotionSection } from '@/src/components/layouts/motionLayout'
 import { cn } from '@/src/lib/utils'
+import React from 'react'
 
 interface VideoSectionProps {
   title: string
@@ -10,7 +11,7 @@ interface VideoSectionProps {
   ref: any
 }
 
-const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
+const VideoSection = React.forwardRef<HTMLDivElement | null, VideoSectionProps>(({ title, videoUrl, buttons }, ref) => {
   const min_height = 'min-h-[320px] lg:h-[500px]'
   const height = 'h-[100%]'
 
@@ -22,6 +23,8 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
       duration={0.3}
       delay={0.2}
       once={true}
+      ref={null}
+      style={{}}
       className='max-w-4xl mx-auto h-auto'
       sectionMounted={() => ''}
     >
@@ -61,6 +64,8 @@ const VideoSection = ({ title, videoUrl, buttons, ref }: VideoSectionProps) => {
       </>
     </MotionSection>
   )
-}
+})
+
+VideoSection.displayName = 'VideoSection'
 
 export default VideoSection

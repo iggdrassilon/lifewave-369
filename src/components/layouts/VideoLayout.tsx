@@ -13,6 +13,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const [videoBlobUrl, setVideoBlobUrl] = useState(null)
+  const [imgBlobUrl, setImgBlobUrl] = useState(null)
   const [ref, inView] = useInView()
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
   return (
     <div>
       <div ref={ref} className={`absolute inset-0 -z-50 opacity-${opacity}`}>
-        <video
+        {/* <video
           ref={videoRef}
           loop
           muted
@@ -60,9 +61,9 @@ const VideoLayout = (props: ViteoLayoutT) => {
           onContextMenu={(e) => e.preventDefault()} // turn off context menu
         >
           {videoBlobUrl && <source src={videoBlobUrl} type="video/mp4" />}
-        </video>
+        </video> */}
         <img
-          src={preview}
+          src={preview} // BLOB IT TOOOOOO
           alt="Previews not available"
           className={`object-cover ${customClass} absolute top-0 left-0 -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
         />

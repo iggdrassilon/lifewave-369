@@ -1,7 +1,7 @@
 import { useInView } from 'react-intersection-observer'
 import { MotionDescriptionT, MotionHookT, MotionPartTextT, MotionSectionT, MotionTextT } from '../../types/hooks'
 import { motion } from 'framer-motion'
-import { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useRef, useState } from 'react'
 
 const MotionLayout = (props: MotionHookT) => {
   const { children, duration, delay } = props
@@ -18,22 +18,25 @@ const MotionLayout = (props: MotionHookT) => {
   )
 }
 
-export const MotionSection = (props: MotionSectionT) => {
-  const { children, className, duration, delay, height_initial, height_viewported, once, sectionMounted, opacity_initial } = props
-
+export const MotionSection = React.forwardRef<HTMLDivElement | null, MotionSectionT>((props, ref) => {
+  const { children, className, style, duration, delay, height_initial, height_viewported, once, sectionMounted, opacity_initial } = props
   return (
-    <motion.section
+    <motion.div
+      ref={ref}
       initial={{ opacity: opacity_initial, y: height_initial }}
       whileInView={{ opacity: 1, y: height_viewported }}
       transition={{ duration: duration, delay: delay }}
       viewport={{ once: once }}
       className={className}
       onAnimationComplete={() => sectionMounted()}
+      style={ style }
     >
       {children}
-    </motion.section>
+    </motion.div>
   )
-}
+})
+
+MotionSection.displayName = 'MotionSecton'
 
 const MotionText = (props: MotionTextT) => {
   const { children, className, duration, delay, height_initial, height_viewported, once, variants, complete } = props
@@ -96,18 +99,18 @@ const MotionDescription = (props: MotionDescriptionT) => {
   }
 
   return (
-    <motion.text
+    <motion.div
       ref={ref}
       initial={{ opacity: 0, y: height_initial }}
       animate={{ opacity: state ? 1 : 0, y: state ? height_viewported : height_initial }}
       transition={{ duration: duration, delay: delay }}
       className={`${className} ${color}`}
-      style={style}
+      style={{...style, opacity: 0}}
       onAnimationComplete={() => setComplete()}
 
     >
       <div ref={refOne}>{children}</div>
-    </motion.text>
+    </motion.div>
   )
 }
 
