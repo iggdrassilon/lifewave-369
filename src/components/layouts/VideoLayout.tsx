@@ -4,8 +4,9 @@ import { useInView } from "react-intersection-observer"
 import Dexie from 'dexie'
 
 const db = new Dexie('VideoCacheDB')
-db.version(1).stores({
-  videos: 'url, data'
+db.version(2).stores({
+  videos: 'url, data',
+  images: 'url, data'
 })
 
 const VideoLayout = (props: ViteoLayoutT) => {
@@ -38,15 +39,39 @@ const VideoLayout = (props: ViteoLayoutT) => {
       }
     }
 
-    if (inView && !isVideoLoaded) {
-      cacheVideo()
+    const cacheImage = async () => {
+      try {
+        const cachedImage = await db.table('images').get(preview)
+        if (cachedImage) {
+          console.log(cachedImage)
+          const blobUrl = URL.createObjectURL(cachedImage.data)
+          setImgBlobUrl(blobUrl)
+        } else {
+          const response = await fetch(preview)
+          const imageBlob = await response.blob()
+          await db.table('images').put({ url: preview, data: imageBlob })
+          const blobUrl = URL.createObjectURL(imageBlob)
+          setImgBlobUrl(blobUrl)
+        }
+      } catch (error) {
+        console.error('Error caching the image:', error)
+      }
     }
-  }, [inView, link, isVideoLoaded])
+
+    if (inView) {
+      if (!videoBlobUrl) {
+        cacheVideo()
+      }
+      if (!imgBlobUrl) {
+        cacheImage()
+      }
+    }
+  }, [inView, link, preview])
 
   return (
     <div>
       <div ref={ref} className={`absolute inset-0 -z-50 opacity-${opacity}`}>
-        <video
+        {/* <video
           ref={videoRef}
           loop
           muted
@@ -55,17 +80,17 @@ const VideoLayout = (props: ViteoLayoutT) => {
           // eslint-disable-next-line react/no-unknown-property
           webkit-playsinline // for chrome
           disablePictureInPicture
-          className={`object-cover ${customClass} -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
+          className={`object-cover ${customClass} -z-50 ${!cover? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
           controls={false}
           tabIndex={-1} // turn off navigation
           onContextMenu={(e) => e.preventDefault()} // turn off context menu
         >
           {videoBlobUrl && <source src={videoBlobUrl} type="video/mp4" />}
-        </video>
+        </video> */}
         <img
-          src={preview} // BLOB IT TOOOOOO
+          src={imgBlobUrl || preview} // Use cached image if available, otherwise use original URL
           alt="Previews not available"
-          className={`object-cover ${customClass} absolute top-0 left-0 -z-50 ${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
+          className={`object-cover ${customClass} absolute top-0 left-0 -z-50 ${!cover? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
         />
       </div>
     </div>
