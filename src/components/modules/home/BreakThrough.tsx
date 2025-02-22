@@ -129,14 +129,14 @@ const BreakThrough = () => {
                 className={cn(
                   'absolute -z-[1]',
                   'opacity-100 overflow-hidden',
-                  'top-[-50px] se:top-[-80px] sm:top-[-80px] md:top-[-50px] lg:top-[-50px]',
-                  'left-[0] sm:left-[0] md:left-[0]'
+                  'top-[-60px] se:top-[-70px] sm:top-[-80px] md:top-[-80px] lg:top-[-100px]',
+                  'left-[0] sm:left-[0] md:left-[-80px]'
                 )}
               >
                 <div
                   className={cn(
-                    'w-[80px] se:w-[100px] sm:w-[100px] md:w-[120px]',
-                    'h-[80px] se:h-[100px] sm:h-[100px] md:h-[120px]',
+                    'w-[110px] se:w-[130px] sm:w-[175px] md:w-[200px]',
+                    'h-[50px] se:h-[60px] sm:h-[80px] md:h-[90px]',
                     "bg-[url('/public/images/PATENTS_STAMP.webp')]", // IMG OF PATENTS
                     'rounded-full bg-cover bg-no-repeat',
                     // 'animate-rotate',
