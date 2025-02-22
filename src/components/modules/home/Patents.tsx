@@ -156,7 +156,7 @@ const Patents = () => {
                   )}
                 >
                   <h2 className={cn(
-                    'font-bold'
+                    'font-bold uppercase'
                     )}
                   >
                     {content.home.patents.patents}

@@ -32,13 +32,8 @@ const TextAnimated = (props: TextAnimatedT) => {
       words.forEach((word: string, index: number) => {
         let wordSpan = `<span class="word-wrapper inline-block">`
         for (let i = 0; i < word.length; i++) {
-          wordSpan += cn(
-            '<span class="',
-            'inline-block opacity-0 transition-opacity duration-150 mt-[4px]"',
-            'ease-[cubic-bezier(0.075,0.82,0.165,1)]>',
-            `${word.substring(i, i + 1)}`,
-            '</span>'
-          )
+          // eslint-disable-next-line max-len
+          wordSpan += `<span class="inline-block opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.075,0.82,0.165,1)]">${word.substring(i, i + 1)}</span>`
         }
         wordSpan += `</span>`
         spaned += wordSpan

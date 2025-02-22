@@ -108,7 +108,7 @@ const HowToUse = () => {
                   'text-sm', // FONT
                   'text-description', // COLOR
                   `${shadowElems}`,
-                  `bg-neutral-200/60 rounded-xl backdrop-blur-sm`
+                  `bg-neutral-200 rounded-xl backdrop-blur-sm`
                 )}>
                   <TextAnimated
                     text={`${content.home.howtouse}`} 
@@ -130,14 +130,14 @@ const HowToUse = () => {
               customCl: cn(
                 shadowElems,
                 bgElemsColor,
-                'mt-0 mb-0 md:mb-4 md:m-0'
+                'mt-0 mb-0 md:mb-4 md:m-0 p-[10px]'
               ),
               motion: motionSetup
             }}
             content={{
               text: (
                 <>
-                  <div className={`${bgElemsColor} ${shadowElems} backdrop-blur-sm`}>
+                  <div className={`${bgElemsColor} ${shadowElems} backdrop-blur-sm overflow-hidden`}>
                     {Object.values(content.home.howTo).map((value: string, index: number) => (
                       <motion.div
                         initial={{ opacity: 0, translateX: '300px' }}
@@ -147,7 +147,7 @@ const HowToUse = () => {
                         }}
                         transition={{ duration: 0.8, delay: 1 * index }}
                         className={cn(
-                          "max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] py-2 px-3",
+                          'max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] py-2 px-3',
                           "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
                           `flex justify-start items-center`,
                           `${fontParams} text-${textColor} text-description align-baseline`,
@@ -163,7 +163,7 @@ const HowToUse = () => {
                     'flex items-center justify-center', // CTR
                     'text-sm', // FONT
                     'text-description', // COLOR
-                    `bg-neutral-200/60 rounded-xl ${shadowElems} backdrop-blur-sm`
+                    `bg-neutral-200 rounded-xl ${shadowElems} backdrop-blur-sm`
                   )}>
                     <TextAnimated
                       text={`${content.home.howitworks_2}`} 
@@ -175,7 +175,7 @@ const HowToUse = () => {
                       mode='slide-left' 
                     />
                   </div>
-                  <div className={`${bgElemsColor} ${shadowElems} backdrop-blur-sm`}>
+                  <div className={`${bgElemsColor} ${shadowElems} backdrop-blur-sm overflow-hidden`}>
                     {Object.values(content.home.howTo_2).map((value: string, index: number) => (
                       <motion.div
                         initial={{ opacity: 0, translateX: '300px' }}
@@ -185,7 +185,7 @@ const HowToUse = () => {
                         }}
                         transition={{ duration: 0.8, delay: 1 * index }}
                         className={cn(
-                          "max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] py-2 px-3",
+                          'max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] py-2 px-3',
                           "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
                           `flex justify-start items-center`,
                           `${fontParams} text-${textColor} text-description align-baseline`,
