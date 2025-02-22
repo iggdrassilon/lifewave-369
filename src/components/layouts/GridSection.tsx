@@ -88,7 +88,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
     <section
       ref={ref}
       className={cn(
-        "relative w-full max-w-7xl mx-auto px-4 py-16 flex flex-col gap-8",
+        "relative w-full max-w-7xl mx-auto px-4 py-16 flex flex-col",
         customClasses.wrapper
       )}>
       {title && (
@@ -112,7 +112,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
       </div>
       <div
         className={cn(
-          "grid gap-5 items-center",
+          "grid md:gap-5 items-center",
           "md:grid-cols-2",
           customClasses.body,
           imageOnRight ? "md:grid-flow-row" : "md:grid-flow-row-dense",
@@ -177,7 +177,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
               delay: content.motion.transition.delay
             }}
             className={cn(
-              "space-y-4",
+              "space-y-4 md:space-y-8",
               paddingBody,
               imageOnTop ? "order-2" : "order-1",
               imageOnRight ? "md:order-2" : "md:order-1"

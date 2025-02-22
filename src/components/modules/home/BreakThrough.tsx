@@ -27,7 +27,7 @@ const BreakThrough = () => {
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
-  const textDescr = 'font-bold text-xl text-description'
+  const textDescr = 'font-bold text-sm se:text-xl text-description'
   const textContent = 'text-xl md:text-2xl text-description text-center'
   const shadowElems = 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
   useEffect(() => {
@@ -78,7 +78,7 @@ const BreakThrough = () => {
           customClasses={{
             header: `space-y-4 ${bgElemsColor}`,
             body: '',
-            wrapper: ''
+            wrapper: 'gap-8'
           }}
           title={
             <div className={cn(
@@ -119,8 +119,28 @@ const BreakThrough = () => {
           image={{
             src: "/images/CARD_X39.webp", // IMG OF STEM SELS
             alt: "steem sels for every neuron",
-            customCl: '',
-            artefact: '',
+            customCl: 'mt-[70px] md:mt-[50px]',
+            // artefact: '',
+            artefact: (
+              <div
+                className={cn(
+                  'absolute -z-[1]',
+                  'opacity-100 overflow-hidden',
+                  'top-[-50px] se:top-[-80px] sm:top-[-80px] md:top-[-50px] lg:top-[-50px]',
+                  'left-[0] sm:left-[0] md:left-[0]'
+                )}
+              >
+                <div
+                  className={cn(
+                    'w-[80px] se:w-[100px] sm:w-[100px] md:w-[120px]',
+                    'h-[80px] se:h-[100px] sm:h-[100px] md:h-[120px]',
+                    "bg-[url('/public/images/PATENTS_STAMP.webp')]", // IMG OF PATENTS
+                    'rounded-full bg-cover bg-no-repeat',
+                    // 'animate-rotate',
+                  )}
+                />
+              </div>
+            ),
             motion: {
               init: {
                 opacity: 0,

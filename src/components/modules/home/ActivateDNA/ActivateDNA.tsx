@@ -83,7 +83,7 @@ const ActivateDNA = () => {
           customClasses={{
             header: `space-y-4 px-[10px] ${bgElemsColor}`,
             body: '',
-            wrapper: ''
+            wrapper: 'gap-8'
           }}
           title={
             <div className={cn(
@@ -193,24 +193,3 @@ const ActivateDNA = () => {
 
 export default ActivateDNA
 
-
- // artefact: (
-          //   <div
-          //     className={cn(
-          //       'absolute -z-[1]',
-          //       'opacity-20 overflow-hidden',
-          //       'top-[-200px] sm:top-[-300px] md:top-[-400px] lg:top-[-300px]',
-          //       'left-[-100px] sm:left-[-200px] md:left-[-100%]'
-          //     )}
-          //   >
-          //     <div
-          //       className={cn(
-          // eslint-disable-next-line max-len
-          //         'w-[300px] h-[300px] se:w-[400px] se:h-[400px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px]',
-          //         "bg-[url('/public/images/standart_blue.png')]", // IMG OF FLOWER
-          //         'rounded-full bg-cover bg-no-repeat',
-          //         'animate-rotate',
-          //       )}
-          //     />
-          //   </div>
-          // )

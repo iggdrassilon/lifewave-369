@@ -81,7 +81,7 @@ const Patents = () => {
             customClasses={{
               header: `space-y-4 ${bgElemsColor}`,
               body: '',
-              wrapper: ''
+              wrapper: 'gap-0'
             }}
             title={
               <div className={cn(

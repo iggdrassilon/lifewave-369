@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from 'react'
 import { useInView } from "react-intersection-observer"
 import { motion } from 'framer-motion'
@@ -11,6 +10,7 @@ import GridSection from '../../../layouts/GridSection'
 import { cn } from '@/src/lib/utils'
 
 import './style.css'
+import TextAnimated from '@/src/components/ui/textAnimations'
 
 const HowToUse = () => {
   const content = usePublic().CONTENT
@@ -30,6 +30,7 @@ const HowToUse = () => {
 
   const bgElemsColor = 'bg-neutral-200/60 rounded-xl'
   const shadowElems = 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]'
+  const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-bold sm:text-lg'
 
@@ -94,10 +95,29 @@ const HowToUse = () => {
               header: '',
               body: '',
               wrapper: cn(
-                'pt-2'
+                'pt-2',
+                'md:gap-6'
               )
             }}
-            title={null}
+            title={
+              <div className={cn(
+                'mt-8 mx-[1rem] py-[4px] gap-0', // CORDS
+                'flex items-center justify-center', // CTR
+                'text-sm', // FONT
+                'text-description', // COLOR
+                `bg-neutral-200/60 rounded-xl ${shadowElems} backdrop-blur-sm`
+              )}>
+                <TextAnimated
+                  text={`${content.home.howtouse}`} 
+                  color="" 
+                  textSizes={`font-bold ${textTitle}`} 
+                  delay={0.3}          
+                  duration={0.1} 
+                  space={0.02} 
+                  mode='slide-left' 
+                />
+              </div>
+            } 
             description={null}
             image={{
               src: '/images/patch_place_guy.png',
@@ -106,32 +126,73 @@ const HowToUse = () => {
               customCl: cn(
                 shadowElems,
                 bgElemsColor,
-                'm-4 md:m-'
+                'm-4 mb-0 md:mb-4 md:m-0'
               ),
               motion: motionSetup
             }}
             content={{
               text: (
-                Object.values(content.home.howTo).map((value: string, index: number) => (
-                  <motion.div
-                    initial={{ opacity: 0, translateX: '300px' }}
-                    animate={{
-                      opacity: state ? 1 : 0,
-                      translateX: state ? 0 : '300px'
-                    }}
-                    transition={{ duration: 0.8, delay: 1 * index }}
-                    className={cn(
-                      "max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] p-3",
-                      "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
-                      `flex justify-start items-center`,
-                      `${fontParams} text-${textColor} text-description align-baseline`,
-                      `${bgElemsColor} ${shadowElems} backdrop-blur-sm`,
-                    )}
-                    key={index}
-                  >
-                    <text>{value}</text>
-                  </motion.div>
-                ))
+                <>
+                  <div className={`${bgElemsColor} ${shadowElems} backdrop-blur-sm`}>
+                    {Object.values(content.home.howTo).map((value: string, index: number) => (
+                      <motion.div
+                        initial={{ opacity: 0, translateX: '300px' }}
+                        animate={{
+                          opacity: state ? 1 : 0,
+                          translateX: state ? 0 : '300px'
+                        }}
+                        transition={{ duration: 0.8, delay: 1 * index }}
+                        className={cn(
+                          "max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] py-2 px-3",
+                          "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
+                          `flex justify-start items-center`,
+                          `${fontParams} text-${textColor} text-description align-baseline`,
+                        )}
+                        key={index}
+                      >
+                        <text>{value}</text>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <div className={cn(
+                    'mt-[20px] py-[4px] gap-0', // CORDS
+                    'flex items-center justify-center', // CTR
+                    'text-sm', // FONT
+                    'text-description', // COLOR
+                    `bg-neutral-200/60 rounded-xl ${shadowElems} backdrop-blur-sm`
+                  )}>
+                    <TextAnimated
+                      text={`${content.home.howitworks_2}`} 
+                      color="" 
+                      textSizes={`font-bold ${textTitle}`} 
+                      delay={0.3}          
+                      duration={0.1} 
+                      space={0.02} 
+                      mode='slide-left' 
+                    />
+                  </div>
+                  <div className={`${bgElemsColor} ${shadowElems} backdrop-blur-sm`}>
+                    {Object.values(content.home.howTo_2).map((value: string, index: number) => (
+                      <motion.div
+                        initial={{ opacity: 0, translateX: '300px' }}
+                        animate={{
+                          opacity: state ? 1 : 0,
+                          translateX: state ? 0 : '300px'
+                        }}
+                        transition={{ duration: 0.8, delay: 1 * index }}
+                        className={cn(
+                          "max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] py-2 px-3",
+                          "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
+                          `flex justify-start items-center`,
+                          `${fontParams} text-${textColor} text-description align-baseline`,
+                        )}
+                        key={index}
+                      >
+                        <text>{value}</text>
+                      </motion.div>
+                    ))}
+                  </div>
+                </>
               ),
               motion: motionSetup
             }}
