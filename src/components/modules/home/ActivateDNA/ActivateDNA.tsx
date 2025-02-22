@@ -171,7 +171,7 @@ const ActivateDNA = () => {
               init: {
                 opacity: 0,
                 translateX: '0',
-                translateY: '200px'
+                translateY: '80px'
               },
               animate: {
                 opacity: 1,
@@ -179,8 +179,8 @@ const ActivateDNA = () => {
                 translateY: '0'
               },
               transition: {
-                duration: 0.6,
-                delay: 0.6
+                duration: 1,
+                delay: 0.3
 
               }
             }

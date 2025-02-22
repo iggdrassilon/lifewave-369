@@ -116,6 +116,8 @@
   body {
     /* overflow-x: hidden; */
     @apply bg-background text-foreground;
-    font-family: 'Helvetica Neue';
+    /* font-family: 'Helvetica Neue'; */
+    font-family: 'Magistral Light';
+    /* font-family: 'Magistral C'; */
   }
 }
