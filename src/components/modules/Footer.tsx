@@ -42,8 +42,8 @@ const Footer = () => {
       <SpaceBackground ref={footerRef} inView={inView} />
       <SpaceLines inView={inView} />
       <div className='txt-shadow-light container mx-auto px-4'>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-          <div>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8'>
+          {/* <div>
             <h3 className='text-space-dark font-bold text-lg mb-4'>
               {UI.footer.titles.quick}
             </h3>
@@ -59,7 +59,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h3 className='text-space-dark font-bold text-lg mb-4'>
@@ -79,7 +79,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h3 className='text-space-dark font-bold text-lg mb-4'>
               {UI.footer.titles.connect}
             </h3>
@@ -97,9 +97,9 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
-          <div>
+          <div className='md:col-start-4 md:col-end-5'>
             <h3 className='text-space-dark font-bold text-lg mb-4'>
               {UI.footer.titles.contact}
             </h3>

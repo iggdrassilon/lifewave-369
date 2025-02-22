@@ -12,7 +12,7 @@ const Unfortunately = () => {
   const content = usePublic().CONTENT
   const links = usePublic().LINKS
 
-  const videoRef = useRef<any>()
+  const videoRef = useRef<any>(null)
   const [ref, inView] = useInView()
 
   const [sectionMounted, setSectionMounted] = useState(false)
@@ -33,7 +33,7 @@ const Unfortunately = () => {
 
   return (
     <MotionSection
-      
+      style={{}}
       height_initial={80}
       opacity_initial={0}
       height_viewported={0}
@@ -50,7 +50,7 @@ const Unfortunately = () => {
             background: 'linear-gradient(to bottom, rgba(250,250,250, 1), rgba(0,0,0, .0), rgba(0,0,0, .0),rgba(250,250,100, .0), hwb(229 29% 43% / 0)), linear-gradient(to bottom, rgba(250,250,250, 0), rgba(0,0,0, .0), rgba(250,250,250, 1)), linear-gradient(to bottom, rgba(250,250,250, .0), rgba(0,0,0,.0)',
           }}
         >
-          <h2 className='text-center mt-20 mb-8 flex items-center justify-center'>
+          <h2 className='text-center my-10 flex items-center justify-center'>
             {/* eslint-disable-next-line max-len */}
             <TextAnimated text={`${content.home.unfortunately}`} textSizes="text-3xl md:text-4xl" color="font-bold text-title" delay={0.3} duration={0.1} space={0.1} mode='slide-left' />
 

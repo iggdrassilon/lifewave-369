@@ -83,24 +83,27 @@ const Patents = () => {
               body: '',
               wrapper: 'gap-0'
             }}
-            title={
-              <div className={cn(
-                'md:mt-20', // CORDS
-                'flex items-center justify-center', // CTR
-                'text-center text-sm', // FONT
-                'text-description' // COLOR
-              )}>
-                <TextAnimated 
-                  text={`${content.home.patents.title}`} 
-                  color="" 
-                  textSizes={`font-bold ${textTitle}`} 
-                  delay={0.3}          
-                  duration={0.1} 
-                  space={0.02} 
-                  mode='slide-left' 
-                />
-              </div>
-            }
+            title={{
+              customCl: '',
+              title: (
+                <div className={cn(
+                  'md:mt-20', // CORDS
+                  'flex items-center justify-center', // CTR
+                  'text-center text-sm', // FONT
+                  'text-description' // COLOR
+                )}>
+                  <TextAnimated 
+                    text={`${content.home.patents.title}`} 
+                    color="" 
+                    textSizes={`font-bold ${textTitle}`} 
+                    delay={0.3}          
+                    duration={0.1} 
+                    space={0.02} 
+                    mode='slide-left' 
+                  />
+                </div>
+              )
+            }}
             description={{
               customCl: cn(
                 'flex justify-center',
@@ -110,7 +113,7 @@ const Patents = () => {
                 <div 
                   dangerouslySetInnerHTML={{ __html: content.home.patents.description }} // CHILD
                   className={cn(
-                    'mt-[50px] mx-[20px] p-[20px] md:mx-[30px] md:p-[50px]',
+                    'mt-[50px] p-[20px] md:p-[50px]',
                     'w-[100%]',
                     // `${shadowElems}`
                   )}

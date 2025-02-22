@@ -30,9 +30,8 @@ const ActivateDNA = () => {
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
-  const textDescr = 'font-bold text-xl text-description'
+  const textDescr = 'text-[21px] text-description'
   const textContent = 'text-xl md:text-2xl text-description text-center'
-  const shadowElems = 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]'
   const borderDev = 'border border-solid border-red-500 border-[1px]' 
 
   useEffect(() => {
@@ -81,61 +80,68 @@ const ActivateDNA = () => {
           imageOnTop={true}
           headerOnTop={true}
           customClasses={{
-            header: `space-y-4 px-[10px] ${bgElemsColor}`,
+            header: `space-y-4 ${bgElemsColor}`,
             body: '',
             wrapper: 'gap-8'
           }}
-          title={
-            <div className={cn(
-              'md:mt-20', // CORDS
-              'flex items-center justify-center', // CTR
-              'text-center text-sm', // FONT
-              'text-description' // COLOR
-            )}>
-              {!isSmScreen && (
-                <TextAnimated 
-                  text={`${content.home.activateDNA_md}`} 
-                  color="" 
-                  textSizes={`font-bold ${textTitle}`} 
-                  delay={0.3}          
-  
-                  duration={0.1} 
-                  space={0.02} 
-                  mode='slide-left' />
-              )}
-              {isSmScreen && (
-                <div className='flex flex-col'>
+          title={{
+            customCl: '',
+            title: (
+              <div className={cn(
+                'md:mt-0', // CORDS
+                'flex items-center justify-center', // CTR
+                'text-center text-sm', // FONT
+                'text-description' // COLOR
+              )}>
+                {!isSmScreen && (
                   <TextAnimated 
-                    text={`${content.home.activateDNA_sm.one}`} 
+                    text={`${content.home.activateDNA_md}`} 
                     color="" 
                     textSizes={`font-bold ${textTitle}`} 
-                    delay={0.3} 
+                    delay={0.3}          
+    
                     duration={0.1} 
-                    space={0.01} 
+                    space={0.02} 
                     mode='slide-left' />
-                  <TextAnimated 
-                    text={`${content.home.activateDNA_sm.two}`} 
-                    color="" 
-                    textSizes={`font-bold ${textTitle}`} 
-                    delay={0.3} 
-                    duration={0.1} 
-                    space={0.01} 
-                    mode='slide-left' />
-                </div>
-              )}
-            </div>
-          }
+                )}
+                {isSmScreen && (
+                  <div className='flex flex-col'>
+                    <TextAnimated 
+                      text={`${content.home.activateDNA_sm.one}`} 
+                      color="" 
+                      textSizes={`font-bold ${textTitle}`} 
+                      delay={0.3} 
+                      duration={0.1} 
+                      space={0.01} 
+                      mode='slide-left' />
+                    <TextAnimated 
+                      text={`${content.home.activateDNA_sm.two}`} 
+                      color="" 
+                      textSizes={`font-bold ${textTitle}`} 
+                      delay={0.3} 
+                      duration={0.1} 
+                      space={0.01} 
+                      mode='slide-left' />
+                  </div>
+                )}
+              </div>
+            )
+          }}
           description={{
             customCl: cn(
               'flex justify-center',
-              `${textDescr}`
+              `${textDescr}`,
+              'rounded-xl'
             ), // PARENT
             description: <div 
               dangerouslySetInnerHTML={{ __html: content.home.patches }} // CHILD
               className={cn(
-                'mt-[50px] mb-[20px]',
+                'p-[20px] md:p-[30px]',
                 'md:max-w-[80%] lg:max-w-[60%]',
               )} />,
+            style: {
+              boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
+            }
           }}
           image={{
             src: "/images/ActivateDNA.png", // IMG OF STEM SELS
@@ -163,10 +169,19 @@ const ActivateDNA = () => {
             text: (
               <div 
                 ref={ref}
-                className={textContent}
+                className={cn(
+                  `${textContent}`,
+                  'p-[10px] md:p-[20px]'
+                )}
                 dangerouslySetInnerHTML={{ __html: content.home.stemcells }} 
               />
             ),
+            customCl: cn(
+              'rounded-xl'
+            ),
+            style: {
+              boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
+            },
             motion: {
               init: {
                 opacity: 0,

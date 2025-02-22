@@ -6,7 +6,10 @@ import { useInView } from "react-intersection-observer"
 
 interface GridSectionProps {
   ref: Ref<HTMLElement>;
-  title: React.ReactNode | null;
+  title: {
+    title: React.ReactNode | null;
+    customCl?: string; 
+  };
   customClasses: {
     header: string;
     body: string;
@@ -15,6 +18,7 @@ interface GridSectionProps {
   description: {
     description: React.ReactNode;
     customCl: string;
+    style?: object;
   } | null;
   image: {
     src: string;
@@ -39,7 +43,9 @@ interface GridSectionProps {
     artefact: React.ReactNode | null;
   } | null;
   content: {
-    text: React.ReactNode,
+    text: React.ReactNode;
+    customCl?: string;
+    style?: object;
     motion: {
       init: {
         opacity: number | null;
@@ -92,8 +98,12 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
         customClasses.wrapper
       )}>
       {title && (
-        <h2 className="text-3xl font-semibold tracking-tight overflow-hidden">
-          {title}
+        <h2 className={cn(
+          'tracking-tight overflow-hidden',
+          'text-3xl font-semibold',
+          `${title.customCl}`
+        )}>
+          {title.title}
         </h2>
       )}
       <div className={cn(
@@ -103,9 +113,11 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
       )}>
         {description && (
           <p className={cn(
-            'text-muted-foreground leading-relaxed overflow-hidden',
+            'text-muted-foreground leading-relaxed',
             description.customCl
-          )}>
+          )}
+            style={description.style}
+          >
             {description.description}
           </p>
         )}
@@ -178,10 +190,12 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
             }}
             className={cn(
               "space-y-4 md:space-y-8",
-              paddingBody,
+              `${content.customCl}`,
+              'mt-4 md:pt-0',
               imageOnTop ? "order-2" : "order-1",
               imageOnRight ? "md:order-2" : "md:order-1"
             )}
+            style={content.style}
           >
             {content.text}
           </motion.div>

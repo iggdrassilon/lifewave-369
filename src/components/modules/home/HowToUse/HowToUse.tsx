@@ -99,25 +99,29 @@ const HowToUse = () => {
                 'md:gap-6'
               )
             }}
-            title={
-              <div className={cn(
-                'mt-8 mx-[1rem] py-[4px] gap-0', // CORDS
-                'flex items-center justify-center', // CTR
-                'text-sm', // FONT
-                'text-description', // COLOR
-                `bg-neutral-200/60 rounded-xl ${shadowElems} backdrop-blur-sm`
-              )}>
-                <TextAnimated
-                  text={`${content.home.howtouse}`} 
-                  color="" 
-                  textSizes={`font-bold ${textTitle}`} 
-                  delay={0.3}          
-                  duration={0.1} 
-                  space={0.02} 
-                  mode='slide-left' 
-                />
-              </div>
-            } 
+            title={{
+              customCl: '',
+              title: (
+                <div className={cn(
+                  'mt-8 mb-4 py-[4px] gap-0', // CORDS
+                  'flex items-center justify-center', // CTR
+                  'text-sm', // FONT
+                  'text-description', // COLOR
+                  `${shadowElems}`,
+                  `bg-neutral-200/60 rounded-xl backdrop-blur-sm`
+                )}>
+                  <TextAnimated
+                    text={`${content.home.howtouse}`} 
+                    color="" 
+                    textSizes={`font-bold ${textTitle}`} 
+                    delay={0.3}          
+                    duration={0.1} 
+                    space={0.02} 
+                    mode='slide-left' 
+                  />
+                </div>
+              )
+            }} 
             description={null}
             image={{
               src: '/images/patch_place_guy.png',
@@ -126,7 +130,7 @@ const HowToUse = () => {
               customCl: cn(
                 shadowElems,
                 bgElemsColor,
-                'm-4 mb-0 md:mb-4 md:m-0'
+                'mt-0 mb-0 md:mb-4 md:m-0'
               ),
               motion: motionSetup
             }}

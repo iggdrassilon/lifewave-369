@@ -54,8 +54,8 @@ const Notice = () => {
           'left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]',
           'w-[100%]',
           'min-h-[10%] sm:min-h-[20%] md:min-h-[10%] h-[auto]',
-          "text-white text-sm/4 sm:text-base/5 md:text-xl/5",
-          // 'rounded-xl backdrop-blur-sm',
+          "text-white text-sm/4 sm:text-base/5 md:text-xl/5 font-bold",
+          'rounded-xl backdrop-blur-sm',
         )}>
           <motion.div
             initial={{ opacity: 0 }}
