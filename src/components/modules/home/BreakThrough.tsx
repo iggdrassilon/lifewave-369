@@ -26,7 +26,7 @@ const BreakThrough = () => {
   const bgElemsColor = 'rounded-xl backdrop-blur-sm'
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
-  const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
+  const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl'
   const textDescr = 'font-bold text-sm se:text-xl text-description'
   const textContent = 'text-xl md:text-2xl text-description text-center'
   const shadowElems = 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
@@ -86,13 +86,13 @@ const BreakThrough = () => {
               <div className={cn(
                 'md:mt-0', // CORDS
                 'flex items-center justify-center', // CTR
-                'text-center text-sm', // FONT
+                'text-left text-sm', // FONT
                 'text-description' // COLOR
               )}>
                 <TextAnimated 
                   text={`${content.home.breakthrough.title}`} 
                   color="" 
-                  textSizes={`font-bold ${textTitle}`} 
+                  textSizes={`${textTitle}`} 
                   delay={0.3}          
                   duration={0.1} 
                   space={0.02} 

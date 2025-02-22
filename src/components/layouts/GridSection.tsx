@@ -100,7 +100,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
       {title && (
         <h2 className={cn(
           'tracking-tight overflow-hidden',
-          'text-3xl font-semibold',
+          'text-3xl',
           `${title.customCl}`
         )}>
           {title.title}
