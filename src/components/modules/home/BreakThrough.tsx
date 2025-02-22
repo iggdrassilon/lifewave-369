@@ -27,7 +27,7 @@ const BreakThrough = () => {
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl'
-  const textDescr = 'font-bold text-sm se:text-xl text-description'
+  const textDescr = 'font-bold font text-sm se:text-xl text-description uppercase'
   const textContent = 'text-xl md:text-2xl text-description text-center'
   const shadowElems = 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
   useEffect(() => {

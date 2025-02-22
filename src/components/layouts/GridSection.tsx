@@ -66,6 +66,8 @@ interface GridSectionProps {
   imageOnRight?: boolean;
   imageOnTop?: boolean;
   headerOnTop?: boolean;
+  isColumnTotal?: boolean;
+  reverseTotalColumn?: boolean;
 }
 
 const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, ref) => {
@@ -85,10 +87,12 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
     content,
     imageOnRight,
     imageOnTop,
+    isColumnTotal,
+    reverseTotalColumn,
     headerOnTop
   } = props
 
-  const paddingBody = 'p-4'
+  const paddingBody = 'md:m-4'
 
   return (
     <section
@@ -127,8 +131,9 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
           "grid md:gap-5 items-center",
           "md:grid-cols-2",
           customClasses.body,
-          imageOnRight ? "md:grid-flow-row" : "md:grid-flow-row-dense",
-          headerOnTop ? "order-2" : "order-1"
+          !isColumnTotal && (imageOnRight ? "md:grid-flow-row" : "md:grid-flow-row-dense"),
+          headerOnTop ? "order-2" : "order-1",
+          isColumnTotal ? "md:grid-cols-1 md:max-w-3x1 md:mx-auto" : "md:grid-cols-2",
         )}
       >
         {image && (
@@ -137,8 +142,13 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
             "relative",
             "space-y-4",
             image.customCl,
-            imageOnTop ? "order-1" : "order-2",
-            imageOnRight ? "md:order-1" : "md:order-2"
+            isColumnTotal
+              ? reverseTotalColumn ? "order-2" : "order-1"
+              : [
+                imageOnTop ? "order-1" : "order-2",
+                imageOnRight ? "md:order-1" : "md:order-2"
+              ]
+            // imageOnRight ? "md:order-1" : "md:order-2"
           )}
         >
           <motion.img
@@ -160,8 +170,8 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
             src={image.src}
             alt={image.alt}
             className={cn(
-              'w-full h-auto object-cover -z-[99]',
-              paddingBody,
+              'w-full h-auto object-cover -z-[99] rounded-xl',
+              // paddingBody,
             )}
             loading="lazy"
           />
@@ -192,8 +202,12 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
               "space-y-4 md:space-y-8",
               `${content.customCl}`,
               'mt-4 md:pt-0',
-              imageOnTop ? "order-2" : "order-1",
-              imageOnRight ? "md:order-2" : "md:order-1"
+              isColumnTotal
+                ? reverseTotalColumn ? "order-1" : "order-2"
+                : [
+                  imageOnTop ? "order-2" : "order-1",
+                  imageOnRight ? "md:order-2" : "md:order-1"
+                ]
             )}
             style={content.style}
           >

@@ -77,7 +77,9 @@ const Patents = () => {
           <GridSection
             imageOnRight={false}
             imageOnTop={false}
-            headerOnTop={false}
+            headerOnTop={true}
+            isColumnTotal={true}
+            reverseTotalColumn={false}
             customClasses={{
               header: `space-y-4 ${bgElemsColor}`,
               body: '',
@@ -114,16 +116,83 @@ const Patents = () => {
                   dangerouslySetInnerHTML={{ __html: content.home.patents.description }} // CHILD
                   className={cn(
                     'mt-[50px] p-[20px] md:p-[50px]',
-                    'w-[100%]',
+                    'w-[100%] rounded-xl',
                     // `${shadowElems}`
                   )}
-                  // style={{
-                  //   boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
-                  // }}
+                  style={{
+                    boxShadow: '0 4px 15px rgba(0,50,250, 0.7)'
+                  }}
                 />,
             }}
-            image={null}
-            content={null}
+            image={{
+              src: "/images/x39_patents.png", // IMG OF PATENTS
+              alt: "patents",
+              customCl: 'mt-[50px]',
+              artefact: '',
+              motion: {
+                init: {
+                  opacity: 0,
+                  translateX: '-200px',
+                  translateY: ''
+                },
+                animate: {
+                  opacity: 1,
+                  translateX: '0',
+                  translateY: '0'
+                },
+                transition: {
+                  duration: 1,
+                  delay: 0.4
+                }
+              }
+            }}
+            content={{
+              text: (
+                <div 
+                  ref={ref}
+                  className={cn(
+                    `${textContent}`,
+                    'p-[10px] md:p-[20px]'
+                  )}
+                >
+                  <h2 className={cn(
+                    'font-bold'
+                    )}
+                  >
+                    {content.home.patents.patents}
+                  </h2>
+                  <div className={cn(
+                      'mt-4'
+                    )}
+                  >
+                    {content.home.patents.numbers}
+                  </div>
+                </div>
+              ),
+              customCl: cn(
+                // 'rounded-xl'
+              ),
+              style: {
+                // boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
+              },
+              motion: {
+                init: {
+                  opacity: 0,
+                  translateX: '0',
+                  translateY: '80px'
+                },
+                animate: {
+                  opacity: 1,
+                  translateX: '0',
+                  translateY: '0'
+                },
+                transition: {
+                  duration: 1,
+                  delay: 0.3
+  
+                }
+              }
+            }}
           />
           <div className={cn(
             'flex justify-center items-center',
