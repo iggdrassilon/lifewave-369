@@ -12,7 +12,7 @@
         "quick": "Quick Links",
         "resources": "Resources",
         "connect": "Connect",
-        "contact": "If You owner Lifewave"
+        "contact": "If You owner LIFEWAVE"
       },
       "links": {
         "about": "About",
@@ -27,10 +27,10 @@
         "twitter": "Twitter",
         "vk": "VK",
         "rutube": "Rutube",
-        "if_owner": "Pleace, contact us to collaborate",
-        "mail": "example@example.com"
+        "if_owner": "Please, contact us for collaborate:",
+        "mail": "errormdc@gmail.com"
       },
-      "rights": "369 of LifeWave. All rights reserved."
+      "rights": "patch-stem-cells. All rights reserved."
     }
   },
   "ru": {
@@ -46,7 +46,7 @@
         "quick": "Ссылки",
         "resources": "Доп. Информация",
         "connect": "Связь с нами",
-        "contact": "Для владельцев Lifewave"
+        "contact": "Для владельцев LIFEWAVE"
       },
       "links": {
         "about": "О Компании",
@@ -61,9 +61,9 @@
         "vk": "VK",
         "rutube": "Rutube",
         "if_owner": "Свяжитесь с нами для кооперации:",
-        "mail": "example@example.ru"
+        "mail": "errormdc@gmail.com"
       },
-      "rights": "369 of LifeWave. Все права зарегистрированы."
+      "rights": "patch-stem-cells. Все права зарегистрированы."
     }
   }
 }

@@ -56,7 +56,7 @@ const Notice = () => {
           'w-[100%]',
           'min-h-[10%] sm:min-h-[20%] md:min-h-[10%] h-[auto]',
           "text-white text-sm/4 sm:text-base/5 md:text-xl/5 font-bold",
-          'rounded-xl backdrop-blur-sm',
+          // 'rounded-xl backdrop-blur-sm',
         )}>
           {sectionMounted && (
             <motion.div

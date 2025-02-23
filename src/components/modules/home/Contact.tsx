@@ -9,6 +9,7 @@ const Contact = () => {
       duration={0.3}
       delay={0.2}
       once={true}
+      style={{}}
       sectionMounted={() => ''}
       className='container mx-auto px-4 py-16'
     >

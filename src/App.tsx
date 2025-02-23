@@ -32,7 +32,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
         <AnimatePresence mode='wait'>
           {/* <LoadingOverlay /> */}
           <Header />
@@ -55,6 +55,5 @@ const App = () => (
 
 export default App
 
-
 //TODO
-// cache images, layouts fix, eng fix, reviews, patents, open graph.
+// cache images, reviews, patents, open graph.
