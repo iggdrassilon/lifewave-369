@@ -1,7 +1,7 @@
 DIST_DIR_CLIENT="$PWD/dist"
-REMOTE_USER="iggdrassil"
-REMOTE_HOST="91.197.98.162"
-REMOTE_DIR_CLIENT="Work/cell"
+REMOTE_USER="jasmine"
+REMOTE_HOST="89.111.153.143"
+REMOTE_DIR_CLIENT="~/Work/cell"
 REMOTE_HOST_DIR='~/Work/www'
 SECRET='~/.ssh/jsm_vps'
 
@@ -23,7 +23,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Share repo to remote server"
-eval sudo scp -r -i ~/.ssh/vps-0225 "$DIST_DIR_CLIENT"/* "$REMOTE_USER"@"$REMOTE_HOST":"$REMOTE_DIR_CLIENT"
+eval sudo scp -r -i $SECRET "$DIST_DIR_CLIENT"/* "$REMOTE_USER"@"$REMOTE_HOST":"$REMOTE_DIR_CLIENT"
 ssh -i $SECRET "$REMOTE_USER"@"$REMOTE_HOST" "sudo -S cp -r $REMOTE_DIR_CLIENT $REMOTE_HOST_DIR"
 
 if [ $? -ne 0 ]; then
