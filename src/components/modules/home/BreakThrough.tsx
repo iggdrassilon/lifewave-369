@@ -64,7 +64,7 @@ const BreakThrough = () => {
       style={{}}
       ref={gridRef}
       className={cn(
-        'activate_dna mx-auto px-0 py-0',
+        'activate_dna mx-auto px-0 py-0 min-h-[768px] lg:min-h-[822px]',
         // 'md:container',
         // 'overflow-y-visible overflow-x-hidden'
       )}

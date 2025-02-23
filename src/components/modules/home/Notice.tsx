@@ -16,6 +16,7 @@ const Notice = () => {
 
   useEffect(() => {
     if (inView) {
+      // alert()
       setState(true)
     }
   }, [inView])
@@ -29,7 +30,7 @@ const Notice = () => {
       delay={0.3}
       once={true}
       style={{}}
-      className='mx-auto px-0 py-0 overflow-hidden'
+      className='mx-auto px-0 py-0 overflow-hidden md:min-h-[400px]'
       sectionMounted={() => setSectionMounted(true)}
     >
       <div className='relative'>
@@ -57,17 +58,26 @@ const Notice = () => {
           "text-white text-sm/4 sm:text-base/5 md:text-xl/5 font-bold",
           'rounded-xl backdrop-blur-sm',
         )}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: state && 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            id="notice"
-            style={{ textAlign: "left" }}
-          >
-            {sectionMounted && (
-              <text>{content.home.notice}</text>
-            )}
-          </motion.div>
+          {sectionMounted && (
+            <motion.div
+              initial={{
+                opacity: 0
+              }}
+              animate={{
+                opacity: 1
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.8
+              }}
+              id="notice"
+              style={{
+                textAlign: "left"
+              }}
+            >
+                <text>{content.home.notice}</text>
+            </motion.div>
+          )}
         </div>
       </div>
     </MotionSection>
