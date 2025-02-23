@@ -11,6 +11,9 @@ import { cn } from '@/src/lib/utils'
 
 import './style.css'
 import TextAnimated from '@/src/components/ui/textAnimations'
+import Instructions from './Instructions'
+import SubTitle from './SubTitle'
+import Title from './Title'
 
 const HowToUse = () => {
   const content = usePublic().CONTENT
@@ -24,6 +27,14 @@ const HowToUse = () => {
     triggerOnce: true
   })
 
+  const [ refDescr, refDescrInView ] = useInView({
+    triggerOnce: true
+  })
+
+  const [ refDescr2, refDescr2InView ] = useInView({
+    triggerOnce: true
+  })
+
   const [ status, setStatus ] = useState(false)
   const [ state, setState ] = useState(false)
   const [sectionMounted, setSectionMounted] = useState(false)
@@ -31,7 +42,6 @@ const HowToUse = () => {
   const bgElemsColor = 'bg-neutral-200/60 rounded-xl'
   const shadowElems = 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]'
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
-  const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-bold sm:text-lg'
 
   const motionSetup = {
@@ -66,10 +76,16 @@ const HowToUse = () => {
 
   useEffect(() => {
     if (gridInView) {
-      console.log('HOWTOUSE SHOWED!')
       setStatus(true)
     }
   }, [gridInView])
+
+  useEffect(() => {
+    
+    if (refDescrInView) {
+      console.log('viewed')
+    }
+  }, [refDescrInView])
 
   return (
     <MotionSection
@@ -81,7 +97,7 @@ const HowToUse = () => {
       once={true}
       style={{}}
       ref={gridRef}
-      className='mx-auto px-0 py-0 x-clip'
+      className='mx-auto px-0 py-0 x-clip min-h-[800px]'
       sectionMounted={() => setSectionMounted(true)}
     >
       {status && (
@@ -92,37 +108,22 @@ const HowToUse = () => {
             imageOnTop={true}
             headerOnTop={true}
             customClasses={{
-              header: '',
-              body: '',
               wrapper: cn(
                 'pt-2',
                 'md:gap-6'
               )
             }}
             title={{
-              customCl: '',
               title: (
-                <div className={cn(
-                  'mt-8 mb-4 py-[4px] gap-0', // CORDS
-                  'flex items-center justify-center', // CTR
-                  'text-sm', // FONT
-                  'text-description', // COLOR
-                  `${shadowElems}`,
-                  `bg-neutral-200 rounded-xl backdrop-blur-sm`
-                )}>
-                  <TextAnimated
-                    text={`${content.home.howtouse}`} 
-                    color="" 
-                    textSizes={`font-bold ${textTitle}`} 
-                    delay={0.3}          
-                    duration={0.1} 
-                    space={0.02} 
-                    mode='slide-left' 
-                  />
-                </div>
+                <Title 
+                  content={content.home.howtouse}
+                  customCl={{
+                    parent: `${shadowElems}`,
+                    child: `${textTitle}`
+                  }}
+                />
               )
             }} 
-            description={null}
             image={{
               src: '/images/patch_place_guy.png',
               alt: 'human accupuncture',
@@ -137,65 +138,33 @@ const HowToUse = () => {
             content={{
               text: (
                 <>
-                  <div className={`${bgElemsColor} ${shadowElems} backdrop-blur-sm overflow-hidden`}>
-                    {Object.values(content.home.howTo).map((value: string, index: number) => (
-                      <motion.div
-                        initial={{ opacity: 0, translateX: '300px' }}
-                        animate={{
-                          opacity: state ? 1 : 0,
-                          translateX: state ? 0 : '300px'
-                        }}
-                        transition={{ duration: 0.8, delay: 1 * index }}
-                        className={cn(
-                          'max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] py-2 px-3',
-                          "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
-                          `flex justify-start items-center`,
-                          `${fontParams} text-${textColor} text-description align-baseline`,
-                        )}
-                        key={index}
-                      >
-                        <text>{value}</text>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <div className={cn(
-                    'mt-[20px] py-[4px] gap-0', // CORDS
-                    'flex items-center justify-center', // CTR
-                    'text-sm', // FONT
-                    'text-description', // COLOR
-                    `bg-neutral-200 rounded-xl ${shadowElems} backdrop-blur-sm`
-                  )}>
-                    <TextAnimated
-                      text={`${content.home.howitworks_2}`} 
-                      color="" 
-                      textSizes={`font-bold ${textTitle}`} 
-                      delay={0.3}          
-                      duration={0.1} 
-                      space={0.02} 
-                      mode='slide-left' 
-                    />
-                  </div>
-                  <div className={`${bgElemsColor} ${shadowElems} backdrop-blur-sm overflow-hidden`}>
-                    {Object.values(content.home.howTo_2).map((value: string, index: number) => (
-                      <motion.div
-                        initial={{ opacity: 0, translateX: '300px' }}
-                        animate={{
-                          opacity: state ? 1 : 0,
-                          translateX: state ? 0 : '300px'
-                        }}
-                        transition={{ duration: 0.8, delay: 1 * index }}
-                        className={cn(
-                          'max-w-[800px] min-w-[60%] md:min-w-[40%] h-[auto] py-2 px-3',
-                          "top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
-                          `flex justify-start items-center`,
-                          `${fontParams} text-${textColor} text-description align-baseline`,
-                        )}
-                        key={index}
-                      >
-                        <text>{value}</text>
-                      </motion.div>
-                    ))}
-                  </div>
+                  <Instructions 
+                    ref={refDescr}
+                    refStatus={refDescrInView}
+                    content={content.home.howTo}
+                    status={state}
+                    customCl={{
+                      parent: `${bgElemsColor} ${shadowElems}`,
+                      child: `${fontParams} text-title`
+                    }}
+                  />
+                  <SubTitle 
+                    content={content.home.howitworks_2}
+                    customCl={{
+                      parent: `${shadowElems}`,
+                      child: `${textTitle}`
+                    }}
+                  />
+                  <Instructions 
+                    ref={refDescr2}
+                    refStatus={refDescr2InView}
+                    content={content.home.howTo_2}
+                    status={state}
+                    customCl={{
+                      parent: `${bgElemsColor} ${shadowElems}`,
+                      child: `${fontParams} text-title`
+                    }}
+                  />
                 </>
               ),
               motion: motionSetup

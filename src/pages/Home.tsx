@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className='bg-transparent relative'>
       <main>
-        <DnaHero />
+        {/* <DnaHero />
         <MotionLayout duration={0.5} delay={0.3}>
           <WeKnow />
         </MotionLayout>
@@ -27,14 +27,14 @@ const Home = () => {
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Unfortunately />
-        </MotionLayout>
+        </MotionLayout> */}
         <MotionLayout duration={1} delay={0.4}>
           <ActivateDNA />
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <HowToUse />
         </MotionLayout>
-        <MotionLayout duration={1} delay={0.4}>
+        {/* <MotionLayout duration={1} delay={0.4}>
           <BreakThrough />
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
@@ -42,7 +42,7 @@ const Home = () => {
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Notice />
-        </MotionLayout>
+        </MotionLayout> */}
       </main>
     </div>
   )

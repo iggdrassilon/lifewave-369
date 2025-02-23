@@ -44,7 +44,10 @@ const DnaHero = () => {
 
       if (videoRef.current) {
         if (inView) {
-          videoRef.current.play()
+          // For firefox need small delay before play
+          setTimeout(() => {
+            videoRef.current.play()
+          }, 11)
         } else {
           videoRef.current.pause()
         }

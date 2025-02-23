@@ -7,62 +7,62 @@ import { useInView } from "react-intersection-observer"
 interface GridSectionProps {
   ref: Ref<HTMLElement>;
   title: {
-    title: React.ReactNode | null;
+    title?: React.ReactNode;
     customCl?: string; 
   };
-  customClasses: {
-    header: string;
-    body: string;
-    wrapper: string;
+  customClasses?: {
+    header?: string;
+    body?: string;
+    wrapper?: string;
   };
-  description: {
+  description?: {
     description: React.ReactNode;
     customCl: string;
     style?: object;
-  } | null;
-  image: {
+  };
+  image?: {
     src: string;
     alt: string;
     customCl: string;
     motion: {
       init: {
-        opacity: number | null;
+        opacity?: number;
         translateX: string;
         translateY: string;
       };
       animate: {
-        opacity: number | null;
+        opacity?: number;
         translateX: string;
         translateY: string;
       };
       transition: {
-        duration: number | null;
-        delay: number | null;
+        duration?: number;
+        delay?: number;
       }
     }
-    artefact: React.ReactNode | null;
-  } | null;
-  content: {
+    artefact?: React.ReactNode;
+  };
+  content?: {
     text: React.ReactNode;
     customCl?: string;
     style?: object;
     motion: {
       init: {
-        opacity: number | null;
+        opacity?: number;
         translateX: string;
         translateY: string;
       };
       animate: {
-        opacity: number | null;
+        opacity?: number;
         translateX: string;
         translateY: string;
       };
       transition: {
-        duration: number | null;
-        delay: number | null;
+        duration?: number;
+        delay?: number;
       }
     }
-  } | null;
+  };
   imageOnRight?: boolean;
   imageOnTop?: boolean;
   headerOnTop?: boolean;

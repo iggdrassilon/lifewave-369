@@ -71,7 +71,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
   return (
     <div>
       <div ref={ref} className={`absolute inset-0 -z-50 opacity-${opacity}`}>
-        <video
+        {/* <video
           ref={videoRef}
           loop
           muted
@@ -86,7 +86,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
           onContextMenu={(e) => e.preventDefault()} // turn off context menu
         >
           {videoBlobUrl && <source src={videoBlobUrl} type="video/mp4" />}
-        </video>
+        </video> */}
         <img
           src={imgBlobUrl || preview} // Use cached image if available, otherwise use original URL
           alt="Previews not available"

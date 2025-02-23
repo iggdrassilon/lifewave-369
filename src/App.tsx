@@ -32,7 +32,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
         <AnimatePresence mode='wait'>
           {/* <LoadingOverlay /> */}
           <Header />
