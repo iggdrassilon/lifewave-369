@@ -30,7 +30,7 @@ const Header = () => {
   const handleClickBurger = () => {
     setIsOpen(!isOpen)
     setAction({ key: 'burger', value: !isOpen })
-    bodyFixed()
+    !isOpen ? bodyFixed() : bodyUnfixed()
   }
 
   const handleClickLinks = () => {
