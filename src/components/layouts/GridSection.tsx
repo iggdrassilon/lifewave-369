@@ -1,7 +1,7 @@
 
 import { cn } from "@/src/lib/utils"
 import { motion } from "framer-motion"
-import React, { Ref } from "react"
+import React, { Ref, useEffect, useRef } from "react"
 import { useInView } from "react-intersection-observer"
 
 interface GridSectionProps {
@@ -71,6 +71,12 @@ interface GridSectionProps {
 }
 
 const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, ref) => {
+  const reff = useRef(null)
+  useEffect(() => {
+    if (reff.current) {
+      console.log(reff.current.offsetHeight)
+    }
+  }, [reff.current, reff.current?.offsetHeight])
 
   const [ imgRef, imgRefInView ] = useInView({
     triggerOnce: true
@@ -126,7 +132,8 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
           </p>
         )}
       </div>
-      <div
+      <div  
+        ref={reff}
         className={cn(
           "grid md:gap-5 items-center",
           "md:grid-cols-2",

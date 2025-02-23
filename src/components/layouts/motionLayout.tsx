@@ -1,16 +1,31 @@
-import { useInView } from 'react-intersection-observer'
-import { MotionDescriptionT, MotionHookT, MotionPartTextT, MotionSectionT, MotionTextT } from '../../types/hooks'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+
+import { useInView } from 'react-intersection-observer'
+
+import { 
+  MotionDescriptionT, 
+  MotionHookT, 
+  MotionPartTextT, 
+  MotionSectionT, 
+  MotionTextT 
+} from '@/src/types/hooks'
 
 const MotionLayout = (props: MotionHookT) => {
   const { children, duration, delay } = props
 
   return (
     <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: duration, delay: delay }}
+      initial={{
+        opacity: 0
+      }}
+      animate={{
+        opacity: 1
+      }}
+      transition={{ 
+        duration: duration,
+        delay: delay
+      }}
       className='mx-auto px-0 py-0 relative z-10'
     >
       {children}
@@ -18,15 +33,38 @@ const MotionLayout = (props: MotionHookT) => {
   )
 }
 
-export const MotionSection = React.forwardRef<HTMLDivElement | null, MotionSectionT>((props, ref) => {
-  const { children, className, style, duration, delay, height_initial, height_viewported, once, sectionMounted, opacity_initial } = props
+export const MotionSection = React.forwardRef<HTMLDivElement, MotionSectionT>((props, ref) => {
+  const {
+    children,
+    className,
+    style,
+    duration,
+    delay,
+    height_initial,
+    height_viewported,
+    once,
+    sectionMounted,
+    opacity_initial 
+  } = props
+
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: opacity_initial, y: height_initial }}
-      whileInView={{ opacity: 1, y: height_viewported }}
-      transition={{ duration: duration, delay: delay }}
-      viewport={{ once: once }}
+      initial={{ 
+        opacity: opacity_initial,
+        y: height_initial
+      }}
+      whileInView={{
+        opacity: 1,
+        y: height_viewported
+      }}
+      transition={{
+        duration: duration,
+        delay: delay
+      }}
+      viewport={{
+        once: once
+      }}
       className={className}
       onAnimationComplete={() => sectionMounted()}
       style={ style }
@@ -39,7 +77,16 @@ export const MotionSection = React.forwardRef<HTMLDivElement | null, MotionSecti
 MotionSection.displayName = 'MotionSecton'
 
 const MotionText = (props: MotionTextT) => {
-  const { children, className, duration, delay, height_initial, height_viewported, once, variants, complete } = props
+  const { children, 
+    className, 
+    duration, 
+    delay, 
+    height_initial, 
+    height_viewported, 
+    once, 
+    variants, 
+    complete 
+  } = props
 
   const [state, setState] = useState(false)
   const { ref, inView } = useInView({
@@ -63,9 +110,18 @@ const MotionText = (props: MotionTextT) => {
   return (
     <motion.text
       ref={ref}
-      initial={{ opacity: 0, y: height_initial }}
-      animate={{ opacity: state ? 1 : 0, y: state ? height_viewported : height_initial }}
-      transition={{ duration: duration, delay: delay }}
+      initial={{
+        opacity: 0,
+        y: height_initial
+      }}
+      animate={{ 
+        opacity: state ? 1 : 0,
+        y: state ? height_viewported : height_initial
+      }}
+      transition={{ 
+        duration: duration,
+        delay: delay
+      }}
       variants={variants}
       className={className}
       onAnimationComplete={() => setComplete()}
@@ -76,7 +132,19 @@ const MotionText = (props: MotionTextT) => {
 }
 
 const MotionDescription = (props: MotionDescriptionT) => {
-  const { color, children, className, duration, delay, height_initial, height_viewported, once, complete, refOne, style } = props
+  const { 
+    color,
+    children,
+    className,
+    duration,
+    delay,
+    height_initial,
+    height_viewported,
+    once,
+    complete,
+    refOne,
+    style
+  } = props
 
   const [state, setState] = useState(false)
 
@@ -101,9 +169,18 @@ const MotionDescription = (props: MotionDescriptionT) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: height_initial }}
-      animate={{ opacity: state ? 1 : 0, y: state ? height_viewported : height_initial }}
-      transition={{ duration: duration, delay: delay }}
+      initial={{
+        opacity: 0,
+        y: height_initial
+      }}
+      animate={{
+        opacity: state ? 1 : 0,
+        y: state ? height_viewported : height_initial
+      }}
+      transition={{ 
+        duration: duration,
+        delay: delay
+      }}
       className={`${className} ${color}`}
       style={{...style, opacity: 0}}
       onAnimationComplete={() => setComplete()}
@@ -115,7 +192,18 @@ const MotionDescription = (props: MotionDescriptionT) => {
 }
 
 const MotionTextPart = (props: MotionPartTextT) => {
-  const { children, duration, color, delay, right_initial, right_viewported, once, className, complete, refOutdoor } = props
+  const { 
+    children,
+    duration,
+    color,
+    delay,
+    right_initial,
+    right_viewported,
+    once,
+    className,
+    complete,
+    refOutdoor
+  } = props
 
   const [state, setState] = useState(false)
   const [ref, inView] = useInView()

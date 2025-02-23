@@ -43,7 +43,7 @@ const App = () => (
             <Route path='/story' element={<FullScreenBackground props={'STORY'} />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
           <BackToTop />
           <Overlay />
           {/* <OverlayModal /> */}
@@ -54,3 +54,7 @@ const App = () => (
 )
 
 export default App
+
+
+//TODO
+// cache images, layouts fix, eng fix, reviews, patents, open graph.

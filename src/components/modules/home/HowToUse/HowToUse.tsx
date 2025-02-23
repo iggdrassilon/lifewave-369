@@ -37,6 +37,7 @@ const HowToUse = () => {
 
   const [ status, setStatus ] = useState(false)
   const [ state, setState ] = useState(false)
+  const [ count, setCount ] = useState(0)
   const [sectionMounted, setSectionMounted] = useState(false)
 
   const bgElemsColor = 'bg-neutral-200/60 rounded-xl'
@@ -83,9 +84,21 @@ const HowToUse = () => {
   useEffect(() => {
     
     if (refDescrInView) {
-      console.log('viewed')
+      // console.log('viewed')
+      // alert('viewed')
     }
   }, [refDescrInView])
+
+  const Iteration = (value: boolean) => {
+    if (value) {
+      setCount(prev => prev + 1)
+    }
+  }
+
+  useEffect(() => {
+    console.log(count)
+  
+  }, [count])
 
   return (
     <MotionSection
@@ -111,7 +124,8 @@ const HowToUse = () => {
               wrapper: cn(
                 'pt-2',
                 'md:gap-6'
-              )
+              ),
+              body: 'min-h-[754px]'
             }}
             title={{
               title: (
@@ -147,23 +161,27 @@ const HowToUse = () => {
                       parent: `${bgElemsColor} ${shadowElems}`,
                       child: `${fontParams} text-title`
                     }}
+                    endAnim={(value: boolean) => Iteration(value)}
                   />
-                  <SubTitle 
+                  <SubTitle
+                    status={count > 0 && state}
                     content={content.home.howitworks_2}
                     customCl={{
                       parent: `${shadowElems}`,
                       child: `${textTitle}`
                     }}
+                    endAnim={(value: boolean) => Iteration(value)}
                   />
                   <Instructions 
                     ref={refDescr2}
                     refStatus={refDescr2InView}
                     content={content.home.howTo_2}
-                    status={state}
+                    status={count === 2 && state}
                     customCl={{
                       parent: `${bgElemsColor} ${shadowElems}`,
                       child: `${fontParams} text-title`
                     }}
+                    endAnim={() => ''}
                   />
                 </>
               ),
