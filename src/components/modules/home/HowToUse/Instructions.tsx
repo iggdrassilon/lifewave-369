@@ -30,7 +30,7 @@ const Instructions = React.forwardRef<HTMLDivElement, InstructionsT>((props, ref
 
   return (
     <div 
-      className='min-h-[280px] se:min-h-[232px] md:min-h-[220px]'
+      className=''
     >
       <motion.div
         initial={{
@@ -51,6 +51,7 @@ const Instructions = React.forwardRef<HTMLDivElement, InstructionsT>((props, ref
           'opacity-0',
           'overflow-hidden',
           'backdrop-blur-sm',
+          'min-h-[280px] se:min-h-[232px] md:min-h-[220px]',
           `${customCl.parent}`
         )}
       >

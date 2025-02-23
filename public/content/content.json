@@ -71,52 +71,70 @@
   "en": {
     "home": {
       "weknow": {
-        "we": "We know that every human has unlimited potential. Our mission is to unlock it to the maximum.",
-        "we-know": "We know ",
-        "what": "that ",
-        "every": "every ",
-        "human": "human ",
-        "has": "has ",
+        "we": "We know that every person has unlimited potential. Our mission is to reveal it to the maximum.",
+        "what": "what",
+        "every": "every",
+        "human": "human",
+        "has": "has",
         "unlimited": "unlimited potential.",
-        "mission": "Our mission is ",
-        "open": "to unlock it ",
-        "at": "to the ",
+        "mission": "Our mission",
+        "open": "to reveal it",
+        "at": "to the",
         "max": "maximum."
       },
       "our": {
       },
-
-      "revol": "X39 - REVOLUTION",
-      "firstinworld": "The world's first patented nanocrystalline technology designed to activate your body's own stem cells.",
-      "enerhyuse": "X39 uses your body's natural energy to activate internal processes of regeneration and rejuvenation.",
+      "revol": "PATCHES X39 - REVOLUTIONARY WORLD TECHNOLOGY",
+      "firstinworld": "The first patented nanocrystalline technology in the world, designed to activate your body's own stem cells.",
+      "enerhyuse": "Patches are based on phototherapy technology (from Greek 'treatment with light'). Scientists have proven that the emission of certain light waves triggers biochemical processes in our bodies that lead to regeneration and rejuvenation of the entire body.",
 
       "howitworks": "How does it work?",
-      "_aboutX39": {
-        "1": "The X39 technology consists of a grid of spirally arranged organic nanocrystals.",
-        "2": "The nanocrystals capture the light emitted from our bodies and return it back to the skin.",
-        "3": "The reflected light stimulates receptors on our skin, activating biological processes in the body. This initiates the production of copper peptides, and then STEM CELLS."
-      },
-      "aboutX39": "The X39 technology consists of a grid of spirally arranged organic nanocrystals. The nanocrystals capture the light emitted from our bodies and return it back to the skin. The reflected light stimulates receptors on our skin, activating biological processes in the body. This initiates the production of copper peptides, and then STEM CELLS.",
+      "aboutX39": "The X39 patch technology consists of a grid of spirally arranged nanocrystals of organic origin.<br><br>Nanocrystals capture the infrared radiation of your body, change the length of the light wave and return it back to the skin.<br><br>The reflected light excites receptors on your skin, activating biological processes in the body.<br><br>Thus, the production of copper peptides and stem cells begins.",
 
       "unfortunately": "UNFORTUNATELY:",
-      "slowlyregenerate": "The LESS activity of stem cells you have, the faster you age and the slower you recover.",
-      "to30years": "By the age of 30, you lose HALF of your stem cell activity.",
-      "to60years": "By the age of 60, you lose almost ALL of your stem cell activity.",
+      "slowlyregenerate": "THE LESS ACTIVE YOUR STEM CELLS ARE, THE FASTER YOU AGE AND THE SLOWER YOU RECOVER.",
+      "to30years": "By the age of 30, you lose HALF of the activity of your stem cells.",
+      "to60years": "By the age of 60, you lose almost ALL activity of your stem cells.",
 
-      "activateDNA": "АКТИВИРУЙТЕ СВОИ СТВОЛОВЫЕ КЛЕТКИ ",
-      "patches": "Световые патчи x39 запускают выработку ваших собственных стволовых клеток, что приводит к омоложению и регенерации тела.",
-      "stemcells": "СТВОЛОВЫЕ КЛЕТКИ – это ремонтные клетки, способные трансформироваться в любую из 220 различных видов клеток вашего организма, запуская процесс регенерации и омоложения. Например, в клетку печени, сердца, мозга и т.д.",
-      
-      "howtouse": "HOW TO USE Х39",
+      "activateDNA_md": "THE POWER OF X39 - ACTIVATE YOUR STEM CELLS",
+      "activateDNA_sm": {
+        "one": "THE POWER OF X39 - ACTIVATE",
+        "two": "YOUR STEM CELLS"
+      },
+      "patches": "X39 light patches launch the production of your own stem cells, leading to rejuvenation and regeneration of the body.",
+      "stemcells": "STEM CELLS are repair cells that can transform into any of the 220 different types of cells in your body, launching the process of regeneration and rejuvenation. For example, into liver, heart, brain, etc.",
+
+      "howtouse": "HOW TO WEAR X39",
       "howTo": {
-        "put": "✓ Wear the X39 patch for 12 hours during the day, then take a break for 12 hours at night.",
+        "put": "✓ Wear the X39 patch for 12 hours during the day, then take a 12-hour break at night.",
         "delete": "✓ Remove the X39 patch after 12 hours.",
-        "change": "✓ After 12 hours, apply a new patch and repeat the process daily. Multiple patches can be used at the same time.",
-        "water": "✓ Drink plenty of water"
+        "change": "✓ After 12 hours, apply a new patch and repeat the process daily. You can use several patches at the same time.",
+        "water": "✓ Drink plenty of water."
+      },
+      "howitworks_2": "HOW DOES X39 WORK?",
+      "howTo_2": {
+        "1": "✓ Patented form of photobiomodulation.",
+        "2": "✓ Patented nanocrystalline technology.",
+        "3": "✓ Non-transdermal",
+        "4": "✓ Does not contain drugs, chemicals, or stimulants.",
+        "5": "✓ Non-invasive."
       },
 
-      "notice": "LifeWave products are not intended for the diagnosis, treatment, or prevention of any diseases or conditions.",
-      "videoTime": "Watch time"
+      "breakthrough": {
+        "title": "PATCHES X39 - HISTORIC BREAKTHROUGH IN PHOTOBIOLOGY",
+        "description": "Patented Light Technology",
+        "annotation": "Unique patented technology of phototherapeutic non-transdermal patch, which is safe, non-invasive and extremely easy to use."
+      },
+      "patents": {
+        "title": "RESEARCH AND PATENTS",
+        "description": "Get acquainted with numerous clinical studies and 20 years of development.<br> X39 patches have demonstrated their effectiveness, showing numerous health benefits.",
+        "patents": "US Patents",
+        "numbers": "10716953B1, 9943672B2, D745504, D746272, D745503, D745502, D745501, 9532942, 9263796, 9258395, 9149451, 8734316, 8602961",
+        "button": "Research and Patents"
+      },
+
+      "notice": "LifeWave products are not intended to diagnose, treat, or prevent any diseases or conditions.",
+      "videoTime": "watch now, duration"
     }
   }
 }
