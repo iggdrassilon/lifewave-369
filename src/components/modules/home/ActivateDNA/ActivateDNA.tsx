@@ -68,7 +68,7 @@ const ActivateDNA = () => {
       style={{}}
       ref={gridRef}
       className={cn(
-        'activate_dna mx-auto px-0 py-0 min-h-[900px] md:min-h-[1064px]',
+        'activate_dna mx-auto px-0 py-0 min-h-[600px] md:min-h-[600px]',
         // 'md:container',
         // 'overflow-y-visible overflow-x-hidden'
       )}

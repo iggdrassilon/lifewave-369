@@ -110,7 +110,7 @@ const HowToUse = () => {
       once={true}
       style={{}}
       ref={gridRef}
-      className='mx-auto px-0 py-0 x-clip min-h-[800px]'
+      className='mx-auto px-0 py-0 x-clip min-h-[600px]'
       sectionMounted={() => setSectionMounted(true)}
     >
       {status && (

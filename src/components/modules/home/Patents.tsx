@@ -66,7 +66,7 @@ const Patents = () => {
       style={{}}
       ref={gridRef}
       className={cn(
-        'activate_dna mx-auto px-0 py-0 min-h-[795px] md:min-h-[900px] lg:min-h-[1000px]',
+        'activate_dna mx-auto px-0 py-0 min-h-[795px] md:min-h-[600px]',
         // 'md:container',
         // 'overflow-y-visible overflow-x-hidden'
       )}
