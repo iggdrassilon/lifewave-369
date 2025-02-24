@@ -104,7 +104,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
     <section
       ref={ref}
       className={cn(
-        "relative w-full max-w-7xl mx-auto px-4 py-16 flex flex-col",
+        "relative w-full max-w-7xl mx-auto px-4 pt-16 pb-8 flex flex-col",
         customClasses.wrapper
       )}>
       {title && (
@@ -208,7 +208,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
             className={cn(
               "space-y-4 md:space-y-8",
               `${content.customCl}`,
-              'mt-4 md:pt-0',
+              'mt-4 md:mt-0 md:pt-0',
               isColumnTotal
                 ? reverseTotalColumn ? "order-1" : "order-2"
                 : [

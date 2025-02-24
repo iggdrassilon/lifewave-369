@@ -66,7 +66,7 @@ const Patents = () => {
       style={{}}
       ref={gridRef}
       className={cn(
-        'activate_dna mx-auto px-0 py-0 min-h-[795px] md:min-h-[900px] lg:min-h-[1374px]',
+        'activate_dna mx-auto px-0 py-0 min-h-[795px] md:min-h-[900px] lg:min-h-[1000px]',
         // 'md:container',
         // 'overflow-y-visible overflow-x-hidden'
       )}
@@ -89,7 +89,8 @@ const Patents = () => {
               customCl: '',
               title: (
                 <div className={cn(
-                  'md:mt-20', // CORDS
+                  // 'md:mt-20', // CORDS
+                  'mt-0',
                   'flex items-center justify-center', // CTR
                   'text-center text-sm', // FONT
                   'text-description' // COLOR
