@@ -6,10 +6,11 @@ import GridSection from '@/src/components/layouts/GridSection'
 import { MotionSection } from '@/src/components/layouts/motionLayout'
 import TextAnimated from '@/src/components/ui/textAnimations'
 import GlowButton from '@/src/components/atoms/GlowButton'
+import usePublic from '@/src/hooks/use-lang'
 
 const Patents = () => {
   const content = useLang().CONTENT
-
+  const links = usePublic().LINKS
   const [ state, setState ] = useState(false)
   const [ status, setStatus ] = useState(false)
   const [ sectionMounted, setSectionMounted ] = useState(false)
@@ -126,7 +127,7 @@ const Patents = () => {
                 />,
             }}
             image={{
-              src: "/images/x39_patents.png", // IMG OF PATENTS
+              src: `${links.content.x39patents}`, // IMG OF PATENTS
               alt: "patents",
               customCl: 'mt-[50px]',
               artefact: '',

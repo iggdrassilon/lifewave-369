@@ -7,9 +7,12 @@ import { m, motion } from "framer-motion"
 import { MotionDescription } from "@/src/components/layouts/motionLayout"
 import TextAnimated from "@/src/components/ui/textAnimations"
 import { cn } from "@/src/lib/utils"
+import usePublic from "@/src/hooks/use-lang"
 
 const FirstBlock = ({ content }: any) => {
   // state of complete status of description
+  const links = usePublic().LINKS
+
   const [state, setState] = useState(false)
   const [viewed, setViewed] = useState({
     girl: false,
@@ -88,8 +91,11 @@ const FirstBlock = ({ content }: any) => {
                 'w-[300px] h-[400px] md:w-[400px] md:h-[600px]',
                 'flex items-center justify-center',
                 'bg-cover bg-no-repeat',
-                "bg-[url('/images/girl_patched.png')]" // GIRL SMILE BACKGROUND
+                `bg-[url(${links.content.girlpatched})]` // GIRL SMILE BACKGROUND
               )}
+              style={{
+                backgroundImage: `url(${links.content.girlpatched})`
+              }}
             />
           </motion.div>
         </div>
@@ -99,8 +105,11 @@ const FirstBlock = ({ content }: any) => {
             'flex items-center justify-center',
             'w-[100%] h-[100%] md:w-[100%] md:h-[100%]',
             'bg-cover bg-no-repeat',
-            "bg-[url('/images/layout-wave.png')]" // WHITE WAVE BACKGROUND
+              `bg-[url(${links.content.whitewave})]` // WHITE WAVE BACKGROUND
           )}
+          style={{
+            backgroundImage: `url(${links.content.whitewave})`
+          }}
         />
         <div 
           className={cn(
@@ -108,8 +117,11 @@ const FirstBlock = ({ content }: any) => {
             'w-[100%] h-[50%] md:w-[100%] md:h-[100%]',
             'flex items-center justify-center',
             'bg-cover bg-no-repeat',
-            "bg-[url('/images/blue-graphs.jpg')]" // BLUE GRAPHS BACKGROUND
+            `bg-[url(${links.content.bluegraphs})]` // BLUE GRAPHS BACKGROUND
           )}
+          style={{
+            backgroundImage: `url(${links.content.bluegraphs})`
+          }}
         >
         </div>
       </div>
@@ -120,7 +132,7 @@ const FirstBlock = ({ content }: any) => {
         )}
       >
         <img 
-          src="/images/perla.png" // BRIDGE RAINBOW BACKGROUND
+          src={`${links.content.perla}`} // BRIDGE RAINBOW BACKGROUND
           className="h-[300px] w-[100%]" 
           alt="background" 
         />

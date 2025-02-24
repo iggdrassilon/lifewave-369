@@ -5,10 +5,11 @@ import { useInView } from 'react-intersection-observer'
 import useLang from '@/src/hooks/use-lang'
 import GridSection from '../../layouts/GridSection'
 import TextAnimated from '../../ui/textAnimations'
+import usePublic from '@/src/hooks/use-lang'
 
 const BreakThrough = () => {
   const content = useLang().CONTENT
-
+  const links = usePublic().LINKS
   const [ state, setState ] = useState(false)
   const [ status, setStatus ] = useState(false)
   const [ sectionMounted, setSectionMounted ] = useState(false)
@@ -120,7 +121,7 @@ const BreakThrough = () => {
               />,
           }}
           image={{
-            src: "/images/CARD_X39.webp", // IMG OF STEM SELS
+            src: `${links.content.x39card2d}`, // IMG OF STEM SELS
             alt: "steem sels for every neuron",
             customCl: 'mt-[70px] md:mt-[50px]',
             // artefact: '',
@@ -137,10 +138,12 @@ const BreakThrough = () => {
                   className={cn(
                     'w-[110px] se:w-[130px] sm:w-[175px] md:w-[160px] lg:w-[180px]',
                     'h-[50px] se:h-[60px] sm:h-[80px] md:h-[70px] lg:h-[80px]',
-                    "bg-[url('/public/images/PATENTS_STAMP.webp')]", // IMG OF PATENTS
                     'rounded-full bg-cover bg-no-repeat',
                     // 'animate-rotate',
                   )}
+                  style={{
+                    backgroundImage: `url(${links.content.patents})`
+                  }}
                 />
               </div>
             ),

@@ -12,7 +12,6 @@ import { cn } from '@/src/lib/utils'
 
 const DnaHero = () => {
   const links = usePublic().LINKS
-
   const [ ref, inView ] = useInView()
   const [ rotate, setRotate ] = useState(false)
   const videoRef = useRef<any>(null)
@@ -110,15 +109,20 @@ const DnaHero = () => {
               "layer-1",
               'absolute -z-[1] inset-[0]',
               'bg-cover bg-no-repeat',
-              "bg-[url('/public/images/X39-card.jpg')]",
-            )} />
+            )} 
+              style={{
+                backgroundImage: `url(${links.content.x39card})`
+              }}
+            />
             <div
               className={cn(
                 "layer-2",
                 'absolute -z-[1] inset-[0]',
                 'bg-cover bg-no-repeat',
-                "bg-[url('/public/images/X39-card.jpg')]",
               )}
+              style={{
+                backgroundImage: `url(${links.content.x39card})`
+              }}
               data-offset='20'
             />
             <div
@@ -126,8 +130,10 @@ const DnaHero = () => {
                 "layer-3",
                 'absolute -z-[1] left-[0] inset-[0]',
                 'bg-cover bg-no-repeat',
-                "bg-[url('/public/images/X39-card.jpg')]",
               )}
+              style={{
+                backgroundImage: `url(${links.content.x39card})`
+              }}
               data-offset='40'
             />
           </Card3D>

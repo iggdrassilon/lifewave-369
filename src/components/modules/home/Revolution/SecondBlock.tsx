@@ -5,8 +5,11 @@ import { useInView } from "react-intersection-observer"
 import { m, motion } from "framer-motion"
 import { MotionDescription } from "@/src/components/layouts/motionLayout"
 import { cn } from "@/src/lib/utils"
+import usePublic from "@/src/hooks/use-lang"
 
 const SecondBlock = ({ content }: any) => {
+  const links = usePublic().LINKS
+
   const smScreen = 768
   const xlScreen = 1200
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen)
@@ -70,8 +73,10 @@ const SecondBlock = ({ content }: any) => {
               'w-full h-[350px] w-[350px] md:h-[400px] md:w-[400px]',
               'flex items-center justify-center',
               'bg-cover bg-no-repeat',
-              "bg-[url('/images/sun.png')]" // SUN BACKGROUND
             )}
+            style={{
+              backgroundImage: `url(${links.content.sun})` // SUN BACKGROUND
+            }}
           />
         </motion.div>
         <div className={cn(
@@ -114,15 +119,21 @@ const SecondBlock = ({ content }: any) => {
         'w-[100%] h-[100%] min-h-[530px] md:w-[101%] md:h-[100%] lg:h-[120%]',
         'flex items-center justify-center',
         'bg-cover bg-no-repeat',
-        "bg-[url('/images/layout-wave.png')]"  // WHITE WAVE BACKGROUND
-      )} />
+      )} 
+      style={{
+        backgroundImage: `url(${links.content.whitewave})`  // WHITE WAVE BACKGROUND
+      }}
+      />
       <div className={cn(
         "absolute top-0 right-0 rotate-180 -z-10",
         'w-[100%] h-[100%] md:w-[100%] md:h-[100%]',
         'flex items-center justify-center',
         'bg-cover bg-no-repeat',
-        "bg-[url('/images/blue-graphs.jpg')]" // BLUE GRAPHS BACKGROUND
-      )} />
+      )}
+      style={{
+        backgroundImage: `url(${links.content.bluegraphs})`// BLUE GRAPHS BACKGROUND
+      }}
+      />
     </>
   )
 }

@@ -8,10 +8,11 @@ import GridSection from '@/src/components/layouts/GridSection'
   import useLang from '@/src/hooks/use-lang'
 
 import { cn } from '@/src/lib/utils'
+import usePublic from '@/src/hooks/use-lang'
 
 const ActivateDNA = () => {
   const content = useLang().CONTENT
-
+  const link = usePublic().LINKS
   const [ state, setState ] = useState(false)
   const [ status, setStatus ] = useState(false)
   const [ sectionMounted, setSectionMounted ] = useState(false)
@@ -144,7 +145,7 @@ const ActivateDNA = () => {
             }
           }}
           image={{
-            src: "/images/ActivateDNA.png", // IMG OF STEM SELS
+            src: `${link.content.activateDNA}`, // IMG OF STEM SELS
             alt: "steem sels for every neuron",
             customCl: '',
             artefact: '',
