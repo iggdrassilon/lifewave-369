@@ -11,7 +11,6 @@ db.version(2).stores({
 
 const VideoLayout = (props: ViteoLayoutT) => {
   const { videoRef, link, opacity, cover, preview, customClass } = props
-
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const [videoBlobUrl, setVideoBlobUrl] = useState(null)
   const [imgBlobUrl, setImgBlobUrl] = useState(null)
@@ -57,25 +56,6 @@ const VideoLayout = (props: ViteoLayoutT) => {
         console.error('Error caching the image:', error)
       }
     }
-
-
-    // const cacheImage = async () => {
-    //   try {
-    //     const cachedImage = await db.table('images').get(preview)
-    //     if (cachedImage) {
-    //       console.log(cachedImage)
-    //       setImgBlobUrl(cachedImage)
-    //     } else {
-    //       const response = await fetch(preview)
-    //       const imageBlob = await response.blob()
-    //       await db.table('images').put({ url: preview, data: imageBlob })
-    //       const blobUrl = URL.createObjectURL(imageBlob)
-    //       setImgBlobUrl(blobUrl)
-    //     }
-    //   } catch (error) {
-    //     console.error('Error caching the image:', error)
-    //   }
-    // }
 
     if (inView) {
       if (!videoBlobUrl) {
