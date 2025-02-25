@@ -4,35 +4,37 @@ import { useInView } from "react-intersection-observer"
 import Dexie from 'dexie'
 
 const db = new Dexie('VideoCacheDB')
-db.version(2).stores({
-  videos: 'url, data',
-  images: 'url, data'
+db.version(3).stores({
+  videos: 'url, data, blobUrl',
+  images: 'url, data, blobUrl'
 })
 
 const VideoLayout = (props: ViteoLayoutT) => {
   const { videoRef, link, opacity, cover, preview, customClass } = props
+  const [ref, inView] = useInView()
 
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const [videoBlobUrl, setVideoBlobUrl] = useState(null)
   const [imgBlobUrl, setImgBlobUrl] = useState(null)
-  const [ref, inView] = useInView()
 
   useEffect(() => {
     const cacheVideo = async () => {
       try {
         const cachedVideo = await db.table('videos').get(link)
         if (cachedVideo) {
-          console.log(cachedVideo)
-          const blobUrl = URL.createObjectURL(cachedVideo.data)
-          setVideoBlobUrl(blobUrl)
-          setIsVideoLoaded(true)
+          if (cachedVideo.blobUrl) {
+            setVideoBlobUrl(cachedVideo.blobUrl)
+          } else {
+            const blob = new Blob([cachedVideo.data], { type: 'video/mp4' })
+            const blobUrl = URL.createObjectURL(blob)
+            await db.table('videos').put({ url: link, data: cachedVideo.data, blobUrl })
+            setVideoBlobUrl(blobUrl)
+          }
         } else {
           const response = await fetch(link)
           const videoBlob = await response.blob()
-          await db.table('videos').put({ url: link, data: videoBlob })
           const blobUrl = URL.createObjectURL(videoBlob)
+          await db.table('videos').put({ url: link, data: videoBlob, blobUrl })
           setVideoBlobUrl(blobUrl)
-          setIsVideoLoaded(true)
         }
       } catch (error) {
         console.error('Error caching the video:', error)
@@ -43,20 +45,43 @@ const VideoLayout = (props: ViteoLayoutT) => {
       try {
         const cachedImage = await db.table('images').get(preview)
         if (cachedImage) {
-          console.log(cachedImage)
-          const blobUrl = URL.createObjectURL(cachedImage.data)
-          setImgBlobUrl(blobUrl)
+          if (cachedImage.blobUrl) {
+            setVideoBlobUrl(cachedImage.blobUrl)
+          } else {
+            const blob = new Blob([cachedImage.data], { type: 'image/png' })
+            const blobUrl = URL.createObjectURL(blob)
+            await db.table('images').put({ url: link, data: cachedImage.data, blobUrl })
+            setVideoBlobUrl(blobUrl)
+          }
         } else {
           const response = await fetch(preview)
           const imageBlob = await response.blob()
-          await db.table('images').put({ url: preview, data: imageBlob })
           const blobUrl = URL.createObjectURL(imageBlob)
+          await db.table('images').put({ url: preview, data: imageBlob, blobUrl })
           setImgBlobUrl(blobUrl)
         }
       } catch (error) {
-        console.error('Error caching the image:', error)
+        console.error('Error caching the video:', error)
       }
     }
+
+    // const cacheImage = async () => {
+    //   try {
+    //     const cachedImage = await db.table('images').get(preview)
+    //     if (cachedImage) {
+    //       console.log(cachedImage)
+    //       setImgBlobUrl(cachedImage)
+    //     } else {
+    //       const response = await fetch(preview)
+    //       const imageBlob = await response.blob()
+    //       await db.table('images').put({ url: preview, data: imageBlob })
+    //       const blobUrl = URL.createObjectURL(imageBlob)
+    //       setImgBlobUrl(blobUrl)
+    //     }
+    //   } catch (error) {
+    //     console.error('Error caching the image:', error)
+    //   }
+    // }
 
     if (inView) {
       if (!videoBlobUrl) {

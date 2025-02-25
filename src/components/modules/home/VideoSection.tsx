@@ -42,7 +42,7 @@ const VideoSection = React.forwardRef<HTMLDivElement | null, VideoSectionProps>(
             className={`w-[100%] h-auto ${min_height}`}
           />
         </div>
-
+{/* 
         {buttons && (
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
             {buttons.map((button) => (
@@ -60,7 +60,7 @@ const VideoSection = React.forwardRef<HTMLDivElement | null, VideoSectionProps>(
               </motion.button>
             ))}
           </div>
-        )}
+        )} */}
       </>
     </MotionSection>
   )
