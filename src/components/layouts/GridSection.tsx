@@ -180,7 +180,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
               'w-full h-auto object-cover -z-[99] rounded-xl',
               // paddingBody,
             )}
-            loading="lazy"
+            // loading="lazy"
           />
             {image.artefact && image.artefact}
           </div>
