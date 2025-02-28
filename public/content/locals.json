@@ -23,6 +23,7 @@
     "bluewaves":     "/images/waves_purple.png",
     "sun":           "/images/sun.png",
     "girlpatched":   "/images/girl_patched.png",
-    "activateDNA":   "/images/ActivateDNA.png"
+    "activateDNA":   "/images/ActivateDNA.png",
+    "earthbackground": "/images/BG_PATENTS.jpg"
   }
 }

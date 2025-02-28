@@ -44,7 +44,7 @@ const App = () => (
               <Route path='/story' element={<FullScreenBackground props={'STORY'} />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
-            <Footer />
+            {/* <Footer /> */}
             <BackToTop />
             <Overlay />
           </>

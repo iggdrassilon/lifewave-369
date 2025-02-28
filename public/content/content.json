@@ -66,6 +66,9 @@
 
       "notice": "Продукты LifeWave не предназначены для диагностики, лечения или предотвращения каких-либо заболеваний или состояний.",
       "videoTime": "смотрите прямо сейчас, продолжительность"
+    },
+    "patents": {
+      "header": "Патенты и Исследования"
     }
   },
   "en": {
@@ -135,6 +138,9 @@
 
       "notice": "LifeWave products are not intended to diagnose, treat, or prevent any diseases or conditions.",
       "videoTime": "watch now, duration"
+    },
+    "patents": {
+      "header": "Patent and Research"
     }
   }
 }

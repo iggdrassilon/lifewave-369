@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { MotionSection } from '../../layouts/motionLayout'
 import { cn } from '@/src/lib/utils'
 import { useInView } from 'react-intersection-observer'
-import useLang from '@/src/hooks/use-lang'
+import usePublic from '@/src/hooks/use-lang'
 import GridSection from '../../layouts/GridSection'
 import TextAnimated from '../../ui/textAnimations'
-import usePublic from '@/src/hooks/use-lang'
 
 const BreakThrough = () => {
-  const content = useLang().CONTENT
+  const content = usePublic().CONTENT
   const links = usePublic().LINKS
   const [ state, setState ] = useState(false)
   const [ status, setStatus ] = useState(false)
