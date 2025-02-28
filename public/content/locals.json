@@ -18,7 +18,7 @@
     "x39card":       "/images/X39-card.jpg",
     "x39card2d":     "/images/CARD_X39.webp",
     "patents":       "/images/PATENTS_STAMP.webp",
-    "x39patents":    "/images/x39_patents.png",
+    "x39patents":    "/images/PATENTS.png",
     "bluegraphs":    "/images/blue-graphs.jpg",
     "bluewaves":     "/images/waves_purple.png",
     "sun":           "/images/sun.png",
@@ -28,11 +28,11 @@
     "patentsPage": {
       "research": {
         "researchA": "/images/Research_1.png",
-        "researchB": "/images/Research_2.png",
-        "phototherapy": {
-          "background": "/images/",
-          "picture": "/images/Phototherapy.webp"
-        }
+        "researchB": "/images/Research_2.png"
+      },
+      "phototherapy": {
+        "background": "/images/",
+        "picture": "/images/Phototherapy.webp"
       },
       "accupressure": {
         "background": "/images/",

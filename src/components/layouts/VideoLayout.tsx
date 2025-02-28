@@ -66,7 +66,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
       }
     }
   }, [inView, link, preview])
-
+  
   return (
     <div>
       <div ref={ref} className={`absolute inset-0 -z-50 opacity-${opacity}`}>

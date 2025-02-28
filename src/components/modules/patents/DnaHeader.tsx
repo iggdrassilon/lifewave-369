@@ -15,7 +15,7 @@ const DnaHeader = ({ title, image }: DnaHeaderProps) => {
       ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className='bg-space-dark text-white'
+      className='bg-white text-white'
     >
       {isInView && (
         <>

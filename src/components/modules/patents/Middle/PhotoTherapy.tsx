@@ -1,12 +1,10 @@
-import { motion } from "framer-motion"
-
-import { cn } from "@/src/lib/utils"
 import useInViewHook from "@/src/hooks/useInView"
-import GridSectionSimple from "@/src/components/layouts/GridSectionSimple"
-import ContentElement from "./Middle/ContentElement"
+import { motion } from "framer-motion"
+import GridSectionSimple from "../../../layouts/GridSectionSimple"
+import ContentElement from "./ContentElement"
 
-type AcupressureT = {
-  images: {
+export type PhotoTherapyT = {
+  images?: {
     background: string;
     picture: string;
   }
@@ -25,10 +23,9 @@ type AcupressureT = {
   readmore: string;
 }
 
-const Acupressure = (props: AcupressureT) => {
+const PhotoTherapy = (props: PhotoTherapyT) => {
   const { images, content, readmore } = props
   const { ref, isInView } = useInViewHook()
-
   return (
     <motion.div
       ref={ref}
@@ -38,12 +35,16 @@ const Acupressure = (props: AcupressureT) => {
         delay: 0.2,
         duration: 0.6
       }}
-      className='bg-white text-white'
+      className=''
     >
-     <GridSectionSimple
+      <GridSectionSimple
         imageMode={false}
         title={content.title}
-        description={content.description}
+        description={
+          <div 
+            dangerouslySetInnerHTML={{ __html: content.description }} // CHILD
+          />
+        }
         content={
           <ContentElement
             content={content.doc1}
@@ -56,9 +57,9 @@ const Acupressure = (props: AcupressureT) => {
             readmore={readmore}
           />
         }
-      /> 
+      />
     </motion.div>
   )
 }
 
-export default Acupressure
+export default PhotoTherapy

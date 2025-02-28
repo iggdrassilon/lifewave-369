@@ -31,6 +31,9 @@
         "mail": "errormdc@gmail.com"
       },
       "rights": "patch-stem-cells. All rights reserved."
+    },
+    "patents": {
+      "readmore": "Read More"
     }
   },
   "ru": {
@@ -64,6 +67,9 @@
         "mail": "errormdc@gmail.com"
       },
       "rights": "patch-stem-cells. Все права зарегистрированы."
+    },
+    "patents": {
+      "readmore": "Читать Далее"    
     }
   }
 }

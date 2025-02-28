@@ -1,19 +1,13 @@
 import GridSectionSimple from "@/src/components/layouts/GridSectionSimple"
 import { ResearchesT } from "./Researches"
+import ContentAB from "./ContentA-B"
 
 const ResearchB = ({ content, images }: ResearchesT) => {
   return (
     <>
       <GridSectionSimple 
         content={
-          <>
-            <h2>
-              {content.b.title}
-            </h2>
-            <div>
-              {content.b.description}
-            </div>
-          </>
+          <ContentAB content={content} />
         }
         image={{
           src: images.researchB,
@@ -23,6 +17,7 @@ const ResearchB = ({ content, images }: ResearchesT) => {
         imageOnTop={false}
         imageFirstInColumn={true}
         headerOnTop={true}
+        imageMode={true}
       />
     </>
   )

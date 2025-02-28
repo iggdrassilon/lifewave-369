@@ -8,6 +8,10 @@ export type ResearchesT = {
   images: {
     researchA: string;
     researchB: string;
+    phototherapy: {
+      background: string;
+      picture: string;
+    };
   };
   content: {
     title: string;

@@ -179,7 +179,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
             className={cn(
               'w-full h-auto object-cover -z-[99] rounded-xl',
             )}
-            loading="lazy"
+            // loading="lazy"
           />
             {image.artefact && image.artefact}
           </div>

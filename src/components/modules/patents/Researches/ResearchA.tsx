@@ -1,5 +1,6 @@
 import GridSectionSimple from "@/src/components/layouts/GridSectionSimple"
 import { ResearchesT } from "./Researches"
+import ContentAB from "./ContentA-B"
 
 const ResearchA = ({ content, images }: ResearchesT) => {
   return (
@@ -8,14 +9,7 @@ const ResearchA = ({ content, images }: ResearchesT) => {
         title={content.title}
         description={content.subtitle}
         content={
-          <>
-            <h2>
-              {content.a.title}
-            </h2>
-            <div>
-              {content.a.description}
-            </div>
-          </>
+          <ContentAB content={content} />
         }
         image={{
           src: images.researchA,
@@ -25,6 +19,7 @@ const ResearchA = ({ content, images }: ResearchesT) => {
         imageOnTop={false}
         imageFirstInColumn={false}
         headerOnTop={true}
+        imageMode={true}
       />
     </>
   )
