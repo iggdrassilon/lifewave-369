@@ -11,19 +11,19 @@ const DnaHeader = ({ title, image }: DnaHeaderProps) => {
   const { ref, isInView } = useInViewHook()
 
   return (
-    <motion.header
+    <motion.div
       ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className='bg-space-dark text-white py-24'
+      className='bg-space-dark text-white'
     >
       {isInView && (
         <>
           <div 
             ref={ref} 
             className={cn(
-            "absolute top-[4rem] left-0  mx-auto",
-            'w-[100vw] h-[400px]',
+            // "absolute top-[4rem] left-0  mx-auto",
+            'w-[100vw] h-[500px]',
             'flex items-end justify-center',
             'bg-cover bg-center bg-no-repeat',
             )} 
@@ -43,7 +43,7 @@ const DnaHeader = ({ title, image }: DnaHeaderProps) => {
           </div>
         </>
       )}
-    </motion.header>
+    </motion.div>
   )
 }
 
