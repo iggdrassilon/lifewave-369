@@ -75,7 +75,7 @@ const Notice = () => {
                 textAlign: "left"
               }}
             >
-                <text>{content.home.notice}</text>
+                <span>{content.home.notice}</span>
             </motion.div>
           )}
         </div>

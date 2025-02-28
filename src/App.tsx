@@ -15,6 +15,7 @@ import './App.css'
 import Overlay from './components/Overlay'
 import FullScreenBackground from './pages/ComingSoon'
 import { useEffect } from 'react'
+import Patents from './pages/Patents'
 
 const queryClient = new QueryClient()
 
@@ -34,19 +35,19 @@ const App = () => (
       <BrowserRouter>
       <ScrollToTop />
         <AnimatePresence mode='wait'>
-          {/* <LoadingOverlay /> */}
-          <Header />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/patents-research' element={<FullScreenBackground props={'PATENTS-RESEARCH'} />} />
-            <Route path='/reviews' element={<FullScreenBackground props={'REVIEWS'} />} />
-            <Route path='/story' element={<FullScreenBackground props={'STORY'} />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-          <Footer />
-          <BackToTop />
-          <Overlay />
-          {/* <OverlayModal /> */}
+          <>
+            <Header />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/patents-research' element={<Patents />} />
+              <Route path='/reviews' element={<FullScreenBackground props={'REVIEWS'} />} />
+              <Route path='/story' element={<FullScreenBackground props={'STORY'} />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+            <Footer />
+            <BackToTop />
+            <Overlay />
+          </>
         </AnimatePresence>
       </BrowserRouter>
     </TooltipProvider>

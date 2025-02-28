@@ -21,7 +21,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
       try {
         const cachedVideo = await db.table('videos').get(link)
         if (cachedVideo) {
-          console.log(cachedVideo)
+          // console.log(cachedVideo)
           const blobUrl = URL.createObjectURL(cachedVideo.data)
           setVideoBlobUrl(blobUrl)
           setIsVideoLoaded(true)
@@ -42,7 +42,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
       try {
         const cachedImage = await db.table('images').get(preview)
         if (cachedImage) {
-          console.log(cachedImage)
+          // console.log(cachedImage)
           const blobUrl = URL.createObjectURL(cachedImage.data)
           setImgBlobUrl(blobUrl)
         } else {
@@ -77,7 +77,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
           autoPlay
           playsInline // for ios
           // eslint-disable-next-line react/no-unknown-property
-          webkit-playsinline // for chrome
+          webkit-playsinline='true' // for chrome
           disablePictureInPicture
           className={`object-cover ${customClass} -z-50 ${!cover? 'w-full h-full' : 'w-[100%] h-[100%]'}`}
           controls={false}

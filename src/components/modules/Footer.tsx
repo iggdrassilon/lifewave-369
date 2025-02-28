@@ -66,8 +66,10 @@ const Footer = () => {
               {UI.footer.titles.resources}
             </h3>
             <ul className='space-y-2'>
-              {links.slice(4).map((link) => (
-                <li key={link.name}>
+              {links.slice(4).map((link, index) => (
+                <li 
+                  key={index}
+                >
                   <Link
                     to={link.path}
                     className='text-space-medium hover:text-primary transition-colors'

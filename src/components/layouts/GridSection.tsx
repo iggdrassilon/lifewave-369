@@ -74,7 +74,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
   const reff = useRef(null)
   useEffect(() => {
     if (reff.current) {
-      console.log(reff.current.offsetHeight)
+      // console.log(reff.current.offsetHeight)
     }
   }, [reff.current, reff.current?.offsetHeight])
 
@@ -122,14 +122,14 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
         headerOnTop ? "order-1" : "order-2"
       )}>
         {description && (
-          <p className={cn(
+          <div className={cn(
             'text-muted-foreground leading-relaxed',
             description.customCl
           )}
             style={description.style}
           >
             {description.description}
-          </p>
+          </div>
         )}
       </div>
       <div  
@@ -178,9 +178,8 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>((props, r
             alt={image.alt}
             className={cn(
               'w-full h-auto object-cover -z-[99] rounded-xl',
-              // paddingBody,
             )}
-            // loading="lazy"
+            loading="lazy"
           />
             {image.artefact && image.artefact}
           </div>

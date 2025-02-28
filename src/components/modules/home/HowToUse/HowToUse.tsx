@@ -95,11 +95,6 @@ const HowToUse = () => {
     }
   }
 
-  useEffect(() => {
-    console.log(count)
-  
-  }, [count])
-
   return (
     <MotionSection
       height_initial={80}

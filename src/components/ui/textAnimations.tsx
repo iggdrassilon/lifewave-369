@@ -58,12 +58,12 @@ const TextAnimated = (props: TextAnimatedT) => {
 
   return (
     <>
-      <text ref={(node: any) => {
+      <div ref={(node: any) => {
         textRef.current = node
         ref(node)
       }} className={`overflow-hidden animation uppercase ${textSizes} tracking-wide ${color} word-wrap`}>
         {text}
-      </text>
+      </div>
 
       <style>
         {`

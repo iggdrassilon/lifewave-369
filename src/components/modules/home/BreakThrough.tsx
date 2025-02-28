@@ -49,7 +49,7 @@ const BreakThrough = () => {
 
   useEffect(() => {
     if (gridInView) {
-      console.log('ACTIVATE_DNA SHOWED!')
+      // console.log('ACTIVATE_DNA SHOWED!')
       setStatus(true)
     }
   }, [gridInView])

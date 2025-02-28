@@ -77,7 +77,7 @@ const Instructions = React.forwardRef<HTMLDivElement, InstructionsT>((props, ref
               }
             }}
           >
-            <text>{value}</text>
+            <span>{value}</span>
           </motion.div>
         ))}
       </motion.div>

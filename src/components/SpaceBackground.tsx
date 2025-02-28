@@ -17,7 +17,7 @@ const SpaceBackground = React.forwardRef(({ inView }: any , ref: any) => {
 
   useEffect(() => {
     if (!container || !ref.current || !inView) return
-    console.log(inView)
+    // console.log(inView)
     const parentH = ref.current.offsetHeight
     const parentW = ref.current.offsetWidth
 

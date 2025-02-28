@@ -96,7 +96,7 @@ const DnaHero = () => {
           'w-[100%] pb-[100px]',
           'font-kefa text-white text-[120px] font-bold',
         )}>
-          <text ref={ref}>X39</text>
+          <span ref={ref}>X39</span>
         </div>
         <div className={cn(
           'absolute top-[565px]',

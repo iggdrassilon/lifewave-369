@@ -1,4 +1,4 @@
-import React from 'react'
+import useInViewHook from '@/src/hooks/useInView'
 import { motion } from 'framer-motion'
 
 interface DnaHeaderProps {
@@ -6,15 +6,20 @@ interface DnaHeaderProps {
 }
 
 const DnaHeader = ({ title }: DnaHeaderProps) => {
+  const { ref, isInView } = useInViewHook()
+
   return (
     <motion.header
+      ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className='bg-space-dark text-white py-24'
     >
-      <div className='container mx-auto px-4'>
-        <h1 className='text-4xl font-bold text-center'>{title}</h1>
-      </div>
+      {isInView && (
+        <div className='container mx-auto px-4'>
+          <h1 className='text-4xl font-bold text-center'>{title}</h1>
+        </div>
+      )}
     </motion.header>
   )
 }

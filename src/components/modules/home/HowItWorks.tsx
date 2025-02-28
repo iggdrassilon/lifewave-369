@@ -58,7 +58,7 @@ const HowItWorks = () => {
             'overflow-hidden',
             'text-md md:text-md font-normal text-space-dark text-center'
           )}>
-            <text>{content.home.videoTime} 1:22</text>
+            <span>{content.home.videoTime} 1:22</span>
           </h2>
           <div className={cn(
             'relative',

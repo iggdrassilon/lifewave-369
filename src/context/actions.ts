@@ -1,4 +1,4 @@
-import { createDomain } from "effector";
+import { createDomain } from "effector"
 
 const actionsDomain = createDomain()
 
@@ -15,7 +15,7 @@ const $actions = actionsDomain
   }))
 
 $actions.watch((state) => {
-  console.log(state);
-});
+  // console.log(state);
+})
 
 export { setAction, $actions }

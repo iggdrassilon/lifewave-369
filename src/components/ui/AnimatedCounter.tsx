@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import Counter from './counter';
+import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import Counter from './counter'
 
 const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox, delay }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   const { ref, inView } = useInView({
     threshold: 1, // 100%
     delay
-  });
+  })
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView) return
 
-    const increment = (endValue / duration) * 50;
+    const increment = (endValue / duration) * 50
     const interval = setInterval(() => {
       setCount((prev) => {
         if (prev >= endValue) {
-          clearInterval(interval);
-          return endValue;
+          clearInterval(interval)
+          return endValue
         }
-        return Math.min(prev + increment, endValue);
-      });
-    }, 50);
+        return Math.min(prev + increment, endValue)
+      })
+    }, 50)
 
-    return () => clearInterval(interval);
-  }, [endValue, duration, inView]);
+    return () => clearInterval(interval)
+  }, [endValue, duration, inView])
 
-  const rd = radius;
-  const circumference = 2 * Math.PI * rd;
-  const offset = circumference - (count / 100 * circumference);
+  const rd = radius
+  const circumference = 2 * Math.PI * rd
+  const offset = circumference - (count / 100 * circumference)
 
   return (
     <div
@@ -81,6 +81,6 @@ const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox, delay }) 
         <Counter value={Math.round(count)} color={color} />
       </div>
     </div>
-  );
-};
-export default AnimatedCounter;
+  )
+}
+export default AnimatedCounter
