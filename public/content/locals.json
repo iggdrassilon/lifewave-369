@@ -34,9 +34,9 @@
         "background": "/images/",
         "picture": "/images/Phototherapy.webp"
       },
-      "accupressure": {
+      "acupressure": {
         "background": "/images/",
-        "picture": "/images/Accupressure.webp"
+        "picture": "/images/Acupressure.webp"
       },
       "technologies": {
         "patchTechnology": "/images/Patch_technology.webp",

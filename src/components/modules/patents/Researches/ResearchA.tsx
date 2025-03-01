@@ -9,7 +9,7 @@ const ResearchA = ({ content, images }: ResearchesT) => {
         title={content.title}
         description={content.subtitle}
         content={
-          <ContentAB content={content} />
+          <ContentAB content={content.a} />
         }
         image={{
           src: images.researchA,

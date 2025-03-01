@@ -50,6 +50,14 @@ const GridSectionSimple = ({
           <div className="text leading-relaxed">{description}</div>
         </div>
       )}
+      {!imageMode && (
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="w-full h-auto rounded-lg object-cover aspect-video m-auto"
+          // loading="lazy"
+        />
+      )}
       <div
         className={cn(
           "grid gap-8 items-center",
@@ -71,7 +79,7 @@ const GridSectionSimple = ({
               src={image.src}
               alt={image.alt}
               className="w-full h-auto rounded-lg object-cover aspect-video m-auto"
-              loading="lazy"
+              // loading="lazy"
             />
           ) : (
             <div>{contentOther}</div>

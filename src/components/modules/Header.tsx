@@ -23,7 +23,7 @@ const Header = () => {
     { name: UI.navigation.home, path: '/' },
     { name: UI.navigation.patents, path: '/patents-research' },
     { name: UI.navigation.reviews, path: '/reviews' },
-    { name: UI.navigation.story, path: '/story' },
+    { name: UI.navigation.story, path: '/public/pdf/История-X39.pdf' },
     // { name: UI.navigation.research, path: '/research' },
   ]
 
@@ -83,14 +83,28 @@ const Header = () => {
             </button>
             {/* Desktop Navigation */}
             <div className='hidden md:flex space-x-5'>
-              {links.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className='text-[rgba(4,103,150)] font-normal hover:text-indigo-600 transition-colors content-center py-2.5'
-                >
-                  {link.name}
-                </Link>
+              {links.map((link, index) => (
+                <>
+                  {link.name === UI.navigation.story ? (
+                    <a
+                      key={`${link.name}-${link.path}`}
+                      href={link.path}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-[rgba(4,103,150)] font-normal hover:text-indigo-600 transition-colors content-center py-2.5'
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={`${link.name}-${link.path}`}
+                      to={link.path}
+                      className='text-[rgba(4,103,150)] font-normal hover:text-indigo-600 transition-colors content-center py-2.5'
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </>
               ))}
             </div>
 
@@ -126,16 +140,38 @@ const Header = () => {
               }}
             >
               <div className='mx-auto px-4 py-4 flex flex-col'>
-                {links.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    className='hover:text-primary font-bold transition-colors flex justify-center py-4'
-                    style={{ color: 'var(--main-blue)', borderBottom: '1px solid rgba(100,100,100, .1)' }}
-                    onClick={() => handleClickLinks()}
-                  >
-                    {link.name}
-                  </Link>
+                {links.map((link, index) => (
+                  <>
+                    {link.name === UI.navigation.story ? (
+                      <a
+                        key={11}
+                        href={link.path}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='hover:text-primary font-bold transition-colors flex justify-center py-4'
+                        style={{
+                          color: 'var(--main-blue)',
+                          borderBottom: '1px solid rgba(100,100,100, .1)'
+                        }}
+                        onClick={() => handleClickLinks()}
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        key={index}
+                        to={link.path}
+                        className='hover:text-primary font-bold transition-colors flex justify-center py-4'
+                        style={{
+                          color: 'var(--main-blue)',
+                          borderBottom: '1px solid rgba(100,100,100, .1)'
+                        }}
+                        onClick={() => handleClickLinks()}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </>
                 ))}
               </div>
             </motion.div>

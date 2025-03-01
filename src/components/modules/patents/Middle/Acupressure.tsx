@@ -40,6 +40,10 @@ const Acupressure = (props: AcupressureT) => {
       className='bg-white text-white'
     >
      <GridSectionSimple
+        image={{
+          src: images.picture,
+          alt: 'acupressure image'
+        }}
         imageMode={false}
         title={content.title}
         description={content.description}

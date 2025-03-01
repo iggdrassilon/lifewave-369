@@ -93,7 +93,7 @@
           "link": "https://pubmed.ncbi.nlm.nih.gov/19606225/"
         }
       },
-      "Accupressure": {
+      "Acupressure": {
         "title": "АКУПРЕССУРА",
         "description": "Акупрессура работает как акупунктура, которая основана на концепции, что у всех нас есть человеческое энергетическое поле, которое течет по «меридианам» в теле. В традиционной китайской медицине существует убеждение, что закупорка этих меридианов вызывает проблемы со здоровьем, болезни и болезни. Слегка надавливая на различные точки акупунктуры, каждая из которых соответствует этим меридианам, считается, что симптомы можно облегчить. Различные исследования продемонстрировали его эффективность против таких вещей, как боль и ожирение.",
         "doc1": {
@@ -221,35 +221,35 @@
               "link": "https://thisisitinfo.ru/wp-content/uploads/docs/acupressure-treatment-of-morning-sickness-in-pregnancy-a-randomised-double-blind-placebo-controlled-study.pdf"
             }
           }
-        }
-      },
-      "security": {
-        "about": "Механизмы действия и безопасность пластырей LifeWave",
-        "documents": {
-          "1": {
-            "title": "Различные типы устройств нанотехнологий",
-            "description": "Автор: Стив Халтивенгер, М.Д., C.C.N.",
-            "link": "https://thisisitinfo.ru/wp-content/uploads/docs/different-types-of-nanotechnology-devices.pdf"
-          },
-          "2": {
-            "title": "Доктор Дин Кларк",
-            "description": "Автор: Стив Халтивенгер, М.Д., C.C.N.",
-            "link": "https://thisisitinfo.ru/wp-content/uploads/docs/dr-dean-clark-letter.pdf"
-          },
-          "3": {
-            "title": "Американское антидопинговое агентство (USADA",
-            "description": "",
-            "link": "https://thisisitinfo.ru/wp-content/uploads/docs/u_s_-anti-doping-agency.pdf"
-          },
-          "4": {
-            "title": "Всемирное антидопинговое агентство (WADA)",
-            "description": "",
-            "link": "https://thisisitinfo.ru/wp-content/uploads/docs/world-anti-doping-agency.pdf"
-          },
-          "5": {
-            "title": "Тест на силу с использованием LifeWave в колледже Морхаус",
-            "description": "В этом двойном слепом плацебо-контролируемом исследовании приняли участие 44 студента-спортсмена колледжа Морхаус, которые носили либо настоящие пластыри LifeWave, либо плацебо. Участники группы LifeWave показали значительно большее среднее улучшение в количестве повторений при жиме лежа 225 фунтов (102 кг) и 185 фунтов (84 кг) даже после интенсивной 60-минутной тренировки верхней части тела: Группа плацебо показала среднее улучшение количества повторений с понедельника по четверг на 4,9%. Группа LifeWave показала среднее улучшение количества повторений с понедельника по четверг на 34%.",
-            "link": "https://thisisitinfo.ru/wp-content/uploads/docs/lifewave-strength-test-morehouse-college.pdf"
+        },
+        "security": {
+          "about": "Механизмы действия и безопасность пластырей LifeWave",
+          "documents": {
+            "1": {
+              "title": "Различные типы устройств нанотехнологий",
+              "description": "Автор: Стив Халтивенгер, М.Д., C.C.N.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/different-types-of-nanotechnology-devices.pdf"
+            },
+            "2": {
+              "title": "Доктор Дин Кларк",
+              "description": "Автор: Стив Халтивенгер, М.Д., C.C.N.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/dr-dean-clark-letter.pdf"
+            },
+            "3": {
+              "title": "Американское антидопинговое агентство (USADA",
+              "description": "",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/u_s_-anti-doping-agency.pdf"
+            },
+            "4": {
+              "title": "Всемирное антидопинговое агентство (WADA)",
+              "description": "",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/world-anti-doping-agency.pdf"
+            },
+            "5": {
+              "title": "Тест на силу с использованием LifeWave в колледже Морхаус",
+              "description": "В этом двойном слепом плацебо-контролируемом исследовании приняли участие 44 студента-спортсмена колледжа Морхаус, которые носили либо настоящие пластыри LifeWave, либо плацебо. Участники группы LifeWave показали значительно большее среднее улучшение в количестве повторений при жиме лежа 225 фунтов (102 кг) и 185 фунтов (84 кг) даже после интенсивной 60-минутной тренировки верхней части тела: Группа плацебо показала среднее улучшение количества повторений с понедельника по четверг на 4,9%. Группа LifeWave показала среднее улучшение количества повторений с понедельника по четверг на 34%.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/lifewave-strength-test-morehouse-college.pdf"
+            }
           }
         }
       }

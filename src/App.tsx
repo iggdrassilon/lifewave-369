@@ -41,10 +41,10 @@ const App = () => (
               <Route path='/' element={<Home />} />
               <Route path='/patents-research' element={<Patents />} />
               <Route path='/reviews' element={<FullScreenBackground props={'REVIEWS'} />} />
-              <Route path='/story' element={<FullScreenBackground props={'STORY'} />} />
+              {/* <Route path='/story' element={<FullScreenBackground props={'STORY'} />} /> */}
               <Route path='*' element={<NotFound />} />
             </Routes>
-            {/* <Footer /> */}
+            <Footer />
             <BackToTop />
             <Overlay />
           </>

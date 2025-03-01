@@ -2,16 +2,8 @@
 type Content = {
   content: {
     title: string;
-    subtitle: string;
-    a: {
-      title: string;
-      description: string;
-    };
-    b: {
-      title: string;
-      description: string;
-    }
-  };
+    description: string;
+  }
 }
 
 const ContentAB = ({content}: Content) => {
@@ -20,10 +12,10 @@ const ContentAB = ({content}: Content) => {
       <h2
         className="text-center"
       >
-        {content.a.title}
+        {content.title}
       </h2>
       <div className="mt-2">
-        {content.a.description}
+        {content.description}
       </div>
     </>
   )

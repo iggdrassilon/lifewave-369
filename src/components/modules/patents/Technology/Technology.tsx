@@ -37,7 +37,8 @@ const Technology = (props: TechnologyT) => {
         duration: 0.6
       }}
       className={cn(
-        '"w-full max-w-7xl mx-auto px-4 py-8 md:py-16 flex flex-col gap-8',
+        'w-full max-w-7xl mx-auto px-4 py-8',
+        'md:py-16 flex flex-col gap-8',
         'bg-white text-white',
       )}
     >

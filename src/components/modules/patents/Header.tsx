@@ -2,12 +2,12 @@ import useInViewHook from '@/src/hooks/useInView'
 import { cn } from '@/src/lib/utils'
 import { motion } from 'framer-motion'
 
-interface DnaHeaderProps {
+interface HeaderProps {
   title: string;
   image: string;
 }
 
-const DnaHeader = ({ title, image }: DnaHeaderProps) => {
+const Header = ({ title, image }: HeaderProps) => {
   const { ref, isInView } = useInViewHook()
 
   return (
@@ -47,4 +47,4 @@ const DnaHeader = ({ title, image }: DnaHeaderProps) => {
   )
 }
 
-export default DnaHeader
+export default Header

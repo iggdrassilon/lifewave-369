@@ -38,6 +38,10 @@ const PhotoTherapy = (props: PhotoTherapyT) => {
       className=''
     >
       <GridSectionSimple
+        image={{
+          src: images.picture,
+          alt: 'acupressure image'
+        }}
         imageMode={false}
         title={content.title}
         description={

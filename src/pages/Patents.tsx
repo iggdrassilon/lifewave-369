@@ -1,21 +1,21 @@
 import usePublic from '@/src/hooks/use-lang'
 
-import DnaHeader from '@/src/components/modules/patents/DnaHeader'
+import Header from '@/src/components/modules/patents/Header'
 import Researches from '@/src/components/modules/patents/Researches/Researches'
 import PhotoTherapy from '@/src/components/modules/patents/Middle/PhotoTherapy'
 import Acupressure from '@/src/components/modules/patents/Middle/Acupressure'
-import OutPatents from '@/src/components/modules/patents/OurPatents'
+import OurResearches from '@/src/components/modules/patents/OurResearches/OurResearches'
 import Technology from '../components/modules/patents/Technology/Technology'
 
 const Patents = () => {
-  const content = usePublic().CONTENT
-  const links = usePublic().LINKS
   const UI = usePublic().UI
   const readMore = UI.patents.readmore
+  const content = usePublic().CONTENT
+  const links = usePublic().LINKS
   return (
     <div className='min-h-screen bg-whitep'>
       <main>
-        <DnaHeader 
+        <Header
           title={content.patents.header}
           image={links.content.earthbackground}
         />
@@ -29,8 +29,8 @@ const Patents = () => {
           readmore={readMore}
         />
         <Acupressure 
-          content={content.patents.Accupressure}
-          images={links.content.patentsPage.accupressure}
+          content={content.patents.Acupressure}
+          images={links.content.patentsPage.acupressure}
           readmore={readMore}
         />
         <Technology 
@@ -38,7 +38,10 @@ const Patents = () => {
           images={links.content.patentsPage.technologies}
           readmore={readMore}
         />
-        {/* <OurPatents /> */}
+        <OurResearches
+          content={content.patents.reseatchesDocuments}
+          readmore={readMore}
+        />
       </main>
     </div>
   )

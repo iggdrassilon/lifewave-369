@@ -21,13 +21,13 @@ const TechnologyPattern = (props: TechnologyPatternT) => {
     <div
       className={cn(
         '',
-        'flex flex-col justify-center items-center p-16',
+        'flex flex-col justify-center items-center md:p-8 text-black',
       )}
     >
       <img 
         src={image}
         alt="image of pattern"
-        className='mb-4 max-w-[300px] lg-max-w-[400px] rounded-xl'
+        className='mb-4 max-w-[100%] rounded-xl'
       />
       <h3
         className='pb-4'
@@ -40,7 +40,7 @@ const TechnologyPattern = (props: TechnologyPatternT) => {
         {content.description}
       </div>
       <PatentsButton
-        customStyle='w-[100%] lg:w-[60%]'
+        customStyle='w-[50%] md:w-[100%] lg:w-[55%]'
         link={content.link}
         title={readmore}
       />

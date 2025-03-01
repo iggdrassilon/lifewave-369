@@ -7,11 +7,11 @@ const ResearchB = ({ content, images }: ResearchesT) => {
     <>
       <GridSectionSimple 
         content={
-          <ContentAB content={content} />
+          <ContentAB content={content.b} />
         }
         image={{
           src: images.researchB,
-          alt: 'research A'
+          alt: 'research B'
         }}
         imageOnRight={false}
         imageOnTop={false}
