@@ -22,23 +22,25 @@ const Header = ({ title, image }: HeaderProps) => {
           <div 
             ref={ref} 
             className={cn(
-            // "absolute top-[4rem] left-0  mx-auto",
-            'w-[100vw] h-[500px]',
-            'flex items-end justify-center',
-            'bg-cover bg-center bg-no-repeat',
-            )} 
+              // "absolute top-[4rem] left-0  mx-auto",
+              'w-[100vw] h-[550px]',
+              'flex items-end justify-center',
+              'bg-cover bg-center bg-no-repeat',
+            )}
             style={{
               backgroundImage: `url(${image})`,  // WHITE WAVE BACKGROUND
+              backgroundPositionX: '65%'
             }}
           >
             <h1 
               className={cn(
                 'w-[100%]',
-                'py-4',
-                'text-4xl font-bold text-center',
-                'bg-slate-600/70'
+                'py-6 px-4',
+                'text-4xl font-bold text-center text-title',
+                'bg-white/70'
               )}
-              >{title}
+              >
+                {title}
             </h1>
           </div>
         </>

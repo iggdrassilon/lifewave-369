@@ -6,10 +6,12 @@ const ResearchA = ({ content, images }: ResearchesT) => {
   return (
     <>
       <GridSectionSimple 
-        title={content.title}
+        // title={content.title}
         description={content.subtitle}
         content={
-          <ContentAB content={content.a} />
+          <ContentAB
+            content={content.a} 
+          />
         }
         image={{
           src: images.researchA,
@@ -20,6 +22,10 @@ const ResearchA = ({ content, images }: ResearchesT) => {
         imageFirstInColumn={false}
         headerOnTop={true}
         imageMode={true}
+        customStyle={{
+          description: 'font-bold',
+          content: 'mt-[50px]',
+        }}
       />
     </>
   )

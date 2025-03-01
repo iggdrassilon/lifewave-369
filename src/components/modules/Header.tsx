@@ -23,7 +23,7 @@ const Header = () => {
     { name: UI.navigation.home, path: '/' },
     { name: UI.navigation.patents, path: '/patents-research' },
     { name: UI.navigation.reviews, path: '/reviews' },
-    { name: UI.navigation.story, path: '/public/pdf/История-X39.pdf' },
+    { name: UI.navigation.story, path: '/pdf/История-X39.pdf' },
     // { name: UI.navigation.research, path: '/research' },
   ]
 

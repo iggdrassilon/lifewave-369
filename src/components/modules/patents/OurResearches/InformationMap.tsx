@@ -15,7 +15,7 @@ const InformationMap = (props: InformationMapT) => {
   return (
     <>
       <h2 
-        className="text-3xl font-semibold tracking-tight text-center mt-4 "
+        className="text-3xl font-semibold tracking-tight text-center mt-4 text-title"
       >
         {content.about}
       </h2>

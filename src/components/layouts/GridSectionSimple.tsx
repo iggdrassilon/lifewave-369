@@ -15,6 +15,12 @@ interface GridSectionProps {
   imageOnTop?: boolean;    // Controls mobile (row) layout
   headerOnTop?: boolean;
   imageFirstInColumn?: boolean; // New prop for desktop column order
+  customStyle?: {
+    title?: string;
+    description?: string;
+    parent?: string;
+    content?: string;
+  };
 }
 
 const GridSectionSimple = ({
@@ -28,14 +34,21 @@ const GridSectionSimple = ({
   imageOnTop = false,
   headerOnTop = true,
   imageFirstInColumn = true,
+  customStyle
 }: GridSectionProps) => {
   return (
     <section 
-      className="w-full max-w-7xl mx-auto px-4 py-8 md:py-16 flex flex-col gap-8 text-black"
+      className={cn(
+        'w-full max-w-7xl mx-auto px-4 py-8 md:py-16 flex flex-col gap-8 text-black',
+        `${customStyle?.parent}`
+      )}
     >
       {title && (
         <h2 
-          className="text-3xl font-semibold tracking-tight text-center"
+          className={cn(
+            "text-3xl text-title font-semibold tracking-tight text-center",
+            `${customStyle?.title}`
+          )}
         >
           {title}
         </h2>
@@ -47,14 +60,18 @@ const GridSectionSimple = ({
             headerOnTop ? "order-1" : "order-2"
           )}
         >
-          <div className="text leading-relaxed">{description}</div>
+          <div className={cn(
+            `${customStyle?.description}`,
+          )}>
+            {description}
+          </div>
         </div>
       )}
       {!imageMode && (
         <img
           src={image.src}
           alt={image.alt}
-          className="w-full h-auto rounded-lg object-cover aspect-video m-auto"
+          className="w-full h-auto rounded-lg object-cover m-auto"
           // loading="lazy"
         />
       )}
@@ -62,6 +79,7 @@ const GridSectionSimple = ({
         className={cn(
           "grid gap-8 items-center",
           "md:grid-cols-2",
+          `${customStyle?.content}`,
           imageOnRight ? "md:grid-flow-row" : "md:grid-flow-row-dense",
           headerOnTop ? "order-2" : "order-1"
         )}
@@ -78,11 +96,13 @@ const GridSectionSimple = ({
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-auto rounded-lg object-cover aspect-video m-auto"
+              className="w-full h-auto rounded-lg object-cover m-auto"
               // loading="lazy"
             />
           ) : (
-            <div>{contentOther}</div>
+            <div>
+              {contentOther}
+            </div>
           )}
         </div>
         <div
@@ -94,7 +114,9 @@ const GridSectionSimple = ({
             imageFirstInColumn ? "md:order-2" : "md:order-1"
           )}
         >
-          <div>{content}</div>
+          <div>
+            {content}
+          </div>
         </div>
       </div>
     </section>

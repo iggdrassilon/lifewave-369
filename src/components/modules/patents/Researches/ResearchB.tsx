@@ -7,7 +7,12 @@ const ResearchB = ({ content, images }: ResearchesT) => {
     <>
       <GridSectionSimple 
         content={
-          <ContentAB content={content.b} />
+          <ContentAB 
+            content={content.b}
+            customStyle={{
+              description: 'text-right'
+            }}
+          />
         }
         image={{
           src: images.researchB,

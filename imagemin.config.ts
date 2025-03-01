@@ -1,7 +1,6 @@
 import imagemin from 'imagemin'
 import imageminOptipng from 'imagemin-optipng'
 import { PluginOption } from 'vite'
-import '@babel/polyfill'
 
 interface ImageminOptions {
   destination: string;
@@ -27,6 +26,10 @@ export function imageminBuilder(): PluginOption {
             colorTypeReduction: false,
             paletteReduction: false,
           } as OptipngOptions),
+        ],
+        ignore: [
+          'images/BG_PATENTS.jpg',
+          'images/girl_patched.png',
         ],
       } as ImageminOptions)
       console.log('Images optimized with optipng!')

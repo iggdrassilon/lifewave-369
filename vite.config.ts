@@ -6,6 +6,7 @@ import { componentTagger } from 'lovable-tagger'
 import legacy from '@vitejs/plugin-legacy'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import { imageminBuilder } from './imagemin.config.ts'
+import '@babel/polyfill'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -18,7 +19,11 @@ export default defineConfig(({ mode }) => ({
     imageminBuilder(),
     ViteImageOptimizer({
       png: { quality: 50 },
-      jpg: { quality: 50 }
+      jpg: { quality: 50 },
+      exclude: [
+        'BG_PATENTS.jpg',
+        'girl_patched.png'
+      ]
     }),
     legacy({
       targets: [

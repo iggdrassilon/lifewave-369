@@ -10,7 +10,6 @@ export type ResearchesT = {
     researchB: string;
   };
   content: {
-    title: string;
     subtitle: string;
     a: {
       title: string;

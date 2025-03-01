@@ -4,7 +4,7 @@ import React from 'react'
 type PatentsButtonT = {
   link: string;
   title: string;
-  customStyle: string;
+  customStyle?: string;
 }
 
 const PatentsButton = (props: PatentsButtonT) => {
