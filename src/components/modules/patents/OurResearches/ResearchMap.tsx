@@ -41,7 +41,8 @@ const ResearchMap = (props: ResearchMapT) => {
             key={index}
             readmore={readmore}
             content={item[1]}
-            even={[0, 3, 4, 7, 8].includes(index)}
+            mode='research'
+            even={index}
           />
         ))}
       </div>

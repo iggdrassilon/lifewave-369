@@ -38,7 +38,7 @@ const SecurityMap = (props: SecurityMapT) => {
             readmore={readmore}
             content={item[1]}
             mode='security'
-            even={[1, 2].includes(index)}
+            even={index}
           />
         ))}
       </div>

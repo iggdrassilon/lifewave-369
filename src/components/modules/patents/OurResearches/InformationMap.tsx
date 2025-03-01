@@ -37,7 +37,8 @@ const InformationMap = (props: InformationMapT) => {
             key={index}
             readmore={readmore}
             content={item[1]}
-            even={[1, 2, 5, 6, 9].includes(index)}
+            mode='indormation'
+            even={index}
           />
         ))}
       </div>
