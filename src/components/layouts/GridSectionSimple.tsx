@@ -3,7 +3,7 @@ import { cn } from "@/src/lib/utils"
 
 interface GridSectionProps {
   title?: string;
-  description?: string | React.ReactNode;
+  description?: string | React.ReactNode  ;
   imageMode: boolean;
   image?: {
     src: string;
@@ -47,7 +47,7 @@ const GridSectionSimple = ({
             headerOnTop ? "order-1" : "order-2"
           )}
         >
-          <p className="text leading-relaxed">{description}</p>
+          <div className="text leading-relaxed">{description}</div>
         </div>
       )}
       <div

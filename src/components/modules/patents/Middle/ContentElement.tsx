@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import PatentsButton from '@/src/components/atoms/PatentsButton'
 import { cn } from '@/src/lib/utils'
 
 const ContentElement = ({content, readmore}: any) => {
@@ -6,7 +7,8 @@ const ContentElement = ({content, readmore}: any) => {
     <div
       className={cn(
         'p-16',
-        'rounded-xl'
+        'rounded-xl',
+        'flex items-center flex-col'
       )}
       style={{
         border: '1px solid black'
@@ -19,18 +21,11 @@ const ContentElement = ({content, readmore}: any) => {
       >
         {content.title}
       </div>
-      <a
-        className={cn(
-          'py-2 rounded-lg',
-          'flex justify-center items-center',
-          'bg-blue-500/80 text-white'
-        )}
-        href={content.link}
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        {readmore}
-      </a> 
+      <PatentsButton 
+        customStyle='w-[100%] lg:w-[60%]'
+        link={content.link}
+        title={readmore}
+      />
     </div>
   )
 }

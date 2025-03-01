@@ -38,8 +38,10 @@
         "background": "/images/",
         "picture": "/images/Accupressure.webp"
       },
-      "patchTechnology": "/images/Patch_technology.webp",
-      "patchTechnologyX39": "/images/Patch_technology_2.webp"
+      "technologies": {
+        "patchTechnology": "/images/Patch_technology.webp",
+        "patchTechnologyX39": "/images/Patch_technology_2.webp"
+      }
     }
   }
 }

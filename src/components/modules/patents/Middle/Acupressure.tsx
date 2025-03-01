@@ -1,9 +1,8 @@
 import { motion } from "framer-motion"
 
-import { cn } from "@/src/lib/utils"
 import useInViewHook from "@/src/hooks/useInView"
 import GridSectionSimple from "@/src/components/layouts/GridSectionSimple"
-import ContentElement from "./Middle/ContentElement"
+import ContentElement from "@/src/components/modules/patents/Middle/ContentElement"
 
 type AcupressureT = {
   images: {

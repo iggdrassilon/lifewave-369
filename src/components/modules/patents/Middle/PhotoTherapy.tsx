@@ -1,7 +1,7 @@
 import useInViewHook from "@/src/hooks/useInView"
 import { motion } from "framer-motion"
-import GridSectionSimple from "../../../layouts/GridSectionSimple"
-import ContentElement from "./ContentElement"
+import GridSectionSimple from "@/src/components/layouts/GridSectionSimple"
+import ContentElement from "@/src/components/modules/patents/Middle/ContentElement"
 
 export type PhotoTherapyT = {
   images?: {
