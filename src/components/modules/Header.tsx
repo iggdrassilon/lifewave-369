@@ -8,9 +8,8 @@ import { setAction } from '@/src/context/actions'
 import useDispatch from '@/src/hooks/dispatcher'
 
 import { bodyFixed, bodyUnfixed } from '@/src/hooks/dom'
-import { buffer } from 'stream/consumers'
 
-import './burger-animation.css'
+import '@/src/styles/burger-animation.css'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)

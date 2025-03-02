@@ -109,7 +109,7 @@ const Footer = () => {
               {UI.footer.links.if_owner}
               <br />
               <a
-                href={`${UI.footer.links.mail}`}
+                href={`mailto:${UI.footer.links.mail}`}
                 className='text-mail underline'
               >
                 {UI.footer.links.mail}

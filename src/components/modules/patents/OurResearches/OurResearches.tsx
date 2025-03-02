@@ -1,6 +1,8 @@
-import useInViewHook from "@/src/hooks/useInView"
-import { cn } from "@/src/lib/utils"
 import { motion } from "framer-motion"
+
+import { cn } from "@/src/lib/utils"
+import useInViewHook from "@/src/hooks/useInView"
+
 import ResearchMap from "./ResearchMap"
 import InformationMap from "./InformationMap"
 import SecurityMap from "./SecurityMap"
@@ -30,10 +32,11 @@ type OurResearchesT = {
     }
   }
   readmore: string;
+  mode: string;
 }
 
 const OurResearches = (props: OurResearchesT) => {
-  const { content, readmore } = props
+  const { content, readmore, mode } = props
   const { ref, isInView } = useInViewHook()
 
   return (
@@ -51,18 +54,25 @@ const OurResearches = (props: OurResearchesT) => {
         'bg-white text-black',
       )}
     >
-      <ResearchMap
-        content={content.research}
-        readmore={readmore}
-      />
-      <InformationMap
-        content={content.information}
-        readmore={readmore}
-      />
-      <SecurityMap
-        content={content.security}
-        readmore={readmore}
-      />
+      {mode === 'before_acupressure' && (
+        <ResearchMap
+          content={content.research}
+          readmore={readmore}
+        />
+      )}
+      {/* // acupressure */}
+      {mode === 'after_acupressure' && (
+        <>
+          <InformationMap
+            content={content.information}
+            readmore={readmore}
+          />
+          <SecurityMap
+            content={content.security}
+            readmore={readmore}
+          />
+        </>
+      )}
     </motion.section>
   )
 }

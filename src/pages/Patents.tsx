@@ -1,19 +1,23 @@
 import usePublic from '@/src/hooks/use-lang'
 
 import Header from '@/src/components/modules/patents/Header'
-import Researches from '@/src/components/modules/patents/Researches/Researches'
+import Researches from '@/src/components/modules/patents/ResearchesAB/Researches'
 import PhotoTherapy from '@/src/components/modules/patents/Middle/PhotoTherapy'
 import Acupressure from '@/src/components/modules/patents/Middle/Acupressure'
 import OurResearches from '@/src/components/modules/patents/OurResearches/OurResearches'
 import Technology from '../components/modules/patents/Technology/Technology'
+import OurPatents from '../components/modules/patents/OurPatents/OurPatents'
 
 const Patents = () => {
   const UI = usePublic().UI
   const readMore = UI.patents.readmore
   const content = usePublic().CONTENT
   const links = usePublic().LINKS
+
   return (
-    <div className='min-h-screen bg-whitep'>
+    <div
+      className='min-h-screen bg-whitep'
+    >
       <main>
         <Header
           title={content.patents.header}
@@ -28,10 +32,8 @@ const Patents = () => {
           images={links.content.patentsPage.phototherapy}
           readmore={readMore}
         />
-        <Acupressure 
-          content={content.patents.Acupressure}
-          images={links.content.patentsPage.acupressure}
-          readmore={readMore}
+        <OurPatents
+          content={content.patents.OurPatents}
         />
         <Technology 
           content={content.patents.Technologies}
@@ -41,6 +43,17 @@ const Patents = () => {
         <OurResearches
           content={content.patents.reseatchesDocuments}
           readmore={readMore}
+          mode='before_acupressure'
+        />
+        <Acupressure 
+          content={content.patents.Acupressure}
+          images={links.content.patentsPage.acupressure}
+          readmore={readMore}
+        />
+        <OurResearches
+          content={content.patents.reseatchesDocuments}
+          readmore={readMore}
+          mode='after_acupressure'
         />
       </main>
     </div>

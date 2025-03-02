@@ -27,6 +27,8 @@ const ContentPattern = (props: ContentPatternT) => {
       className={cn(
         `${isSmallScreen && even % 2 === 0 && 'bg-sky-300/20'}`,
         `${!isSmallScreen && mode === 'research' && [0, 3, 4, 7, 8].includes(even) && 'md:bg-sky-300/20'}`,
+        `${!isSmallScreen && mode === 'indormation' && [1, 2, 5, 6].includes(even) && 'md:bg-sky-300/20'}`,
+        `${!isSmallScreen && mode === 'security' && [1, 2].includes(even) && 'md:bg-sky-300/20'}`,
         'rounded-xl',
         'flex flex-col justify-center items-center p-4 md:p-8',
       )}

@@ -1,4 +1,5 @@
 import { cn } from '@/src/lib/utils'
+
 import { Documents } from './OurResearches'
 import ContentPattern from './ContentBlock'
 
@@ -28,7 +29,7 @@ const InformationMap = (props: InformationMapT) => {
       </div>
       <div
         className={cn(
-          "grid gap-8 items-center",
+          "grid gap-8 items-start",
           "grid-cols-1 md:grid-cols-2",
         )}
       >

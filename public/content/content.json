@@ -117,20 +117,20 @@
       },
       "Technologies": {
         "patch": {
-          "title": "Патч Технология",
-          "description": "Первый в своем роде носимый аппарат, который регулирует поток термодинамической энергии по всему телу для повышения силы и выносливости, а также для облегчения боли.",
+          "title": "Технология Патчей",
+          "description": "Первый и уникальный в своём роде биоэлектрод, который регулирует поток термодинамической энергии по всему телу, повышая уровень выносливости и силы, а также облегчая боль.",
           "link": "https://startx39.com/wp-content/uploads/2023/08/US-Patent-8734316B2.pdf"
         },
         "X39": {
           "title": "X39",
-          "description": "Носимый пластырь для фототерапии, оказывающий благоприятное воздействие на организм человека, например, активацию стволовых клеток, повышение силы, выносливости и облегчение боли.",
+          "description": "Фототерапевтический патч, оказывающие благоприятное воздействие на организм человека, в том числе, на активацию стволовых клеток.",
           "link": "https://startx39.com/wp-content/uploads/2023/08/US-Patent-10716953-B1.pdf"
         }
       },
       "reseatchesDocuments": {
         "research": {
-          "title": "ИССЛЕДОВАНИЯ НАШИХ ПРОДУКТОВ",
-          "description": "Мы переосмысливаем понятие здоровья. Наша уникальная технология для улучшения и продления жизни подтверждена более чем 80 независимыми исследованиями, проведенными в ведущих университетах и исследовательских институтах мира. Испытайте LifeWave и откройте для себя множество способов, как наши инновации могут сделать вашу жизнь более здоровой:",
+          "title": "ИССЛЕДОВАНИЯ ПРОДУКТА",
+          "description": "Мы переосмысливаем сферу здоровья. Наши непревзойденные технологии здравоохранения, подкрепленные более чем 80 независимыми исследованиями, проведенными в университетах и исследовательских институтах мирового уровня, улучшают и продлевают жизнь. Познакомьтесь с патчами X39 и узнайте, как наши инновационные продукты могут изменить ваш уровень жизни:",
           "documents": {
             "1": {
               "title": "Двойное слепое тестирование пластыря LifeWave X39 для определения уровня производства GHK-Cu.",
@@ -180,7 +180,7 @@
           }
         },
         "information": {
-          "about": "ИНФОРМАЦИЯ ОБ АКУПРЕССУРЕ",
+          "about": "ИССЛЕДОВАНИЯ АКУПРЕССУРЫ",
           "documents": {
             "1": {
             "title": "Акупрессура для снижения веса у молодых людей Азии",
@@ -326,7 +326,193 @@
       "videoTime": "watch now, duration"
     },
     "patents": {
-      "header": "Patent and Research"
+      "header": "Patents and Research",
+      "researches": {
+        "title": "X39",
+        "subtitle": "Eight independent studies have shown that our flagship patch X39 promotes the production of copper peptides in the blood, which can improve tissue repair, stimulate blood vessel and nerve growth, and improve skin condition.",
+        "a": {
+          "title": "STUDY A",
+          "description": "A double-blind randomized controlled trial published in the International Journal of Research Studies in Medical and Health Sciences found a significant increase in the production of 8 amino acids, which improved short-term memory, sleep, and life energy.",
+          "link": "https://static.showit.co/file/4hTZhahETD-fI8xp41WW2Q/117381/study-a.pdf"
+        },
+        "b": {
+          "title": "STUDY B",
+          "description": "A double-blind study published in the Journal of Internal Medicine Research found a significant increase in copper peptide levels in the blood of subjects who wore the X39 patch for one week.",
+          "link": "https://static.showit.co/file/4hTZhahETD-fI8xp41WW2Q/117381/study-a.pdf"
+        }
+      },
+      "PhotoTherapy": {
+        "title": "PHOTOTHERAPY",
+        "description": "Using visible and infrared light, LifeWave patches offer an innovative approach to wellness by using the body's own light to improve and extend your life.<br><br> Phototherapy has been used in wellness for centuries. Phototherapy, also known as light therapy or photobiomodulation, uses the mechanism of reflecting or emitting light into the body to stimulate cellular activity. The X39 patches work similarly, reflecting visible and infrared light back into the body.<br><br>The X39 patches reflect light back into the body, stimulating cellular activity and the production of a copper peptide known as GHK-Cu, which activates stem cells.",
+        "doc1": {
+          "title": "This article examines the research on low-level light therapy.",
+          "link": "https://thisisitinfo.ru/wp-content/uploads/docs/mechanisms-of-low-level-light-therapy.pdf"
+        },
+        "doc2": {
+          "title": "Learn more about the benefits of the body's own infrared radiation…",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/19606225/"
+        }
+      },
+      "Acupressure": {
+        "title": "ACUPRESSURE",
+        "description": "Acupressure works like acupuncture, which is based on the concept that we all have a human energy field that flows through'meridians' in the body. In traditional Chinese medicine, it is believed that blockages in these meridians cause health problems, diseases, and illnesses. By gently pressing on various acupressure points, each corresponding to these meridians, symptoms can be alleviated. Various studies have demonstrated its effectiveness against things like pain and obesity.",
+        "doc1": {
+          "title": "This study showed that pressing acupressure points and massage can effectively improve clinical symptoms in patients with chronic fatigue syndrome.",
+          "link": "https://thisisitinfo.ru/wp-content/uploads/docs/energy-improvement_-fatigue_-and-acupressure.pdf"
+        },
+        "doc2": {
+          "title": "This study showed that acupressure is a safe, simple, and effective way for rescuers to relieve pain during transport to the hospital.",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/12198060/"
+        }
+      },
+      "OurPatents": {
+        "title": "OUR PATENTS",
+        "description": "The distinction lies in our patented technology.<br><br> By rethinking the possibilities of science and wellness, LifeWave has revolutionized the way our bodies respond to phototherapy.<br><br> Learn more about our incredible patented technology in the field of wellness.",
+        "patents": {
+          "title": "US PATENTS",
+          "description": "10716953B1, 9943672B2, D745504, D746272, D745503, D745502, D745501, 9532942, 9263796, 9258395, 9149451, 8734316, 8602961<br><br>*All materials related to the scientific research of LifeWave products are based on scientific data on phototherapy and acupressure and may contain them. LifeWave products fall under one of these two scientific classifications depending on local laws and regulations. Any promotion of LifeWave products must comply with official local classifications. Please refer to the official literature and guidelines of the governing body of your country to understand what is most accepted in your region."
+        }
+      },
+      "Technologies": {
+        "patch": {
+          "title": "Patch Technology",
+          "description": "The first-of-its-kind wearable device that regulates the flow of thermodynamic energy throughout the body to enhance strength and endurance, as well as relieve pain.",
+          "link": "https://startx39.com/wp-content/uploads/2023/08/US-Patent-8734316B2.pdf"
+        },
+        "X39": {
+          "title": "X39",
+          "description": "A wearable phototherapy patch that has a beneficial effect on the human body, such as activating stem cells, increasing strength, endurance, and relieving pain.",
+          "link": "https://startx39.com/wp-content/uploads/2023/08/US-Patent-10716953-B1.pdf"
+        }
+      },
+      "reseatchesDocuments": {
+        "research": {
+          "title": "OUR PRODUCT RESEARCH",
+          "description": "We are rethinking the concept of health. Our unique technology for improving and extending life is backed by over 80 independent studies conducted at leading universities and research institutions around the world. Experience LifeWave and discover the many ways our innovations can make your life healthier:",
+          "documents": {
+            "1": {
+              "title": "Double-blind testing of the LifeWave X39 patch for determining GHK-Cu production levels.",
+              "description": "A double-blind study published in the Journal of Internal Medicine Research found a significant increase in copper peptide levels in the blood of subjects who wore the X39 patch for one week.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/double-blind.pdf"
+            },
+            "2": {
+              "title": "Metabolic changes caused by phototherapy using the LifeWave X39 patch.",
+              "description": "A double-blind randomized controlled trial published in the International Journal of Research Studies in Medical and Health Sciences found that the X39 patch significantly increased the production of 8 amino acids, which improved short-term memory, sleep, and life energy.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/phototherapy.pdf"
+            },
+            "3": {
+              "title": "Changes in tripeptides produced by the LifeWave X39 patch",
+              "description": "This pilot study examined changes in GHK and GHK-Cu blood levels when wearing the LifeWave X39 patch for 1 week. A significant increase in GHK blood levels was recorded after 24 hours and again on day 7.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/changes-in-tripeptides.pdf"
+            },
+            "4": {
+              "title": "Experimental study of LifeWave, Inc. X39 patches",
+              "description": "The pilot study demonstrated statistically significant positive changes in the bioenergy fields of the experimental group compared to the control group",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/experimental-study-of-lifewave-x-39-patches-report-final-draft-3.pdf"
+            },
+            "5": {
+              "title": "LifeWave X39 pilot study demonstrates light-triggered changes",
+              "description": "The purpose of this study was to determine whether metabolic and physiological changes are caused by wearing the non-transdermal phototherapy patch LifeWave X39. While this is a small sample, the positive results of this study suggest that further research is needed.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/lifewave-x39-pilot-demonstrates-light-triggered-changes-may-2020.pdf"
+            },
+            "6": {
+              "title": "Non-invasive scanning and subtle energy testing lab: Effect of LifeWave X39 patches on the brain as seen with P3 brain mapping: Preliminary results",
+              "description": "All participants demonstrated significant changes in scalp topographic maps showing the amplitude of the P300 recording for each channel, as well as in coherence maps.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/x39-non-invasive-scanning-and-subtle-energy-testing-lab-effect-of-lifewave-x39-patches-on-brain-as-seen-with-p3-brain-mapping.pdf"
+            },
+            "7": {
+              "title": "Metabolic consequences of using the LifeWave X39 patch - Study 1",
+              "description": "The LifeWave X39 patch demonstrates clear, significant metabolic changes within one week, which should be studied over longer periods of time in future studies to better understand the comprehensive nature and effects of phototherapy caused by this patch.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/x39-non-invasive-scanning-and-subtle-energy-testing-lab-effect-of-lifewave-x39-patches-on-brain-as-seen-with-p3-brain-mapping.pdf"
+            },
+            "8": {
+              "title": "Metabolic consequences of using the LifeWave X39 patch - Study 4",
+              "description": "The data shows improved blood pressure, 17 statistically significant changes in amino acids over 7 days, significant improvement in anti-inflammatory response, improved sleep quality, reduced blood pressure, improved short-term memory, improved feelings of life energy, and consistency in reports throughout the study, suggesting the need for further research with a larger sample size.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/lifewave-x39-pilot-demonstrates-light-triggered-changes-may-2020.pdf"
+            },
+            "9": {
+              "title": "Changes in GHK and GHK-Cu blood levels caused by the LifeWave X39 patch",
+              "description": "This study found a significant increase in GHK blood levels, which was recorded after 24 hours and again on day 7.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/changes-in-ghk-and-ghk-cu-in-blood-produced-by-the-lifewave-x39-patch.pdf"
+            }
+          }
+        },
+        "information": {
+          "about": "INFORMATION ABOUT ACUPRESSURE",
+          "documents": {
+            "1": {
+              "title": "Auricular acupressure for weight reduction in obese Asian young adults: a randomized controlled trial",
+              "description": "The results of this study showed that after 8 weeks of auricular acupressure treatment using Japanese magnetic pearls, the mean body mass index (BMI) significantly decreased.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/auricular-acupressure-for-weight-reducation-in-obese-asian-young-adults-a-randomized-controlled-trial.pdf"
+            },
+            "2": {
+              "title": "Treatment of obesity with acupuncture",
+              "description": "Acupuncture stimulates the ear branch of the vagus nerve, which has been shown to increase the tone of the stomach's smooth muscle, thereby suppressing appetite. It also controls stress and depression through the production of endorphins and dopamine. In addition to these effects, the increase in beta-endorphin levels in plasma, which naturally occurs after acupuncture, is thought to contribute to weight loss. This is achieved by mobilizing the body's energy reserves through a lipolytic effect. Through these mechanisms, acupuncture can be considered an effective therapy for the treatment of obesity.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/treatment-of-obesity-by-acupuncture.pdf"
+            },
+            "3": {
+              "title": "Acupressure and antioxidants",
+              "description": "Auricular acupressure using pellets can increase the concentration of antioxidant enzymes in people at high risk of diabetes.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/acupressure-and-antioxidants.pdf"
+            },
+            "4": {
+              "title": "Acupressure and anti-aging",
+              "description": "Evidence suggests that acupressure can increase telomere length - molecules at the ends of chromosomes. This increase has potential applications in anti-aging and cancer treatment, according to scientists and the Heart Research Foundation.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/acupressure-abstracts_anti-aging.pdf"
+            },
+            "5": {
+              "title": "Acupressure and pain reduction",
+              "description": "This study showed that acupressure was effective in reducing lower back pain, improving disability scores, pain levels, and functional status. The positive effect persisted for six months.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/acupressure-and-pain-reduction.pdf"
+            },
+            "6": {
+              "title": "Acupressure and sleep improvement",
+              "description": "The data show that the H7 control for insomnia is effective in improving sleep quality and reducing anxiety levels in people with insomnia.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/acupressure-and-sleep-improvement.pdf"
+            },
+            "7": {
+              "title": "Acupressure and mental clarity",
+              "description": "The use of an ancient Jewish prayer ritual, in which two small leather boxes are placed on specific points on the head, shows some connection to acupressure.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/acupressure-and-mental-clarity.pdf"
+            },
+            "8": {
+              "title": "Acupressure and morning sickness",
+              "description": "This study showed that an acupressure wristband can be an alternative therapy for morning sickness in early pregnancy, especially before considering the use of pharmaceuticals.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/acupressure-treatment-of-morning-sickness-in-pregnancy-a-randomised-double-blind-placebo-controlled-study.pdf"
+            }
+          }
+        },
+        "security": {
+          "about": "MECHANISMS OF ACTION AND SAFETY OF LIFEWAVE PATCHES",
+          "documents": {
+            "1": {
+              "title": "Various types of nanotechnology devices",
+              "description": "Author: Steve Haltiwanger, M.D., C.C.N.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/different-types-of-nanotechnology-devices.pdf"
+            },
+            "2": {
+              "title": "Dr. Dean Clark",
+              "description": "Author: Steve Haltiwanger, M.D., C.C.N.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/dr-dean-clark-letter.pdf"
+            },
+            "3": {
+              "title": "US Anti-Doping Agency (USADA)",
+              "description": "",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/u_s_-anti-doping-agency.pdf"
+            },
+            "4": {
+              "title": "World Anti-Doping Agency (WADA)",
+              "description": "",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/world-anti-doping-agency.pdf"
+            },
+            "5": {
+              "title": "Strength test using LifeWave at Morehouse College",
+              "description": "In this double-blind placebo-controlled study, 44 college athlete students from Morehouse College wore either real LifeWave patches or a placebo. The LifeWave group showed significantly greater average improvement in the number of repetitions at 225 pounds (102 kg) and 185 pounds (84 kg) even after an intense 60-minute upper body workout: The placebo group showed an average improvement in the number of repetitions from Monday to Thursday of 4.9%. The LifeWave group showed an average improvement in the number of repetitions from Monday to Thursday of 34%.",
+              "link": "https://thisisitinfo.ru/wp-content/uploads/docs/lifewave-strength-test-morehouse-college.pdf"
+            }
+          }
+        }
+      }
     }
   }
 }
