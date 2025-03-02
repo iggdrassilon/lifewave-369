@@ -16,7 +16,7 @@ const ContentElement = ({content, readmore}: any) => {
     >
       <div
         className={cn(
-          'py-4 text-center'
+          'py-4 text-center min-h-[120px]'
         )}
       >
         {content.title}

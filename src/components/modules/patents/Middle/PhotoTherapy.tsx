@@ -44,6 +44,9 @@ const PhotoTherapy = (props: PhotoTherapyT) => {
         }}
         imageMode={false}
         title={content.title}
+        customStyle={{
+          description: 'font-bold'
+        }}
         description={
           <div 
             dangerouslySetInnerHTML={{ __html: content.description }} // CHILD

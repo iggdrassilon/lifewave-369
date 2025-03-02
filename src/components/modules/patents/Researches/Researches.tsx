@@ -14,10 +14,12 @@ export type ResearchesT = {
     a: {
       title: string;
       description: string;
+      link: string;
     };
     b: {
       title: string;
       description: string;
+      link: string;
     }
   };
 }

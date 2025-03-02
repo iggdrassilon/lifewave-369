@@ -71,7 +71,7 @@ const GridSectionSimple = ({
         <img
           src={image.src}
           alt={image.alt}
-          className="w-full h-auto rounded-lg object-cover m-auto"
+          className="md:w-[70%] h-auto rounded-lg object-cover aspect-video m-auto"
           // loading="lazy"
         />
       )}
