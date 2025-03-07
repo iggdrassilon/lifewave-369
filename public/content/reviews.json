@@ -1,0 +1,799 @@
+
+{
+  "ru": {
+    "reviews": [
+      {
+        "id": "1",
+        "title": "Превосходное качество продукта",
+        "description": "Очень доволен своей покупкой, качество превзошло все ожидания.",
+        "videos": [
+          {
+            "title": "Обзор продукта",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+          },
+          {
+            "title": "Тестирование в домашних условиях",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Продукт в действии",
+            "url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+            "description": "Демонстрация основных функций продукта"
+          },
+          {
+            "title": "Детали упаковки",
+            "url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+            "description": "Премиальная упаковка продукта с полным комплектом"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Отзыв клиента",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          },
+          {
+            "title": "Интервью с разработчиком",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Инновационный дизайн",
+        "description": "Этот продукт сочетает в себе передовые технологии и стильный дизайн.",
+        "videos": [
+          {
+            "title": "Презентация дизайна",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Минималистичный дизайн",
+            "url": "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9",
+            "description": "Элегантный и современный внешний вид"
+          },
+          {
+            "title": "Эргономика",
+            "url": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89",
+            "description": "Удобство использования благодаря продуманной эргономике"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Рассказ дизайнера",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "title": "Впечатляющая функциональность",
+        "description": "Разнообразие функций и возможностей делает этот продукт незаменимым.",
+        "videos": [
+          {
+            "title": "Демонстрация функций",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Возможности продукта",
+            "url": "https://images.unsplash.com/photo-1487215078519-e21cc028cb29",
+            "description": "Широкий спектр возможностей для различных задач"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Отзыв эксперта",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "title": "Долговечность и надежность",
+        "description": "Продукт, который прослужит вам долгие годы без проблем.",
+        "videos": [
+          {
+            "title": "Тест на прочность",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Материалы высокого качества",
+            "url": "https://images.unsplash.com/photo-1619790154436-3f5001e11351",
+            "description": "Использование только премиальных материалов"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Долгосрочный опыт использования",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "title": "Отличное соотношение цены и качества",
+        "description": "Доступная цена при высоком качестве исполнения.",
+        "videos": [
+          {
+            "title": "Сравнение с конкурентами",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Стоимость владения",
+            "url": "https://images.unsplash.com/photo-1553835973-dec43bfddbeb",
+            "description": "Экономическая эффективность в долгосрочной перспективе"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Анализ ценности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "title": "Универсальность применения",
+        "description": "Подходит для различных сценариев использования.",
+        "videos": [
+          {
+            "title": "Примеры использования",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Разнообразие сценариев",
+            "url": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+            "description": "Продукт эффективен в любых условиях"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Отзывы разных пользователей",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "title": "Превосходная производительность",
+        "description": "Высокая скорость работы и отзывчивость интерфейса.",
+        "videos": [
+          {
+            "title": "Тесты производительности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Бенчмарки",
+            "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+            "description": "Результаты сравнительных тестов"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Звук работы устройства",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "title": "Экологичное производство",
+        "description": "Забота об окружающей среде и устойчивое развитие.",
+        "videos": [
+          {
+            "title": "Процесс производства",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Экологические сертификаты",
+            "url": "https://images.unsplash.com/photo-1523461811963-7f1023caeddd",
+            "description": "Соответствие международным стандартам экологичности"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью с экологом",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "title": "Стильный аксессуар",
+        "description": "Элемент, который подчеркнет ваш статус и индивидуальность.",
+        "videos": [
+          {
+            "title": "Модные тенденции",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Элегантный дизайн",
+            "url": "https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3",
+            "description": "Продукт как часть имиджа"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Мнение стилиста",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "title": "Инновационные технологии",
+        "description": "Передовые разработки для максимального комфорта.",
+        "videos": [
+          {
+            "title": "Технологические решения",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Инновации в деталях",
+            "url": "https://images.unsplash.com/photo-1563770660941-20978e870e26",
+            "description": "Уникальные технологические решения"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Рассказ инженера",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3"
+          }
+        ]
+      },
+      {
+        "id": "11",
+        "title": "Комфорт использования",
+        "description": "Эргономичный дизайн для длительного использования без усталости.",
+        "videos": [
+          {
+            "title": "Эргономика в действии",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Удобство в деталях",
+            "url": "https://images.unsplash.com/photo-1569230516306-5a8cb5586399",
+            "description": "Продуманные элементы дизайна"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Опыт длительного использования",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3"
+          }
+        ]
+      },
+      {
+        "id": "12",
+        "title": "Интуитивный интерфейс",
+        "description": "Простота использования без необходимости читать инструкцию.",
+        "videos": [
+          {
+            "title": "Демонстрация управления",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Схема интерфейса",
+            "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+            "description": "Интуитивно понятное расположение элементов"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Отзыв новичка",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "title": "Премиальное качество звука",
+        "description": "Чистое звучание и глубокие басы для настоящих ценителей.",
+        "videos": [
+          {
+            "title": "Аудиотесты",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Технология звучания",
+            "url": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04",
+            "description": "Внутреннее устройство звуковой системы"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Демонстрация звучания",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3"
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "title": "Компактные размеры",
+        "description": "Портативность без ущерба для функциональности.",
+        "videos": [
+          {
+            "title": "Сравнение размеров",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Компактный дизайн",
+            "url": "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7",
+            "description": "Минимальные габариты при максимальной функциональности"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Удобство транспортировки",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3"
+          }
+        ]
+      },
+      {
+        "id": "15",
+        "title": "Безопасность и надежность",
+        "description": "Надежная защита данных и личной информации.",
+        "videos": [
+          {
+            "title": "Системы безопасности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Защита информации",
+            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+            "description": "Надежные технологии шифрования"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью со специалистом по безопасности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "reviews": [
+      {
+        "id": "1",
+        "title": "Превосходное качество продукта",
+        "description": "Очень доволен своей покупкой, качество превзошло все ожидания.",
+        "videos": [
+          {
+            "title": "Обзор продукта",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+          },
+          {
+            "title": "Тестирование в домашних условиях",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Продукт в действии",
+            "url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+            "description": "Демонстрация основных функций продукта"
+          },
+          {
+            "title": "Детали упаковки",
+            "url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+            "description": "Премиальная упаковка продукта с полным комплектом"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Отзыв клиента",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          },
+          {
+            "title": "Интервью с разработчиком",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Инновационный дизайн",
+        "description": "Этот продукт сочетает в себе передовые технологии и стильный дизайн.",
+        "videos": [
+          {
+            "title": "Презентация дизайна",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Минималистичный дизайн",
+            "url": "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9",
+            "description": "Элегантный и современный внешний вид"
+          },
+          {
+            "title": "Эргономика",
+            "url": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89",
+            "description": "Удобство использования благодаря продуманной эргономике"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Рассказ дизайнера",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "title": "Впечатляющая функциональность",
+        "description": "Разнообразие функций и возможностей делает этот продукт незаменимым.",
+        "videos": [
+          {
+            "title": "Демонстрация функций",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Возможности продукта",
+            "url": "https://images.unsplash.com/photo-1487215078519-e21cc028cb29",
+            "description": "Широкий спектр возможностей для различных задач"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Отзыв эксперта",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "title": "Долговечность и надежность",
+        "description": "Продукт, который прослужит вам долгие годы без проблем.",
+        "videos": [
+          {
+            "title": "Тест на прочность",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Материалы высокого качества",
+            "url": "https://images.unsplash.com/photo-1619790154436-3f5001e11351",
+            "description": "Использование только премиальных материалов"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Долгосрочный опыт использования",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "title": "Отличное соотношение цены и качества",
+        "description": "Доступная цена при высоком качестве исполнения.",
+        "videos": [
+          {
+            "title": "Сравнение с конкурентами",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Стоимость владения",
+            "url": "https://images.unsplash.com/photo-1553835973-dec43bfddbeb",
+            "description": "Экономическая эффективность в долгосрочной перспективе"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Анализ ценности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "title": "Универсальность применения",
+        "description": "Подходит для различных сценариев использования.",
+        "videos": [
+          {
+            "title": "Примеры использования",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Разнообразие сценариев",
+            "url": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+            "description": "Продукт эффективен в любых условиях"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Отзывы разных пользователей",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "title": "Превосходная производительность",
+        "description": "Высокая скорость работы и отзывчивость интерфейса.",
+        "videos": [
+          {
+            "title": "Тесты производительности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Бенчмарки",
+            "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+            "description": "Результаты сравнительных тестов"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Звук работы устройства",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "title": "Экологичное производство",
+        "description": "Забота об окружающей среде и устойчивое развитие.",
+        "videos": [
+          {
+            "title": "Процесс производства",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Экологические сертификаты",
+            "url": "https://images.unsplash.com/photo-1523461811963-7f1023caeddd",
+            "description": "Соответствие международным стандартам экологичности"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью с экологом",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "title": "Стильный аксессуар",
+        "description": "Элемент, который подчеркнет ваш статус и индивидуальность.",
+        "videos": [
+          {
+            "title": "Модные тенденции",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Элегантный дизайн",
+            "url": "https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3",
+            "description": "Продукт как часть имиджа"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Мнение стилиста",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "title": "Инновационные технологии",
+        "description": "Передовые разработки для максимального комфорта.",
+        "videos": [
+          {
+            "title": "Технологические решения",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Инновации в деталях",
+            "url": "https://images.unsplash.com/photo-1563770660941-20978e870e26",
+            "description": "Уникальные технологические решения"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Рассказ инженера",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3"
+          }
+        ]
+      },
+      {
+        "id": "11",
+        "title": "Комфорт использования",
+        "description": "Эргономичный дизайн для длительного использования без усталости.",
+        "videos": [
+          {
+            "title": "Эргономика в действии",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Удобство в деталях",
+            "url": "https://images.unsplash.com/photo-1569230516306-5a8cb5586399",
+            "description": "Продуманные элементы дизайна"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Опыт длительного использования",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3"
+          }
+        ]
+      },
+      {
+        "id": "12",
+        "title": "Интуитивный интерфейс",
+        "description": "Простота использования без необходимости читать инструкцию.",
+        "videos": [
+          {
+            "title": "Демонстрация управления",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Схема интерфейса",
+            "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+            "description": "Интуитивно понятное расположение элементов"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Отзыв новичка",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "title": "Премиальное качество звука",
+        "description": "Чистое звучание и глубокие басы для настоящих ценителей.",
+        "videos": [
+          {
+            "title": "Аудиотесты",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Технология звучания",
+            "url": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04",
+            "description": "Внутреннее устройство звуковой системы"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Демонстрация звучания",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3"
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "title": "Компактные размеры",
+        "description": "Портативность без ущерба для функциональности.",
+        "videos": [
+          {
+            "title": "Сравнение размеров",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Компактный дизайн",
+            "url": "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7",
+            "description": "Минимальные габариты при максимальной функциональности"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Удобство транспортировки",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3"
+          }
+        ]
+      },
+      {
+        "id": "15",
+        "title": "Безопасность и надежность",
+        "description": "Надежная защита данных и личной информации.",
+        "videos": [
+          {
+            "title": "Системы безопасности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Защита информации",
+            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+            "description": "Надежные технологии шифрования"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью со специалистом по безопасности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
+          }
+        ]
+      }
+    ]
+  }
+}

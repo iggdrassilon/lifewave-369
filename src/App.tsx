@@ -4,6 +4,7 @@ import { TooltipProvider } from '@/src/components/ui/tooltip'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Header from './components/modules/Header'
@@ -13,9 +14,11 @@ import BackToTop from './components/BackToTop'
 import './App.css'
 
 import Overlay from './components/Overlay'
-import FullScreenBackground from './pages/ComingSoon'
+// import FullScreenBackground from './pages/ComingSoon'
 import { useEffect } from 'react'
 import Patents from './pages/Patents'
+import Reviews from './pages/Reviews'
+import ReviewDetailed from './components/modules/reviews/ReviewDetailed'
 
 const queryClient = new QueryClient()
 
@@ -40,8 +43,8 @@ const App = () => (
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/patents-research' element={<Patents />} />
-              <Route path='/reviews' element={<FullScreenBackground props={'REVIEWS'} />} />
-              {/* <Route path='/story' element={<FullScreenBackground props={'STORY'} />} /> */}
+              <Route path='/reviews' element={<Reviews />} />
+              <Route path='/reviews/:id' element={<ReviewDetailed />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
             <Footer />

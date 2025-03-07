@@ -28,13 +28,13 @@ const ActivateDNA = () => {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen)
   const [isSmScreen, setIsSmScreen] = useState(window.innerWidth < smScreen)
 
+  // const textColor = 'titles'
+  // const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
+  // const borderDev = 'border border-solid border-red-500 border-[1px]' 
   const bgElemsColor = 'rounded-xl backdrop-blur-sm'
-  const textColor = 'titles'
-  const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
   const textDescr = 'text-[21px] text-description'
   const textContent = 'text-xl md:text-2xl text-description text-center'
-  const borderDev = 'border border-solid border-red-500 border-[1px]' 
 
   useEffect(() => {
     if (inView && sectionMounted) {
