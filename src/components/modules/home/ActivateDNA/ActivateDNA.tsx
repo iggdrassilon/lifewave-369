@@ -13,6 +13,7 @@ import usePublic from '@/src/hooks/use-lang'
 const ActivateDNA = () => {
   const content = useLang().CONTENT
   const link = usePublic().LINKS
+
   const [ state, setState ] = useState(false)
   const [ status, setStatus ] = useState(false)
   const [ sectionMounted, setSectionMounted ] = useState(false)

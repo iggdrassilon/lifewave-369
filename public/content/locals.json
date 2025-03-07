@@ -25,6 +25,8 @@
     "girlpatched":   "/images/girl_patched.png",
     "activateDNA":   "/images/ActivateDNA.png",
     "earthbackground": "/images/BG_PATENTS.jpg",
+    "whiteStandart": "/images/standart_white_2.png",
+    "noticeWaves": "/images/blue_waves_background.jpg",
     "patentsPage": {
       "research": {
         "researchA": "/images/Research_1.png",

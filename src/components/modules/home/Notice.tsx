@@ -5,10 +5,11 @@ import { motion } from 'framer-motion'
 import { useInView } from "react-intersection-observer"
 import TypewriterText from '@/src/hooks/Writer'
 import { cn } from '@/src/lib/utils'
+import usePublic from '@/src/hooks/use-lang'
 
 const Notice = () => {
   const content = useLang().CONTENT
-
+  const links = usePublic().LINKS
   const [ref, inView] = useInView()
 
   const [state, setState] = useState(false)
@@ -36,7 +37,7 @@ const Notice = () => {
       <div className='relative'>
         <div className='bg-blue-700 max-h-[600px]'>
           <img
-            src="/images/blue_waves_background.jpg"
+            src={links.content.noticeWaves}
             alt="blue matrix background" 
             className="opacity-80 hue-rotate-30 w-[100%] h-auto object-cover bg-cover" 
           />

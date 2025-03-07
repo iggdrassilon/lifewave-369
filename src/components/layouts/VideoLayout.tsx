@@ -3,13 +3,15 @@ import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
 import { cn } from "@/src/lib/utils"
 import useCache from "@/src/hooks/useCache"
+import useInViewHook from "@/src/hooks/useInView"
 
 const VideoLayout = (props: ViteoLayoutT) => {
   const { videoRef, link, opacity, cover, preview, customClass } = props
-  const [ref, inView] = useInView()
 
-  const videoBlobUrl = useCache(link, 'video', inView)
-  const imgBlobUrl = useCache(preview, 'image', inView)
+  const { ref, isInView } = useInViewHook()
+
+  const videoBlobUrl = useCache(link, 'video', isInView)
+  const imgBlobUrl = useCache(preview, 'image', isInView)
 
   return (
     <div>

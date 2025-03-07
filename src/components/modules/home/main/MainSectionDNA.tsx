@@ -6,14 +6,18 @@ import Card3D from '@/src/components/modules/home/Card3D'
 
 import VideoLayout from '@/src/components/layouts/VideoLayout'
 import usePublic from '@/src/hooks/use-lang'
+import useInViewHook from '@/src/hooks/useInView'
 
-import '../style.css'
 import { cn } from '@/src/lib/utils'
+import '../style.css'
 
 const DnaHero = () => {
   const links = usePublic().LINKS
-  const [ ref, inView ] = useInView()
+
+  const { ref, isInView } = useInViewHook()
+
   const [ rotate, setRotate ] = useState(false)
+
   const videoRef = useRef<any>(null)
  
   const [mousePosition, setMousePosition] = useState({
@@ -21,28 +25,28 @@ const DnaHero = () => {
     y: window.innerHeight * 0.5,
   })
 
-  const handlePointerMove = (
-    event: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
-  ) => {
-    const rect = event.currentTarget.getBoundingClientRect()
-    let x: any, y: any
+  // const handlePointerMove = (
+  //   event: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
+  // ) => {
+  //   const rect = event.currentTarget.getBoundingClientRect()
+  //   let x: any, y: any
 
-    if ('touches' in event) {
-      x = event.touches[0].clientX - rect.left
-      y = event.touches[0].clientY - rect.top
-    } else {
-      x = event.clientX - rect.left
-      y = event.clientY - rect.top
-    }
+  //   if ('touches' in event) {
+  //     x = event.touches[0].clientX - rect.left
+  //     y = event.touches[0].clientY - rect.top
+  //   } else {
+  //     x = event.clientX - rect.left
+  //     y = event.clientY - rect.top
+  //   }
 
-    setMousePosition({ x, y })
-  }
+  //   setMousePosition({ x, y })
+  // }
 
     useEffect(() => {
-      inView ? setRotate(true) : setRotate(false)
+      isInView ? setRotate(true) : setRotate(false)
 
       if (videoRef.current) {
-        if (inView) {
+        if (isInView) {
           // For firefox need small delay before play
           setTimeout(() => {
             videoRef.current.play()
@@ -51,7 +55,7 @@ const DnaHero = () => {
           videoRef.current.pause()
         }
       }
-    }, [inView])
+    }, [isInView])
 
   return (
     <motion.div
@@ -82,15 +86,19 @@ const DnaHero = () => {
             'w-[270px] h-[270px]',
             `${rotate ? 'animate-rotate' : ''} rounded-full`,
             'bg-cover bg-no-repeat',
-            "bg-[url('/public/images/standart_white_2.png')]"
-          )} />
+          )} 
+            style={{
+              backgroundImage: `url(${links.content.whiteStandart})`
+            }}
+          />
           <div className={cn(
             'absolute z-[9]',
             'before:absolute inset-0',
             'before:w-[252px] before:h-[252px]',
             "before:top-[15px] before:left-[18px] before:translate-y-1",
             'before:rounded-full before:shadow-custom'
-          )} />
+          )} 
+          />
         </div>
         <div className={cn(
           'w-[100%] pb-[100px]',

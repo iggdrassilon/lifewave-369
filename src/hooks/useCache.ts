@@ -58,6 +58,7 @@ const useCache = (url: string, type: CacheFileType, viewed: boolean) => {
     if (url && viewed) {
       cacheFile()
     }
+
     return () => {
       if (oldBlobUrl) {
         URL.revokeObjectURL(oldBlobUrl)
