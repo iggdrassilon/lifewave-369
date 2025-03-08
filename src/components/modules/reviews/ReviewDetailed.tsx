@@ -46,8 +46,8 @@ const ReviewDetailed: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse flex flex-col items-center">
-          <div className="w-12 h-12 bg-gray-200 rounded-full mb-4"></div>
-          <div className="h-4 bg-gray-200 rounded w-24"></div>
+          <div className="w-12 h-12 bg-gray-200 rounded-full mb-4" />
+          <div className="h-4 bg-gray-200 rounded w-24" />
         </div>
       </div>
     )
@@ -62,7 +62,9 @@ const ReviewDetailed: React.FC = () => {
         <p className="mb-8 text-center">
           {content.errors.notExist}
         </p>
-        <Link to="/reviews" className="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+        <Link 
+          to="/reviews"
+          className="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
           {content.main.getBack}
         </Link>
       </div>
@@ -77,13 +79,13 @@ const ReviewDetailed: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
-      className="min-h-screen px-6 py-12 mt-[64px] md:px-12 lg:px-24"
+      className="min-h-screen px-2 py-12 mt-[64px] md:px-12 lg:px-24 pt-3 md:pt-4"
     >
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <Link 
             to="/reviews" 
-            className="inline-flex items-center text-blue-500 hover:text-blue-700 transition-colors mb-6"
+            className="inline-flex items-center mt-2 text-blue-500 hover:text-blue-700 transition-colors mb-6"
           >
             <ChevronLeft className="w-4 h-4 mr-1" />
             {content.main.getBackSimple}
@@ -93,10 +95,10 @@ const ReviewDetailed: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            <h1 className="text-center text-3xl md:text-4xl text-title font-bold tracking-tight mb-4 mt-12">
               {title}
             </h1>
-            <p className="text-lg text-gray-600 mb-12">
+            <p className="text-center text-lg text-description mb-12">
               {description}
             </p>
           </motion.div>
@@ -106,20 +108,20 @@ const ReviewDetailed: React.FC = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-12"
+            className="mb-20"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex text-center items-center mb-20">
               <Video className="w-5 h-5 mr-2 text-blue-500" />
-              <h2 className="text-2xl font-semibold">
+              <h2 className="text-center items-center text-2xl text-title font-semibold">
                 {content.main.videos}
               </h2>
             </div>
-            <div className="space-y-8">
+            <div className="space-y-20">
               {videos.map((video: any, index: number) => (
                 <VideoPlayer 
                   key={`video-${index}`}
                   url={video.url}
-                  thumbnail={video.thumbnail}
+                  thumbnail={video.thumbnail && video.thumbnail}
                   title={video.title}
                 />
               ))}
@@ -132,21 +134,21 @@ const ReviewDetailed: React.FC = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-12"
+            className="mb-20"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-20">
               <ImageIcon className="w-5 h-5 mr-2 text-blue-500" />
-              <h2 className="text-2xl font-semibold">
+              <h2 className="text-2xl font-semibold text-title">
                 {content.main.photos}
               </h2>
             </div>
-            <div className="space-y-8">
+            <div className="space-y-20">
               {images.map((image: any, index: number) => (
                 <ImageDisplay 
                   key={`image-${index}`}
                   url={image.url}
-                  title={image.title}
-                  description={image.description}
+                  title={image.title && image.title}
+                  description={image.description && image.description}
                 />
               ))}
             </div>
@@ -160,13 +162,13 @@ const ReviewDetailed: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mb-12"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-20">
               <AudioLines className="w-5 h-5 mr-2 text-blue-500" />
               <h2 className="text-2xl font-semibold">
                 {content.main.audios}
               </h2>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-16">
               {audios.map((audio: any, index: number) => (
                 <AudioPlayer 
                   key={`audio-${index}`}

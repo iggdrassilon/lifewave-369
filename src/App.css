@@ -44,3 +44,20 @@
 .read-the-docs {
   color: #888;
 }
+
+audio::-webkit-media-controls-timeline {
+  background-color: #6e56e927;
+  border-radius: 20px;
+}
+
+audio::-webkit-media-controls-timeline-container {
+  background-color: #0c21c1;
+}
+
+audio::-moz-range-track {
+  background-color: #6e56e927;
+}
+
+audio::-moz-range-progress {
+  background-color: #0c21c1;
+}

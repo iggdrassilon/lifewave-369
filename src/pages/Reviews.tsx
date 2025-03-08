@@ -29,7 +29,7 @@ const Reviews: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen mt-[64px] px-6 py-12 md:px-12 lg:px-24"
+      className="container min-h-screen mt-[64px] px-6 py-12 md:px-12 lg:px-24"
     >
       <motion.div
         initial={{ y: -20, opacity: 0 }}
@@ -41,10 +41,10 @@ const Reviews: React.FC = () => {
         className='text-center'
       >
         <>
-          <h1 className="text-4xl font-bold tracking-tight mb-8">
+          <h1 className="text-4xl font-bold text-title tracking-tight mb-8">
             {content.reviews.main.title}
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mb-12 mx-auto">
+          <p className="text-lg text-description max-w-2xl mb-12 mx-auto">
             {content.reviews.main.description}
           </p>
         </>
