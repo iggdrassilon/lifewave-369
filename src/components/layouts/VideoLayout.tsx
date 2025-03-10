@@ -21,16 +21,16 @@ const VideoLayout = (props: ViteoLayoutT) => {
       >
         <video
           ref={videoRef}
-          loop
+          // loop
           muted
-          autoPlay
+          // autoPlay
           playsInline // for ios
           // eslint-disable-next-line react/no-unknown-property
           webkit-playsinline='true' // for chrome
           disablePictureInPicture
           className={cn(
             `${customClass}`,
-            'object-cover -z-50',
+            'object-cover -z-49',
             `${!cover? 'w-full h-full' : 'w-[100%] h-[100%]'}`
           )}
           controls={false}
@@ -44,8 +44,8 @@ const VideoLayout = (props: ViteoLayoutT) => {
           alt="Previews not available"
           className={cn(
             'object-cover',
-            `${customClass}`,
             'absolute top-0 left-0 -z-50',
+            `${customClass}`,
             `${!cover? 'w-full h-full' : 'w-[100%] h-[100%]'}`
           )}
         />

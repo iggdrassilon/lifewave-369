@@ -5,14 +5,22 @@ import Researches from '@/src/components/modules/patents/ResearchesAB/Researches
 import PhotoTherapy from '@/src/components/modules/patents/Middle/PhotoTherapy'
 import Acupressure from '@/src/components/modules/patents/Middle/Acupressure'
 import OurResearches from '@/src/components/modules/patents/OurResearches/OurResearches'
-import Technology from '../components/modules/patents/Technology/Technology'
-import OurPatents from '../components/modules/patents/OurPatents/OurPatents'
+import Technology from '@/src/components/modules/patents/Technology/Technology'
+import OurPatents from '@/src/components/modules/patents/OurPatents/OurPatents'
+
+import { useEffect } from 'react'
 
 const Patents = () => {
   const UI = usePublic().UI
   const readMore = UI.patents.readmore
   const content = usePublic().CONTENT
   const links = usePublic().LINKS
+
+  useEffect(() => {
+    if (document.title !== content.patents.name) {
+      document.title = content.patents.name
+    }
+  }, [])
 
   return (
     <div
@@ -21,7 +29,7 @@ const Patents = () => {
       <main>
         <Header
           title={content.patents.header}
-          image={links.content.earthbackground}
+          image={links.content.patentsPage.earthbackground}
         />
         <Researches 
           content={content.patents.researches}

@@ -13,6 +13,7 @@ import '../style.css'
 
 const DnaHero = () => {
   const links = usePublic().LINKS
+  const content = usePublic().CONTENT
 
   const { ref, isInView } = useInViewHook()
 
@@ -43,6 +44,9 @@ const DnaHero = () => {
   // }
 
     useEffect(() => {
+      if (document.title !== content.home.name) {
+        document.title = content.home.name
+      }
       isInView ? setRotate(true) : setRotate(false)
 
       if (videoRef.current) {

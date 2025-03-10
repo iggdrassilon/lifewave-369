@@ -49,7 +49,7 @@
         "images": [
           {
             "title": "ОБНОВЛЕНИЕ ИСТОРИИ УСПЕХА Мэнди Роу",
-            "description": "Если вы пропустили... прошло 19 месяцев с момента появления первых патчей для фототерапии!<br>-Больше не будет боли в суставах/сухожилиях<br> -Больше не будет прерывистого сна<br> -Повысится уровень энергии<br> -Улучшится иммунная система<br> -Гормоны сбалансируются (нет больше ужасных судорог)<br> -Морщины уменьшатся<br> -Более густые и здоровые волосы<br> -Больше не будет размытия мозга. <br> Я началa только с патча X39 , но вскоре купилa и остальные. <br> Теперь я использую всевозможные патчи LifeWave .",
+            "description": "Если вы пропустили... прошло 19 месяцев с момента появления первых патчей для фототерапии!<br><br>-Больше не будет боли в суставах/сухожилиях<br> -Больше не будет прерывистого сна<br> -Повысится уровень энергии<br> -Улучшится иммунная система<br> -Гормоны сбалансируются (нет больше ужасных судорог)<br> -Морщины уменьшатся<br> -Более густые и здоровые волосы<br> -Больше не будет размытия мозга. <br><br>Я началa только с патча X39 , но вскоре купилa и остальные. <br> Теперь я использую всевозможные патчи LifeWave .",
             "url": "/images/reviews/hair/1.jpeg"
           },
           {
@@ -72,104 +72,190 @@
         ]
       },
       {
-        "id": "3",
+        "id": "rejuvenation",
         "title": "Омоложение",
         "description": "Заметное пребражение внешнего вида и напитка энергией.",
         "videos": [
           {
-            "title": "Демонстрация функций",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg"
+            "title": "Как патч X39 помог при пигментных пятнах и старении: История Оникса Скольта",
+            "url": "https://kinescope.io/embed/erw48CcdFkjyvRYc3NtChG"
+          },
+          {
+            "url": "https://kinescope.io/embed/pHFAZbu5eiQHZJK5NstxZV"
           }
         ],
         "images": [
           {
-            "title": "Возможности продукта",
-            "url": "https://images.unsplash.com/photo-1487215078519-e21cc028cb29",
-            "description": "Широкий спектр возможностей для различных задач"
+            "url": "/images/reviews/rejuvenation/1.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/2.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/3.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/4.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/5.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/6.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/7.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/8.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/9.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/10.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/11.jpeg"
+          },
+          {
+            "url": "/images/reviews/rejuvenation/12.jpeg"
           }
         ],
-        "audios": [
-          {
-            "title": "Отзыв эксперта",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
-          }
-        ]
+        "audios": []
       },
       {
-        "id": "4",
+        "id": "skin",
         "title": "Кожа",
         "description": "Значительное изменение состояния кожных проблем.",
         "videos": [
           {
-            "title": "Тест на прочность",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg"
+            "title": "Сон, дискомфорт в бедрах, рост волос, тонкие линии и морщины X39",
+            "url": "https://kinescope.io/embed/s1P6sUEpy5hZPGMXwbfuNX"
+          },
+          {
+            "title": "Ирина 65 лет",
+            "url": "https://kinescope.io/embed/jB55brtvuAtBU3k5HBYrzp"
+          },
+          {
+            "title": "Свидетельство об улучшении состояния зубов и кожи Х39",
+            "url": "https://kinescope.io/embed/awpqHXRx5484Sf4Tz4cbKj"
+          },
+          {
+            "title": "Свидетельство улучшения сна, улучшения состояния кожи, ясности ума и повышения стабильности",
+            "url": "https://kinescope.io/embed/5jShbj3kueuqaKraPnXoXk"
+          },
+          {
+            "title": "Свидетельство о том, что глаза ребенка:подростка стали раскосыми и зрение улучшилось X39",
+            "url": "https://kinescope.io/embed/qVWNy4i6QSWrXtk1ZhRNy4"
+          },
+          {
+            "url": "https://kinescope.io/embed/nqWdRanxzz18SPZmU9hvtN"
+          },
+          {
+            "url": "https://kinescope.io/embed/0nD1EoWqZjWkmYcD3Xx5Rc"
           }
         ],
         "images": [
           {
-            "title": "Материалы высокого качества",
-            "url": "https://images.unsplash.com/photo-1619790154436-3f5001e11351",
-            "description": "Использование только премиальных материалов"
+            "url": "/images/reviews/skin/1.jpeg"
+          },
+          {
+            "url": "/images/reviews/skin/2.jpeg"
+          },
+          {
+            "url": "/images/reviews/skin/3.jpeg"
+          },
+          {
+            "url": "/images/reviews/skin/4.jpeg"
+          },
+          {
+            "url": "/images/reviews/skin/5.jpeg"
+          },
+          {
+            "url": "/images/reviews/skin/6.jpeg"
+          },
+          {
+            "url": "/images/reviews/skin/7.jpeg"
+          },
+          {
+            "url": "/images/reviews/skin/8.jpeg"
           }
         ],
-        "audios": [
-          {
-            "title": "Долгосрочный опыт использования",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
-          }
-        ]
+        "audios": []
       },
       {
-        "id": "5",
+        "id": "vision",
         "title": "Зрение",
         "description": "Отзывы о частичном или полном возврате зрения.",
         "videos": [
           {
-            "title": "Сравнение с конкурентами",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+            "title": "Свидетельство об улучшении уровня сахара в крови, улучшении зрения, улучшении артериального давления",
+            "url": "https://kinescope.io/embed/j7LxNFnrXMSQCCTMVve21H"
+          },
+          {
+            "title": "Нателла USA Las Vegas",
+            "url": "https://kinescope.io/embed/45Uy6mP93zgLcRkbrYR3dZ"
+          },
+          {
+            "title": "Свидетельства улучшения памяти, остроты ума, улучшения суставов, улучшения зрения.",
+            "url": "https://kinescope.io/embed/onkRk2BXGqAwpshzoPoALG"
+          },
+          {
+            "title": "Свидетельство о том, что глаза ребенка:подростка стали раскосыми и зрение улучшилось X39",
+            "url": "https://kinescope.io/embed/qVWNy4i6QSWrXtk1ZhRNy4"
           }
         ],
         "images": [
           {
-            "title": "Стоимость владения",
-            "url": "https://images.unsplash.com/photo-1553835973-dec43bfddbeb",
-            "description": "Экономическая эффективность в долгосрочной перспективе"
+            "url": "/images/reviews/vision/1.jpeg"
           }
         ],
-        "audios": [
-          {
-            "title": "Анализ ценности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
-          }
-        ]
+        "audios": []
       },
       {
-        "id": "6",
+        "id": "injuries",
         "title": "Переломы и травмы",
         "description": "Ускорение восстановления после полученных травм различной степени тяжести.",
         "videos": [
           {
-            "title": "Примеры использования",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg"
+            "title": "Нина 69 лет Германия",
+            "url": "https://kinescope.io/embed/5w1uTXPRVJaNJbpkSZSVuR"
+          },
+          {
+            "title": "Ирина 65 лет",
+            "url": "https://kinescope.io/embed/jB55brtvuAtBU3k5HBYrzp"
+          },
+          {
+            "title": "Отзыв: разрыв связок",
+            "url": "https://kinescope.io/embed/wzbTHUyTrcEdtFMmiaBzsy"
+          },
+          {
+            "title": "Глубока рана на ноге",
+            "url": "https://kinescope.io/embed/cGZroSUb7SG4wJ3jEMBWCk"
           }
         ],
         "images": [
           {
-            "title": "Разнообразие сценариев",
-            "url": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
-            "description": "Продукт эффективен в любых условиях"
+            "url": "/images/reviews/injuries/1.jpeg"
+          },
+          {
+            "url": "/images/reviews/injuries/2.jpeg"
+          },
+          {
+            "url": "/images/reviews/injuries/3.jpeg"
+          },
+          {
+            "url": "/images/reviews/injuries/4.jpeg"
+          },
+          {
+            "url": "/images/reviews/injuries/5.jpeg"
+          },
+          {
+            "url": "/images/reviews/injuries/6.jpeg"
           }
         ],
-        "audios": [
-          {
-            "title": "Отзывы разных пользователей",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
-          }
-        ]
+        "audios": []
       },
       {
         "id": "7",

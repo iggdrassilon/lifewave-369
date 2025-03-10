@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-import React, { use, useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { useParams, Link } from 'react-router-dom'
 import { ChevronLeft, Video, Image as ImageIcon, AudioLines } from 'lucide-react'
 
 import { VideoPlayer, ImageDisplay, AudioPlayer } from '@/src/components/atoms/MediaPlayer'
 import usePublic from '@/src/hooks/use-lang'
+import { cn } from '@/src/lib/utils'
 
 interface RouteParams {
   id: string;
@@ -16,10 +16,11 @@ interface RouteParams {
 const ReviewDetailed: React.FC = () => {
   const reviewsData = usePublic().REVIEWS
   const content = usePublic().CONTENT.reviews
+  const links = usePublic().LINKS
 
   const { id } = useParams<RouteParams>()
-  const [review, setReview] = useState<any>(null)
-  const [loading, setLoading] = useState<boolean>(true)
+  const [ review, setReview ] = useState<any>(null)
+  const [ loading, setLoading ] = useState<boolean>(true)
 
   useEffect(() => {
     window.scrollTo({
@@ -28,7 +29,7 @@ const ReviewDetailed: React.FC = () => {
     })
     
     setLoading(true)
-        
+
     const foundReview = reviewsData.find((r: any) => r.id === id)
     
     if (foundReview) {
@@ -74,113 +75,143 @@ const ReviewDetailed: React.FC = () => {
   const { title, description, videos, images, audios } = review
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
-      className="min-h-screen px-2 py-12 mt-[64px] md:px-12 lg:px-24 pt-3 md:pt-4"
-    >
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <Link 
-            to="/reviews" 
-            className="inline-flex items-center mt-2 text-blue-500 hover:text-blue-700 transition-colors mb-6"
-          >
-            <ChevronLeft className="w-4 h-4 mr-1" />
-            {content.main.getBackSimple}
-          </Link>
-          <motion.div
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-center text-3xl md:text-4xl text-title font-bold tracking-tight mb-4 mt-12">
-              {title}
-            </h1>
-            <p className="text-center text-lg text-description mb-12">
-              {description}
-            </p>
-          </motion.div>
-        </div>
-        {videos && videos.length > 0 && (
-          <motion.section 
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-20"
-          >
-            <div className="flex text-center items-center mb-20">
-              <Video className="w-5 h-5 mr-2 text-blue-500" />
-              <h2 className="text-center items-center text-2xl text-title font-semibold">
-                {content.main.videos}
-              </h2>
-            </div>
-            <div className="space-y-20">
-              {videos.map((video: any, index: number) => (
-                <VideoPlayer 
-                  key={`video-${index}`}
-                  url={video.url}
-                  thumbnail={video.thumbnail && video.thumbnail}
-                  title={video.title}
-                />
-              ))}
-            </div>
-          </motion.section>
+    <>
+      <div
+        className={cn(
+          "mb-8",
+          'w-[100vw] h-[550px]',
+          'flex items-end',
+          'bg-cover bg-center bg-no-repeat',
         )}
-
-        {images && images.length > 0 && (
-          <motion.section 
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-20"
-          >
-            <div className="flex items-center mb-20">
-              <ImageIcon className="w-5 h-5 mr-2 text-blue-500" />
-              <h2 className="text-2xl font-semibold text-title">
-                {content.main.photos}
-              </h2>
-            </div>
-            <div className="space-y-20">
-              {images.map((image: any, index: number) => (
-                <ImageDisplay 
-                  key={`image-${index}`}
-                  url={image.url}
-                  title={image.title && image.title}
-                  description={image.description && image.description}
-                />
-              ))}
-            </div>
-          </motion.section>
-        )}
-
-        {audios && audios.length > 0 && (
-          <motion.section 
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mb-12"
-          >
-            <div className="flex items-center mb-20">
-              <AudioLines className="w-5 h-5 mr-2 text-blue-500" />
-              <h2 className="text-2xl font-semibold">
-                {content.main.audios}
-              </h2>
-            </div>
-            <div className="space-y-16">
-              {audios.map((audio: any, index: number) => (
-                <AudioPlayer 
-                  key={`audio-${index}`}
-                  url={audio.url}
-                  title={audio.title}
-                />
-              ))}
-            </div>
-          </motion.section>
-        )}
+        style={{
+          backgroundImage: `url(${links.content.reviewsPage.background})`,
+          backgroundPositionX: '65%'
+        }}
+      >
+        <Link 
+          to="/reviews"
+          className={cn(
+            'absolute top-[80px] left-4',
+            'mt-2 mb-6 p-2 pr-4 rounded-xl',
+            'text-title hover:text-description bg-cyan-100/70 font-bold',
+            'inline-flex items-center transition-colors font-extrabold'
+          )}
+        >
+          <ChevronLeft 
+            className="w-4 h-4 mr-1"
+          />
+          {content.main.getBackSimple}
+        </Link>
+        <motion.div
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className={cn(
+            'py-4',
+            'mx-auto w-[100%]',
+            'text-4xl font-bold text-center text-title',
+            'bg-white/70'
+          )}
+        >
+          <h1 className={cn(
+            'text-title font-bold',
+            'text-center text-3xl md:text-4xl tracking-tight mb-2'
+          )}>
+            {title}
+          </h1>
+          <p className="text-center text-lg text-description">
+            {description}
+          </p>
+        </motion.div>
       </div>
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4 }}
+        className="min-h-screen px-2 py-12 mt-[64px] md:px-12 lg:px-24 pt-3 md:pt-4"
+      >
+        <div className="max-w-4xl mx-auto">
+          {videos && videos.length > 0 && (
+            <motion.section 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-20"
+            >
+              <div className="flex text-center items-center mb-20">
+                <Video className="w-5 h-5 mr-2 text-blue-500" />
+                <h2 className="text-center items-center text-2xl text-title font-semibold">
+                  {content.main.videos}
+                </h2>
+              </div>
+              <div className="space-y-20">
+                {videos.map((video: any, index: number) => (
+                  <VideoPlayer 
+                    key={`video-${index}`}
+                    url={video.url}
+                    thumbnail={video.thumbnail && video.thumbnail}
+                    customFrame={video.customFrame}
+                    title={video.title}
+                  />
+                ))}
+              </div>
+            </motion.section>
+          )}
+  
+          {images && images.length > 0 && (
+            <motion.section 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-20"
+            >
+              <div className="flex items-center mb-20">
+                <ImageIcon className="w-5 h-5 mr-2 text-blue-500" />
+                <h2 className="text-2xl font-semibold text-title">
+                  {content.main.photos}
+                </h2>
+              </div>
+              <div className="space-y-20">
+                {images.map((image: any, index: number) => (
+                  <ImageDisplay 
+                    key={`image-${index}`}
+                    url={image.url}
+                    title={image.title && image.title}
+                    description={image.description && image.description}
+                  />
+                ))}
+              </div>
+            </motion.section>
+          )}
+  
+          {audios && audios.length > 0 && (
+            <motion.section 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mb-12"
+            >
+              <div className="flex items-center mb-20">
+                <AudioLines className="w-5 h-5 mr-2 text-blue-500" />
+                <h2 className="text-2xl font-semibold">
+                  {content.main.audios}
+                </h2>
+              </div>
+              <div className="space-y-16">
+                {audios.map((audio: any, index: number) => (
+                  <AudioPlayer 
+                    key={`audio-${index}`}
+                    url={audio.url}
+                    title={audio.title}
+                  />
+                ))}
+              </div>
+            </motion.section>
+          )}
+        </div>
+      </motion.div>
+    </>
   )
 }
 

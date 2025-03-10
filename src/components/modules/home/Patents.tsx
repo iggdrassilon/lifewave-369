@@ -11,6 +11,7 @@ import usePublic from '@/src/hooks/use-lang'
 const Patents = () => {
   const content = useLang().CONTENT
   const links = usePublic().LINKS
+
   const [ state, setState ] = useState(false)
   const [ status, setStatus ] = useState(false)
   const [ sectionMounted, setSectionMounted ] = useState(false)
@@ -37,7 +38,7 @@ const Patents = () => {
     if (inView && sectionMounted) {
       setState(true)
     }
-  
+
     const handleResize = () => {
       setIsXlScreen(window.innerWidth < xlScreen)
       setIsSmScreen(window.innerWidth < smScreen)
@@ -199,10 +200,18 @@ const Patents = () => {
             'flex justify-center items-center',
             'mb-[80px]',
           )}>
-            <GlowButton
-              link='/patents-research'
-              message={content.home.patents.button} 
-            />
+            <div className='flex flex-col md:flex-row gap-6'>
+              <GlowButton
+                link='/patents-research'
+                message={content.home.patents.button}
+                style='purple'
+              />
+              <GlowButton
+                link='/reviews'
+                message={content.home.reviews.button}
+                style='blue'
+              />
+            </div>
           </div>
         </>
       )}

@@ -22,17 +22,16 @@ const Header = ({ title, image }: HeaderProps) => {
           <div 
             ref={ref} 
             className={cn(
-              // "absolute top-[4rem] left-0  mx-auto",
               'w-[100vw] h-[550px]',
               'flex items-end justify-center',
               'bg-cover bg-center bg-no-repeat',
             )}
             style={{
-              backgroundImage: `url(${image})`,  // WHITE WAVE BACKGROUND
+              backgroundImage: `url(${image})`,  // BACKGROUND
               backgroundPositionX: '65%'
             }}
           >
-            <h1 
+            <h1
               className={cn(
                 'w-[100%]',
                 'py-6 px-4',

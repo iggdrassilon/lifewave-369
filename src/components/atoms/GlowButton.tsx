@@ -3,12 +3,19 @@ import './style.css'
 import { Link } from 'react-router-dom'
 import { scrollToTop } from '@/src/hooks/dom'
 
-const GlowButton = ({message, link}: {message: string, link: string}) => {
+type GlowButtonT = {
+  message: string;
+  link: string;
+  style: string;
+}
+
+const GlowButton = ({message, link, style}: GlowButtonT) => {
   return (
     <Link
       to={link}
       className={cn(
-        'rounded-3xl',
+        `${style}`,
+        'rounded-3xl min-w-[333px]',
         'flex justify-center items-center select-none',
         'btn-glow btn-hover-shine'
       )}

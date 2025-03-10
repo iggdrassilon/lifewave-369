@@ -1,13 +1,18 @@
 
 import React, { useState, useRef, useEffect } from 'react'
-import { motion } from 'framer-motion'
+
 import { Play, Image as ImageIcon, AudioLines } from 'lucide-react'
+import { motion } from 'framer-motion'
+
+import DOMPurify from 'dompurify'
+
 import { cn } from '@/src/lib/utils'
 
 interface VideoProps {
   url: string;
-  thumbnail?: string;
   title: string;
+  thumbnail?: string;
+  customFrame?: boolean;
 }
 
 interface ImageProps {
@@ -21,22 +26,27 @@ interface AudioProps {
   title: string;
 }
 
-export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title }) => {
-  // const [isPlaying, setIsPlaying] = useState(false)
-  const videoRef = useRef<HTMLDivElement>(null)
+export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title, customFrame }) => {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   const min_height = 'min-h-[320px] lg:h-[500px]'
 
-  // const handleVideoClick = () => {
-  //   if (videoRef.current) {
-  //     if (isPlaying) {
-  //       videoRef.current.pause()
-  //     } else {
-  //       videoRef.current.play()
-  //     }
-  //     setIsPlaying(!isPlaying)
-  //   }
-  // }
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      console.log('tblk')
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
+  useEffect(() => {
+    console.log(videoRef.current)
+  }, [videoRef.current])
 
   return (
     <motion.div
@@ -49,7 +59,8 @@ export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title }) => 
         {title}
       </h4>
       <div className="relative">
-        <div ref={videoRef} className={`aspect-w-16 aspect-h-9 h-[100%] ${min_height}`}>
+        {!customFrame && (
+          <div className={`aspect-w-16 aspect-h-9 h-[100%] ${min_height}`}>
           <iframe
             src={url}
             title={title}
@@ -58,21 +69,28 @@ export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title }) => 
             className={`w-[100%] h-auto ${min_height} rounded-3xl overflow-hidden`}
           />
         </div>
-        {/* <video
-          ref={videoRef}
-          src={url}
-          poster={thumbnail}
-          controls={isPlaying}
-          onClick={handleVideoClick}
-          className="w-full rounded-xl cursor-pointer"
-        />
-        {!isPlaying && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/10 rounded-xl">
-            <div className="p-3 rounded-full bg-white/90 shadow-lg cursor-pointer">
-              <Play className="w-8 h-8 text-blue-500" />
-            </div>
-          </div>
-        )} */}
+        )}
+        {customFrame && (
+          <>
+            <video
+              ref={videoRef}
+              src={url}
+              poster={thumbnail}
+              controls={isPlaying}
+              className="w-full rounded-xl cursor-pointer"
+            />
+            {!isPlaying && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 rounded-xl">
+                <div className="p-3 rounded-full bg-white/90 shadow-lg cursor-pointer">
+                  <Play 
+                    className="w-8 h-8 text-blue-500"
+                    onClick={() => handleVideoClick()}
+                  />
+                </div>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </motion.div>
   )
@@ -80,7 +98,8 @@ export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title }) => 
 
 export const ImageDisplay: React.FC<ImageProps> = ({ url, title, description }) => {
   const [isLoaded, setIsLoaded] = useState(false)
-  
+  const descriptionPured = DOMPurify.sanitize(description)
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -113,9 +132,11 @@ export const ImageDisplay: React.FC<ImageProps> = ({ url, title, description }) 
         {title}
       </h4>
       {description && 
-        <p className="mt-1 text-sm text-description text-center">
-          {description}
-        </p>
+        <div 
+          className="mt-1 text-sm text-description text-center"
+          dangerouslySetInnerHTML={{ __html: descriptionPured }}
+        >
+        </div>
       }
     </motion.div>
   )

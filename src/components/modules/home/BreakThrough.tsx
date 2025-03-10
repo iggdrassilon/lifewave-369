@@ -186,7 +186,6 @@ const BreakThrough = () => {
               transition: {
                 duration: 0.6,
                 delay: 0.6
-
               }
             }
           }}

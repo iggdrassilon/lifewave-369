@@ -12,6 +12,7 @@ import BreakThrough from '@/src/components/modules/home/BreakThrough'
 import Patents from '@/src/components/modules/home/Patents'
 
 const Home = () => {
+
   return (
     <div className='bg-transparent relative'>
       <main>
