@@ -15,8 +15,6 @@ const Footer = () => {
     { name: UI.footer.links.mission, path: '/mission' },
     { name: UI.footer.links.feedback, path: '/feedback' },
     { name: UI.footer.links.instructions, path: '/instructions' },
-    { name: UI.footer.links.story, path: '/story' },
-    { name: UI.footer.links.policies, path: '/policies' },
     { name: UI.footer.links.policy, path: '/privacy' },
     { name: UI.footer.links.terms, path: '/terms' },
   ]

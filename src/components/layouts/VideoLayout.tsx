@@ -21,9 +21,9 @@ const VideoLayout = (props: ViteoLayoutT) => {
       >
         <video
           ref={videoRef}
-          loop
+          // loop
           muted
-          autoPlay
+          // autoPlay
           playsInline // for ios
           // eslint-disable-next-line react/no-unknown-property
           webkit-playsinline='true' // for chrome

@@ -19,6 +19,8 @@ import { useEffect } from 'react'
 import Patents from './pages/Patents'
 import Reviews from './pages/Reviews'
 import ReviewDetailed from './components/modules/reviews/ReviewDetailed'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 
 const queryClient = new QueryClient()
 
@@ -44,10 +46,12 @@ const App = () => (
               <Route path='/' element={<Home />} />
               <Route path='/patents-research' element={<Patents />} />
               <Route path='/reviews' element={<Reviews />} />
+              <Route path='/privacy' element={<Privacy />} />
+              <Route path='/terms' element={<Terms />} />
               <Route path='/reviews/:id' element={<ReviewDetailed />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
-            <Footer />
+            {/* <Footer /> */}
             <BackToTop />
             <Overlay />
           </>

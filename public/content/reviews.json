@@ -367,8 +367,108 @@
         "audios": []
       },
       {
-        "id": "10",
-        "title": "Диабет",
+        "id": "mind",
+        "title": "Ясность ума/Память",
+        "description": "Придумайте краткое описание о данных отзывах...",
+        "videos": [
+          {
+            "title": "Системы безопасности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Защита информации",
+            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+            "description": "Надежные технологии шифрования"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью со специалистом по безопасности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
+          }
+        ]
+      },
+      {
+        "id": "heart",
+        "title": "Сердце",
+        "description": "Придумайте краткое описание о данных отзывах...",
+        "videos": [
+          {
+            "title": "Системы безопасности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Защита информации",
+            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+            "description": "Надежные технологии шифрования"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью со специалистом по безопасности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
+          }
+        ]
+      },
+      {
+        "id": "pressure",
+        "title": "Давление",
+        "description": "Придумайте краткое описание о данных отзывах...",
+        "videos": [
+          {
+            "title": "Системы безопасности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Защита информации",
+            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+            "description": "Надежные технологии шифрования"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью со специалистом по безопасности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
+          }
+        ]
+      },
+      {
+        "id": "cov-id",
+        "title": "COVID 19",
+        "description": "Придумайте краткое описание о данных отзывах...",
+        "videos": [
+          {
+            "title": "Системы безопасности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Защита информации",
+            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+            "description": "Надежные технологии шифрования"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью со специалистом по безопасности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
+          }
+        ]
+      },
+      {
+        "id": "dream",
+        "title": "Сон",
         "description": "Как происходит снятие оков инсулиновой зависимости организма.",
         "videos": [
           {
@@ -392,7 +492,32 @@
         ]
       },
       {
-        "id": "11",
+        "id": "diabetes",
+        "title": "Диабет",
+        "description": "Придумайте краткое описание о данных отзывах...",
+        "videos": [
+          {
+            "title": "Системы безопасности",
+            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+          }
+        ],
+        "images": [
+          {
+            "title": "Защита информации",
+            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+            "description": "Надежные технологии шифрования"
+          }
+        ],
+        "audios": [
+          {
+            "title": "Интервью со специалистом по безопасности",
+            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
+          }
+        ]
+      },
+      {
+        "id": "celebral-palsy",
         "title": "ДЦП",
         "description": "Отзывы людей с ДЦП различной степенью тяжести.",
         "videos": [
@@ -417,7 +542,7 @@
         ]
       },
       {
-        "id": "12",
+        "id": "wrinkles",
         "title": "Морщины",
         "description": "Явное омоложение и исправление проблем с преждевременным старением.",
         "videos": [
@@ -442,7 +567,7 @@
         ]
       },
       {
-        "id": "13",
+        "id": "hormonal-changes",
         "title": "Гормональная перестройка",
         "description": "Ощутимые изменения жизненных циклов у взрослых и подростков.",
         "videos": [
@@ -467,7 +592,7 @@
         ]
       },
       {
-        "id": "14",
+        "id": "immunal-system",
         "title": "Имунная система",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -492,7 +617,7 @@
         ]
       },
       {
-        "id": "15",
+        "id": "psoriasis",
         "title": "Псориаз",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -517,7 +642,7 @@
         ]
       },
       {
-        "id": "16",
+        "id": "dementia",
         "title": "Деменция",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -542,7 +667,7 @@
         ]
       },
       {
-        "id": "17",
+        "id": "lyme-disease",
         "title": "Болезнь Лайма",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -567,8 +692,8 @@
         ]
       },
       {
-        "id": "18",
-        "title": "Зубах",
+        "id": "teeth",
+        "title": "Зубы",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
@@ -592,7 +717,7 @@
         ]
       },
       {
-        "id": "19",
+        "id": "asthma",
         "title": "Астма",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -617,7 +742,7 @@
         ]
       },
       {
-        "id": "20",
+        "id": "parkinson-disease",
         "title": "Болезнь Паркинсона",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -642,7 +767,7 @@
         ]
       },
       {
-        "id": "21",
+        "id": "alzheimer-disease",
         "title": "Болезнь Альцгеймера",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -667,8 +792,8 @@
         ]
       },
       {
-        "id": "22",
-        "title": "Магрень / Головная боль",
+        "id": "head-pain",
+        "title": "Мигрень / Головная боль",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
@@ -692,7 +817,7 @@
         ]
       },
       {
-        "id": "23",
+        "id": "spine",
         "title": "Позвоночник",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -717,7 +842,7 @@
         ]
       },
       {
-        "id": "24",
+        "id": "stroke",
         "title": "Инсульт",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -742,7 +867,7 @@
         ]
       },
       {
-        "id": "25",
+        "id": "bladder",
         "title": "Мочевой пузырь",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -767,7 +892,7 @@
         ]
       },
       {
-        "id": "26",
+        "id": "multiple-sclerosis",
         "title": "Рассеянный склероз",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -792,7 +917,7 @@
         ]
       },
       {
-        "id": "27",
+        "id": "have-desire-to-live",
         "title": "Появилось желание жить",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -817,7 +942,7 @@
         ]
       },
       {
-        "id": "28",
+        "id": "hearing",
         "title": "Слух",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -842,7 +967,7 @@
         ]
       },
       {
-        "id": "29",
+        "id": "anxious-feel",
         "title": "Чувство тревоги",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -867,7 +992,7 @@
         ]
       },
       {
-        "id": "30",
+        "id": "improvements-disability",
         "title": "Улучшения при инвалидности",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -892,7 +1017,7 @@
         ]
       },
       {
-        "id": "31",
+        "id": "rheumatoid-arthritis",
         "title": "Ревматоидный артрит",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -917,7 +1042,7 @@
         ]
       },
       {
-        "id": "32",
+        "id": "extended-improvement",
         "title": "Расширенное улучшение",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -942,7 +1067,7 @@
         ]
       },
       {
-        "id": "33",
+        "id": "prostate",
         "title": "Простата",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -967,7 +1092,7 @@
         ]
       },
       {
-        "id": "34",
+        "id": "anesthesia",
         "title": "Обезболивание",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -992,7 +1117,7 @@
         ]
       },
       {
-        "id": "35",
+        "id": "neuropathy",
         "title": "Нейропатия",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -1017,7 +1142,7 @@
         ]
       },
       {
-        "id": "36",
+        "id": "neurological-disorders",
         "title": "Неврологические расстройства",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -1042,7 +1167,7 @@
         ]
       },
       {
-        "id": "37",
+        "id": "exhaustion",
         "title": "Истощение",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -1067,7 +1192,7 @@
         ]
       },
       {
-        "id": "38",
+        "id": "dialysis",
         "title": "Диализ",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -1092,7 +1217,7 @@
         ]
       },
       {
-        "id": "39",
+        "id": "kids",
         "title": "Дети",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -1117,7 +1242,7 @@
         ]
       },
       {
-        "id": "40",
+        "id": "hypertension",
         "title": "Гипертония",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -1142,7 +1267,7 @@
         ]
       },
       {
-        "id": "41",
+        "id": "venous-phenomens",
         "title": "Венозные явления",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -1167,7 +1292,7 @@
         ]
       },
       {
-        "id": "42",
+        "id": "sun-allergy",
         "title": "Аллергия на солнце",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
@@ -1192,7 +1317,7 @@
         ]
       },
       {
-        "id": "43",
+        "id": "autism",
         "title": "Аутизм",
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
