@@ -258,84 +258,118 @@
         "audios": []
       },
       {
-        "id": "7",
+        "id": "menstruation",
         "title": "Менструация",
         "description": "Отзывы женщин о снятии недомоганий во время менструации.",
         "videos": [
           {
-            "title": "Тесты производительности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+            "title": "Эмилия результат Х-39",
+            "url": "https://kinescope.io/embed/bLXKYpFzXCNWNKpeudtXPW"
+          },
+          {
+            "title": "Ольга USA",
+            "url": "https://kinescope.io/embed/g6B17qzs3F2Eu5UJhx299f"
+          },
+          {
+            "url": "https://kinescope.io/embed/4KayocEodoLT56NwsGYgqz"
           }
         ],
-        "images": [
-          {
-            "title": "Бенчмарки",
-            "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-            "description": "Результаты сравнительных тестов"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Звук работы устройства",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
-        "id": "8",
+        "id": "bones",
         "title": "Кости и суставы",
         "description": "Забота о своей опорно двигательной конструкции.",
         "videos": [
           {
-            "title": "Процесс производства",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg"
+            "title": "Валентина Ситникова Х-39",
+            "url": "https://kinescope.io/embed/herJEPokg3KLiHy7EpRU8R"
+          },
+          {
+            "title": "Татьяна Днепр. КОКСАРТРОЗ и МИГРЕНЬ в ПРОШЛОМ",
+            "url": "https://kinescope.io/embed/dMzpCQ37W8AkbVdx5qZhyZ"
+          },
+          {
+            "title": "Нателла",
+            "url": "https://kinescope.io/embed/h2yThtyZKMFrBXdun8nYmd"
+          },
+          {
+            "title": "Каби 60 лет. Алматы Казахстан.",
+            "url": "https://kinescope.io/embed/uVHuSRXpWk7EYtnY2n8b5v"
+          },
+          {
+            "title": "Нина 69 лет Германия",
+            "url": "https://kinescope.io/embed/5w1uTXPRVJaNJbpkSZSVuR"
+          },
+          {
+            "title": "X39 Свидетельство улучшения энергии, ясности ума, дискомфорта в суставах, заживления ран",
+            "url": "https://kinescope.io/embed/6zrkfbBY2cLkgaxAz8Tmyb"
+          },
+          {
+            "title": "X39 Свидетельство улучшения состояния суставов, увеличения роста волос",
+            "url": "https://kinescope.io/embed/aHsVXtcpDu9q18LXTAV9qX"
+          },
+          {
+            "title": "Свидетельство об улучшении и изменении жизни, включая улучшение памяти, суставов и потерю веса X39",
+            "url": "https://kinescope.io/embed/76gaoTdr9oqk9DiBoorRKm"
+          },
+          {
+            "title": "Свидетельства улучшения памяти, остроты ума, улучшения суставов, улучшения зрения.",
+            "url": "https://kinescope.io/embed/onkRk2BXGqAwpshzoPoALG"
+          },
+          {
+            "title": "Суставы, подвижность, легкость.",
+            "url": "https://kinescope.io/embed/6GgEFHjGbWAxS9YGGhU6jv"
+          },
+          {
+            "url": "https://kinescope.io/embed/8LeESZLPbp9KsSjVcTifoN"
+          },
+          {
+            "url": "https://kinescope.io/embed/wkpKUmDGFx9EcmfBsJHFXy"
           }
         ],
-        "images": [
-          {
-            "title": "Экологические сертификаты",
-            "url": "https://images.unsplash.com/photo-1523461811963-7f1023caeddd",
-            "description": "Соответствие международным стандартам экологичности"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью с экологом",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
-        "id": "9",
+        "id": "Cancer",
         "title": "Рак",
         "description": "Неизлечимое становится излечиваемым.",
         "videos": [
           {
-            "title": "Модные тенденции",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg"
+            "title": "Прощай рак кожи",
+            "url": "https://kinescope.io/embed/6CwRrnjsTAp6oWte5VSVE6"
+          },
+          {
+            "title": "Был рак молочной железы",
+            "url": "https://kinescope.io/embed/voA7Rxtr4nciAeJJRzgAgT"
+          },
+          {
+            "title": "Истории Польша",
+            "url": "https://kinescope.io/embed/g6c5HJua85Av9xuMB5vwvb"
+          },
+          {
+            "title": "НЕЙРОПАТИЯ",
+            "url": "https://kinescope.io/embed/3G6ZcXN3rXVRLWfGaiBJR2"
+          },
+          {
+            "url": "https://kinescope.io/embed/0kVMX6967npL9JYchZ8USB"
+          },
+          {
+            "url": "https://kinescope.io/embed/p6mMQGt1Ed51a9RsLac5eB"
+          },
+          {
+            "url": "https://kinescope.io/embed/jK96pYxPNR3ULXyXmdv9Av"
           }
         ],
-        "images": [
-          {
-            "title": "Элегантный дизайн",
-            "url": "https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3",
-            "description": "Продукт как часть имиджа"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Мнение стилиста",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "10",
         "title": "Диабет",
-        "description": "Как происходит снятие оков инсуоиновой зависимости организма.",
+        "description": "Как происходит снятие оков инсулиновой зависимости организма.",
         "videos": [
           {
             "title": "Технологические решения",

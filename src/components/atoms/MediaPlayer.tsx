@@ -19,6 +19,7 @@ interface ImageProps {
   url: string;
   title: string;
   description?: string;
+  vertical?: boolean;
 }
 
 interface AudioProps {
@@ -58,7 +59,13 @@ export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title, custo
       <h4 className="mt-3 text-lg font-medium text-center text-description">
         {title}
       </h4>
-      <div className="relative">
+      <div 
+        className="relative rounded-[25px]"
+        style={{
+          border: '1px solid rgba(1,1,1,.1)',
+          boxShadow: '0 4px 15px rgba(1,1,1,.2)'
+        }}
+      >
         {!customFrame && (
           <div className={`aspect-w-16 aspect-h-9 h-[100%] ${min_height}`}>
           <iframe
@@ -107,7 +114,13 @@ export const ImageDisplay: React.FC<ImageProps> = ({ url, title, description }) 
       transition={{ duration: 0.5 }}
       className="media-container mb-8"
     >
-      <div className="relative mx-auto overflow-hidden rounded-xl max-w-[400px]">
+      <div 
+        className="relative mx-auto overflow-hidden rounded-xl max-w-[400px]"
+        style={{
+          border: '1px solid rgba(1,1,1,.1)',
+          boxShadow: '0 4px 15px rgba(1,1,1,.2)'
+        }}
+      >
         <div className={cn(
           `${isLoaded ? 'opacity-0' : 'opacity-100'}`,
           'flex items-center justify-center',
@@ -123,7 +136,7 @@ export const ImageDisplay: React.FC<ImageProps> = ({ url, title, description }) 
           alt={title}
           className={cn(
             `${isLoaded ? 'lazy-image loaded' : 'lazy-image'}`,
-            'w-full h-auto object-cover transition-all duration-700'
+            'w-full h-auto object-cover transition-all duration-700',
           )}
           onLoad={() => setIsLoaded(true)}
         />
