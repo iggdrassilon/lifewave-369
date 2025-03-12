@@ -369,77 +369,105 @@
       {
         "id": "mind",
         "title": "Ясность ума/Память",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Как патчи могут влиять на сознание.",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Ольга USA",
+            "url": "https://kinescope.io/embed/g6B17qzs3F2Eu5UJhx299f"
+          },
+          {
+            "title": "X39 Свидетельство улучшения неврологического расстройства",
+            "url": "https://kinescope.io/embed/tWqVYVrk7DEbSyLEa2i89P"
+          },
+          {
+            "title": "X39 Свидетельство улучшения энергии, ясности ума, дискомфорта в суставах, заживления ран",
+            "url": "https://kinescope.io/embed/kUpYk2hwFQ6F8TWprMw7M6"
+          },
+          {
+            "title": "X39 Свидетельствует о глубоком сне, энергии, восстановлении мышц, ясности ума и затуманенности мозга",
+            "url": "https://kinescope.io/embed/fQTS5RCAhCeTUoZ8BeWX73"
+          },
+          {
+            "title": "X39 Свидетельство улучшения состояния суставов, увеличения роста волос",
+            "url": "https://kinescope.io/embed/aHsVXtcpDu9q18LXTAV9qX"
+          },
+          {
+            "title": "Свидетельство об улучшении уровня сахара в крови, улучшении зрения, улучшении артериального давления",
+            "url": "https://kinescope.io/embed/j7LxNFnrXMSQCCTMVve21H"
+          },
+          {
+            "title": "Свидетельства улучшения памяти, остроты ума, улучшения суставов, улучшения зрения.",
+            "url": "https://kinescope.io/embed/onkRk2BXGqAwpshzoPoALG"
+          },
+          {
+            "title": "Свидетельство об улучшении и изменении жизни, включая улучшение памяти, суставов и потерю веса X39",
+            "url": "https://kinescope.io/embed/76gaoTdr9oqk9DiBoorRKm"
+          },
+          {
+            "title": "Свидетельство улучшения сна, улучшения состояния кожи, ясности ума и повышения стабильности",
+            "url": "https://kinescope.io/embed/5jShbj3kueuqaKraPnXoXk"
+          },
+          {
+            "title": "Деменция 87 лет через 2 месяца память вернулась",
+            "url": "https://kinescope.io/embed/s9Wvr21ngH3YeGzkgKprpV"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "heart",
         "title": "Сердце",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Отзывы о работе патчей при проблемах с сердцем.",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "СЕРДЦЕ",
+            "url": "https://kinescope.io/embed/7nFz2PQ43tFXyDwHeGRnUY"
+          },
+          {
+            "title": "Ирина 65 лет",
+            "url": "https://kinescope.io/embed/ujFy5j2G2EDrm4KssKC7DA"
+          },
+          {
+            "title": "X39 Heart Cardiac Test Result Improvement Testimony",
+            "url": "https://kinescope.io/embed/2UybvVenRPficnT2zgd3cJ"
+          },
+          {
+            "title": "X39 Testimony | Heart Improvement",
+            "url": "https://kinescope.io/embed/5E6FQLYjvAzwNihtgihGiX"
+          },
+          {
+            "title": "Ольга Харьков",
+            "url": "https://kinescope.io/embed/3PeboWFfQhfEeBqqNUD1rL"
+          },
+          {
+            "title": "Похудела на 30 кг. Пульс был 30-35 стал 50-56",
+            "url": "https://kinescope.io/embed/hk5W3YHkjW5H11uzRd58kZ"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "pressure",
         "title": "Давление",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Отзывы о влиянии и изменении давления",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Нургуль 59 лет Алматы",
+            "url": "https://kinescope.io/embed/raWzJJkX8761cMC9xbo52j"
+          },
+          {
+            "title": "Свидетельство улучшении высокого кровяного давления, диализе, и стабилизации уровня сахара в крови",
+            "url": "https://kinescope.io/embed/nxSN2VuRB417yyVqfpHwgb"
+          },
+          {
+            "title": "Свидетельство об улучшении уровня сахара в крови, улучшении зрения, улучшении артериального давления",
+            "url": "https://kinescope.io/embed/j7LxNFnrXMSQCCTMVve21H"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "cov-id",
@@ -447,74 +475,100 @@
         "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Александр, переболел COVID + результат мамы 92 г",
+            "url": "https://kinescope.io/embed/jBNJQVT1sg6pS6vjokByxA"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "dream",
         "title": "Сон",
         "description": "Как происходит снятие оков инсулиновой зависимости организма.",
         "videos": [
+          
           {
-            "title": "Технологические решения",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg"
+            "title": "Софья Константиновна Казахстан",
+            "url": "https://kinescope.io/embed/749xvP5u8KoYrwGGQuGQAj"
+          },
+          {
+            "title": "X39 Свидетельство улучшения энергии, ясности ума, дискомфорта в суставах, заживления ран",
+            "url": "https://kinescope.io/embed/6zrkfbBY2cLkgaxAz8Tmyb"
+          },
+          {
+            "title": "X39 Свидетельствует о глубоком сне, энергии, восстановлении мышц, ясности ума и затуманенности мозга",
+            "url": "https://kinescope.io/embed/fQTS5RCAhCeTUoZ8BeWX73"
+          },
+          {
+            "title": "X39 Свидетельство улучшения энергии, ясности ума, дискомфорта в суставах, заживления ран",
+            "url": "https://kinescope.io/embed/6zrkfbBY2cLkgaxAz8Tmyb"
+          },
+          {
+            "title": "Свидетельство улучшения сна, улучшения состояния кожи, ясности ума и повышения стабильности",
+            "url": "https://kinescope.io/embed/5jShbj3kueuqaKraPnXoXk"
+          },
+          {
+            "title": "Свидетельство улучшения сна и большей энергии | Массивные улучшения с их невербальным внуком",
+            "url": "https://kinescope.io/embed/abP35rGtpLRoHJVujqQwNo"
+          },
+          {
+            "title": "Свидетельства улучшения памяти, остроты ума, улучшения суставов, улучшения зрения.",
+            "url": "https://kinescope.io/embed/onkRk2BXGqAwpshzoPoALG"
+          },
+          {
+            "title": "Как патч X39 помог при пигментных пятнах и старении: История Оникса Скольта",
+            "url": "https://kinescope.io/embed/erw48CcdFkjyvRYc3NtChG"
+          },
+          {
+            "title": "Сон, дискомфорт в бедрах, рост волос, тонкие линии и морщины X39",
+            "url": "https://kinescope.io/embed/s1P6sUEpy5hZPGMXwbfuNX"
           }
         ],
         "images": [
           {
-            "title": "Инновации в деталях",
-            "url": "https://images.unsplash.com/photo-1563770660941-20978e870e26",
-            "description": "Уникальные технологические решения"
+            "title": "ОБНОВЛЕНИЕ ИСТОРИИ УСПЕХА Мэнди Роу",
+            "description": "Если вы пропустили... прошло 19 месяцев с момента появления первых патчей для фототерапии!<br><br>-Больше не будет боли в суставах/сухожилиях<br> -Больше не будет прерывистого сна<br> -Повысится уровень энергии<br> -Улучшится иммунная система<br> -Гормоны сбалансируются (нет больше ужасных судорог)<br> -Морщины уменьшатся<br> -Более густые и здоровые волосы<br> -Больше не будет размытия мозга. <br><br>Я началa только с патча X39 , но вскоре купилa и остальные. <br> Теперь я использую всевозможные патчи LifeWave .",
+            "url": "/images/reviews/hair/1.jpeg"
           }
         ],
-        "audios": [
-          {
-            "title": "Рассказ инженера",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3"
-          }
-        ]
+        "audios": []
       },
       {
         "id": "diabetes",
         "title": "Диабет",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Упоминания диабетиков о работе пластыря",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "url": "https://kinescope.io/embed/9XvTDuSUGbe7aFR4VvAmj3"
+          },
+          {
+            "title": "Жанна 30 лет ДИАБЕТ",
+            "url": "https://kinescope.io/embed/v3jnxQktJxi35WhEXaaSCU"
+          },
+          {
+            "title": "МАРИНА Диабет 2-го типа, ОНКОЛОГИЯ",
+            "url": "https://kinescope.io/embed/g9MNBjkKqu5Kg9GS3YueqF"
+          },
+          {
+            "title": "РЕЗУЛЬТАТЫ 28 января",
+            "url": "https://kinescope.io/embed/ov6YZMY4CYnbtpJFo2H5ca"
+          },
+          {
+            "title": "Как я вернул себе жизнь после диализа и диабета с помощью LifeWave X-39: История Дэйва Грегори",
+            "url": "https://kinescope.io/embed/nxSN2VuRB417yyVqfpHwgb"
+          },
+          {
+            "title": "Свидетельство об улучшении уровня сахара в крови, улучшении зрения, улучшении артериального давления",
+            "url": "https://kinescope.io/embed/j7LxNFnrXMSQCCTMVve21H"
+          },
+          {
+            "title": "Показатели сахара с 32 до 12 моль за год ношения х39.",
+            "url": "https://kinescope.io/embed/5jz8rgQ1f19SVUed3mufdd"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "celebral-palsy",
@@ -522,24 +576,18 @@
         "description": "Отзывы людей с ДЦП различной степенью тяжести.",
         "videos": [
           {
-            "title": "Эргономика в действии",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg"
+            "title": "Использование патчей 200 дней",
+            "url": "https://kinescope.io/embed/pTsfqGEdnxB5zsU59YQz2L"
           }
         ],
         "images": [
           {
             "title": "Удобство в деталях",
-            "url": "https://images.unsplash.com/photo-1569230516306-5a8cb5586399",
-            "description": "Продуманные элементы дизайна"
+            "url": "/images/reviews/celebral/1.jpeg",
+            "description": "Друзья !<br>Новые результаты 2024 года <br>Патчами пользуется весь мир! <br><br>Смотрите результат!<br>Есть отзыв из Турции при ДЦП:<br><br>В течение 30 лет были испробованы все методы лечения, но результатов не было получено. <br>Начал использовать патчи  X39 для активации стволовых клеток, патчи   Aeoн и   Глутатион. <br>Наша сестра Себахат теперь может сидеть, двигать шеей и двигаться. Качество жизни улучшилось благодаря технологии Lifewave. <br>Спасибо Lifewave.<br><br>ПОСЛЕ 160 ДНЕЙ<br>Видео результат 200 дней"
           }
         ],
-        "audios": [
-          {
-            "title": "Опыт длительного использования",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3"
-          }
-        ]
+        "audios": []
       },
       {
         "id": "wrinkles",
@@ -547,24 +595,24 @@
         "description": "Явное омоложение и исправление проблем с преждевременным старением.",
         "videos": [
           {
-            "title": "Демонстрация управления",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg"
+            "title": "Свидетельство об улучшении состояния зубов и кожи Х39",
+            "url": "https://kinescope.io/embed/awpqHXRx5484Sf4Tz4cbKj"
+          },
+          {
+            "title": "Свидетельство улучшения сна, улучшения состояния кожи, ясности ума и повышения стабильности",
+            "url": "https://kinescope.io/embed/5jShbj3kueuqaKraPnXoXk"
+          },
+          {
+            "title": "Свидетельство о том, что глаза ребенка:подростка стали раскосыми и зрение улучшилось X39",
+            "url": "https://kinescope.io/embed/qVWNy4i6QSWrXtk1ZhRNy4"
+          },
+          {
+            "title": "Сон, дискомфорт в бедрах, рост волос, тонкие линии и морщины X39",
+            "url": "https://kinescope.io/embed/s1P6sUEpy5hZPGMXwbfuNX"
           }
         ],
-        "images": [
-          {
-            "title": "Схема интерфейса",
-            "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
-            "description": "Интуитивно понятное расположение элементов"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Отзыв новичка",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "hormonal-changes",
@@ -577,19 +625,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Технология звучания",
-            "url": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04",
-            "description": "Внутреннее устройство звуковой системы"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Демонстрация звучания",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "immunal-system",
@@ -602,419 +639,333 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Компактный дизайн",
-            "url": "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7",
-            "description": "Минимальные габариты при максимальной функциональности"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Удобство транспортировки",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "psoriasis",
         "title": "Псориаз",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Улучшение кожи и кожных недомоганий",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "за 90 дней прощай псориаз",
+            "url": "https://kinescope.io/embed/6ioYxSoAsSySY1Mg1vFV5W"
           }
         ],
         "images": [
           {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
+            "url": "/images/reviews/psoriasis/1.jpeg"
           }
         ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "audios": []
       },
       {
         "id": "dementia",
         "title": "Деменция",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Возвращение памяти при деменции",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Деменция 87 лет через 2 месяца память вернулась",
+            "url": "https://kinescope.io/embed/s9Wvr21ngH3YeGzkgKprpV"
+          },
+          {
+            "title": "Сергей о результатах своего папы, пришел в сознание после деменции 👍",
+            "url": "https://kinescope.io/embed/uX2frWeJAbMrvso5HCSvTr"
+          },
+          {
+            "title": "Мой отзыв по деменции",
+            "url": "https://kinescope.io/embed/qZhMGGEGvXzzs5fRVSQdXs"
+          },
+          {
+            "title": "Мама вспомнила как ее зовут, как фамилия и как зовут папу. Ведь она молчала и веьа себя как неадекватная",
+            "url": "https://kinescope.io/embed/qDBFXQAnqKghZXAsePC8ob"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "lyme-disease",
         "title": "Болезнь Лайма",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Отзыв пациента с болезнью Лайма",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "У меня была поздняя стадия хронического Лайма в течение 26 лет. Это мои результаты после ношения 5 патчей в течение чуть менее 2 месяцев! 😭😍💚💚💚💚💚💚🙏🌹",
+            "url": "https://kinescope.io/embed/6M5soR36TKVkmC7i7uQrvU"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "teeth",
         "title": "Зубы",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Упоминания о зубных улушениях у пользователей данной световой технологии",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "X39 Свидетельство улучшения состояния суставов, увеличения роста волос",
+            "url": "https://kinescope.io/embed/aHsVXtcpDu9q18LXTAV9qX"
+          },
+          {
+            "title": "Как патч X39 помог при пигментных пятнах и старении: История Оникса Скольта",
+            "url": "https://kinescope.io/embed/erw48CcdFkjyvRYc3NtChG"
+          },
+          {
+            "title": "Свидетельство об улучшении состояния зубов и кожи Х39",
+            "url": "https://kinescope.io/embed/awpqHXRx5484Sf4Tz4cbKj"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "asthma",
         "title": "Астма",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Уход астмы, больше не мечта, а реальность",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Майа 82 года",
+            "url": "https://kinescope.io/embed/mj4QsHoa5A54sqcVaY2GWX"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "parkinson-disease",
         "title": "Болезнь Паркинсона",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Отзывы о применении патчей при болезни Паркинсона",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Болезнь Паркинсона. Казахстан",
+            "url": "https://kinescope.io/embed/5VKtrmWr5m9vhArLSFd3aY"
+          },
+          {
+            "title": "Болезнь Паркинсона",
+            "url": "https://kinescope.io/embed/a1kcQvvyiKWyUoLuoMCv2Y"
+          },
+          {
+            "url": "https://kinescope.io/embed/bWy1NZiKYCCKKDBgAHsbAX"
+          },
+          {
+            "url": "https://kinescope.io/embed/iTDCbBaZoSUB6e3LsWEKeD"
+          },
+          {
+            "title": "Галина Краскевич, 77 лет Иркутск, улучшилось зрение, ушел тремор паркинсона 💣💣💣",
+            "url": "https://kinescope.io/embed/ciC6CthKoeaE5oC15JVtYa"
           }
+          
         ],
         "images": [
           {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
+            "title": "Просто еще одно чудо",
+            "description": "Итак, мы новички в использовании патчей, и делаем это в течение 9 дней. Сегодня утром я плакала как ребенок, когда мой муж позвал, чтобы я пришла в ванную.<br><br>У него болезнь Паркинсона, и жизнь была для него битвой. Он позвал меня посмотреть, пока он чистил зубы правой рукой, а также брился ею.<br><br>Он не мог сделать это уже больше года!!! Его дрожь уменьшилась, а также подергивание большого пальца и непроизвольные движения головой! МЫ оба испытываем гораздо меньше боли, чем раньше, и мой уровень энергии резко возрос, несмотря на диагноз волчанки. Это равносильно чуду в нашей книге!",
+            "url": "/images/reviews/parkinson/1.jpeg"
           }
         ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "audios": []
       },
       {
         "id": "alzheimer-disease",
         "title": "Болезнь Альцгеймера",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Болезнь Альцгеймера отзывы",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Галия Каюповна",
+            "url": "https://kinescope.io/embed/pHaFmyQAYR95nkDTE9CdWD"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "head-pain",
         "title": "Мигрень / Головная боль",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Помощь при частых головных болях",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Нателла USA Las Vegas",
+            "url": "https://kinescope.io/embed/45Uy6mP93zgLcRkbrYR3dZ"
+          },
+          {
+            "title": "Свидетельство о мигрени и дискомфорте в голове X39",
+            "url": "https://kinescope.io/embed/vU35raVSe5zNJfYbt4VUZd"
+          },
+          {
+            "title": "Нателла",
+            "url": "https://kinescope.io/embed/h2yThtyZKMFrBXdun8nYmd"
+          },
+          {
+            "title": "Татьяна Днепр. КОКСАРТРОЗ и МИГРЕНЬ в ПРОШЛОМ",
+            "url": "https://kinescope.io/embed/dMzpCQ37W8AkbVdx5qZhyZ"
+          },
+          {
+            "title": "Как Эвия из Латвии справилась с мигренью с помощью патчей X39!",
+            "url": "https://kinescope.io/embed/dS2fcwJPKbcaTEqNGqaASo"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "spine",
         "title": "Позвоночник",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Свидетельства улучшения проблем с позвоночником",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Нэля позвоночник",
+            "url": "https://kinescope.io/embed/hHEC8H4Ex7vdzxdaVLyXzh"
+          },
+          {
+            "title": "X39 Свидетельство улучшения состояния суставов, увеличения роста волос",
+            "url": "https://kinescope.io/embed/aHsVXtcpDu9q18LXTAV9qX"
+          },
+          {
+            "title": "Свидетельства улучшения памяти, остроты ума, улучшения суставов, улучшения зрения.",
+            "url": "https://kinescope.io/embed/onkRk2BXGqAwpshzoPoALG"
+          },
+          {
+            "title": "Рассеянный склероз дочери, Ласима Алматы",
+            "url": "https://kinescope.io/embed/uNeAtfvwPdUkf89UaYt2SE"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "stroke",
         "title": "Инсульт",
-        "description": "Придумайте краткое описание о данных отзывах...",
+        "description": "Реабилитация после инсульта",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Анжелика результат отца, инсульт и инфаркт",
+            "url": "https://kinescope.io/embed/kLJXYyUwSCeVFsbxQzwTL4"
+          },
+          {
+            "title": "Свидетельство значительного улучшения после инсульта",
+            "url": "https://kinescope.io/embed/nwiXzwWN9QwjbJDkqVQkJX"
+          },
+          {
+            "url": "https://kinescope.io/embed/kBeJw6v5DKcZjuod74S5C7"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "bladder",
         "title": "Мочевой пузырь",
-        "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "X39 Свидетельство улучшения энергии, ясности ума, дискомфорта в суставах, заживления ран",
+            "url": "https://kinescope.io/embed/6zrkfbBY2cLkgaxAz8Tmyb"
+          },
+          {
+            "title": "Нургуль 59 лет Алматы",
+            "url": "https://kinescope.io/embed/raWzJJkX8761cMC9xbo52j"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "multiple-sclerosis",
         "title": "Рассеянный склероз",
-        "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Рассеянный склероз дочери, Ласима Алматы",
+            "url": "https://kinescope.io/embed/uNeAtfvwPdUkf89UaYt2SE"
+          },
+          {
+            "title": "Рассеянный склероз 5 дней тестирования",
+            "url": "https://kinescope.io/embed/nPqfgpt5BgCWVS6SCUybdU"
+          },
+          {
+            "url": "https://kinescope.io/embed/oG1FFojZWk7QmUVY2MZe8Q"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "have-desire-to-live",
         "title": "Появилось желание жить",
-        "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Похудела на 30 кг. Пульс был 30-35 стал 50-56",
+            "url": "https://kinescope.io/embed/hk5W3YHkjW5H11uzRd58kZ"
+          },
+          {
+            "title": "Ирина Шамаханская",
+            "url": "https://kinescope.io/embed/uTfidBwKNjzwYhjjrwZn6q"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "hearing",
         "title": "Слух",
-        "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Галия Каюповна",
+            "url": "https://kinescope.io/embed/pHaFmyQAYR95nkDTE9CdWD"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "anxious-feel",
         "title": "Чувство тревоги",
-        "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Ольга USA",
+            "url": "https://kinescope.io/embed/g6B17qzs3F2Eu5UJhx299f"
+          },
+          {
+            "title": "X39 Свидетельство улучшения неврологического расстройства",
+            "url": "https://kinescope.io/embed/tWqVYVrk7DEbSyLEa2i89P"
+          },
+          {
+            "title": "X39 Свидетельство улучшения энергии, ясности ума, дискомфорта в суставах, заживления ран",
+            "url": "https://kinescope.io/embed/6zrkfbBY2cLkgaxAz8Tmyb"
+          },
+          {
+            "title": "X39 Свидетельствует о глубоком сне, энергии, восстановлении мышц, ясности ума и затуманенности мозга",
+            "url": "https://kinescope.io/embed/fQTS5RCAhCeTUoZ8BeWX73"
+          },
+          {
+            "title": "X39 Свидетельство улучшения состояния суставов, увеличения роста волос",
+            "url": "https://kinescope.io/embed/aHsVXtcpDu9q18LXTAV9qX"
+          },
+          {
+            "title": "Свидетельство об улучшении уровня сахара в крови, улучшении зрения, улучшении артериального давления",
+            "url": "https://kinescope.io/embed/j7LxNFnrXMSQCCTMVve21H"
+          },
+          {
+            "title": "Свидетельство об улучшении и изменении жизни, включая улучшение памяти, суставов и потерю веса X39",
+            "url": "https://kinescope.io/embed/76gaoTdr9oqk9DiBoorRKm"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "improvements-disability",
         "title": "Улучшения при инвалидности",
-        "description": "Придумайте краткое описание о данных отзывах...",
         "videos": [
           {
-            "title": "Системы безопасности",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+            "title": "Свидетельство улучшения сна и большей энергии | Массивные улучшения с их невербальным внуком",
+            "url": "https://kinescope.io/embed/abP35rGtpLRoHJVujqQwNo"
+          },
+          {
+            "title": "Показания фиксаторов ног для ходьбы без них",
+            "url": "https://kinescope.io/geFoknJojGvRVDEHvX8kyn"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "rheumatoid-arthritis",
@@ -1027,19 +978,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "extended-improvement",
@@ -1052,19 +992,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "prostate",
@@ -1077,19 +1006,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "anesthesia",
@@ -1102,19 +1020,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "neuropathy",
@@ -1127,19 +1034,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "neurological-disorders",
@@ -1152,19 +1048,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "exhaustion",
@@ -1177,19 +1062,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "dialysis",
@@ -1202,19 +1076,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "kids",
@@ -1227,19 +1090,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "hypertension",
@@ -1252,19 +1104,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "venous-phenomens",
@@ -1277,19 +1118,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "sun-allergy",
@@ -1302,19 +1132,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": []
       },
       {
         "id": "autism",
@@ -1327,19 +1146,8 @@
             "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
           }
         ],
-        "images": [
-          {
-            "title": "Защита информации",
-            "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-            "description": "Надежные технологии шифрования"
-          }
-        ],
-        "audios": [
-          {
-            "title": "Интервью со специалистом по безопасности",
-            "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          }
-        ]
+        "images": [],
+        "audios": [ ]
       }
     ]
   },
