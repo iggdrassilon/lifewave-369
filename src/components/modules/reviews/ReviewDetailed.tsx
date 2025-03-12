@@ -7,9 +7,10 @@ import { ChevronLeft, Video, Image as ImageIcon, AudioLines } from 'lucide-react
 import { VideoPlayer, ImageDisplay, AudioPlayer } from '@/src/components/atoms/MediaPlayer'
 import usePublic from '@/src/hooks/use-lang'
 import { cn } from '@/src/lib/utils'
+import Spinner from '../../atoms/Spinner'
 
 interface RouteParams {
-  id: string;
+  path: string;
   [key: string]: string | undefined;
 }
 
@@ -18,7 +19,7 @@ const ReviewDetailed: React.FC = () => {
   const content = usePublic().CONTENT.reviews
   const links = usePublic().LINKS
 
-  const { id } = useParams<RouteParams>()
+  const { path } = useParams<RouteParams>()
   const [ review, setReview ] = useState<any>(null)
   const [ loading, setLoading ] = useState<boolean>(true)
 
@@ -27,11 +28,10 @@ const ReviewDetailed: React.FC = () => {
       top: 0,
       behavior: 'smooth',
     })
-    
     setLoading(true)
 
-    const foundReview = reviewsData.find((r: any) => r.id === id)
-    
+    const foundReview = reviewsData.find((r: any) => r.path === path)
+  
     if (foundReview) {
       setReview(foundReview)
       document.title = `${content.main.review}: ${foundReview.title}`
@@ -41,15 +41,12 @@ const ReviewDetailed: React.FC = () => {
       setLoading(false)
     }, 500)
     return () => clearTimeout(timer)
-  }, [id])
+  }, [path])
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse flex flex-col items-center">
-          <div className="w-12 h-12 bg-gray-200 rounded-full mb-4" />
-          <div className="h-4 bg-gray-200 rounded w-24" />
-        </div>
+        <Spinner />
       </div>
     )
   }

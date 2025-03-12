@@ -48,10 +48,10 @@ const App = () => (
               <Route path='/reviews' element={<Reviews />} />
               <Route path='/privacy' element={<Privacy />} />
               <Route path='/terms' element={<Terms />} />
-              <Route path='/reviews/:id' element={<ReviewDetailed />} />
+              <Route path='/reviews/:path' element={<ReviewDetailed />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
-            {/* <Footer /> */}
+            <Footer />
             <BackToTop />
             <Overlay />
           </>

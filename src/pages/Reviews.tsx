@@ -65,6 +65,7 @@ const Reviews: React.FC = () => {
             <ReviewCard
               key={review.id}
               id={review.id}
+              path={review.path}
               title={review.title}
               description={review.description}
               bgColor={bgColor}

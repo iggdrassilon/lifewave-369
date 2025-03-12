@@ -7,12 +7,13 @@ import { cn } from '@/src/lib/utils'
 
 interface ReviewCardProps {
   id: string;
+  path: string;
   title: string;
   description: string;
   bgColor?: string;
 }
 
-const ReviewCard: React.FC<ReviewCardProps> = ({ id, title, description, bgColor }) => {
+const ReviewCard: React.FC<ReviewCardProps> = ({ id, path, title, description, bgColor }) => {
   const content = usePublic().CONTENT
   return (
     <motion.div
@@ -25,7 +26,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ id, title, description, bgColor
       className="review-card w-full"
     >
       <Link
-        to={`/reviews/${id}`}
+        to={`/reviews/${path}`}
         className="block h-full"
       >
         <div 
