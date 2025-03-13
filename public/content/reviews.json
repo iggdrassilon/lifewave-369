@@ -631,36 +631,6 @@
         "audios": []
       },
       {
-        "id": "18",
-        "path": "hormonal-changes",
-        "title": "Гормональная перестройка",
-        "description": "Ощутимые изменения жизненных циклов у взрослых и подростков.",
-        "videos": [
-          {
-            "title": "Аудиотесты",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
-          }
-        ],
-        "images": [],
-        "audios": []
-      },
-      {
-        "id": "19",
-        "path": "immunal-system",
-        "title": "Имунная система",
-        "description": "Придумайте краткое описание о данных отзывах...",
-        "videos": [
-          {
-            "title": "Сравнение размеров",
-            "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-            "thumbnail": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
-          }
-        ],
-        "images": [],
-        "audios": []
-      },
-      {
         "id": "20",
         "path": "psoriasis",
         "title": "Псориаз",
