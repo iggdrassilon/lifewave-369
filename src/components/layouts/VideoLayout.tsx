@@ -9,7 +9,6 @@ db.version(2).stores({
   videos: 'url, data',
   images: 'url, data'
 })
-
 const VideoLayout = (props: ViteoLayoutT) => {
   const { videoRef, link, opacity, cover, preview, customClass } = props
 
@@ -26,7 +25,6 @@ const VideoLayout = (props: ViteoLayoutT) => {
       try {
         const cachedVideo = await db.table('videos').get(link)
         if (cachedVideo) {
-          console.log(cachedVideo)
           const blobUrl = URL.createObjectURL(cachedVideo.data)
           setVideoBlobUrl(blobUrl)
           setIsVideoLoaded(true)
@@ -47,7 +45,6 @@ const VideoLayout = (props: ViteoLayoutT) => {
       try {
         const cachedImage = await db.table('images').get(preview)
         if (cachedImage) {
-          console.log(cachedImage)
           const blobUrl = URL.createObjectURL(cachedImage.data)
           setImgBlobUrl(blobUrl)
         } else {

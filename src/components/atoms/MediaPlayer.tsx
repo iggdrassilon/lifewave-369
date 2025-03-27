@@ -35,7 +35,6 @@ export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title, custo
 
   const handleVideoClick = () => {
     if (videoRef.current) {
-      console.log('tblk')
       if (isPlaying) {
         videoRef.current.pause()
       } else {
@@ -44,10 +43,6 @@ export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title, custo
       setIsPlaying(!isPlaying)
     }
   }
-
-  useEffect(() => {
-    console.log(videoRef.current)
-  }, [videoRef.current])
 
   return (
     <motion.div

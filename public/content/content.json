@@ -537,6 +537,24 @@
           }
         }
       }
+    },
+    "reviews": {
+      "main": {
+        "name": "Reviews",
+        "review": "Review",
+        "title": "Reviews after applying patches",
+        "description": "Read reviews from customers whose situation was significantly improved by X39 patches.",
+        "getBackSimple": "Back to list",
+        "getBack": "Back to reviews list",
+        "turnIt": "Go to",
+        "videos": "Videos",
+        "photos": "Photos",
+        "audios": "Audio recordings"
+      },
+      "errors": {
+        "notFound": "Review not found",
+        "notExist": "The requested review does not exist or has been deleted."
+      }
     }
   }
 }
