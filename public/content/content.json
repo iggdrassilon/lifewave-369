@@ -271,6 +271,7 @@
         "turnIt": "Перейти",
         "videos": "Видео",
         "photos": "Фотографии",
+        "letters": "Письменные отзывы",
         "audios": "Аудиозаписи"
       },
       "errors": {
@@ -549,6 +550,7 @@
         "turnIt": "Go to",
         "videos": "Videos",
         "photos": "Photos",
+        "letters": "Written reviews",
         "audios": "Audio recordings"
       },
       "errors": {

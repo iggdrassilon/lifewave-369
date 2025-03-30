@@ -19,7 +19,8 @@ export default {
     },
     width: {
       descr: '450px',
-      descr_md: '598px'
+      descr_md: '598px',
+      calc_40: 'calc(100% - 40px)'
     },
     extend: {
       maxWidth: {
