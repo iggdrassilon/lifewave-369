@@ -17,7 +17,7 @@ const usePublic = () => {
 
   const CONTENT = content[lang]
   const UI = _UI[lang]
-  const REVIEWS = reviewsData[lang].reviews
+  const REVIEWS = reviewsData['ru'].reviews
   const PRIVACY = privacy[lang].privacy
   const TERMS = terms[lang].terms
 
