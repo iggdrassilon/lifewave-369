@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useParams, Link } from 'react-router-dom'
 import { ChevronLeft, Video, Image as ImageIcon, AudioLines } from 'lucide-react'
 
-import { VideoPlayer, ImageDisplay, AudioPlayer } from '@/src/components/atoms/MediaPlayer'
+import { VideoPlayer, ImageDisplay, AudioPlayer, LetterDisplay } from '@/src/components/atoms/MediaPlayer'
 import usePublic from '@/src/hooks/use-lang'
 import { cn } from '@/src/lib/utils'
 import Spinner from '../../atoms/Spinner'
@@ -69,7 +69,7 @@ const ReviewDetailed: React.FC = () => {
     )
   }
 
-  const { title, description, videos, images, audios } = review
+  const { title, description, videos, images, audios, letters } = review
 
   return (
     <>
@@ -155,7 +155,6 @@ const ReviewDetailed: React.FC = () => {
               </div>
             </motion.section>
           )}
-  
           {images && images.length > 0 && (
             <motion.section 
               initial={{ y: 20, opacity: 0 }}
@@ -181,7 +180,30 @@ const ReviewDetailed: React.FC = () => {
               </div>
             </motion.section>
           )}
-  
+          {letters && letters.length > 0 && (
+            <motion.section 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-20"
+            >
+              <div className="flex items-center mb-20">
+                <ImageIcon className="w-5 h-5 mr-2 text-blue-500" />
+                <h2 className="text-2xl font-semibold text-title">
+                  {content.main.letters}
+                </h2>
+              </div>
+              <div className="space-y-20">
+                {letters.map((image: any, index: number) => (
+                  <LetterDisplay
+                    key={`letter-${index}`}
+                    title={image.title && image.title}
+                    description={image.description && image.description}
+                  />
+                ))}
+              </div>
+            </motion.section>
+          )}
           {audios && audios.length > 0 && (
             <motion.section 
               initial={{ y: 20, opacity: 0 }}

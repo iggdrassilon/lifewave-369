@@ -22,6 +22,12 @@ interface ImageProps {
   vertical?: boolean;
 }
 
+interface LetterProps {
+  title: string;
+  description?: string;
+  vertical?: boolean;
+}
+
 interface AudioProps {
   url: string;
   title: string;
@@ -112,7 +118,7 @@ export const ImageDisplay: React.FC<ImageProps> = ({ url, title, description }) 
       <div 
         className="relative mx-auto overflow-hidden rounded-xl max-w-[400px]"
         style={{
-          border: '1px solid rgba(1,1,1,.1)',
+          border: url && '1px solid rgba(1,1,1,.1)',
           boxShadow: '0 4px 15px rgba(1,1,1,.2)'
         }}
       >
@@ -150,7 +156,43 @@ export const ImageDisplay: React.FC<ImageProps> = ({ url, title, description }) 
   )
 }
 
+export const LetterDisplay: React.FC<LetterProps> = ({ title, description }) => {
+  const descriptionPured = DOMPurify.sanitize(description)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="media-container mb-8"
+    >
+      <div
+        className="relative p-8 mx-auto overflow-hidden rounded-xl max-w-[400px]"
+        style={{
+          border: '1px solid rgba(1,1,1,.1)',
+          boxShadow: '0 4px 15px rgba(1,1,1,.2)'
+        }}
+      >
+        {title && (
+          <h4 className="mt-3 text-lg font-medium text-center text-title">
+            {title}
+          </h4>
+        )}
+        {description && 
+          <div 
+            className="mt-1 text-sm text-description text-start"
+            dangerouslySetInnerHTML={{ __html: descriptionPured }}
+          >
+          </div>
+        }
+      </div>
+    </motion.div>
+  )
+}
+
 export const AudioPlayer: React.FC<AudioProps> = ({ url, title }) => {
+  const sanitizedTitle = DOMPurify.sanitize(title)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -163,18 +205,23 @@ export const AudioPlayer: React.FC<AudioProps> = ({ url, title }) => {
           <AudioLines className="w-6 h-6 text-blue-600" />
         </div> */}
         <div 
-          className="flex-grow"
+          className="flex flex-col w-[100%] items-center rounded-[20px]"
+          style={{
+            border: '1px solid rgba(1,1,1,.1)',
+            boxShadow: '0 4px 15px rgba(1,1,1,.2)'
+          }}
         >
-          <h4
-            className="text-lg font-medium mb-2 text-center text-description"
-          >
-            {title}
-          </h4>
+          {title && (
+            <h4
+              className="text-sm max-w-[478px] inline-block font-medium p-4 pt-8 text-start text-description mx-auto"
+              dangerouslySetInnerHTML={{ __html: sanitizedTitle}}
+            />
+          )}
           <audio 
             src={url}
             controls
             preload='auto'
-            className="w-[100%] rounded-3xl"
+            className="w-[100%] md:w-calc_40 md:mx-[20px] rounded-3xl"
           />
         </div>
       </div>

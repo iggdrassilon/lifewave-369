@@ -73,10 +73,11 @@ const Notice = () => {
               }}
               id="notice"
               style={{
-                textAlign: "left"
+                textAlign: "center"
               }}
             >
-                <span>{content.home.notice}</span>
+              <span
+              >{content.home.notice}</span>
             </motion.div>
           )}
         </div>
