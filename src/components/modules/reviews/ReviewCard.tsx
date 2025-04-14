@@ -1,9 +1,11 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import usePublic from '@/src/hooks/use-lang'
 import { cn } from '@/src/lib/utils'
+import { setStateAction } from '@/src/context/states'
+import useStates from '@/src/hooks/useStates'
 
 interface ReviewCardProps {
   id: string;
@@ -11,17 +13,26 @@ interface ReviewCardProps {
   title: string;
   description: string;
   bgColor?: string;
+  totalLength: number;
 }
 
-const ReviewCard: React.FC<ReviewCardProps> = ({ id, path, title, description, bgColor }) => {
+const ReviewCard: React.FC<ReviewCardProps> = ({ id, path, title, description, bgColor, totalLength }) => {
+  const firstDownloadState = useStates().states
+
+  useEffect(() => {
+    if (totalLength === Number(id)) {
+      setStateAction({ key: "reviews", value: true })
+    }
+  }, [id])
+
   const content = usePublic().CONTENT
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.5,
-        delay: parseInt(id) * 0.1
+        duration: firstDownloadState['reviews'] ? 0 : 0.5,
+        delay: firstDownloadState['reviews'] ? 0 : parseInt(id) * 0.1
       }}
       className="review-card w-full"
     >

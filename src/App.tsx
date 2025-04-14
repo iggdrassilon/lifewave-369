@@ -21,16 +21,9 @@ import Reviews from './pages/Reviews'
 import ReviewDetailed from './components/modules/reviews/ReviewDetailed'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import { ScrollToTop } from './lib/sessions'
 
 const queryClient = new QueryClient()
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation()
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
-  return null
-}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

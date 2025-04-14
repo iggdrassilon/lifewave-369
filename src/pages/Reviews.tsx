@@ -22,11 +22,6 @@ const Reviews: React.FC = () => {
   const bgColor = 'bg-sky-300/25 rounded-xl p-4 text-white backdrop-blur-[2px]'
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
-
     document.title = content.reviews.main.name
   }, [])
 
@@ -69,6 +64,7 @@ const Reviews: React.FC = () => {
               title={review.title}
               description={review.description}
               bgColor={bgColor}
+              totalLength={reviews.length}
             />
           ))}
         </div>

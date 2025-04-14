@@ -7,7 +7,7 @@ import { ChevronLeft, Video, Image as ImageIcon, AudioLines } from 'lucide-react
 import { VideoPlayer, ImageDisplay, AudioPlayer, LetterDisplay } from '@/src/components/atoms/MediaPlayer'
 import usePublic from '@/src/hooks/use-lang'
 import { cn } from '@/src/lib/utils'
-import Spinner from '../../atoms/Spinner'
+import Spinner from '@/src/components/atoms/Spinner'
 
 interface RouteParams {
   path: string;
@@ -24,10 +24,10 @@ const ReviewDetailed: React.FC = () => {
   const [ loading, setLoading ] = useState<boolean>(true)
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth',
+    // })
     setLoading(true)
 
     const foundReview = reviewsData.find((r: any) => r.path === path)
