@@ -36,6 +36,7 @@ interface AudioProps {
 export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title, customFrame }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const sanitizedTitle = DOMPurify.sanitize(title)
 
   const min_height = 'min-h-[320px] lg:h-[500px]'
 
@@ -57,9 +58,9 @@ export const VideoPlayer: React.FC<VideoProps> = ({ url, thumbnail, title, custo
       transition={{ duration: 0.5 }}
       className="media-container"
     >
-      <h4 className="mt-3 text-lg font-medium text-center text-description">
-        {title}
-      </h4>
+      <h4 className="mt-3 text-lg font-medium text-center text-description" 
+        dangerouslySetInnerHTML={{ __html: sanitizedTitle }}
+      />
       <div 
         className="relative rounded-[25px]"
         style={{
