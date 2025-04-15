@@ -9,6 +9,7 @@ import ReviewCard from '@/src/components/modules/reviews/ReviewCard'
 import usePublic from '../hooks/use-lang'
 import VideoLayout from '../components/layouts/VideoLayout'
 import { cn } from '../lib/utils'
+import useStates from '../hooks/useStates'
 
 const Reviews: React.FC = () => {
   const reviews = usePublic().REVIEWS
@@ -18,10 +19,15 @@ const Reviews: React.FC = () => {
 
   const videoRef = useRef<any>(null)
 
+  const firstDownloadState = useStates().states
+
   // UI
   const bgColor = 'bg-sky-300/25 rounded-xl p-4 text-white backdrop-blur-[2px]'
 
   useEffect(() => {
+    if (!firstDownloadState['reviews']) {
+      window.scrollTo(0, 0)
+    }
     document.title = content.reviews.main.name
   }, [])
 
