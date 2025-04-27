@@ -38,7 +38,7 @@ const Home = () => {
         <MotionLayout duration={1} delay={0.4}>
           <BreakThrough />
         </MotionLayout>
-        <MotionLayout duration={1} delay={0.4}>
+        <MotionLayout type='client' duration={1} delay={0.4}>
           <Patents />
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>

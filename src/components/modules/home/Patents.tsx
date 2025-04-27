@@ -26,7 +26,7 @@ const Patents = () => {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen)
   const [isSmScreen, setIsSmScreen] = useState(window.innerWidth < smScreen)
 
-  const bgElemsColor = 'rounded-xl backdrop-blur-sm'
+  const bgElemsColor = 'rounded-xl backdrop-blur-sm z-[100]'
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
@@ -200,7 +200,7 @@ const Patents = () => {
             'flex justify-center items-center',
             'pb-[80px]',
           )}>
-            <div className='flex flex-col md:flex-row gap-6'>
+            <div className='flex flex-col md:flex-row gap-6 z-[102]'>
               <GlowButton
                 link='/patents-research'
                 message={content.home.patents.button}

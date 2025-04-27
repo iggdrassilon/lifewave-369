@@ -5,6 +5,7 @@ export type MotionHookT = {
   children: React.ReactElement
   duration: number
   delay: number
+  type?: string
 }
 
 export type MotionSectionT = {
@@ -18,7 +19,7 @@ export type MotionSectionT = {
   className: string
   style: object
   sectionMounted: () => void
-} 
+}
 
 export type MotionTextT = {
   children: React.ReactElement

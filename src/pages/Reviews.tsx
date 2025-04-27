@@ -98,7 +98,13 @@ const Reviews: React.FC = () => {
             key={index}
             alt='guy'
             src={guy}
-            className='object-contain'
+            className={cn(
+              'placed-guy',
+              index == 1 ? `${'centuri'}` : ''
+            )}
+            style={{
+              minWidth: `${index === 1 ? `${'80'}` : 0}px`
+            }}
           />
         ))}
       </div>

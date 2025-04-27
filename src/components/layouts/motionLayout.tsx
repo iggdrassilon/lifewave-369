@@ -8,11 +8,12 @@ import {
   MotionHookT, 
   MotionPartTextT, 
   MotionSectionT, 
-  MotionTextT 
+  MotionTextT
 } from '@/src/types/hooks'
+import { cn } from '@/src/lib/utils'
 
 const MotionLayout = (props: MotionHookT) => {
-  const { children, duration, delay } = props
+  const { children, duration, delay, type } = props
 
   return (
     <motion.section
@@ -26,7 +27,12 @@ const MotionLayout = (props: MotionHookT) => {
         duration: duration,
         delay: delay
       }}
-      className='mx-auto px-0 py-0 relative bg-white z-[-1]'
+       
+      className={cn(`
+        mx-auto px-0 py-0 
+        relative bg-white
+        ${type === 'client' ? 'z-[1]' : '-z-[1]'}
+      `)}
     >
       {children}
     </motion.section>

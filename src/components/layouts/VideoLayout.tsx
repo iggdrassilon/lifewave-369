@@ -1,8 +1,8 @@
-import { ViteoLayoutT } from "@/src/types/layouts"
-import { useEffect, useState } from "react"
-import { cn } from "@/src/lib/utils"
-import useInViewHook from "@/src/hooks/useInView"
-import Dexie from "dexie"
+import { ViteoLayoutT } from '@/src/types/layouts'
+import { useEffect, useState } from 'react'
+import { cn } from '@/src/lib/utils'
+import useInViewHook from '@/src/hooks/useInView'
+import Dexie from 'dexie'
 
 const db = new Dexie('VideoCacheDB')
 db.version(2).stores({
