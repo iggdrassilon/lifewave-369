@@ -21,7 +21,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ id, path, title, description, b
 
   useEffect(() => {
     if (totalLength === Number(id)) {
-      setStateAction({ key: "reviews", value: true })
+      setStateAction({ key: 'reviews', value: true })
     }
   }, [id])
 

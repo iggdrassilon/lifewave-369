@@ -14,7 +14,7 @@ import Patents from '@/src/components/modules/home/Patents'
 const Home = () => {
 
   return (
-    <div className='bg-transparent relative bg-white'>
+    <div className='bg-transparent relative'>
       <main>
         <DnaHero />
         <MotionLayout duration={0.5} delay={0.3}>

@@ -129,7 +129,7 @@ const Patents = () => {
             }}
             image={{
               src: `${links.content.x39patents}`, // IMG OF PATENTS
-              alt: "patents",
+              alt: 'patents',
               customCl: 'mt-[50px] min-h-[300px]',
               motion: {
                 init: {
@@ -198,7 +198,7 @@ const Patents = () => {
           />
           <div className={cn(
             'flex justify-center items-center',
-            'mb-[80px]',
+            'pb-[80px]',
           )}>
             <div className='flex flex-col md:flex-row gap-6'>
               <GlowButton

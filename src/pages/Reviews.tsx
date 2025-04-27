@@ -39,7 +39,10 @@ const Reviews: React.FC = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="container  min-h-screen mt-[64px] px-4 py-12 md:px-12 lg:px-24"
+        className={cn(
+          'container min-h-screen',
+          'mt-[64px] px-4 py-12 md:px-12 lg:px-24'
+        )}
       >
         <motion.div
           initial={{ y: -20, opacity: 0 }}

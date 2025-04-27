@@ -24,7 +24,7 @@ const Patents = () => {
 
   return (
     <div
-      className='min-h-screen bg-whitep'
+      className='min-h-screen bg-white'
     >
       <main>
         <Header

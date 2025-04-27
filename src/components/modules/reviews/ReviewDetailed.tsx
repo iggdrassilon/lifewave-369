@@ -75,10 +75,11 @@ const ReviewDetailed: React.FC = () => {
     <>
       <div
         className={cn(
-          "mb-8",
+          'mb-8',
           'w-[100vw] h-[550px]',
           'flex items-end',
           'bg-cover bg-center bg-no-repeat',
+          'bg-white'
         )}
         style={{
           backgroundImage: `url(${links.content.reviewsPage.background})`,
@@ -126,7 +127,10 @@ const ReviewDetailed: React.FC = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
-        className="min-h-screen px-2 py-12 mt-[64px] md:px-12 lg:px-24 pt-3 md:pt-4"
+        className={cn(
+          'min-h-screen px-2 py-12 md:px-12 lg:px-24 pt-3 md:pt-4',
+          'bg-white'
+        )}
       >
         <div className="max-w-4xl mx-auto">
           {videos && videos.length > 0 && (

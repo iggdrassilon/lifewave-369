@@ -22,6 +22,7 @@ import ReviewDetailed from './components/modules/reviews/ReviewDetailed'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import { ScrollToTop } from './lib/sessions'
+import { RootStyler } from './lib/utils'
 
 const queryClient = new QueryClient()
 
@@ -31,6 +32,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <RootStyler />
       <ScrollToTop />
         <AnimatePresence mode='wait'>
           <>

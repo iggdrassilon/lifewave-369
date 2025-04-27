@@ -26,7 +26,7 @@ const MotionLayout = (props: MotionHookT) => {
         duration: duration,
         delay: delay
       }}
-      className='mx-auto px-0 py-0 relative z-10'
+      className='mx-auto px-0 py-0 relative bg-white z-[-1]'
     >
       {children}
     </motion.section>
