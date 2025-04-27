@@ -1,7 +1,7 @@
-import useInViewHook from "@/src/hooks/useInView"
-import { motion } from "framer-motion"
-import GridSectionSimple from "@/src/components/layouts/GridSectionSimple"
-import ContentElement from "@/src/components/modules/patents/Middle/ContentElement"
+import useInViewHook from '@/src/hooks/useInView'
+import { motion } from 'framer-motion'
+import GridSectionSimple from '@/src/components/layouts/GridSectionSimple'
+import ContentElement from '@/src/components/modules/patents/Middle/ContentElement'
 
 export type PhotoTherapyT = {
   images?: {
@@ -35,7 +35,7 @@ const PhotoTherapy = (props: PhotoTherapyT) => {
         delay: 0.2,
         duration: 0.6
       }}
-      className=''
+      className='bg-white'
     >
       <GridSectionSimple
         image={{

@@ -22,6 +22,7 @@ const Reviews: React.FC = () => {
   const firstDownloadState = useStates().states
 
   // UI
+
   const bgColor = 'bg-sky-300/25 rounded-xl p-4 text-white backdrop-blur-[2px]'
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const Reviews: React.FC = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="container min-h-screen mt-[64px] px-4 py-12 md:px-12 lg:px-24"
+        className="container  min-h-screen mt-[64px] px-4 py-12 md:px-12 lg:px-24"
       >
         <motion.div
           initial={{ y: -20, opacity: 0 }}

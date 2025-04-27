@@ -92,7 +92,7 @@
 
 @layer colors {
   :root {
-    --main-blue: rgba(4,103,150);
+    --main-blue: rgba(4, 103, 150);
     --header-color: #f6f7fce1;
     --header-blur: blur(20px);
 
@@ -114,6 +114,7 @@
   }
 
   body {
+    background-color: #000017 !important;
     /* overflow-x: hidden; */
     @apply bg-background text-foreground;
     /* font-family: 'Helvetica Neue'; */
