@@ -4,38 +4,31 @@ import { Documents } from './OurResearches'
 import ContentPattern from './ContentBlock'
 
 type ResearchMapT = {
-  readmore: string;
+  readmore: string
   content: {
-    title: string;
-    description: string;
-    documents: Documents;
-  };
+    title: string
+    description: string
+    documents: Documents
+  }
 }
 
 const ResearchMap = (props: ResearchMapT) => {
   const { readmore, content } = props
   return (
     <>
-      <h2 
-        className="text-3xl font-semibold tracking-tight text-center mt-4 text-title"
-      >
+      <h2 className='text-3xl font-semibold tracking-tight text-center mt-4 text-title'>
         {content.title}
       </h2>
       <div
         className={cn(
-          "text-center max-w-3xl mx-auto",
+          'text-center max-w-3xl mx-auto'
           // headerOnTop ? "order-1" : "order-2"
         )}
       >
-        <div className="text leading-relaxed">
-          {content.description}
-        </div>
+        <div className='text leading-relaxed'>{content.description}</div>
       </div>
       <div
-        className={cn(
-          "grid gap-8 items-start",
-          "grid-cols-1 md:grid-cols-2",
-        )}
+        className={cn('grid gap-8 items-start', 'grid-cols-1 md:grid-cols-2')}
       >
         {Object.entries(content.documents).map((item, index) => (
           <ContentPattern

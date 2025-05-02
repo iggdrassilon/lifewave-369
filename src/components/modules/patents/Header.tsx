@@ -3,8 +3,8 @@ import { cn } from '@/src/lib/utils'
 import { motion } from 'framer-motion'
 
 interface HeaderProps {
-  title: string;
-  image: string;
+  title: string
+  image: string
 }
 
 const Header = ({ title, image }: HeaderProps) => {
@@ -19,16 +19,16 @@ const Header = ({ title, image }: HeaderProps) => {
     >
       {isInView && (
         <>
-          <div 
-            ref={ref} 
+          <div
+            ref={ref}
             className={cn(
               'w-[100vw] h-[550px]',
               'flex items-end justify-center',
-              'bg-cover bg-center bg-no-repeat',
+              'bg-cover bg-center bg-no-repeat'
             )}
             style={{
-              backgroundImage: `url(${image})`,  // BACKGROUND
-              backgroundPositionX: '65%'
+              backgroundImage: `url(${image})`, // BACKGROUND
+              backgroundPositionX: '65%',
             }}
           >
             <h1
@@ -38,8 +38,8 @@ const Header = ({ title, image }: HeaderProps) => {
                 'text-4xl font-bold text-center text-title',
                 'bg-white/70'
               )}
-              >
-                {title}
+            >
+              {title}
             </h1>
           </div>
         </>

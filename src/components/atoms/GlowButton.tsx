@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 import { scrollToTop } from '@/src/hooks/dom'
 
 type GlowButtonT = {
-  message: string;
-  link: string;
-  style: string;
+  message: string
+  link: string
+  style: string
 }
 
-const GlowButton = ({message, link, style}: GlowButtonT) => {
+const GlowButton = ({ message, link, style }: GlowButtonT) => {
   return (
     <Link
       to={link}

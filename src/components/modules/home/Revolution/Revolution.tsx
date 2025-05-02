@@ -1,7 +1,7 @@
-import { MotionSection } from "@/src/components/layouts/motionLayout"
-import useLang from "@/src/hooks/use-lang"
-import { FirstBlock } from "./FirstBlock"
-import { SecondBlock } from "./SecondBlock"
+import { MotionSection } from '@/src/components/layouts/motionLayout'
+import useLang from '@/src/hooks/use-lang'
+import { FirstBlock } from './FirstBlock'
+import { SecondBlock } from './SecondBlock'
 
 const Revolution = () => {
   const content = useLang().CONTENT
@@ -18,10 +18,10 @@ const Revolution = () => {
       sectionMounted={() => ''}
     >
       <>
-        <div className="bg-blue-600/80 w-[100%] relative">
+        <div className='bg-blue-600/80 w-[100%] relative'>
           <FirstBlock content={content} />
         </div>
-        <div className="bg-blue-600/80 w-[100%] min-h-[700px] relative">
+        <div className='bg-blue-600/80 w-[100%] min-h-[700px] relative'>
           <SecondBlock content={content} />
         </div>
       </>

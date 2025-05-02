@@ -1,36 +1,26 @@
-import PatentsButton from "@/src/components/atoms/PatentsButton"
-import { cn } from "@/src/lib/utils"
+import PatentsButton from '@/src/components/atoms/PatentsButton'
+import { cn } from '@/src/lib/utils'
 
 type Content = {
   content: {
-    title: string;
-    description: string;
-    link: string;
+    title: string
+    description: string
+    link: string
   }
   customStyle?: {
-    title?: string;
-    description?: string;
-    parent?: string;
+    title?: string
+    description?: string
+    parent?: string
   }
 }
 
-const ContentAB = ({content, customStyle}: Content) => {
+const ContentAB = ({ content, customStyle }: Content) => {
   return (
     <>
-      <h2
-        className={cn(
-          'text-center',
-          `${customStyle?.title}`
-        )}
-      >
+      <h2 className={cn('text-center', `${customStyle?.title}`)}>
         {content.title}
       </h2>
-      <div 
-        className={cn(
-          "mt-2",
-          `${customStyle?.description}`
-        )}
-      >
+      <div className={cn('mt-2', `${customStyle?.description}`)}>
         {content.description}
       </div>
       <PatentsButton

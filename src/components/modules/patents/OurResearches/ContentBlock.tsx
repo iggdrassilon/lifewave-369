@@ -7,14 +7,14 @@ import useScreenWidth from '@/src/hooks/useScreenWidth'
 
 type ContentPatternT = {
   content: {
-    title: string;
-    description?: string;
-    link: string;
+    title: string
+    description?: string
+    link: string
   }
-  readmore: string;
-  mode?: string;
-  last?: boolean;
-  even?: number;
+  readmore: string
+  mode?: string
+  last?: boolean
+  even?: number
 }
 
 const ContentPattern = (props: ContentPatternT) => {
@@ -30,14 +30,10 @@ const ContentPattern = (props: ContentPatternT) => {
         `${!isSmallScreen && mode === 'indormation' && [1, 2, 5, 6].includes(even) && 'md:bg-sky-300/20'}`,
         `${!isSmallScreen && mode === 'security' && [1, 2].includes(even) && 'md:bg-sky-300/20'}`,
         'rounded-xl',
-        'flex flex-col justify-center items-center p-4 md:p-8',
+        'flex flex-col justify-center items-center p-4 md:p-8'
       )}
     >
-      <h3
-        className='pb-4 text-center md:min-h-[100px]'
-      >
-        {content.title}
-      </h3>
+      <h3 className='pb-4 text-center md:min-h-[100px]'>{content.title}</h3>
       {content.description && (
         <div
           className={cn(
@@ -45,7 +41,7 @@ const ContentPattern = (props: ContentPatternT) => {
             `${mode !== 'security' && !last && 'md:min-h-[160px] lg:min-h-[180px]'}`
           )}
         >
-          {content.description} 
+          {content.description}
         </div>
       )}
       <PatentsButton

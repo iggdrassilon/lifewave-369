@@ -4,7 +4,7 @@ import { cn } from '@/src/lib/utils'
 interface Card3DProps {
   className?: string
   children?: React.ReactNode
-  mousePosition: { x: number; y: number } 
+  mousePosition: { x: number; y: number }
 }
 
 const Card3D: React.FC<Card3DProps> = ({
@@ -68,7 +68,10 @@ const Card3D: React.FC<Card3DProps> = ({
         className
       )}
     >
-      <div ref={shineRef} className='absolute inset-0 pointer-events-none z-[999]' />
+      <div
+        ref={shineRef}
+        className='absolute inset-0 pointer-events-none z-[999]'
+      />
       {children}
     </div>
   )

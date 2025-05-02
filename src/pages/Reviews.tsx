@@ -20,12 +20,15 @@ const Reviews: React.FC = () => {
   const videoRef = useRef<any>(null)
 
   const firstDownloadState = useStates().states
-
   // UI
 
   const bgColor = 'bg-sky-300/25 rounded-xl p-4 text-white backdrop-blur-[2px]'
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    })
     if (!firstDownloadState['reviews']) {
       window.scrollTo(0, 0)
     }
@@ -49,23 +52,24 @@ const Reviews: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{
             duration: 0.5,
-            delay: 0.1
+            delay: 0.1,
           }}
-          className={cn(
-            'text-center mb-6',
-            `${bgColor}`
-          )}
+          className={cn('text-center mb-6', `${bgColor}`)}
         >
           <>
-            <h1 className="text-4xl font-bold tracking-tight mb-8">
+            <h1 className='text-4xl font-bold tracking-tight mb-8'>
               {content.reviews.main.title}
             </h1>
-            <p className="text-lg max-w-2xl mb-2 mx-auto">
+            <p className='text-lg max-w-2xl mb-2 mx-auto'>
               {content.reviews.main.description}
             </p>
           </>
         </motion.div>
-        <div className={`grid gap-6 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+        <div
+          className={`grid gap-6 
+          ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2 lg:grid-cols-3'}
+        `}
+        >
           {reviews.map((review: any) => (
             <ReviewCard
               key={review.id}
@@ -85,7 +89,7 @@ const Reviews: React.FC = () => {
         opacity='10'
         customClass='fixed top-[64px] md:top-0'
         videoRef={videoRef}
-        cover={true} 
+        cover={true}
       />
       <div
         className={cn(
@@ -98,12 +102,9 @@ const Reviews: React.FC = () => {
             key={index}
             alt='guy'
             src={guy}
-            className={cn(
-              'placed-guy',
-              index == 1 ? `${'centuri'}` : ''
-            )}
+            className={cn('placed-guy', index == 1 ? `${'centuri'}` : '')}
             style={{
-              minWidth: `${index === 1 ? `${'80'}` : 0}px`
+              minWidth: `${index === 1 ? `${80}` : 0}px`,
             }}
           />
         ))}

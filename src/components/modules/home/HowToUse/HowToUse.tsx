@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useInView } from "react-intersection-observer"
+import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 
 import { MotionSection } from '@/src/components/layouts/motionLayout'
@@ -21,23 +21,23 @@ const HowToUse = () => {
 
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  const [ ref, inView ] = useInView()
+  const [ref, inView] = useInView()
 
-  const [ gridRef, gridInView ] = useInView({
-    triggerOnce: true
+  const [gridRef, gridInView] = useInView({
+    triggerOnce: true,
   })
 
-  const [ refDescr, refDescrInView ] = useInView({
-    triggerOnce: true
+  const [refDescr, refDescrInView] = useInView({
+    triggerOnce: true,
   })
 
-  const [ refDescr2, refDescr2InView ] = useInView({
-    triggerOnce: true
+  const [refDescr2, refDescr2InView] = useInView({
+    triggerOnce: true,
   })
 
-  const [ status, setStatus ] = useState(false)
-  const [ state, setState ] = useState(false)
-  const [ count, setCount ] = useState(0)
+  const [status, setStatus] = useState(false)
+  const [state, setState] = useState(false)
+  const [count, setCount] = useState(0)
   const [sectionMounted, setSectionMounted] = useState(false)
 
   const bgElemsColor = 'bg-neutral-200/60 rounded-xl'
@@ -49,17 +49,17 @@ const HowToUse = () => {
     init: {
       opacity: 1,
       translateX: '0',
-      translateY: '0'
+      translateY: '0',
     },
     animate: {
       opacity: 1,
       translateX: '0',
-      translateY: '0'
+      translateY: '0',
     },
     transition: {
       duration: 0,
-      delay: 0
-    }
+      delay: 0,
+    },
   }
 
   useEffect(() => {
@@ -82,7 +82,6 @@ const HowToUse = () => {
   }, [gridInView])
 
   useEffect(() => {
-    
     if (refDescrInView) {
       // console.log('viewed')
       // alert('viewed')
@@ -91,7 +90,7 @@ const HowToUse = () => {
 
   const Iteration = (value: boolean) => {
     if (value) {
-      setCount(prev => prev + 1)
+      setCount((prev) => prev + 1)
     }
   }
 
@@ -116,23 +115,20 @@ const HowToUse = () => {
             imageOnTop={true}
             headerOnTop={true}
             customClasses={{
-              wrapper: cn(
-                'pt-2',
-                'md:gap-6'
-              ),
-              body: 'min-h-[754px]'
+              wrapper: cn('pt-2', 'md:gap-6'),
+              body: 'min-h-[754px]',
             }}
             title={{
               title: (
-                <Title 
+                <Title
                   content={content.home.howtouse}
                   customCl={{
                     parent: `${shadowElems}`,
-                    child: `${textTitle}`
+                    child: `${textTitle}`,
                   }}
                 />
-              )
-            }} 
+              ),
+            }}
             image={{
               src: '/images/patch_place_guy.png',
               alt: 'human accupuncture',
@@ -142,19 +138,19 @@ const HowToUse = () => {
                 bgElemsColor,
                 'mt-0 mb-0 md:mb-4 md:m-0 p-[10px]'
               ),
-              motion: motionSetup
+              motion: motionSetup,
             }}
             content={{
               text: (
                 <>
-                  <Instructions 
+                  <Instructions
                     ref={refDescr}
                     refStatus={refDescrInView}
                     content={content.home.howTo}
                     status={state}
                     customCl={{
                       parent: `${bgElemsColor} ${shadowElems}`,
-                      child: `${fontParams} text-title`
+                      child: `${fontParams} text-title`,
                     }}
                     endAnim={(value: boolean) => Iteration(value)}
                   />
@@ -163,24 +159,24 @@ const HowToUse = () => {
                     content={content.home.howitworks_2}
                     customCl={{
                       parent: `${shadowElems}`,
-                      child: `${textTitle}`
+                      child: `${textTitle}`,
                     }}
                     endAnim={(value: boolean) => Iteration(value)}
                   />
-                  <Instructions 
+                  <Instructions
                     ref={refDescr2}
                     refStatus={refDescr2InView}
                     content={content.home.howTo_2}
                     status={count === 2 && state}
                     customCl={{
                       parent: `${bgElemsColor} ${shadowElems}`,
-                      child: `${fontParams} text-title`
+                      child: `${fontParams} text-title`,
                     }}
                     endAnim={() => ''}
                   />
                 </>
               ),
-              motion: motionSetup
+              motion: motionSetup,
             }}
           />
           <VideoLayout

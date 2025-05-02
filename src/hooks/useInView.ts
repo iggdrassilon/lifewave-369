@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer'
 const useInViewHook = () => {
   const [isInView, setIsInView] = useState(false)
   const [ref, inView] = useInView({
-    triggerOnce: true
+    triggerOnce: true,
   })
 
   useEffect(() => {

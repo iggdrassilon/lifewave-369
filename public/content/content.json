@@ -14,8 +14,7 @@
         "at": "на ",
         "max": "максимум."
       },
-      "our": {
-      },
+      "our": {},
       "revol": "ПАТЧИ X39 - РЕВОЛЮЦИОННАЯ СВЕТОВАЯ ТЕХНОЛОГИЯ",
       "firstinworld": "Первая в мире запатентованная нанокристаллическая технология, предназначенная для активации собственных стволовых клеток вашего организма.",
       "enerhyuse": "Патчи основаны на технологии фототерапии (с греческого 'лечение светом'). Ученые доказали, излучение определенных волн света запускает биохимические процессы в наших телах, которые ведут к регенерации и омоложению всего организма.",
@@ -187,9 +186,9 @@
           "about": "ИССЛЕДОВАНИЯ АКУПРЕССУРЫ",
           "documents": {
             "1": {
-            "title": "Акупрессура для снижения веса у молодых людей Азии",
-            "description": "Результаты настоящего исследования показали, что после 8 недель лечения ушной акупрессурой с использованием японских магнитных жемчужин средний индекс массы тела (ИМТ) значительно снизился.",
-            "link": "pdf/auricular-acupressure-for-weight-reducation-in-obese-asian-young-adults-a-randomized-controlled-trial.pdf"
+              "title": "Акупрессура для снижения веса у молодых людей Азии",
+              "description": "Результаты настоящего исследования показали, что после 8 недель лечения ушной акупрессурой с использованием японских магнитных жемчужин средний индекс массы тела (ИМТ) значительно снизился.",
+              "link": "pdf/auricular-acupressure-for-weight-reducation-in-obese-asian-young-adults-a-randomized-controlled-trial.pdf"
             },
             "2": {
               "title": "Лечение ожирения с помощью акупунктуры",
@@ -294,8 +293,7 @@
         "at": "to the",
         "max": "maximum."
       },
-      "our": {
-      },
+      "our": {},
       "revol": "PATCHES X39 - REVOLUTIONARY WORLD TECHNOLOGY",
       "firstinworld": "The first patented nanocrystalline technology in the world, designed to activate your body's own stem cells.",
       "enerhyuse": "Patches are based on phototherapy technology (from Greek 'treatment with light'). Scientists have proven that the emission of certain light waves triggers biochemical processes in our bodies that lead to regeneration and rejuvenation of the entire body.",

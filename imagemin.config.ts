@@ -3,15 +3,15 @@ import imageminOptipng from 'imagemin-optipng'
 import { PluginOption } from 'vite'
 
 interface ImageminOptions {
-  destination: string;
+  destination: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  plugins: any[];
+  plugins: any[]
 }
 
 interface OptipngOptions {
-  optimizationLevel: number;
-  colorTypeReduction: boolean;
-  paletteReduction: boolean;
+  optimizationLevel: number
+  colorTypeReduction: boolean
+  paletteReduction: boolean
 }
 
 export function imageminBuilder(): PluginOption {
@@ -27,10 +27,7 @@ export function imageminBuilder(): PluginOption {
             paletteReduction: false,
           } as OptipngOptions),
         ],
-        ignore: [
-          'images/BG_PATENTS.jpg',
-          'images/girl_patched.png',
-        ],
+        ignore: ['images/BG_PATENTS.jpg', 'images/girl_patched.png'],
       } as ImageminOptions)
       console.log('Images optimized with optipng!')
     },

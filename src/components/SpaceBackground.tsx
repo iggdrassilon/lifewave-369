@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
 // eslint-disable-next-line react/display-name
-const SpaceBackground = React.forwardRef(({ inView }: any , ref: any) => {
+const SpaceBackground = React.forwardRef(({ inView }: any, ref: any) => {
   const containerRef = useRef(null)
   const sceneRef = useRef(null)
   const cameraRef = useRef(null)
@@ -78,19 +78,18 @@ const SpaceBackground = React.forwardRef(({ inView }: any , ref: any) => {
         rendererRef.current.render(sceneRef.current, cameraRef.current)
       }
     }
-    
-    
+
     const handleResize = () => {
       const newParentH = ref.current.offsetHeight
       const newParentW = ref.current.offsetWidth
-      
+
       cameraRef.current.aspect = newParentW / newParentH
       cameraRef.current.updateProjectionMatrix()
       rendererRef.current.setSize(newParentW, newParentH)
-      
+
       createStars()
     }
-    
+
     window.addEventListener('resize', handleResize)
 
     if (inView) {
@@ -102,7 +101,6 @@ const SpaceBackground = React.forwardRef(({ inView }: any , ref: any) => {
       container.removeChild(renderer.domElement)
       renderer.dispose()
     }
-
   }, [ref, container, inView])
 
   return (

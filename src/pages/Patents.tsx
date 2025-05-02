@@ -9,12 +9,14 @@ import Technology from '@/src/components/modules/patents/Technology/Technology'
 import OurPatents from '@/src/components/modules/patents/OurPatents/OurPatents'
 
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const Patents = () => {
   const UI = usePublic().UI
   const readMore = UI.patents.readmore
   const content = usePublic().CONTENT
   const links = usePublic().LINKS
+  const location = useLocation()
 
   useEffect(() => {
     if (document.title !== content.patents.name) {
@@ -23,15 +25,13 @@ const Patents = () => {
   }, [])
 
   return (
-    <div
-      className='min-h-screen bg-white'
-    >
+    <div className='min-h-screen bg-white'>
       <main>
         <Header
           title={content.patents.header}
           image={links.content.patentsPage.earthbackground}
         />
-        <Researches 
+        <Researches
           content={content.patents.researches}
           images={links.content.patentsPage.research}
         />
@@ -40,10 +40,8 @@ const Patents = () => {
           images={links.content.patentsPage.phototherapy}
           readmore={readMore}
         />
-        <OurPatents
-          content={content.patents.OurPatents}
-        />
-        <Technology 
+        <OurPatents content={content.patents.OurPatents} />
+        <Technology
           content={content.patents.Technologies}
           images={links.content.patentsPage.technologies}
           readmore={readMore}
@@ -53,7 +51,7 @@ const Patents = () => {
           readmore={readMore}
           mode='before_acupressure'
         />
-        <Acupressure 
+        <Acupressure
           content={content.patents.Acupressure}
           images={links.content.patentsPage.acupressure}
           readmore={readMore}

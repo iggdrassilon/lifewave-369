@@ -1,27 +1,27 @@
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 
-import useInViewHook from "@/src/hooks/useInView"
-import GridSectionSimple from "@/src/components/layouts/GridSectionSimple"
-import ContentElement from "@/src/components/modules/patents/Middle/ContentElement"
+import useInViewHook from '@/src/hooks/useInView'
+import GridSectionSimple from '@/src/components/layouts/GridSectionSimple'
+import ContentElement from '@/src/components/modules/patents/Middle/ContentElement'
 
 type AcupressureT = {
   images: {
-    background: string;
-    picture: string;
+    background: string
+    picture: string
   }
   content: {
-    title: string;
-    description: string;
+    title: string
+    description: string
     doc1: {
-      title: string;
-      link: string;
+      title: string
+      link: string
     }
     doc2: {
-      title: string;
-      link: string;
+      title: string
+      link: string
     }
   }
-  readmore: string;
+  readmore: string
 }
 
 const Acupressure = (props: AcupressureT) => {
@@ -35,31 +35,23 @@ const Acupressure = (props: AcupressureT) => {
       animate={{ opacity: 1 }}
       transition={{
         delay: 0.2,
-        duration: 0.6
+        duration: 0.6,
       }}
       className='bg-white text-white'
     >
-     <GridSectionSimple
+      <GridSectionSimple
         image={{
           src: images.picture,
-          alt: 'acupressure image'
+          alt: 'acupressure image',
         }}
         imageMode={false}
         title={content.title}
         description={content.description}
-        content={
-          <ContentElement
-            content={content.doc1}
-            readmore={readmore}
-          />
-        }
+        content={<ContentElement content={content.doc1} readmore={readmore} />}
         contentOther={
-          <ContentElement
-            content={content.doc2}
-            readmore={readmore}
-          />
+          <ContentElement content={content.doc2} readmore={readmore} />
         }
-      /> 
+      />
     </motion.div>
   )
 }

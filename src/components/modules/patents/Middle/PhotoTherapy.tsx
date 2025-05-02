@@ -5,22 +5,22 @@ import ContentElement from '@/src/components/modules/patents/Middle/ContentEleme
 
 export type PhotoTherapyT = {
   images?: {
-    background: string;
-    picture: string;
+    background: string
+    picture: string
   }
   content: {
-    title: string;
-    description: string;
+    title: string
+    description: string
     doc1: {
-      title: string;
-      link: string;
+      title: string
+      link: string
     }
     doc2: {
-      title: string;
-      link: string;
+      title: string
+      link: string
     }
   }
-  readmore: string;
+  readmore: string
 }
 
 const PhotoTherapy = (props: PhotoTherapyT) => {
@@ -33,36 +33,28 @@ const PhotoTherapy = (props: PhotoTherapyT) => {
       animate={{ opacity: 1 }}
       transition={{
         delay: 0.2,
-        duration: 0.6
+        duration: 0.6,
       }}
       className='bg-white'
     >
       <GridSectionSimple
         image={{
           src: images.picture,
-          alt: 'acupressure image'
+          alt: 'acupressure image',
         }}
         imageMode={false}
         title={content.title}
         customStyle={{
-          description: 'font-bold'
+          description: 'font-bold',
         }}
         description={
-          <div 
+          <div
             dangerouslySetInnerHTML={{ __html: content.description }} // CHILD
           />
         }
-        content={
-          <ContentElement
-            content={content.doc1}
-            readmore={readmore}
-          />
-        }
+        content={<ContentElement content={content.doc1} readmore={readmore} />}
         contentOther={
-          <ContentElement
-            content={content.doc2}
-            readmore={readmore}
-          />
+          <ContentElement content={content.doc2} readmore={readmore} />
         }
       />
     </motion.div>

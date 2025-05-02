@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useUnit } from 'effector-react'
 
 import _UI from '@/public/content/UI.json'
@@ -9,7 +10,17 @@ import reviewsData from '@/public/content/reviews.json'
 import privacy from '@/public/content/privacy.json'
 import terms from '@/public/content/terms.json'
 
-const usePublic = () => {
+interface PublicData {
+  lang: string
+  CONTENT: any
+  UI: any
+  LINKS: any
+  REVIEWS: any
+  PRIVACY: any
+  TERMS: any
+}
+
+const usePublic = (): PublicData => {
   const lang = useUnit($language)
 
   const LINKS = locals

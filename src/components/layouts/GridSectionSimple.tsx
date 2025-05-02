@@ -1,26 +1,25 @@
-
 import { cn } from '@/src/lib/utils'
 
 interface GridSectionProps {
-  title?: string;
-  description?: string | React.ReactNode  ;
-  imageMode: boolean;
+  title?: string
+  description?: string | React.ReactNode
+  imageMode: boolean
   image?: {
-    src: string;
-    alt: string;
-  };
-  content: React.ReactNode;
-  contentOther?: React.ReactNode;
-  imageOnRight?: boolean;  // Controls desktop (column) layout
-  imageOnTop?: boolean;    // Controls mobile (row) layout
-  headerOnTop?: boolean;
-  imageFirstInColumn?: boolean; // New prop for desktop column order
+    src: string
+    alt: string
+  }
+  content: React.ReactNode
+  contentOther?: React.ReactNode
+  imageOnRight?: boolean // Controls desktop (column) layout
+  imageOnTop?: boolean // Controls mobile (row) layout
+  headerOnTop?: boolean
+  imageFirstInColumn?: boolean // New prop for desktop column order
   customStyle?: {
-    title?: string;
-    description?: string;
-    parent?: string;
-    content?: string;
-  };
+    title?: string
+    description?: string
+    parent?: string
+    content?: string
+  }
 }
 
 const GridSectionSimple = ({
@@ -34,10 +33,10 @@ const GridSectionSimple = ({
   imageOnTop = false,
   headerOnTop = true,
   imageFirstInColumn = true,
-  customStyle
+  customStyle,
 }: GridSectionProps) => {
   return (
-    <section 
+    <section
       className={cn(
         'w-full max-w-7xl mx-auto px-4 py-8 md:py-16',
         'flex flex-col gap-8 text-black',
@@ -45,7 +44,7 @@ const GridSectionSimple = ({
       )}
     >
       {title && (
-        <h2 
+        <h2
           className={cn(
             'text-3xl text-title font-semibold',
             'tracking-tight text-center',
@@ -62,18 +61,14 @@ const GridSectionSimple = ({
             headerOnTop ? 'order-1' : 'order-2'
           )}
         >
-          <div className={cn(
-            `${customStyle?.description}`,
-          )}>
-            {description}
-          </div>
+          <div className={cn(`${customStyle?.description}`)}>{description}</div>
         </div>
       )}
       {!imageMode && (
         <img
           src={image.src}
           alt={image.alt}
-          className="md:w-[70%] h-auto rounded-lg object-cover aspect-video m-auto"
+          className='md:w-[70%] h-auto rounded-lg object-cover aspect-video m-auto'
           // loading="lazy"
         />
       )}
@@ -98,13 +93,11 @@ const GridSectionSimple = ({
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-auto rounded-lg object-cover m-auto"
+              className='w-full h-auto rounded-lg object-cover m-auto'
               // loading="lazy"
             />
           ) : (
-            <div>
-              {contentOther}
-            </div>
+            <div>{contentOther}</div>
           )}
         </div>
         <div
@@ -116,9 +109,7 @@ const GridSectionSimple = ({
             imageFirstInColumn ? 'md:order-2' : 'md:order-1'
           )}
         >
-          <div>
-            {content}
-          </div>
+          <div>{content}</div>
         </div>
       </div>
     </section>

@@ -12,7 +12,6 @@ import BreakThrough from '@/src/components/modules/home/BreakThrough'
 import Patents from '@/src/components/modules/home/Patents'
 
 const Home = () => {
-
   return (
     <div className='bg-transparent relative'>
       <main>
@@ -24,7 +23,7 @@ const Home = () => {
           <Revolution />
         </MotionLayout>
         <MotionLayout duration={0.5} delay={0.3}>
-         <HowItWorks />
+          <HowItWorks />
         </MotionLayout>
         <MotionLayout duration={1} delay={0.4}>
           <Unfortunately />

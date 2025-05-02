@@ -1,23 +1,35 @@
-import { ReactNode, useEffect, useState } from "react";
-import { useInView } from 'react-intersection-observer';
+import { ReactNode, useEffect, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 
-const WaveText = ({ text, color, textSize }: { text: string, color: string, textSize: string }) => {
+const WaveText = ({
+  text,
+  color,
+  textSize,
+}: {
+  text: string
+  color: string
+  textSize: string
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.8,
-    delay: 5
-  });
+    delay: 5,
+  })
 
-  const [startAnimation, setStartAnimation] = useState(false);
+  const [startAnimation, setStartAnimation] = useState(false)
 
   useEffect(() => {
     if (inView) {
-      setStartAnimation(true);
+      setStartAnimation(true)
     }
-  }, [inView]);
+  }, [inView])
 
   return (
-    <div ref={ref} className={`overflow-hidden flex ${color}`} style={{ flexWrap: 'wrap' }}>
+    <div
+      ref={ref}
+      className={`overflow-hidden flex ${color}`}
+      style={{ flexWrap: 'wrap' }}
+    >
       {Array.from(text).map((char: string, index: number) => (
         <>
           {startAnimation && (
@@ -32,7 +44,7 @@ const WaveText = ({ text, color, textSize }: { text: string, color: string, text
         </>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default WaveText;
+export default WaveText

@@ -3,11 +3,18 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Counter from './counter'
 
-const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox, delay }) => {
+const AnimatedCounter = ({
+  endValue,
+  duration,
+  color,
+  radius,
+  sizeBox,
+  delay,
+}) => {
   const [count, setCount] = useState(0)
   const { ref, inView } = useInView({
     threshold: 1, // 100%
-    delay
+    delay,
   })
 
   useEffect(() => {
@@ -29,53 +36,56 @@ const AnimatedCounter = ({ endValue, duration, color, radius, sizeBox, delay }) 
 
   const rd = radius
   const circumference = 2 * Math.PI * rd
-  const offset = circumference - (count / 100 * circumference)
+  const offset = circumference - (count / 100) * circumference
 
   return (
     <div
       ref={ref}
       className='flex items-center justify-center'
-      style={{ 
+      style={{
         position: 'relative',
         width: sizeBox,
         height: sizeBox,
-        // border: '1px solid red' 
+        // border: '1px solid red'
       }}
     >
-      <svg width={sizeBox} height={sizeBox} className='flex items-center justify-center'
-        style={{ 
-          // transform: 'translate(-50%, -50%)', 
-          textAlign: 'center'
+      <svg
+        width={sizeBox}
+        height={sizeBox}
+        className='flex items-center justify-center'
+        style={{
+          // transform: 'translate(-50%, -50%)',
+          textAlign: 'center',
         }}
       >
-      <circle
-        stroke="#e6e6e6"
-        fill="transparent"
-        strokeWidth="8"
-        r={rd}
-        cx={sizeBox / 2}
-        cy={sizeBox / 2}
-      />
-      <motion.circle
-        stroke={color}
-        fill="transparent"
-        strokeWidth="8"
-        r={rd}
-        cx={sizeBox / 2}
-        cy={sizeBox / 2}
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-        transform={`rotate(-90 ${sizeBox / 2} ${sizeBox / 2})`}
-        transition={{ duration: 0.1 }}
-      />
+        <circle
+          stroke='#e6e6e6'
+          fill='transparent'
+          strokeWidth='8'
+          r={rd}
+          cx={sizeBox / 2}
+          cy={sizeBox / 2}
+        />
+        <motion.circle
+          stroke={color}
+          fill='transparent'
+          strokeWidth='8'
+          r={rd}
+          cx={sizeBox / 2}
+          cy={sizeBox / 2}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          transform={`rotate(-90 ${sizeBox / 2} ${sizeBox / 2})`}
+          transition={{ duration: 0.1 }}
+        />
       </svg>
-      <div 
-        style={{ 
-          position: 'absolute', 
-          top: '50%', 
-          left: '50%', 
-          transform: 'translate(-50%, -50%)', 
-          textAlign: 'center'
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          textAlign: 'center',
         }}
       >
         <Counter value={Math.round(count)} color={color} />

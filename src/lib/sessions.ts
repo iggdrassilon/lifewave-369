@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react"
-import { useLocation } from "react-router-dom"
+import { useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation()
@@ -8,13 +8,16 @@ const ScrollToTop = () => {
   useEffect(() => {
     if (timer.current) clearTimeout(timer.current)
     if (pathname !== '/reviews') {
-      window.scrollTo(0, 0) 
+      window.scrollTo(0, 0)
     } else {
       if (pathname.split('/').length === 2) {
         const scrollPosition = sessionStorage.getItem('scrollPosition')
         if (scrollPosition !== null) {
           timer.current = setTimeout(() => {
-            window.scrollTo({top: parseInt(scrollPosition, 10), behavior: 'smooth'})
+            window.scrollTo({
+              top: parseInt(scrollPosition, 10),
+              behavior: 'smooth',
+            })
           }, 300)
         }
       }

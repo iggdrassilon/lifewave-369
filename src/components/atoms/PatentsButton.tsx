@@ -2,9 +2,9 @@ import { cn } from '@/src/lib/utils'
 import React from 'react'
 
 type PatentsButtonT = {
-  link: string;
-  title: string;
-  customStyle?: string;
+  link: string
+  title: string
+  customStyle?: string
 }
 
 const PatentsButton = (props: PatentsButtonT) => {
@@ -23,7 +23,7 @@ const PatentsButton = (props: PatentsButtonT) => {
       rel='noopener noreferrer'
     >
       {title}
-    </a> 
+    </a>
   )
 }
 

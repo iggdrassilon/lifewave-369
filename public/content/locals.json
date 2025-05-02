@@ -1,33 +1,33 @@
 {
   "previews": {
-    "dna":           "/images/DNA-preview.png",
-    "weKnow":        "/images/human_meridians_rotate.png",
+    "dna": "/images/DNA-preview.png",
+    "weKnow": "/images/human_meridians_rotate.png",
     "unfortunately": "/images/waves_purple.png",
-    "howToUse":      "/images/source_of_light.png",
-    "reviewsBG":     "/images/graphs_letters.jpeg"
+    "howToUse": "/images/source_of_light.png",
+    "reviewsBG": "/images/graphs_letters.jpeg"
   },
   "videos": {
-    "dna":           "https://dl.dropboxusercontent.com/scl/fi/7983fiac8sr57y4mf535p/DNA.mp4?rlkey=gu8q55get1stbup0rt5k0q8aq&",
-    "weKnow":        "https://dl.dropboxusercontent.com/scl/fi/zjelrmok5m6zvvs7hmd88/human_meridians_rotate.mp4?rlkey=0xr29rtyzjxiiuxp7ldjfsxz4&",
+    "dna": "https://dl.dropboxusercontent.com/scl/fi/7983fiac8sr57y4mf535p/DNA.mp4?rlkey=gu8q55get1stbup0rt5k0q8aq&",
+    "weKnow": "https://dl.dropboxusercontent.com/scl/fi/zjelrmok5m6zvvs7hmd88/human_meridians_rotate.mp4?rlkey=0xr29rtyzjxiiuxp7ldjfsxz4&",
     "unfortunately": "https://dl.dropboxusercontent.com/scl/fi/nd1yudh8aiy2o26xzan34/waves_purple.mp4?rlkey=bffq19ddbfsbmvhcwdm9hpv5v&",
-    "howToUse":      "https://dl.dropboxusercontent.com/scl/fi/75zye8szngkoxdsb6dttb/source_of_light.mp4?rlkey=y0wsfvh6tm63s5t571b0s8k2e&",
-    "reviewsBG":     "https://dl.dropboxusercontent.com/scl/fi/i0lo728l9kbv1zp5ha1i9/graphs_letters.mp4?rlkey=bc0v6dogv8y3uh5idl56k410d&"
+    "howToUse": "https://dl.dropboxusercontent.com/scl/fi/75zye8szngkoxdsb6dttb/source_of_light.mp4?rlkey=y0wsfvh6tm63s5t571b0s8k2e&",
+    "reviewsBG": "https://dl.dropboxusercontent.com/scl/fi/i0lo728l9kbv1zp5ha1i9/graphs_letters.mp4?rlkey=bc0v6dogv8y3uh5idl56k410d&"
   },
   "content": {
-    "perla":         "/images/perla.png",
-    "whitewave":     "/images/layout-wave.png",
+    "perla": "/images/perla.png",
+    "whitewave": "/images/layout-wave.png",
     "patchplaceguy": "/images/patch_place_guy.png",
-    "x39card":       "/images/X39-card.jpg",
-    "x39card2d":     "/images/CARD_X39.webp",
-    "patents":       "/images/PATENTS_STAMP.webp",
-    "x39patents":    "/images/PATENTS.png",
-    "bluegraphs":    "/images/blue-graphs.jpg",
-    "bluewaves":     "/images/waves_purple.png",
-    "sun":           "/images/sun.png",
-    "girlpatched":   "/images/girl_patched.png",
-    "activateDNA":   "/images/ActivateDNA.png",
+    "x39card": "/images/X39-card.jpg",
+    "x39card2d": "/images/CARD_X39.webp",
+    "patents": "/images/PATENTS_STAMP.webp",
+    "x39patents": "/images/PATENTS.png",
+    "bluegraphs": "/images/blue-graphs.jpg",
+    "bluewaves": "/images/waves_purple.png",
+    "sun": "/images/sun.png",
+    "girlpatched": "/images/girl_patched.png",
+    "activateDNA": "/images/ActivateDNA.png",
     "whiteStandart": "/images/standart_white_2.png",
-    "noticeWaves":   "/images/blue_waves_background.jpg",
+    "noticeWaves": "/images/blue_waves_background.jpg",
     "patentsPage": {
       "earthbackground": "/images/BG_PATENTS.jpg",
       "research": {

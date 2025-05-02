@@ -14,16 +14,14 @@ export default defineConfig(({ mode }) => ({
     host: '::',
     port: 8080,
   },
-  plugins: [  
-    react(), mode === 'development' && componentTagger(),
+  plugins: [
+    react(),
+    mode === 'development' && componentTagger(),
     imageminBuilder(),
     ViteImageOptimizer({
       png: { quality: 50 },
       jpg: { quality: 50 },
-      exclude: [
-        'BG_PATENTS.jpg',
-        'girl_patched.png'
-      ]
+      exclude: ['BG_PATENTS.jpg', 'girl_patched.png'],
     }),
     legacy({
       targets: [

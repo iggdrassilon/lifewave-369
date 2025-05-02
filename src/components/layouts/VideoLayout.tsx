@@ -5,10 +5,12 @@ import useInViewHook from '@/src/hooks/useInView'
 import Dexie from 'dexie'
 
 const db = new Dexie('VideoCacheDB')
+
 db.version(2).stores({
   videos: 'url, data',
-  images: 'url, data'
+  images: 'url, data',
 })
+
 const VideoLayout = (props: ViteoLayoutT) => {
   const { videoRef, link, opacity, cover, preview, customClass } = props
 
@@ -71,10 +73,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
 
   return (
     <div>
-      <div 
-        ref={ref}
-        className={`absolute inset-0 -z-50 opacity-${opacity}`}
-      >
+      <div ref={ref} className={`absolute inset-0 -z-50 opacity-${opacity}`}>
         <video
           ref={videoRef}
           loop
@@ -87,24 +86,24 @@ const VideoLayout = (props: ViteoLayoutT) => {
           className={cn(
             `${customClass}`,
             'object-cover -z-49',
-            `${!cover? 'w-full h-full' : 'w-[100%] h-[100%]'}`
+            `${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`
           )}
           controls={false}
-          preload="auto"
+          preload='auto'
           tabIndex={-1} // turn off navigation
           onContextMenu={(e) => e.preventDefault()} // turn off context menu
           style={{ pointerEvents: 'none' }}
         >
-          {videoBlobUrl && <source src={videoBlobUrl} type="video/mp4" />}
+          {/* {videoBlobUrl && <source src={videoBlobUrl} type="video/mp4" />} */}
         </video>
         <img
           src={imgBlobUrl || preview} // Use cached image if available, otherwise use original URL
-          alt="Previews not available"
+          alt='Previews not available'
           className={cn(
             'object-cover',
             'absolute top-0 left-0 -z-50',
             `${customClass}`,
-            `${!cover? 'w-full h-full' : 'w-[100%] h-[100%]'}`
+            `${!cover ? 'w-full h-full' : 'w-[100%] h-[100%]'}`
           )}
         />
       </div>

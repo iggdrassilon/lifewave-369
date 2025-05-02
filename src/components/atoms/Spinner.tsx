@@ -1,6 +1,11 @@
 const Spinner = () => {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <style>
         {`.spinner_hzlK {
           animation: spinner_vc4H .8s linear infinite;
@@ -24,9 +29,21 @@ const Spinner = () => {
           }
         }`}
       </style>
-      <rect className="spinner_hzlK" x="1" y="1" width="6" height="22" />
-      <rect className="spinner_hzlK spinner_koGT" x="9" y="1" width="6" height="22" />
-      <rect className="spinner_hzlK spinner_YF1u" x="17" y="1" width="6" height="22" />
+      <rect className='spinner_hzlK' x='1' y='1' width='6' height='22' />
+      <rect
+        className='spinner_hzlK spinner_koGT'
+        x='9'
+        y='1'
+        width='6'
+        height='22'
+      />
+      <rect
+        className='spinner_hzlK spinner_YF1u'
+        x='17'
+        y='1'
+        width='6'
+        height='22'
+      />
     </svg>
   )
 }

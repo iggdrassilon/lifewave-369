@@ -1,8 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint/eslint-plugin"
-  ],
+  "plugins": ["@typescript-eslint/eslint-plugin"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
@@ -13,10 +11,7 @@
       "warn",
       { "allowConstantExport": true }
     ],
-    "quotes": [
-      "error",
-      "single"
-    ],
+    "quotes": ["error", "single"],
     "prettier/prettier": [
       "error",
       {
@@ -46,10 +41,7 @@
         "maxBOF": 1
       }
     ],
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
+    "object-curly-spacing": ["error", "always"],
     "comma-spacing": [
       2,
       {
@@ -85,28 +77,16 @@
         "indentLogicalExpressions": true
       }
     ],
-    "arrow-body-style": [
-      "error",
-      "as-needed"
-    ],
-    "padded-blocks": [
-      "error",
-      "never"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
+    "arrow-body-style": ["error", "as-needed"],
+    "padded-blocks": ["error", "never"],
+    "semi": ["error", "always"],
     "max-len": [
       "error",
       {
         "code": 120
       }
     ],
-    "indent": [
-      "error",
-      2
-    ],
+    "indent": ["error", 2],
     "react/self-closing-comp": [
       "error",
       {

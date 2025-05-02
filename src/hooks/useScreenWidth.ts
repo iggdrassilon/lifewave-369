@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 const useScreenWidth = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false)
-  
+
   const mdBreakpoint = 768
 
   const checkScreenWidth = () => {

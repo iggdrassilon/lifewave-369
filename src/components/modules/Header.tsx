@@ -56,14 +56,26 @@ const Header = () => {
     >
       <div className='mx-auto px-4 backdrop-blur-md'>
         <div className='flex items-center justify-between h-16'>
-          <Link to='/' className='cursor-pointer text-2xl font-bold text-[rgba(4,103,150)]' onClick={() => {
-            if (location.pathname !== '/') {
-              handleClickLinks()
-            }
-          }}>
+          <Link
+            to='/'
+            className='cursor-pointer text-2xl font-bold text-[rgba(4,103,150)]'
+            onClick={() => {
+              if (location.pathname !== '/') {
+                handleClickLinks()
+              }
+            }}
+          >
             <div className='relative w-[200px] h-[56px] flex items-center rounded-[50px]'>
-              <img src="/images/standart_blue.png" className='h-[100%] w-[56px]' alt="" />
-              <img src="/images/22.webp" className='rounded-[50px] h-[80%]' alt="" />
+              <img
+                src='/images/standart_blue.png'
+                className='h-[100%] w-[56px]'
+                alt=''
+              />
+              <img
+                src='/images/22.webp'
+                className='rounded-[50px] h-[80%]'
+                alt=''
+              />
             </div>
           </Link>
           <nav className='flex'>
@@ -150,7 +162,7 @@ const Header = () => {
                         className='hover:text-primary font-bold transition-colors flex justify-center py-4'
                         style={{
                           color: 'var(--main-blue)',
-                          borderBottom: '1px solid rgba(100,100,100, .1)'
+                          borderBottom: '1px solid rgba(100,100,100, .1)',
                         }}
                         onClick={() => handleClickLinks()}
                       >
@@ -163,7 +175,7 @@ const Header = () => {
                         className='hover:text-primary font-bold transition-colors flex justify-center py-4'
                         style={{
                           color: 'var(--main-blue)',
-                          borderBottom: '1px solid rgba(100,100,100, .1)'
+                          borderBottom: '1px solid rgba(100,100,100, .1)',
                         }}
                         onClick={() => handleClickLinks()}
                       >

@@ -12,13 +12,13 @@ const Patents = () => {
   const content = useLang().CONTENT
   const links = usePublic().LINKS
 
-  const [ state, setState ] = useState(false)
-  const [ status, setStatus ] = useState(false)
-  const [ sectionMounted, setSectionMounted ] = useState(false)
+  const [state, setState] = useState(false)
+  const [status, setStatus] = useState(false)
+  const [sectionMounted, setSectionMounted] = useState(false)
 
-  const [ ref, inView ] = useInView()
-  const [ gridRef, gridInView ] = useInView({
-    triggerOnce: true
+  const [ref, inView] = useInView()
+  const [gridRef, gridInView] = useInView({
+    triggerOnce: true,
   })
 
   const smScreen = 768
@@ -32,7 +32,8 @@ const Patents = () => {
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
   const textDescr = 'font-bold text-xl text-description'
   const textContent = 'text-xl md:text-2xl text-description text-center'
-  const shadowElems = 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
+  const shadowElems =
+    'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
 
   useEffect(() => {
     if (inView && sectionMounted) {
@@ -68,7 +69,7 @@ const Patents = () => {
       style={{}}
       ref={gridRef}
       className={cn(
-        'activate_dna mx-auto px-0 py-0 min-h-[795px] md:min-h-[600px]',
+        'activate_dna mx-auto px-0 py-0 min-h-[795px] md:min-h-[300px]'
         // 'md:container',
         // 'overflow-y-visible overflow-x-hidden'
       )}
@@ -85,47 +86,49 @@ const Patents = () => {
             customClasses={{
               header: `space-y-4 ${bgElemsColor}`,
               body: '',
-              wrapper: 'gap-0'
+              wrapper: 'gap-0',
             }}
             title={{
               customCl: '',
               title: (
-                <div className={cn(
-                  // 'md:mt-20', // CORDS
-                  'mt-0',
-                  'flex items-center justify-center', // CTR
-                  'text-center text-sm', // FONT
-                  'text-description' // COLOR
-                )}>
-                  <TextAnimated 
-                    text={`${content.home.patents.title}`} 
-                    color="" 
-                    textSizes={`font-bold ${textTitle}`} 
-                    delay={0.3}          
-                    duration={0.1} 
-                    space={0.02} 
-                    mode='slide-left' 
+                <div
+                  className={cn(
+                    // 'md:mt-20', // CORDS
+                    'mt-0',
+                    'flex items-center justify-center', // CTR
+                    'text-center text-sm', // FONT
+                    'text-description' // COLOR
+                  )}
+                >
+                  <TextAnimated
+                    text={`${content.home.patents.title}`}
+                    color=''
+                    textSizes={`font-bold ${textTitle}`}
+                    delay={0.3}
+                    duration={0.1}
+                    space={0.02}
+                    mode='slide-left'
                   />
                 </div>
-              )
+              ),
             }}
             description={{
-              customCl: cn(
-                'flex justify-center',
-                `${textContent}`
-              ), // PARENT
-              description: 
-                <div 
-                  dangerouslySetInnerHTML={{ __html: content.home.patents.description }} // CHILD
+              customCl: cn('flex justify-center', `${textContent}`), // PARENT
+              description: (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: content.home.patents.description,
+                  }} // CHILD
                   className={cn(
                     'mt-[50px] p-[20px] md:p-[50px]',
-                    'w-[100%] rounded-xl',
+                    'w-[100%] rounded-xl'
                     // `${shadowElems}`
                   )}
                   style={{
-                    boxShadow: '0 4px 15px rgba(0,50,250, 0.7)'
+                    boxShadow: '0 4px 15px rgba(0,50,250, 0.7)',
                   }}
-                />,
+                />
+              ),
             }}
             image={{
               src: `${links.content.x39patents}`, // IMG OF PATENTS
@@ -135,44 +138,36 @@ const Patents = () => {
                 init: {
                   opacity: 0,
                   translateX: '-200px',
-                  translateY: ''
+                  translateY: '',
                 },
                 animate: {
                   opacity: 1,
                   translateX: '0',
-                  translateY: '0'
+                  translateY: '0',
                 },
                 transition: {
                   duration: 1,
-                  delay: 0.4
-                }
-              }
+                  delay: 0.4,
+                },
+              },
             }}
             content={{
               text: (
-                <div 
+                <div
                   ref={ref}
-                  className={cn(
-                    `${textContent}`,
-                    'p-[10px] md:p-[20px]'
-                  )}
+                  className={cn(`${textContent}`, 'p-[10px] md:p-[20px]')}
                 >
-                  <h2 className={cn(
-                    'font-bold uppercase'
-                    )}
-                  >
+                  <h2 className={cn('font-bold uppercase')}>
                     {content.home.patents.patents}
                   </h2>
-                  <div className={cn(
-                      'mt-4'
-                    )}
-                  >
+                  <div className={cn('mt-4')}>
                     {content.home.patents.numbers}
                   </div>
                 </div>
               ),
               customCl: cn(
                 // 'rounded-xl'
+                'min-h-[300px]'
               ),
               style: {
                 // boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
@@ -181,25 +176,21 @@ const Patents = () => {
                 init: {
                   opacity: 0,
                   translateX: '0',
-                  translateY: '80px'
+                  translateY: '80px',
                 },
                 animate: {
                   opacity: 1,
                   translateX: '0',
-                  translateY: '0'
+                  translateY: '0',
                 },
                 transition: {
                   duration: 1,
-                  delay: 0.3
-  
-                }
-              }
+                  delay: 0.3,
+                },
+              },
             }}
           />
-          <div className={cn(
-            'flex justify-center items-center',
-            'pb-[80px]',
-          )}>
+          <div className={cn('flex justify-center items-center', 'pb-[80px]')}>
             <div className='flex flex-col md:flex-row gap-6 z-[102]'>
               <GlowButton
                 link='/patents-research'

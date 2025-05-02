@@ -17,10 +17,10 @@ const DnaHero = () => {
 
   const { ref, isInView } = useInViewHook()
 
-  const [ rotate, setRotate ] = useState(false)
+  const [rotate, setRotate] = useState(false)
 
   const videoRef = useRef<any>(null)
- 
+
   const [mousePosition, setMousePosition] = useState({
     x: window.innerWidth * 0.8,
     y: window.innerHeight * 0.5,
@@ -43,23 +43,23 @@ const DnaHero = () => {
   //   setMousePosition({ x, y })
   // }
 
-    useEffect(() => {
-      if (document.title !== content.home.name) {
-        document.title = content.home.name
-      }
-      isInView ? setRotate(true) : setRotate(false)
+  useEffect(() => {
+    if (document.title !== content.home.name) {
+      document.title = content.home.name
+    }
+    isInView ? setRotate(true) : setRotate(false)
 
-      if (videoRef.current) {
-        if (isInView) {
-          // For firefox need small delay before play
-          setTimeout(() => {
-            videoRef.current.play()
-          }, 11)
-        } else {
-          videoRef.current.pause()
-        }
+    if (videoRef.current) {
+      if (isInView) {
+        // For firefox need small delay before play
+        setTimeout(() => {
+          videoRef.current.play()
+        }, 11)
+      } else {
+        videoRef.current.pause()
       }
-    }, [isInView])
+    }
+  }, [isInView])
 
   return (
     <motion.div
@@ -83,68 +83,75 @@ const DnaHero = () => {
           opacity='10'
           customClass='rotate-[180deg]'
           videoRef={videoRef}
-          cover={true} 
+          cover={true}
         />
         <div className='relative mt-[100px] p-[10px] overflow-hidden'>
-          <div className={cn(
-            'w-[270px] h-[270px]',
-            `${rotate ? 'animate-rotate' : ''} rounded-full`,
-            'bg-cover bg-no-repeat',
-          )} 
+          <div
+            className={cn(
+              'w-[270px] h-[270px]',
+              `${rotate ? 'animate-rotate' : ''} rounded-full`,
+              'bg-cover bg-no-repeat'
+            )}
             style={{
-              backgroundImage: `url(${links.content.whiteStandart})`
+              backgroundImage: `url(${links.content.whiteStandart})`,
             }}
           />
-          <div className={cn(
-            'absolute z-[9]',
-            'before:absolute inset-0',
-            'before:w-[252px] before:h-[252px]',
-            "before:top-[15px] before:left-[18px] before:translate-y-1",
-            'before:rounded-full before:shadow-custom'
-          )} 
+          <div
+            className={cn(
+              'absolute z-[9]',
+              'before:absolute inset-0',
+              'before:w-[252px] before:h-[252px]',
+              'before:top-[15px] before:left-[18px] before:translate-y-1',
+              'before:rounded-full before:shadow-custom'
+            )}
           />
         </div>
-        <div className={cn(
-          'w-[100%] pb-[100px]',
-          'font-kefa text-white text-[120px] font-bold',
-        )}>
+        <div
+          className={cn(
+            'w-[100%] pb-[100px]',
+            'font-kefa text-white text-[120px] font-bold'
+          )}
+        >
           <span ref={ref}>X39</span>
         </div>
-        <div className={cn(
-          'absolute top-[565px]',
-          'w-[100vw] max-w-[410px]',
-          'mr-[20px]',
-          'aspect-video',
-        )} >
+        <div
+          className={cn(
+            'absolute top-[565px]',
+            'w-[100vw] max-w-[410px]',
+            'mr-[20px]',
+            'aspect-video'
+          )}
+        >
           <Card3D mousePosition={mousePosition}>
-            <div className={cn(
-              "layer-1",
-              'absolute -z-[1] inset-[0]',
-              'bg-cover bg-no-repeat',
-            )} 
+            <div
+              className={cn(
+                'layer-1',
+                'absolute -z-[1] inset-[0]',
+                'bg-cover bg-no-repeat'
+              )}
               style={{
-                backgroundImage: `url(${links.content.x39card})`
+                backgroundImage: `url(${links.content.x39card})`,
               }}
             />
             <div
               className={cn(
-                "layer-2",
+                'layer-2',
                 'absolute -z-[1] inset-[0]',
-                'bg-cover bg-no-repeat',
+                'bg-cover bg-no-repeat'
               )}
               style={{
-                backgroundImage: `url(${links.content.x39card})`
+                backgroundImage: `url(${links.content.x39card})`,
               }}
               data-offset='20'
             />
             <div
               className={cn(
-                "layer-3",
+                'layer-3',
                 'absolute -z-[1] left-[0] inset-[0]',
-                'bg-cover bg-no-repeat',
+                'bg-cover bg-no-repeat'
               )}
               style={{
-                backgroundImage: `url(${links.content.x39card})`
+                backgroundImage: `url(${links.content.x39card})`,
               }}
               data-offset='40'
             />

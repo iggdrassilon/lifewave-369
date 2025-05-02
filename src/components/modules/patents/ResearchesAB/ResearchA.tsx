@@ -1,21 +1,17 @@
-import GridSectionSimple from "@/src/components/layouts/GridSectionSimple"
-import { ResearchesT } from "./Researches"
-import ContentAB from "./ContentA-B"
+import GridSectionSimple from '@/src/components/layouts/GridSectionSimple'
+import { ResearchesT } from './Researches'
+import ContentAB from './ContentA-B'
 
 const ResearchA = ({ content, images }: ResearchesT) => {
   return (
     <>
-      <GridSectionSimple 
+      <GridSectionSimple
         // title={content.title}
         description={content.subtitle}
-        content={
-          <ContentAB
-            content={content.a}
-          />
-        }
+        content={<ContentAB content={content.a} />}
         image={{
           src: images.researchA,
-          alt: 'research A'
+          alt: 'research A',
         }}
         imageOnRight={true}
         imageOnTop={false}

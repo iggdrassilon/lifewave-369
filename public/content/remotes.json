@@ -1,28 +1,28 @@
 {
   "previews": {
-    "dna":           "/images/DNA-preview.png",
-    "weKnow":        "/images/human_meridians_rotate.png",
+    "dna": "/images/DNA-preview.png",
+    "weKnow": "/images/human_meridians_rotate.png",
     "unfortunately": "/images/waves_purple.png",
-    "howToUse":      "/images/source_of_light.png"
+    "howToUse": "/images/source_of_light.png"
   },
   "videos": {
-    "dna":           "https://dl.dropboxusercontent.com/scl/fi/7983fiac8sr57y4mf535p/DNA.mp4?rlkey=gu8q55get1stbup0rt5k0q8aq&",
-    "weKnow":        "https://dl.dropboxusercontent.com/scl/fi/zjelrmok5m6zvvs7hmd88/human_meridians_rotate.mp4?rlkey=0xr29rtyzjxiiuxp7ldjfsxz4&",
+    "dna": "https://dl.dropboxusercontent.com/scl/fi/7983fiac8sr57y4mf535p/DNA.mp4?rlkey=gu8q55get1stbup0rt5k0q8aq&",
+    "weKnow": "https://dl.dropboxusercontent.com/scl/fi/zjelrmok5m6zvvs7hmd88/human_meridians_rotate.mp4?rlkey=0xr29rtyzjxiiuxp7ldjfsxz4&",
     "unfortunately": "https://dl.dropboxusercontent.com/scl/fi/nd1yudh8aiy2o26xzan34/waves_purple.mp4?rlkey=bffq19ddbfsbmvhcwdm9hpv5v&",
-    "howToUse":      "https://dl.dropboxusercontent.com/scl/fi/75zye8szngkoxdsb6dttb/source_of_light.mp4?rlkey=y0wsfvh6tm63s5t571b0s8k2e&"
+    "howToUse": "https://dl.dropboxusercontent.com/scl/fi/75zye8szngkoxdsb6dttb/source_of_light.mp4?rlkey=y0wsfvh6tm63s5t571b0s8k2e&"
   },
   "content": {
-    "perla":         "https://dl.dropboxusercontent.com/scl/fi/l27vjxbgr5erjndltigdd/perla.png?rlkey=j4f9h8i62edvqmqj4n021vo8k&",
-    "whitewave":     "https://dl.dropboxusercontent.com/scl/fi/7tu8blh5975v3p4b1sy1z/layout-wave.png?rlkey=qul3kod7wk8ymfyw79qo10fbf&",
+    "perla": "https://dl.dropboxusercontent.com/scl/fi/l27vjxbgr5erjndltigdd/perla.png?rlkey=j4f9h8i62edvqmqj4n021vo8k&",
+    "whitewave": "https://dl.dropboxusercontent.com/scl/fi/7tu8blh5975v3p4b1sy1z/layout-wave.png?rlkey=qul3kod7wk8ymfyw79qo10fbf&",
     "patchplaceguy": "https://dl.dropboxusercontent.com/scl/fi/lhooc51kb2qgdqvibd2dx/patch_place_guy.png?rlkey=l1hzei7pbm3uppf3yfupmwnkd&",
-    "x39card":       "https://dl.dropboxusercontent.com/scl/fi/73par13vtkwdfzid43snv/X39-card.jpg?rlkey=x90avxf42uuzl1oy8of04um06&",
-    "x39card2d":     "https://dl.dropboxusercontent.com/scl/fi/k5nu79iggs7uwsxxa9837/CARD_X39.webp?rlkey=m4p89rr9nv1fdkoktib2bfoi0&",
-    "patents":       "https://dl.dropboxusercontent.com/scl/fi/7iq3xty9uch0xpej37fnc/PATENTS_STAMP.webp?rlkey=4393z1jtkatytr3luhqcysdg6&",
-    "x39patents":    "https://dl.dropboxusercontent.com/scl/fi/om98tchwu1yisufxwhlq9/x39_patents.png?rlkey=ud3hx2xv6qyha39qjokxebt95&",
-    "bluegraphs":    "https://dl.dropboxusercontent.com/scl/fi/iknbqjwi3q25dl3qr4l0e/blue-graphs.jpg?rlkey=ezu73xh5guprzb8s3pwwq49nw&",
-    "bluewaves":     "https://dl.dropboxusercontent.com/scl/fi/h48z96k25szoesuouov7g/blue_waves_background.jpg?rlkey=xjh3mooevnbsd29qm10efbvzs&",
-    "sun":           "https://dl.dropboxusercontent.com/scl/fi/w0cl09ag8rf83xcbak8mu/sun.png?rlkey=grq2jei99z0oy6ryob111xrnf&",
-    "girlpatched":   "https://dl.dropboxusercontent.com/scl/fi/ztunuky7ff4a5mvvix7ey/girl_patched.png?rlkey=j4cerwlf0bczc8n23afexxhqc&",
-    "activateDNA":   "https://dl.dropboxusercontent.com/scl/fi/9cclfdchdsvpyaz0su7d1/ActivateDNA.png?rlkey=wtstyt1z0xb3ry9xbsbhnafk2&"
+    "x39card": "https://dl.dropboxusercontent.com/scl/fi/73par13vtkwdfzid43snv/X39-card.jpg?rlkey=x90avxf42uuzl1oy8of04um06&",
+    "x39card2d": "https://dl.dropboxusercontent.com/scl/fi/k5nu79iggs7uwsxxa9837/CARD_X39.webp?rlkey=m4p89rr9nv1fdkoktib2bfoi0&",
+    "patents": "https://dl.dropboxusercontent.com/scl/fi/7iq3xty9uch0xpej37fnc/PATENTS_STAMP.webp?rlkey=4393z1jtkatytr3luhqcysdg6&",
+    "x39patents": "https://dl.dropboxusercontent.com/scl/fi/om98tchwu1yisufxwhlq9/x39_patents.png?rlkey=ud3hx2xv6qyha39qjokxebt95&",
+    "bluegraphs": "https://dl.dropboxusercontent.com/scl/fi/iknbqjwi3q25dl3qr4l0e/blue-graphs.jpg?rlkey=ezu73xh5guprzb8s3pwwq49nw&",
+    "bluewaves": "https://dl.dropboxusercontent.com/scl/fi/h48z96k25szoesuouov7g/blue_waves_background.jpg?rlkey=xjh3mooevnbsd29qm10efbvzs&",
+    "sun": "https://dl.dropboxusercontent.com/scl/fi/w0cl09ag8rf83xcbak8mu/sun.png?rlkey=grq2jei99z0oy6ryob111xrnf&",
+    "girlpatched": "https://dl.dropboxusercontent.com/scl/fi/ztunuky7ff4a5mvvix7ey/girl_patched.png?rlkey=j4cerwlf0bczc8n23afexxhqc&",
+    "activateDNA": "https://dl.dropboxusercontent.com/scl/fi/9cclfdchdsvpyaz0su7d1/ActivateDNA.png?rlkey=wtstyt1z0xb3ry9xbsbhnafk2&"
   }
 }

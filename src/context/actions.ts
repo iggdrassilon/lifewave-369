@@ -1,4 +1,4 @@
-import { createDomain } from "effector"
+import { createDomain } from 'effector'
 
 const actionsDomain = createDomain()
 
@@ -9,9 +9,9 @@ const $actions = actionsDomain
     burger: false,
     language: false,
   })
-  .on(setAction, (state, {key, value}) => ({
+  .on(setAction, (state, { key, value }) => ({
     ...state,
-    [key]: value
+    [key]: value,
   }))
 
 $actions.watch((state) => {

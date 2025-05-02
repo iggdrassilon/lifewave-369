@@ -20,15 +20,15 @@ export default {
     width: {
       descr: '450px',
       descr_md: '598px',
-      calc_40: 'calc(100% - 40px)'
+      calc_40: 'calc(100% - 40px)',
     },
     extend: {
       maxWidth: {
-        'descr': '450px',
-        'descr_md': '598px',
+        descr: '450px',
+        descr_md: '598px',
       },
       screens: {
-        'se': "370px",
+        se: '370px',
       },
       fontFamily: {
         helvetica: ['Helvetica Neue', 'sans-serif'],

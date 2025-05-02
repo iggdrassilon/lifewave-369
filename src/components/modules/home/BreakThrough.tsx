@@ -9,13 +9,13 @@ import TextAnimated from '../../ui/textAnimations'
 const BreakThrough = () => {
   const content = usePublic().CONTENT
   const links = usePublic().LINKS
-  const [ state, setState ] = useState(false)
-  const [ status, setStatus ] = useState(false)
-  const [ sectionMounted, setSectionMounted ] = useState(false)
+  const [state, setState] = useState(false)
+  const [status, setStatus] = useState(false)
+  const [sectionMounted, setSectionMounted] = useState(false)
 
-  const [ ref, inView ] = useInView()
-  const [ gridRef, gridInView ] = useInView({
-    triggerOnce: true
+  const [ref, inView] = useInView()
+  const [gridRef, gridInView] = useInView({
+    triggerOnce: true,
   })
 
   const smScreen = 768
@@ -27,14 +27,15 @@ const BreakThrough = () => {
   const textColor = 'titles'
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl'
-  const textDescr = 'font-bold font text-sm se:text-xl text-description uppercase'
+  const textDescr =
+    'font-bold font text-sm se:text-xl text-description uppercase'
   const textContent = 'text-xl md:text-2xl text-description text-center'
   const shadowElems = 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl'
   useEffect(() => {
     if (inView && sectionMounted) {
       setState(true)
     }
-  
+
     const handleResize = () => {
       setIsXlScreen(window.innerWidth < xlScreen)
       setIsSmScreen(window.innerWidth < smScreen)
@@ -64,7 +65,7 @@ const BreakThrough = () => {
       style={{}}
       ref={gridRef}
       className={cn(
-        'activate_dna mx-auto px-0 py-0 min-h-[768px] lg:min-h-[822px]',
+        'activate_dna mx-auto px-0 py-0 min-h-[768px] lg:min-h-[822px]'
         // 'md:container',
         // 'overflow-y-visible overflow-x-hidden'
       )}
@@ -78,37 +79,38 @@ const BreakThrough = () => {
           customClasses={{
             header: `space-y-4 ${bgElemsColor}`,
             body: '',
-            wrapper: 'gap-8'
+            wrapper: 'gap-8',
           }}
           title={{
             customCl: '',
             title: (
-              <div className={cn(
-                'md:mt-0', // CORDS
-                'flex items-center justify-center', // CTR
-                'text-left text-sm', // FONT
-                'text-description' // COLOR
-              )}>
-                <TextAnimated 
-                  text={`${content.home.breakthrough.title}`} 
-                  color="" 
-                  textSizes={`${textTitle}`} 
-                  delay={0.3}          
-                  duration={0.1} 
-                  space={0.02} 
-                  mode='slide-left' 
+              <div
+                className={cn(
+                  'md:mt-0', // CORDS
+                  'flex items-center justify-center', // CTR
+                  'text-left text-sm', // FONT
+                  'text-description' // COLOR
+                )}
+              >
+                <TextAnimated
+                  text={`${content.home.breakthrough.title}`}
+                  color=''
+                  textSizes={`${textTitle}`}
+                  delay={0.3}
+                  duration={0.1}
+                  space={0.02}
+                  mode='slide-left'
                 />
               </div>
-            )
+            ),
           }}
           description={{
-            customCl: cn(
-              'flex justify-center',
-              `${textContent}`
-            ), // PARENT
-            description: 
-              <div 
-                dangerouslySetInnerHTML={{ __html: content.home.breakthrough.annotation }} // CHILD
+            customCl: cn('flex justify-center', `${textContent}`), // PARENT
+            description: (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: content.home.breakthrough.annotation,
+                }} // CHILD
                 className={cn(
                   'mt-[50px] mb-[50px] p-[20px] md:p-[50px]',
                   'w-[100%]',
@@ -116,13 +118,14 @@ const BreakThrough = () => {
                   // `${shadowElems}`
                 )}
                 style={{
-                  boxShadow: '0 4px 15px rgba(0,50,250, 0.4)'
+                  boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
                 }}
-              />,
+              />
+            ),
           }}
           image={{
             src: `${links.content.x39card2d}`, // IMG OF STEM SELS
-            alt: "steem sels for every neuron",
+            alt: 'steem sels for every neuron',
             customCl: 'mt-[70px] md:mt-[50px]',
             // artefact: '',
             artefact: (
@@ -138,11 +141,11 @@ const BreakThrough = () => {
                   className={cn(
                     'w-[110px] se:w-[130px] sm:w-[175px] md:w-[160px] lg:w-[180px]',
                     'h-[50px] se:h-[60px] sm:h-[80px] md:h-[70px] lg:h-[80px]',
-                    'rounded-full bg-cover bg-no-repeat',
+                    'rounded-full bg-cover bg-no-repeat'
                     // 'animate-rotate',
                   )}
                   style={{
-                    backgroundImage: `url(${links.content.patents})`
+                    backgroundImage: `url(${links.content.patents})`,
                   }}
                 />
               </div>
@@ -151,43 +154,45 @@ const BreakThrough = () => {
               init: {
                 opacity: 0,
                 translateX: '200px',
-                translateY: ''
+                translateY: '',
               },
               animate: {
                 opacity: 1,
                 translateX: '0',
-                translateY: '0'
+                translateY: '0',
               },
               transition: {
                 duration: 0.6,
-                delay: 0.6
-              }
-            }
+                delay: 0.6,
+              },
+            },
           }}
           content={{
             text: (
-              <div 
+              <div
                 ref={ref}
                 className={textDescr}
-                dangerouslySetInnerHTML={{ __html: content.home.breakthrough.description }} 
+                dangerouslySetInnerHTML={{
+                  __html: content.home.breakthrough.description,
+                }}
               />
             ),
             motion: {
               init: {
                 opacity: 0,
                 translateX: '-200px',
-                translateY: ''
+                translateY: '',
               },
               animate: {
                 opacity: 1,
                 translateX: '0',
-                translateY: '0'
+                translateY: '0',
               },
               transition: {
                 duration: 0.6,
-                delay: 0.6
-              }
-            }
+                delay: 0.6,
+              },
+            },
           }}
         />
       )}

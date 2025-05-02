@@ -2,7 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 
-import { MotionSection, MotionText } from "@/src/components/layouts/motionLayout"
+import {
+  MotionSection,
+  MotionText,
+} from '@/src/components/layouts/motionLayout'
 
 import { BlueRotatedFlower } from '@/src/components/ui/sacralGeometry'
 
@@ -15,13 +18,13 @@ const WeKnow = () => {
   const content = usePublic().CONTENT
   const links = usePublic().LINKS
 
-  const { ref, inView } = useInView({ threshold: 0.1 })  
+  const { ref, inView } = useInView({ threshold: 0.1 })
   const videoRef = useRef(null)
 
   const [state, setState] = useState(false)
   const [isAnimating, setIsAnimating] = useState(true)
   const [sectionMounted, setSectionMounted] = useState(false)
-  
+
   // TEXT
   const shadowElems = '0 2px 5px rgba(0,0,0, .3)'
   // const textColor = 'text-pink-700/90'
@@ -43,8 +46,8 @@ const WeKnow = () => {
       rotate: 0,
       transition: {
         duration: 0.7,
-        ease: "easeInOut",
-      }
+        ease: 'easeInOut',
+      },
     },
   }
 
@@ -55,8 +58,8 @@ const WeKnow = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeInOut",
-      }
+        ease: 'easeInOut',
+      },
     },
   }
 
@@ -91,9 +94,9 @@ const WeKnow = () => {
       <>
         <motion.div
           ref={ref}
-          initial="visible"
-          animate="visible"
-          className="flex items-center justify-center bg-cover bg-no-repeat relative"
+          initial='visible'
+          animate='visible'
+          className='flex items-center justify-center bg-cover bg-no-repeat relative'
           style={{
             position: 'relative',
             // padding: '20px',
@@ -108,17 +111,19 @@ const WeKnow = () => {
             link={links.videos.weKnow}
             cover={true}
           /> */}
-          <div className='relative w-[450px] md:w-[100%] flex mt-[200px] flex-col justify-center items-center px-[20px] md:px-0'>  
+          <div className='relative w-[450px] md:w-[100%] flex mt-[200px] flex-col justify-center items-center px-[20px] md:px-0'>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className={`relative z- overflow-hidden p-[50px]`}
-              style={{
-                // borderTop: '1px solid rgba(1,1,1,.2)',
-                // borderBottom: '1px solid rgba(1,1,1,.2)'
-                // boxShadow: shadowElems
-              }}
+              style={
+                {
+                  // borderTop: '1px solid rgba(1,1,1,.2)',
+                  // borderBottom: '1px solid rgba(1,1,1,.2)'
+                  // boxShadow: shadowElems
+                }
+              }
             >
               {/* {Object.values(content.home.weknow).map((word: string, index: number) => (
                 <MotionText key={index} className={`${text} mb-8 ${textColor}`} variants={textVariants} height_initial={80} height_viewported={0} duration={index * 0.3} delay={index * 0.3} once={false} complete={completeAnimation}>

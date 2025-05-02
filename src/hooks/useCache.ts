@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 import Dexie from 'dexie'
 
 const db = new Dexie('CacheDB')
@@ -29,7 +29,7 @@ const useCache = (url: string, type: CacheFileType, viewed: boolean) => {
           }
 
           const blobUrl = URL.createObjectURL(cachedFile.data)
-          
+
           console.log(`return cached file ${url} type ${type}`)
 
           setBlobUrl(blobUrl)

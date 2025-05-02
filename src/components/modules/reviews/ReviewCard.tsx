@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -8,15 +7,22 @@ import { setStateAction } from '@/src/context/states'
 import useStates from '@/src/hooks/useStates'
 
 interface ReviewCardProps {
-  id: string;
-  path: string;
-  title: string;
-  description: string;
-  bgColor?: string;
-  totalLength: number;
+  id: string
+  path: string
+  title: string
+  description: string
+  bgColor?: string
+  totalLength: number
 }
 
-const ReviewCard: React.FC<ReviewCardProps> = ({ id, path, title, description, bgColor, totalLength }) => {
+const ReviewCard: React.FC<ReviewCardProps> = ({
+  id,
+  path,
+  title,
+  description,
+  bgColor,
+  totalLength,
+}: ReviewCardProps) => {
   const firstDownloadState = useStates().states
 
   useEffect(() => {
@@ -32,30 +38,17 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ id, path, title, description, b
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: firstDownloadState['reviews'] ? 0 : 0.5,
-        delay: firstDownloadState['reviews'] ? 0 : parseInt(id) * 0.1
+        delay: firstDownloadState['reviews'] ? 0 : parseInt(id) * 0.1,
       }}
-      className="review-card w-full"
+      className='review-card w-full'
     >
-      <Link
-        to={`/reviews/${path}`}
-        className="block h-full"
-      >
-        <div 
-          className={cn(
-            `${bgColor}`,
-            'space-y-3 h-full flex flex-col'
-          )}
-        >
-          <div className="w-full h-2 bg-gradient-to-r from-blue-400 to-blue-100 rounded-full" />
-          <h3 className="text-xl font-medium tracking-tight">
-            {title}
-          </h3>
-          <p className="text-sm flex-grow">
-            {description}
-          </p>
-          <div className="pt-4 flex justify-end">
-            <span
-              className=" text-sm font-medium">
+      <Link to={`/reviews/${path}`} className='block h-full'>
+        <div className={cn(`${bgColor}`, 'space-y-3 h-full flex flex-col')}>
+          <div className='w-full h-2 bg-gradient-to-r from-blue-400 to-blue-100 rounded-full' />
+          <h3 className='text-xl font-medium tracking-tight'>{title}</h3>
+          <p className='text-sm flex-grow'>{description}</p>
+          <div className='pt-4 flex justify-end'>
+            <span className=' text-sm font-medium'>
               {content.reviews.main.turnIt}
             </span>
           </div>

@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import WaveText from "@/src/components/ui/waveText"
-import { useState, useEffect } from "react"
-import { useInView } from "react-intersection-observer"
-import { m, motion } from "framer-motion"
-import { MotionDescription } from "@/src/components/layouts/motionLayout"
-import { cn } from "@/src/lib/utils"
-import usePublic from "@/src/hooks/use-lang"
+import WaveText from '@/src/components/ui/waveText'
+import { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { m, motion } from 'framer-motion'
+import { MotionDescription } from '@/src/components/layouts/motionLayout'
+import { cn } from '@/src/lib/utils'
+import usePublic from '@/src/hooks/use-lang'
 
 const SecondBlock = ({ content }: any) => {
   const links = usePublic().LINKS
@@ -18,7 +18,7 @@ const SecondBlock = ({ content }: any) => {
   const [state, setState] = useState(false)
   const [viewed, setViewed] = useState({
     sun: false,
-    description: false
+    description: false,
   })
 
   const chatBox = 'bg-violet-100 rounded-xl backdrop-blur-md p-3'
@@ -41,18 +41,20 @@ const SecondBlock = ({ content }: any) => {
   useEffect(() => {
     setViewed((prev) => ({
       sun: prev.sun || inView,
-      description: prev.description || inView
+      description: prev.description || inView,
     }))
   }, [inView])
 
   return (
     <>
-      <div className={cn(
-        'md:container',
-        'w-[100%]',
-        'flex flex-col-reverse md:flex-row justify-center',
-        'md:p-[20px]'
-      )}>
+      <div
+        className={cn(
+          'md:container',
+          'w-[100%]',
+          'flex flex-col-reverse md:flex-row justify-center',
+          'md:p-[20px]'
+        )}
+      >
         <motion.div
           initial={{
             opacity: 0,
@@ -61,39 +63,43 @@ const SecondBlock = ({ content }: any) => {
           }}
           animate={{
             opacity: viewed.sun ? 1 : 0,
-            translateX: viewed.sun ? !isXlScreen ? '100px' : 0 : null,
-            translateY: viewed.sun ? !isSmScreen ? '50px' : '-50px' : '250px',
+            translateX: viewed.sun ? (!isXlScreen ? '100px' : 0) : null,
+            translateY: viewed.sun ? (!isSmScreen ? '50px' : '-50px') : '250px',
           }}
           transition={{ duration: 2, delay: 0.2 }}
-          className="z-10 flex items-center justify-center md:mt-[90px] md:my-0 my-[50px]"
+          className='z-10 flex items-center justify-center md:mt-[90px] md:my-0 my-[50px]'
         >
-          <div 
+          <div
             className={cn(
               'z-10',
               'w-full h-[350px] w-[350px] md:h-[400px] md:w-[400px]',
               'flex items-center justify-center',
-              'bg-cover bg-no-repeat',
+              'bg-cover bg-no-repeat'
             )}
             style={{
-              backgroundImage: `url(${links.content.sun})` // SUN BACKGROUND
+              backgroundImage: `url(${links.content.sun})`, // SUN BACKGROUND
             }}
           />
         </motion.div>
-        <div className={cn(
-          'xl:w-[60%]',
-          'relative flex items-center md:items-start justify-end',
-          'md:pr-[3rem] xl:pr-0 mx-0  pt-[180px] md:pt-5 px-[20px] md:mx-0'
-        )}>
+        <div
+          className={cn(
+            'xl:w-[60%]',
+            'relative flex items-center md:items-start justify-end',
+            'md:pr-[3rem] xl:pr-0 mx-0  pt-[180px] md:pt-5 px-[20px] md:mx-0'
+          )}
+        >
           {viewed.sun && (
-            <div className={cn(
-              'ml-0 md:mt-[200px] text-center rounded-lg',
-              'text-xl/tight md:text-2xl/tight font-normal text-description',
-              'max-w-descr md:max-w-descr_md xl:max-w-[100%]',
-              'flex items-center justify-center',
-            )}>
+            <div
+              className={cn(
+                'ml-0 md:mt-[200px] text-center rounded-lg',
+                'text-xl/tight md:text-2xl/tight font-normal text-description',
+                'max-w-descr md:max-w-descr_md xl:max-w-[100%]',
+                'flex items-center justify-center'
+              )}
+            >
               <MotionDescription
                 refOne={ref}
-                color="text-description"
+                color='text-description'
                 className={cn(
                   `text-black ${chatBox}`,
                   'flex items-center justify-center',
@@ -113,26 +119,29 @@ const SecondBlock = ({ content }: any) => {
             </div>
           )}
         </div>
-      </div >
-      <div ref={ref} className={cn(
-        "absolute rotate-180 top-[60%] md:top-[50%] lg:top-[40%] right-0 -z-1",
-        'w-[100%] h-[100%] min-h-[530px] md:w-[101%] md:h-[100%] lg:h-[120%]',
-        'flex items-center justify-center',
-        'bg-cover bg-no-repeat',
-      )} 
-      style={{
-        backgroundImage: `url(${links.content.whitewave})`  // WHITE WAVE BACKGROUND
-      }}
+      </div>
+      <div
+        ref={ref}
+        className={cn(
+          'absolute rotate-180 top-[60%] md:top-[50%] lg:top-[40%] right-0 -z-1',
+          'w-[100%] h-[100%] min-h-[530px] md:w-[101%] md:h-[100%] lg:h-[120%]',
+          'flex items-center justify-center',
+          'bg-cover bg-no-repeat'
+        )}
+        style={{
+          backgroundImage: `url(${links.content.whitewave})`, // WHITE WAVE BACKGROUND
+        }}
       />
-      <div className={cn(
-        "absolute top-0 right-0 rotate-180 -z-10",
-        'w-[100%] h-[100%] md:w-[100%] md:h-[100%]',
-        'flex items-center justify-center',
-        'bg-cover bg-no-repeat',
-      )}
-      style={{
-        backgroundImage: `url(${links.content.bluegraphs})`// BLUE GRAPHS BACKGROUND
-      }}
+      <div
+        className={cn(
+          'absolute top-0 right-0 rotate-180 -z-10',
+          'w-[100%] h-[100%] md:w-[100%] md:h-[100%]',
+          'flex items-center justify-center',
+          'bg-cover bg-no-repeat'
+        )}
+        style={{
+          backgroundImage: `url(${links.content.bluegraphs})`, // BLUE GRAPHS BACKGROUND
+        }}
       />
     </>
   )

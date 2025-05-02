@@ -4,34 +4,28 @@ import { Documents } from './OurResearches'
 import ContentPattern from './ContentBlock'
 
 type SecurityMapT = {
-  readmore: string;
+  readmore: string
   content: {
-    about: string;
-    documents: Documents;
-  };
+    about: string
+    documents: Documents
+  }
 }
 
 const SecurityMap = (props: SecurityMapT) => {
   const { readmore, content } = props
   return (
     <>
-      <h2 
-        className="text-3xl font-semibold tracking-tight text-center mt-4 text-title"
-      >
+      <h2 className='text-3xl font-semibold tracking-tight text-center mt-4 text-title'>
         {content.about}
       </h2>
       <div
         className={cn(
-          "text-center max-w-3xl mx-auto",
+          'text-center max-w-3xl mx-auto'
           // headerOnTop ? "order-1" : "order-2"
         )}
-      >
-      </div>
+      ></div>
       <div
-        className={cn(
-          "grid gap-8 items-center",
-          "grid-cols-1 md:grid-cols-2",
-        )}
+        className={cn('grid gap-8 items-center', 'grid-cols-1 md:grid-cols-2')}
       >
         {Object.entries(content.documents).map((item, index) => (
           <ContentPattern

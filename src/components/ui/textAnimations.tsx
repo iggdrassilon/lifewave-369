@@ -22,7 +22,7 @@ const TextAnimated = (props: TextAnimatedT) => {
   const { ref, inView } = useInView({
     threshold: 1,
     triggerOnce: true,
-    delay: delay
+    delay: delay,
   })
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const TextAnimated = (props: TextAnimatedT) => {
     const animations = headline.querySelectorAll('span.word-wrapper span')
     if (inView) {
       animations.forEach((letter: HTMLDivElement, i: number) => {
-        letter.style.animationDelay = (i * space) + 's'
+        letter.style.animationDelay = i * space + 's'
         letter.classList.add(`${mode}`)
       })
     }
@@ -58,10 +58,13 @@ const TextAnimated = (props: TextAnimatedT) => {
 
   return (
     <>
-      <div ref={(node: any) => {
-        textRef.current = node
-        ref(node)
-      }} className={`overflow-hidden animation uppercase ${textSizes} tracking-wide ${color} word-wrap`}>
+      <div
+        ref={(node: any) => {
+          textRef.current = node
+          ref(node)
+        }}
+        className={`overflow-hidden animation uppercase ${textSizes} tracking-wide ${color} word-wrap`}
+      >
         {text}
       </div>
 
