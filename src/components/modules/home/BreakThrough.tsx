@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MotionSection } from '../../layouts/motionLayout'
 import { cn } from '@/src/lib/utils'
 import { useInView } from 'react-intersection-observer'
@@ -9,7 +9,7 @@ import TextAnimated from '../../ui/textAnimations'
 const BreakThrough = () => {
   const content = usePublic().CONTENT
   const links = usePublic().LINKS
-  const [state, setState] = useState(false)
+  // const [state, setState] = useState(false)
   const [status, setStatus] = useState(false)
   const [sectionMounted, setSectionMounted] = useState(false)
 
@@ -18,32 +18,31 @@ const BreakThrough = () => {
     triggerOnce: true,
   })
 
-  const smScreen = 768
-  const xlScreen = 1200
-  const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen)
-  const [isSmScreen, setIsSmScreen] = useState(window.innerWidth < smScreen)
+  // const smScreen = 768
+  // const xlScreen = 1200
+  // const [isXlScreen, setIsXlScreen] = useState(window.innerWidth < xlScreen)
+  // const [isSmScreen, setIsSmScreen] = useState(window.innerWidth < smScreen)
 
   const bgElemsColor = 'rounded-xl'
-  const textColor = 'titles'
-  const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
+  // const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl'
   const textDescr =
     'font-bold font text-sm se:text-xl text-description uppercase'
   const textContent = 'text-xl md:text-2xl text-description text-center'
-  const shadowElems = 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl'
+  // const shadowElems = 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl'
   useEffect(() => {
-    if (inView && sectionMounted) {
-      setState(true)
-    }
+    // if (inView && sectionMounted) {
+    //   setState(true)
+    // }
 
-    const handleResize = () => {
-      setIsXlScreen(window.innerWidth < xlScreen)
-      setIsSmScreen(window.innerWidth < smScreen)
-    }
+    // const handleResize = () => {
+    //   setIsXlScreen(window.innerWidth < xlScreen)
+    //   setIsSmScreen(window.innerWidth < smScreen)
+    // }
 
-    window.addEventListener('resize', handleResize)
+    // window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener('resize', handleResize)
+      // window.removeEventListener('resize', handleResize)
     }
   }, [inView, sectionMounted])
 

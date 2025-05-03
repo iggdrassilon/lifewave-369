@@ -12,7 +12,7 @@ interface VideoSectionProps {
 }
 
 const VideoSection = React.forwardRef<HTMLDivElement | null, VideoSectionProps>(
-  ({ title, videoUrl, buttons }, ref) => {
+  ({ title, videoUrl }, ref) => {
     const min_height = 'min-h-[320px] lg:h-[500px]'
     const height = 'h-[100%]'
 
@@ -39,7 +39,7 @@ const VideoSection = React.forwardRef<HTMLDivElement | null, VideoSectionProps>(
             className={`aspect-w-16 aspect-h-9 h-[100%] ${min_height}`}
           >
             <iframe
-              // src={videoUrl}
+              src={videoUrl}
               title={title}
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen

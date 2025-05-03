@@ -1,6 +1,8 @@
 import { ViteoLayoutT } from '@/src/types/layouts'
 import { useEffect, useState } from 'react'
+
 import { cn } from '@/src/lib/utils'
+
 import useInViewHook from '@/src/hooks/useInView'
 import Dexie from 'dexie'
 
@@ -94,7 +96,7 @@ const VideoLayout = (props: ViteoLayoutT) => {
           onContextMenu={(e) => e.preventDefault()} // turn off context menu
           style={{ pointerEvents: 'none' }}
         >
-          {/* {videoBlobUrl && <source src={videoBlobUrl} type="video/mp4" />} */}
+          {videoBlobUrl && <source src={videoBlobUrl} type="video/mp4" />}
         </video>
         <img
           src={imgBlobUrl || preview} // Use cached image if available, otherwise use original URL

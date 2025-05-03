@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { cn } from '@/src/lib/utils'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 export type TextAnimatedT = {
@@ -17,8 +16,7 @@ const TextAnimated = (props: TextAnimatedT) => {
   const { text, mode, delay, color, duration, space, textSizes } = props
   const textRef = useRef(null)
 
-  const chatBox = 'bg-violet-100/5 rounded-xl backdrop-blur-[8px] p-4'
-
+  // const chatBox = 'bg-violet-100/5 rounded-xl backdrop-blur-[8px] p-4'
   const { ref, inView } = useInView({
     threshold: 1,
     triggerOnce: true,
@@ -30,12 +28,12 @@ const TextAnimated = (props: TextAnimatedT) => {
       const words = textElement.innerText.split(' ')
       let spaned = ''
       words.forEach((word: string, index: number) => {
-        let wordSpan = `<span class="word-wrapper inline-block">`
+        let wordSpan = '<span class="word-wrapper inline-block">'
         for (let i = 0; i < word.length; i++) {
           // eslint-disable-next-line max-len
-          wordSpan += `<span class="inline-block opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.075,0.82,0.165,1)]">${word.substring(i, i + 1)}</span>`
+          wordSpan += `<span class='inline-block opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.075,0.82,0.165,1)]'>${word.substring(i, i + 1)}</span>`
         }
-        wordSpan += `</span>`
+        wordSpan += '</span>'
         spaned += wordSpan
         if (index < words.length - 1) {
           spaned += ' '

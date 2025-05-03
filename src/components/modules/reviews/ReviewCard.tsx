@@ -5,6 +5,7 @@ import usePublic from '@/src/hooks/use-lang'
 import { cn } from '@/src/lib/utils'
 import { setStateAction } from '@/src/context/states'
 import useStates from '@/src/hooks/useStates'
+import styled from 'styled-components'
 
 interface ReviewCardProps {
   id: string
@@ -43,19 +44,48 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       className='review-card w-full'
     >
       <Link to={`/reviews/${path}`} className='block h-full'>
-        <div className={cn(`${bgColor}`, 'space-y-3 h-full flex flex-col')}>
-          <div className='w-full h-2 bg-gradient-to-r from-blue-400 to-blue-100 rounded-full' />
-          <h3 className='text-xl font-medium tracking-tight'>{title}</h3>
-          <p className='text-sm flex-grow'>{description}</p>
-          <div className='pt-4 flex justify-end'>
-            <span className=' text-sm font-medium'>
-              {content.reviews.main.turnIt}
-            </span>
-          </div>
+        <div className={cn(`${bgColor}`, 'h-full flex flex-col justify-center pb-[5px]')}>
+          <h3 className='text-xl font-medium tracking-tight text-center'>
+            {title}
+          </h3>
+          <div className='w-full h-1 bg-gradient-to-r from-blue-400 to-blue-100 rounded-full mb-1' />
+          {description && (
+            <p className='text-[13px] flex-grow w-[94%]'>
+              {description}
+            </p>
+          )}
+          <ArrowWhite />
+          {/* <div className='pt-4? flex justify-end'> */}
+            {/* <span className=' text-sm font-medium'> */}
+              {/* {content.reviews.main.turnIt} */}
+            {/* </span> */}
+          {/* </div> */}
         </div>
       </Link>
     </motion.div>
   )
 }
+
+const ArrowWhite = styled.div`
+  position: absolute;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  // border: 1px solid red;
+  bottom: 10px;
+  right: calc(1rem - 6px);
+  &:before {
+    position: absolute;
+    content: url('/public/icons/arrow-white.svg');
+    width: 150%;
+    height: 150%;
+    // top: 0;
+    // top: 50%;
+    // left: 50%;
+  }
+`
 
 export default ReviewCard

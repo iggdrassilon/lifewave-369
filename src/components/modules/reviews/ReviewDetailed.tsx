@@ -35,6 +35,7 @@ const ReviewDetailed: React.FC = () => {
 
   // For scroll viewers
   const [scrollTop, setScrollTop] = useState<number>(0)
+
   const scrollParent = useRef<HTMLDivElement | null>(null)
   const scrollDynBtn = useRef<HTMLDivElement | null>(null)
 
@@ -55,6 +56,7 @@ const ReviewDetailed: React.FC = () => {
     const timer = setTimeout(() => {
       setLoading(false)
     }, 500)
+
     return () => clearTimeout(timer)
   }, [path])
 
@@ -74,8 +76,12 @@ const ReviewDetailed: React.FC = () => {
   if (!review) {
     return (
       <div className='min-h-screen flex flex-col items-center justify-center px-4'>
-        <h2 className='text-2xl font-bold mb-4'>{content.errors.notFound}</h2>
-        <p className='mb-8 text-center'>{content.errors.notExist}</p>
+        <h2 className='text-2xl font-bold mb-4'>
+          {content.errors.notFound}
+        </h2>
+        <p className='mb-8 text-center'>
+          {content.errors.notExist}
+        </p>
         <Link
           to='/reviews'
           className={cn(

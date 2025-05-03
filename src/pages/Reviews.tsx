@@ -57,10 +57,10 @@ const Reviews: React.FC = () => {
           className={cn('text-center mb-6', `${bgColor}`)}
         >
           <>
-            <h1 className='text-4xl font-bold tracking-tight mb-8'>
+            <h1 className='text-3xl font-bold tracking-tight mb-4'>
               {content.reviews.main.title}
             </h1>
-            <p className='text-lg max-w-2xl mb-2 mx-auto'>
+            <p className='text-md max-w-2xl mb-2 mx-auto'>
               {content.reviews.main.description}
             </p>
           </>

@@ -10,6 +10,7 @@ import useDispatch from '@/src/hooks/dispatcher'
 import { bodyFixed, bodyUnfixed } from '@/src/hooks/dom'
 
 import '@/src/styles/burger-animation.css'
+import { cn } from '@/src/lib/utils'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -55,7 +56,7 @@ const Header = () => {
       }}
     >
       <div className='mx-auto px-4 backdrop-blur-md'>
-        <div className='flex items-center justify-between h-16'>
+        <div className='flex items-center justify-between h-[3rem]'>
           <Link
             to='/'
             className='cursor-pointer text-2xl font-bold text-[rgba(4,103,150)]'
@@ -80,7 +81,7 @@ const Header = () => {
           </Link>
           <nav className='flex'>
             <button
-              className='flex p-2 mr-1'
+              className='flex p-2 mr-1 justify-center items-center'
               onClick={() => {
                 setLangOpen(true)
               }}
@@ -102,7 +103,13 @@ const Header = () => {
                       href={link.path}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-[rgba(4,103,150)] font-normal hover:text-indigo-600 transition-colors content-center py-2.5'
+                      className={cn(
+                        'max-w-[120px] md:max-w-[260px] truncate',
+                        'text-[rgba(4,103,150)] font-normal',
+                        'overflow-hidden whitespace-nowrap text-ellipsis',
+                        'hover:text-indigo-600 transition-colors',
+                        'content-center py-2.5'
+                      )}
                     >
                       {link.name}
                     </a>
@@ -110,7 +117,15 @@ const Header = () => {
                     <Link
                       key={`${link.name}-${link.path}`}
                       to={link.path}
-                      className='text-[rgba(4,103,150)] font-normal hover:text-indigo-600 transition-colors content-center py-2.5'
+                      className={cn(
+                        'max-w-[120px] md:max-w-[236px] truncate',
+                        'overflow-hidden whitespace-nowrap text-ellipsis',
+                        'text-[rgba(4,103,150)] font-normal',
+                        'hover:text-indigo-600 transition-colors',
+                        'content-center py-2.5',
+                        'overflow-hidden',
+                        'text'
+                      )}
                     >
                       {link.name}
                     </Link>
@@ -127,9 +142,9 @@ const Header = () => {
             >
               {/* <Menu className="h-6 w-6 text-primary" /> */}
               <div className={`hamburger ${isOpen ? 'change' : ''}`}>
-                <div className={`bar bar1 text-[rgba(4,103,150)]`}></div>
-                <div className={`bar bar2 text-[rgba(4,103,150)]`}></div>
-                <div className={`bar bar3 text-[rgba(4,103,150)]`}></div>
+                <div className={'bar bar1 text-[rgba(4,103,150)]'}></div>
+                <div className={'bar bar2 text-[rgba(4,103,150)]'}></div>
+                <div className={'bar bar3 text-[rgba(4,103,150)]'}></div>
               </div>
             </button>
           </nav>
