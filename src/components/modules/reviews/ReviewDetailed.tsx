@@ -64,7 +64,7 @@ const ReviewDetailed: React.FC = () => {
 
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 500)
+    }, 11)
 
     return () => clearTimeout(timer)
   }, [path])
@@ -76,7 +76,7 @@ const ReviewDetailed: React.FC = () => {
 
   if (loading) {
     return (
-      <div className='min-h-screen flex items-center justify-center'>
+      <div className='min-h-screen flex items-center justify-center bg-black -z-1'>
         <Spinner />
       </div>
     )
