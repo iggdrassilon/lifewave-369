@@ -28,7 +28,10 @@ const usePublic = (): PublicData => {
 
   const CONTENT = content[lang]
   const UI = _UI[lang]
+
+  //reviews.json
   const REVIEWS = reviewsData['ru'].reviews
+
   const PRIVACY = privacy[lang].privacy
   const TERMS = terms[lang].terms
 

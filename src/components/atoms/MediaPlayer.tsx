@@ -29,15 +29,15 @@ interface LetterProps {
 
 interface AudioProps {
   url: string
-  title: string
+  title?: string
 }
 
-export const VideoPlayer: React.FC<VideoProps> = ({
+export const VideoPlayer = React.forwardRef<HTMLDivElement, VideoProps>(({
   url,
   thumbnail,
   title,
   customFrame,
-}: VideoProps) => {
+}: VideoProps , ref) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const sanitizedTitle = DOMPurify.sanitize(title)
@@ -61,6 +61,7 @@ export const VideoPlayer: React.FC<VideoProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className='media-container'
+      ref={ref}  // forwarded up
     >
       <h4
         className='mt-3 text-lg font-medium text-center text-description'
@@ -108,13 +109,15 @@ export const VideoPlayer: React.FC<VideoProps> = ({
       </div>
     </motion.div>
   )
-}
+})
 
-export const ImageDisplay: React.FC<ImageProps> = ({
+VideoPlayer.displayName = 'VideoPlayer'
+
+export const ImageDisplay = React.forwardRef<HTMLDivElement, ImageProps>(({
   url,
   title,
   description,
-}) => {
+}, ref) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const descriptionPured = DOMPurify.sanitize(description)
 
@@ -124,6 +127,7 @@ export const ImageDisplay: React.FC<ImageProps> = ({
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
       className='media-container mb-8'
+      ref={ref}  // forwarded up
     >
       <div
         className='relative mx-auto overflow-hidden rounded-xl max-w-[400px]'
@@ -163,12 +167,14 @@ export const ImageDisplay: React.FC<ImageProps> = ({
       )}
     </motion.div>
   )
-}
+})
 
-export const LetterDisplay: React.FC<LetterProps> = ({
+ImageDisplay.displayName = 'ImageDisplay'
+
+export const LetterDisplay = React.forwardRef<HTMLDivElement, LetterProps>(({
   title,
   description,
-}) => {
+}, ref) => {
   const descriptionPured = DOMPurify.sanitize(description)
 
   return (
@@ -177,6 +183,7 @@ export const LetterDisplay: React.FC<LetterProps> = ({
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
       className='media-container mb-8'
+      ref={ref}  // forwarded up
     >
       <div
         className='relative p-8 mx-auto overflow-hidden rounded-xl max-w-[400px]'
@@ -199,10 +206,12 @@ export const LetterDisplay: React.FC<LetterProps> = ({
       </div>
     </motion.div>
   )
-}
+})
 
-export const AudioPlayer: React.FC<AudioProps> = ({ url, title }) => {
-  const sanitizedTitle = DOMPurify.sanitize(title)
+LetterDisplay.displayName = 'LetterDisplay'
+
+export const AudioPlayer = React.forwardRef<HTMLDivElement, AudioProps>(({ url, title }, ref) => {
+  const sanitizedTitle = DOMPurify.sanitize(title || '')
 
   return (
     <motion.div
@@ -221,6 +230,7 @@ export const AudioPlayer: React.FC<AudioProps> = ({ url, title }) => {
             border: '1px solid rgba(1,1,1,.1)',
             boxShadow: '0 4px 15px rgba(1,1,1,.2)',
           }}
+          ref={ref} // forwarded up
         >
           {title && (
             <h4
@@ -238,4 +248,6 @@ export const AudioPlayer: React.FC<AudioProps> = ({ url, title }) => {
       </div>
     </motion.div>
   )
-}
+})
+
+AudioPlayer.displayName = 'AudioPlayer'

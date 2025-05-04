@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useParams, Link } from 'react-router-dom'
 import {
-  ChevronLeft,
   Video,
   Image as ImageIcon,
   AudioLines,
@@ -24,20 +23,28 @@ interface RouteParams {
   [key: string]: string | undefined
 }
 
-const ReviewDetailed: React.FC = () => {
-  const reviewsData = usePublic().REVIEWS
-  const content = usePublic().CONTENT.reviews
-  const links = usePublic().LINKS
-
+const ReviewDetailed: React.FC = () => {  
   const { path } = useParams<RouteParams>()
   const [review, setReview] = useState<any>(null)
   const [loading, setLoading] = useState<boolean>(true)
+
+  // refs for viewing elements
+  // MAKE: register to global hook
+  const elementRefs = useRef<Map<string, HTMLDivElement>>(new Map())
+  const observer = useRef<IntersectionObserver | null>(null)
 
   // For scroll viewers
   const [scrollTop, setScrollTop] = useState<number>(0)
 
   const scrollParent = useRef<HTMLDivElement | null>(null)
   const scrollDynBtn = useRef<HTMLDivElement | null>(null)
+//
+
+  // fetch content storage
+  const content = usePublic().CONTENT.reviews
+  const reviewsData = usePublic().REVIEWS
+  // fetch links array storage
+  const links = usePublic().LINKS
 
   useEffect(() => {
     window.scrollTo({
@@ -46,8 +53,10 @@ const ReviewDetailed: React.FC = () => {
     })
     setLoading(true)
 
+    // fetch data from storage (json)
     const foundReview = reviewsData.find((r: any) => r.path === path)
 
+    
     if (foundReview) {
       setReview(foundReview)
       document.title = `${content.main.review}: ${foundReview.title}`
@@ -95,7 +104,17 @@ const ReviewDetailed: React.FC = () => {
     )
   }
 
-  const { title, description, videos, images, audios, letters } = review
+  const { title, description, videos, images, audios, letters } = review || {}
+
+  // Helper function to register element refs
+  const registerRef = (id: string) => (element: HTMLDivElement) => {
+    if (element) {
+      elementRefs.current.set(id, element)
+    } else {
+      elementRefs.current.delete(id)
+    }
+    console.log(elementRefs.current)
+  }
 
   return (
     <>
@@ -166,6 +185,7 @@ const ReviewDetailed: React.FC = () => {
                     thumbnail={video.thumbnail && video.thumbnail}
                     customFrame={video.customFrame}
                     title={video.title}
+                    ref={registerRef(`video-${index}`)}
                   />
                 ))}
               </div>
@@ -191,6 +211,7 @@ const ReviewDetailed: React.FC = () => {
                     url={image.url}
                     title={image.title && image.title}
                     description={image.description && image.description}
+                    ref={registerRef(`image-${index}`)}
                   />
                 ))}
               </div>
@@ -215,6 +236,7 @@ const ReviewDetailed: React.FC = () => {
                     key={`letter-${index}`}
                     title={image.title && image.title}
                     description={image.description && image.description}
+                    ref={registerRef(`letter-${index}`)}
                   />
                 ))}
               </div>
@@ -239,6 +261,7 @@ const ReviewDetailed: React.FC = () => {
                     key={`audio-${index}`}
                     url={audio.url}
                     title={audio.title}
+                    ref={registerRef(`audio-${index}`)}
                   />
                 ))}
               </div>
