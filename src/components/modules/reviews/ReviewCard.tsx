@@ -48,9 +48,9 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
           <h3 className='text-xl font-medium tracking-tight text-center'>
             {title}
           </h3>
-          <div className='w-full h-1 bg-gradient-to-r from-blue-400 to-blue-100 rounded-full mb-1' />
+          <div className='w-full h-1 bg-gradient-to-r from-blue-400 to-blue-100 rounded-full mb-[18px]' />
           {description && (
-            <p className='text-[13px] flex-grow w-[94%]'>
+            <p className='text-[15px] flex-grow w-[94%] pl-[5px] pb-[15px]'>
               {description}
             </p>
           )}

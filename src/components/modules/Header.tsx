@@ -56,7 +56,7 @@ const Header = () => {
       }}
     >
       <div className='mx-auto px-4 backdrop-blur-md'>
-        <div className='flex items-center justify-between h-[3rem]'>
+        <div className='flex items-center justify-between h-[56px]'>
           <Link
             to='/'
             className='cursor-pointer text-2xl font-bold text-[rgba(4,103,150)]'
