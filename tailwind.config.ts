@@ -40,7 +40,7 @@ export default {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        primary: '#194F90',
+        primary: 'oklch(70.2% 0.183 293.541)',
         secondary: '#AED8F2',
         whitePremium: 'rgba(250,250,250, .9)',
         title: 'var(--titles-color)',

@@ -75,7 +75,10 @@ const VideoLayout = (props: ViteoLayoutT) => {
 
   return (
     <div>
-      <div ref={ref} className={`absolute inset-0 -z-50 opacity-${opacity}`}>
+      <div 
+        ref={ref} 
+        className={`absolute inset-0 -z-50 opacity-${opacity}`}
+      >
         <video
           ref={videoRef}
           loop

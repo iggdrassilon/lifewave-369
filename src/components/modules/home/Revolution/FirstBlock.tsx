@@ -43,7 +43,7 @@ const FirstBlock = ({ content }: any) => {
         >
           <TextAnimated
             mode='slide-left'
-            textSizes=' text-3xl md:text-5xl'
+            textSizes=' text-[26px] md:text-[32px] max-w-[600px]'
             text={`${content.home.revol}`}
             color='text-black  font-normal z-10'
             delay={0.4}
