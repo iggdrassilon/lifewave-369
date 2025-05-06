@@ -15,7 +15,7 @@ const Title = (props: HouUseTitleT) => {
     <>
       <div
         className={cn(
-          'mt-8 mb-4 py-[4px] pt-[10px] gap-0', // CORDS
+          'mt-8 mb-4 gap-0', // CORDS
           'flex items-center justify-center', // CTR
           'text-sm text-zinc-700', // FONT
           // 'text-description', // COLOR

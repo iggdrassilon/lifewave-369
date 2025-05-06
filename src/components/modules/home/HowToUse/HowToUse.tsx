@@ -124,7 +124,7 @@ const HowToUse = () => {
                   content={content.home.howtouse}
                   customCl={{
                     parent: `${shadowElems}`,
-                    child: `${textTitle}`,
+                    child: `${textTitle} ${shadowElems} p-2 mx-4 rounded-full ${bgElemsColor}`,
                   }}
                 />
               ),

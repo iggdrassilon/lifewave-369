@@ -134,7 +134,7 @@ const Patents = () => {
             image={{
               src: `${links.content.x39patents}`, // IMG OF PATENTS
               alt: 'patents',
-              customCl: 'mt-[50px] min-h-[300px] md:max-h-[300px]',
+              customCl: 'mt-[50px] min-h-[300px]',
               motion: {
                 init: {
                   opacity: 0,
