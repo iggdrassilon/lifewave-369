@@ -5,6 +5,7 @@ const persentsSize = '22px'
 const fontSize = 30
 const padding = 15
 const height = fontSize + padding
+const width = 10
 
 function Counter({ value, color }: { value: number; color: string }) {
   return (
@@ -38,7 +39,7 @@ function Digit({ place, value }: { place: number; value: number }) {
   }, [animatedValue, valueRoundedToPlace])
 
   return (
-    <div style={{ height }} className='relative w-[1ch] tabular-nums'>
+    <div style={{ height }} className='relative w-[14px] tabular-nums'>
       {[...Array(10).keys()].map((i) => (
         <Number key={i} mv={animatedValue} number={i} />
       ))}

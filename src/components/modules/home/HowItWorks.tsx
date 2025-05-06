@@ -75,9 +75,9 @@ const HowItWorks = () => {
               className={cn(
                 'relative',
                 'w-[100%] md:w-[80%]',
-                'rounded-xl'
+                'rounded-xl',
                 // `${shadowElems}`,
-                // `${bgElemsColor}`
+                `${bgElemsColor}`
               )}
             >
               <VideoSection
@@ -109,7 +109,7 @@ const HowItWorks = () => {
                   // `${shadowElems}`
                 )}
                 style={{
-                  boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
+                  // boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
                 }}
                 sectionMounted={() => ''}
               >

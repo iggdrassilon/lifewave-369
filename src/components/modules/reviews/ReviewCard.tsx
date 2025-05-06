@@ -44,7 +44,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       className='review-card w-full'
     >
       <Link to={`/reviews/${path}`} className='block h-full'>
-        <div className={cn(`${bgColor}`, 'h-full flex flex-col justify-center pb-[5px]')}>
+        <div className={cn(`${bgColor}`, 'h-full flex flex-col justify-center')}>
           <h3 className='text-xl font-medium tracking-tight text-center'>
             {title}
           </h3>

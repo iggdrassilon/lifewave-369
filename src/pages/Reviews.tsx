@@ -10,6 +10,7 @@ import usePublic from '../hooks/use-lang'
 import VideoLayout from '../components/layouts/VideoLayout'
 import { cn } from '../lib/utils'
 import useStates from '../hooks/useStates'
+import { logRefs } from '../hooks/useUI'
 
 const Reviews: React.FC = () => {
   const reviews = usePublic().REVIEWS
@@ -35,6 +36,8 @@ const Reviews: React.FC = () => {
     document.title = content.reviews.main.name
   }, [])
 
+  logRefs()
+
   return (
     <>
       <motion.div
@@ -44,7 +47,7 @@ const Reviews: React.FC = () => {
         transition={{ duration: 0.5 }}
         className={cn(
           'container min-h-screen',
-          'mt-[64px] px-4 py-12 md:px-12 lg:px-24'
+          'mt-[15px] md:mt-[64px] px-4 py-12 md:px-12 lg:px-24'
         )}
       >
         <motion.div

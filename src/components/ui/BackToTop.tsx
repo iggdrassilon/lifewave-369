@@ -41,10 +41,10 @@ const BackToTop = () => {
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
           className={cn(
-            'fixed bottom-[40px] right-[40px]   ',
+            'fixed bottom-[30px] right-[20px]   ',
             'backdrop-blur-sm transition-colors duration-300',
             'z-50 p-4 rounded-full',
-            'bg-primary/40 hover:bg-primary/60 text-zinc-400'
+            'bg-primary/40 hover:bg-primary/60 text-zinc-400' 
           )}
           style={{
             boxShadow:

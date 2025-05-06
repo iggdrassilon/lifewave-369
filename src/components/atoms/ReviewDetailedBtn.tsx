@@ -1,45 +1,85 @@
-import React, { useEffect, useRef } from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { cn } from '@/src/lib/utils'
 
 import { ChevronLeft } from 'lucide-react'
-import { addRef, removeRef, updateDimensions } from '@/src/context/UI'
+import { useOurUI } from '@/src/hooks/useUI'
 
-const ReviewDetailedBtn: React.FC = () => {
+interface ReviewDetailedBtnProps {
+  content: any
+}
+
+const ReviewDetailedBtn = (props: ReviewDetailedBtnProps) => {
+  const { content } = props
+  const [ state, setState ] = useState<boolean>(false)
+  const [ params, setParams ] = useState({
+    titleH: 0,
+    btnTop: 0,
+    btnH: 0
+  })
+
   const ref = useRef<HTMLAnchorElement | null>(null)
-  const height = ref.current.getBoundingClientRect().height
-  const width = ref.current.getBoundingClientRect().width
+  const refs = useOurUI().Refs
 
   useEffect(() => {
-    if (ref.current) {
-      addRef({ id: 'componentB', ref: ref.current })
-      updateDimensions({
-        id: 1,
-        width: height,
-        height: width,
-      })
+    const titleRef = refs.filter(ref => ref.id === 'titles')[0]
+    const descrRef = refs.filter(ref => ref.id === 'title')[0]
+    const headerRef = refs.filter(ref => ref.id === 'header')[0]
+    const btnCordTop = Number(window.getComputedStyle(ref.current).top.slice(0, -2))
+    const btnPaddings = Number(window.getComputedStyle(ref.current).padding.slice(0, -2))
+    const handleScroll = () => {
+      if (titleRef && descrRef && headerRef) {
+        const titleH = titleRef.ref.getBoundingClientRect().height
+        const descrH = descrRef.ref.getBoundingClientRect().height
+        const header = headerRef.ref.getBoundingClientRect().height
+        setParams(prev => ({
+          ...prev,
+          titleH: titleH - descrH - header - btnCordTop + (btnPaddings * 2),
+          btnTop: ref.current.clientTop,
+          btnH: ref.current.clientHeight
+        }))
+      }
     }
-
+    window.addEventListener('scroll', handleScroll)
+    console.log(refs)
     return () => {
-      removeRef({ id: 'componentB', ref: ref.current })
+      window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [refs])
+  
+  useMemo(() => {
+    if (ref.current && window.scrollY >= params.titleH) {
+      setState(true)
+    } else {
+      setState(false)
+    }
+  }, [params])
 
   return (
     <Link
       to='/reviews'
       ref={ref}
       className={cn(
-        'top-[80px] left-4',
-        'fixed',
-        'mt-2 mb-6 p-2 pr-4 rounded-xl',
-        'text-title hover:text-description bg-cyan-100/70 font-bold',
-        'inline-flex items-center transition-colors font-extrabold'
+        'top-[80px] left-4 h-[40px]',
+        'fixed z-[99]',
+        'rounded-xl',
+        'hover:text-description bg-cyan-100/70 font-bold',
+        'inline-flex items-center transition-colors font-extrabold',
+        'overflow-hidden text-ellipsis whitespace-nowrap',
+        `${state ? 'bg-cyan-100' : 'bg-cyan-100/70'}`
       )}
+      style={{
+        transition: 'width 0.2s linear',
+        width: state ? `${params.btnH}px` : '200px',
+        // paddingLeft: state ? '' : '40px'
+      }}
     >
-      <ChevronLeft className='w-4 h-4 mr-1' />
-      {/* {window.scrollX >= 200 ? '<' : content.main.getBackSimple} */}
+      <ChevronLeft className='w-[20px] h-[20px] absolute left-[10px]' />
+      <span className='pl-[40px]'>
+        {state ? '' : content.main.getBackSimple}
+      </span>
     </Link>
   )
 }

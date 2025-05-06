@@ -50,4 +50,9 @@ const UseTargetElementsParams = (): ReactNode | Promise<ReactNode> => {
   return ''
 }
 
-export { useOurUI, UseTargetElementsParams }
+const logRefs = () => {
+  const refs = useOurUI().Refs
+  console.log(refs)
+}
+
+export { useOurUI, UseTargetElementsParams, logRefs }

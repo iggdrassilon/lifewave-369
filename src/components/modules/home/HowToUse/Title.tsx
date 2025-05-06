@@ -17,10 +17,10 @@ const Title = (props: HouUseTitleT) => {
         className={cn(
           'mt-8 mb-4 py-[4px] pt-[10px] gap-0', // CORDS
           'flex items-center justify-center', // CTR
-          'text-sm', // FONT
-          'text-description', // COLOR
-          `bg-neutral-200 rounded-xl backdrop-blur-sm`,
-          `${customCl.parent}`
+          'text-sm text-zinc-700', // FONT
+          // 'text-description', // COLOR
+          // 'bg-neutral-200 rounded-xl backdrop-blur-sm',
+          // `${customCl.parent}`
         )}
       >
         <TextAnimated

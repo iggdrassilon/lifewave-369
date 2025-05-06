@@ -103,10 +103,22 @@ const SecondBlock = ({ content }: any) => {
                 className={cn(
                   `text-black ${chatBox}`,
                   'flex items-center justify-center',
-                  `z-10 p-[20px] ml-0`,
+                  'shadow-[rgba(0,0,0,0.4)_0px_4px_15px]',
+                  'opacity-100',
+                  'transform-none',
+                  'backdrop-brightness-100',
+                  'backdrop-blur-[19px]',
+                  'bg-[#ffebcdd4]',
+                  'text-[24px]',
+                  'bg-gradient-to-r', // Направление градиента слева направо
+                  'from-[rgba(230,230,230,1)]',       // Начальный цвет градиента (белый)
+                  'from-[40%]',        // Начальная позиция градиента (40%)
+                  'z-10 p-[20px] ml-0',
                   'min-w-descr sm:w-[100%] md:min-w-0 md:max-w-descr_md'
                 )}
-                style={{ boxShadow: shadowElems }}
+                style={{ 
+                  boxShadow: shadowElems
+                }}
                 duration={1}
                 delay={0.6}
                 height_initial={60}

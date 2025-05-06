@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import {
   Video,
   Image as ImageIcon,
@@ -17,14 +17,19 @@ import {
 import usePublic from '@/src/hooks/use-lang'
 import { cn } from '@/src/lib/utils'
 import Spinner from '@/src/components/atoms/Spinner'
+import GetBack from './GetBack'
+import Titles from './Titles'
+import ReviewDetailedBtn from '../../atoms/ReviewDetailedBtn'
+import { logRefs } from '@/src/hooks/useUI'
 
 interface RouteParams {
   path: string
   [key: string]: string | undefined
 }
 
-const ReviewDetailed: React.FC = () => {  
-  const { path } = useParams<RouteParams>()
+const ReviewDetailed: React.FC = () => {
+  const { path, elementId } = useParams<RouteParams>()
+
   const [review, setReview] = useState<any>(null)
   const [loading, setLoading] = useState<boolean>(true)
 
@@ -34,12 +39,14 @@ const ReviewDetailed: React.FC = () => {
   const observer = useRef<IntersectionObserver | null>(null)
 
   // For scroll viewers
-  const [scrollTop, setScrollTop] = useState<number>(0)
+  // const [scrollTop, setScrollTop] = useState<number>(0)
 
   const scrollParent = useRef<HTMLDivElement | null>(null)
   const scrollDynBtn = useRef<HTMLDivElement | null>(null)
 //
 
+  const navigate = useNavigate()
+  logRefs()
   // fetch content storage
   const content = usePublic().CONTENT.reviews
   const reviewsData = usePublic().REVIEWS
@@ -56,7 +63,6 @@ const ReviewDetailed: React.FC = () => {
     // fetch data from storage (json)
     const foundReview = reviewsData.find((r: any) => r.path === path)
 
-    
     if (foundReview) {
       setReview(foundReview)
       document.title = `${content.main.review}: ${foundReview.title}`
@@ -69,10 +75,47 @@ const ReviewDetailed: React.FC = () => {
     return () => clearTimeout(timer)
   }, [path])
 
+  // useEffect(() => {
+  //   setScrollTop(window.scrollX)
+  //   console.log(window.scrollX)
+  // }, [window.scrollX])
+
   useEffect(() => {
-    setScrollTop(window.scrollX)
-    console.log(window.scrollX)
-  }, [window.scrollX])
+    if (elementId) {
+      const element = elementRefs.current.get(elementId)
+      if (element) {
+        console.log(`Scrolling to element with id: ${elementId}`, element)
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      } else {
+        console.warn(`Element with id ${elementId} not found in elementRefs`)
+      }
+    }
+  }, [elementId])
+
+  useEffect(() => {
+    // Initialize IntersectionObserver
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const elementId = entry.target.id
+          navigate(`/reviews/${path}/${elementId}`, { replace: true })
+          console.log(`Element in view: ${elementId}`)
+        }
+      })
+    }
+
+    observer.current = new IntersectionObserver(handleIntersection, { threshold: 0.5 })
+
+    elementRefs.current.forEach((element, id) => {
+      console.log(`Observing element with id: ${id}`, element)
+      observer.current?.observe(element)
+    })
+
+    return () => {
+      observer.current?.disconnect()
+    }
+  }, [path, navigate])
+
 
   if (loading) {
     return (
@@ -84,75 +127,27 @@ const ReviewDetailed: React.FC = () => {
 
   if (!review) {
     return (
-      <div className='min-h-screen flex flex-col items-center justify-center px-4'>
-        <h2 className='text-2xl font-bold mb-4'>
-          {content.errors.notFound}
-        </h2>
-        <p className='mb-8 text-center'>
-          {content.errors.notExist}
-        </p>
-        <Link
-          to='/reviews'
-          className={cn(
-            'px-5 py-2 transition-colors rounded-lg',
-            'bg-blue-500 text-white hover:bg-blue-600'
-          )}
-        >
-          {content.main.getBack}
-        </Link>
-      </div>
+      <GetBack content={content} />
     )
   }
 
   const { title, description, videos, images, audios, letters } = review || {}
 
   // Helper function to register element refs
-  const registerRef = (id: string) => (element: HTMLDivElement) => {
+  const registerRef = (id: string) => (element: HTMLDivElement | null) => {
     if (element) {
+      console.log(`Registering element with id: ${id}`, element)
       elementRefs.current.set(id, element)
     } else {
       elementRefs.current.delete(id)
     }
-    console.log(elementRefs.current)
+    // console.log(elementRefs.current)
   }
 
   return (
     <>
-      <div
-        className={cn(
-          'mb-8',
-          'w-[100vw] h-[550px]',
-          'flex items-end',
-          'bg-cover bg-center bg-no-repeat',
-          'bg-white'
-        )}
-        style={{
-          backgroundImage: `url(${links.content.reviewsPage.background})`,
-          backgroundPositionX: '65%',
-        }}
-      >
-        <motion.div
-          initial={{ y: 0, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className={cn(
-            'py-4',
-            'mx-auto w-[100%]',
-            'text-4xl font-bold text-center text-title',
-            'bg-white/70'
-          )}
-        >
-          <h1
-            className={cn(
-              'text-title font-bold',
-              'text-center text-3xl md:text-4xl tracking-tight mb-2'
-            )}
-          >
-            {title}
-          </h1>
-          <p className='text-center text-lg text-description'>{description}</p>
-        </motion.div>
-      </div>
+      <ReviewDetailedBtn content={content} />
+      <Titles title={title} links={links} description={description} />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -219,6 +219,7 @@ export const AudioPlayer = React.forwardRef<HTMLDivElement, AudioProps>(({ url, 
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className='mb-8'
+      ref={ref} // forwarded up
     >
       <div className='flex items-center gap-4 p-0 rounded-xl bg-gray-50'>
         {/* <div className="flex-shrink-0 p-3 rounded-full bg-blue-100">
@@ -230,7 +231,6 @@ export const AudioPlayer = React.forwardRef<HTMLDivElement, AudioProps>(({ url, 
             border: '1px solid rgba(1,1,1,.1)',
             boxShadow: '0 4px 15px rgba(1,1,1,.2)',
           }}
-          ref={ref} // forwarded up
         >
           {title && (
             <h4

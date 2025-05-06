@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence, color } from 'framer-motion'
 
@@ -11,11 +11,14 @@ import { bodyFixed, bodyUnfixed } from '@/src/hooks/dom'
 
 import '@/src/styles/burger-animation.css'
 import { cn } from '@/src/lib/utils'
+import { addRef } from '@/src/context/UI'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const burgerStatus = useDispatch().burgerStatus
+
+  const headerRef = useRef<HTMLDivElement | null>(null)
 
   const UI = useLang().UI
 
@@ -45,6 +48,12 @@ const Header = () => {
     }
   }, [burgerStatus])
 
+  useEffect(() => {
+    if (headerRef.current) {
+      addRef({ id: 'header', ref: headerRef.current })
+    }
+  }, [headerRef.current])
+
   return (
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
@@ -54,6 +63,7 @@ const Header = () => {
       style={{
         backgroundColor: 'var(--header-color)',
       }}
+      ref={headerRef}
     >
       <div className='mx-auto px-4 backdrop-blur-md'>
         <div className='flex items-center justify-between h-[56px]'>
@@ -66,10 +76,10 @@ const Header = () => {
               }
             }}
           >
-            <div className='relative w-[200px] h-[56px] flex items-center rounded-[50px]'>
+            <div className='relative w-[200px] h-[54px] flex items-center rounded-[50px]'>
               <img
                 src='/images/standart_blue.png'
-                className='h-[100%] w-[56px]'
+                className='h-[100%] w-[54px]'
                 alt=''
               />
               <img
@@ -160,7 +170,7 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className='backdrop-blur-md md:hidden -z-[1] absolute overflow-hidden top-16 left-0 right-0 shadow-lg'
+              className='backdrop-blur-md md:hidden -z-[1] absolute overflow-hidden top-[55px] left-0 right-0 shadow-lg'
               style={{
                 backgroundColor: 'var(--header-color)',
               }}

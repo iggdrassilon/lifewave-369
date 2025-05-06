@@ -113,6 +113,7 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>(
             className={cn(
               'tracking-tight overflow-hidden',
               'text-3xl',
+              'mx-auto',
               `${title.customCl}`
             )}
           >
@@ -190,7 +191,8 @@ const GridSection = React.forwardRef<HTMLDivElement, GridSectionProps>(
                 src={image.src}
                 alt={image.alt}
                 className={cn(
-                  'w-full h-auto object-cover -z-[99] rounded-xl md:max-h-[300px]'
+                  'w-full h-auto object-cover -z-[99] rounded-xl',
+                  // 'md:max-h-[300px]'
                 )}
                 // loading="lazy"
               />

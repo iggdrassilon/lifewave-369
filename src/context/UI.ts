@@ -16,17 +16,17 @@ export const addRef = createEvent<RefT>('addRef')
 export const removeRef = createEvent<RefT>('removeRef')
 export const updateDimensions = createEvent<Dimensions>({})
 
-// Эффект для обновления размеров
 export const updateDimensionsFx = createEffect('updateDimensionsFx')
 
-// Хранилище рефов
 export const $refs = createStore<RefT[]>([])
-  .on(addRef, (refs, newRef) => [...refs, newRef])
+  .on(addRef, (refs, newRef) => {
+    const existing = refs.some((ref) => ref.id === newRef.id)
+    return existing ? refs : [...refs, newRef]
+  })
   .on(removeRef, (refs, refToRemove) =>
-    refs.filter((ref) => ref !== refToRemove)
+    refs.filter((ref) => ref.id !== refToRemove.id)
   )
 
-// Хранилище размеров
 export const $dimensions = createStore({
   id: 0,
   width: 0,
@@ -39,7 +39,6 @@ export const $dimensions = createStore({
   },
 }))
 
-// Обновление размеров при добавлении рефа
 sample({
   clock: addRef,
   target: updateDimensionsFx,

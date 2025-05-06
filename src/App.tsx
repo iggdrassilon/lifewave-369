@@ -22,7 +22,6 @@ import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import { ScrollToTop } from './lib/sessions'
 import { RootStyler } from './lib/utils'
-import ReviewDetailedBtn from './components/atoms/ReviewDetailedBtn'
 import { UseTargetElementsParams } from './hooks/useUI'
 
 const queryClient = new QueryClient()
@@ -46,7 +45,6 @@ const App = () => (
               <Route path='/terms' element={<Terms />} />
 
               <Route path='/reviews/:path' element={<ReviewDetailed />} />
-              <Route path='/reviews/:path' element={<ReviewDetailedBtn />} />
 
               <Route path='/' element={<Home />} />
               <Route path='*' element={<NotFound />} />

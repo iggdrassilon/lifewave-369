@@ -87,8 +87,9 @@ const BreakThrough = () => {
                 className={cn(
                   'md:mt-0', // CORDS
                   'flex items-center justify-center', // CTR
-                  'text-left text-sm', // FONT
-                  'text-description' // COLOR
+                  'text-left text-[22px]', // FONT
+                  'text-description', // COLOR
+                  'max-w-[550px]'
                 )}
               >
                 <TextAnimated
@@ -117,7 +118,7 @@ const BreakThrough = () => {
                   // `${shadowElems}`
                 )}
                 style={{
-                  boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
+                  // boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
                 }}
               />
             ),

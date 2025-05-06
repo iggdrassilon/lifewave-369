@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
@@ -17,9 +18,10 @@ const Unfortunately = () => {
 
   const [sectionMounted, setSectionMounted] = useState(false)
 
-  const chatBox = 'bg-violet-100 rounded-xl backdrop-blur-sm p-3'
+  // const chatBox = 'bg-violet-100 rounded-xl backdrop-blur-sm p-3'
+  const chatBox = ''
   const textDensity =
-    'md:w-[100%] md:text-[25px] text-base text-center sm:text-lg text-description overflow-hidden'
+    'md:w-[100%] md:text-[25px] text-[18px] text-center sm:text-lg text-description overflow-hidden'
   const shadowElems = '0 4px 15px rgba(0,0,0, .2)'
 
   useEffect(() => {
@@ -49,13 +51,12 @@ const Unfortunately = () => {
           ref={ref}
           className='px-0 flex flex-col justify-center items-center'
           style={{
-            // eslint-disable-next-line max-len
             background:
               'linear-gradient(to bottom, rgba(250,250,250, 1), rgba(0,0,0, .0), rgba(0,0,0, .0),rgba(250,250,100, .0), hwb(229 29% 43% / 0)), linear-gradient(to bottom, rgba(250,250,250, 0), rgba(0,0,0, .0), rgba(250,250,250, 1)), linear-gradient(to bottom, rgba(250,250,250, .0), rgba(0,0,0,.0)',
           }}
         >
           <h2 className='text-center my-10 flex items-center justify-center'>
-            {/* eslint-disable-next-line max-len */}
+            { }
             <TextAnimated
               text={`${content.home.unfortunately}`}
               textSizes='text-3xl md:text-4xl'
@@ -70,7 +71,7 @@ const Unfortunately = () => {
             <div
               className={`text-description prose font-bold ${chatBox} ${textDensity} sm:text-3xl`}
               style={{
-                boxShadow: shadowElems,
+                // boxShadow: shadowElems,
               }}
             >
               {content.home.slowlyregenerate}
@@ -86,7 +87,7 @@ const Unfortunately = () => {
             <div
               className={`mt-5 text-description ${chatBox} ${textDensity}`}
               style={{
-                boxShadow: shadowElems,
+                // boxShadow: shadowElems,  
               }}
             >
               {content.home.to30years}
@@ -102,7 +103,7 @@ const Unfortunately = () => {
             <div
               className={`text-description ${chatBox} ${textDensity}`}
               style={{
-                boxShadow: shadowElems,
+                // boxShadow: shadowElems,
               }}
             >
               {content.home.to60years}

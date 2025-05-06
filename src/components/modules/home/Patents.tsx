@@ -31,9 +31,10 @@ const Patents = () => {
   const fontParams = 'md:text-xl text-base font-normal sm:text-lg '
   const textTitle = 'text-[17px] se:text-2xl sm:text-3xl md:text-4xl font-bold'
   const textDescr = 'font-bold text-xl text-description'
-  const textContent = 'text-xl md:text-2xl text-description text-center'
+  // const textContent = 'text-xl md:text-2xl text-description text-center'
+  const textContent = 'text-xl md:text-2xxl text-description text-center'
   const shadowElems =
-    'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
+    // 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
 
   useEffect(() => {
     if (inView && sectionMounted) {
@@ -125,7 +126,7 @@ const Patents = () => {
                     // `${shadowElems}`
                   )}
                   style={{
-                    boxShadow: '0 4px 15px rgba(0,50,250, 0.7)',
+                    boxShadow: '0 4px 15px rgba(0,50,250, 0.2)',
                   }}
                 />
               ),
@@ -133,7 +134,7 @@ const Patents = () => {
             image={{
               src: `${links.content.x39patents}`, // IMG OF PATENTS
               alt: 'patents',
-              customCl: 'mt-[50px] min-h-[300px]',
+              customCl: 'mt-[50px] min-h-[300px] md:max-h-[300px]',
               motion: {
                 init: {
                   opacity: 0,
