@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
 import { useParams, useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
 import {
   Video,
   Image as ImageIcon,
@@ -14,13 +15,15 @@ import {
   AudioPlayer,
   LetterDisplay,
 } from '@/src/components/atoms/MediaPlayer'
+
 import usePublic from '@/src/hooks/use-lang'
 import { cn } from '@/src/lib/utils'
 import Spinner from '@/src/components/atoms/Spinner'
+import { logRefs } from '@/src/hooks/useUI'
+
 import GetBack from './GetBack'
 import Titles from './Titles'
 import ReviewDetailedBtn from '../../atoms/ReviewDetailedBtn'
-import { logRefs } from '@/src/hooks/useUI'
 
 interface RouteParams {
   path: string
@@ -44,14 +47,13 @@ const ReviewDetailed: React.FC = () => {
   const scrollParent = useRef<HTMLDivElement | null>(null)
   const scrollDynBtn = useRef<HTMLDivElement | null>(null)
 //
-
-  const navigate = useNavigate()
-  logRefs()
   // fetch content storage
   const content = usePublic().CONTENT.reviews
   const reviewsData = usePublic().REVIEWS
   // fetch links array storage
   const links = usePublic().LINKS
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     window.scrollTo({

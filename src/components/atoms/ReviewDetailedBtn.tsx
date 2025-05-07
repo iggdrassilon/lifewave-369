@@ -68,11 +68,12 @@ const ReviewDetailedBtn = (props: ReviewDetailedBtnProps) => {
         'hover:text-description bg-cyan-100/70 font-bold',
         'inline-flex items-center transition-colors font-extrabold',
         'overflow-hidden text-ellipsis whitespace-nowrap',
-        `${state ? 'bg-cyan-100' : 'bg-cyan-100/70'}`
+        `${state ? 'bg-cyan-50' : 'bg-cyan-100/70'}`
       )}
       style={{
         transition: 'width 0.2s linear',
         width: state ? `${params.btnH}px` : '200px',
+        boxShadow: '0 4px 10px rgba(1,1,1,.2)',
         // paddingLeft: state ? '' : '40px'
       }}
     >
