@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useRef } from 'react'
 
 import { Play, Image as ImageIcon } from 'lucide-react'
@@ -8,35 +9,45 @@ import DOMPurify from 'dompurify'
 import { cn } from '@/src/lib/utils'
 
 interface VideoProps {
+  id: string
   url: string
   title: string
   thumbnail?: string
   customFrame?: boolean
+  className?: any
 }
 
 interface ImageProps {
+  id: string
   url: string
   title: string
   description?: string
   vertical?: boolean
+  className?: any
 }
 
 interface LetterProps {
+  id: string
   title: string
   description?: string
   vertical?: boolean
+  className?: any
 }
 
 interface AudioProps {
+  id: string
   url: string
   title?: string
+  className?: any
 }
 
 export const VideoPlayer = React.forwardRef<HTMLDivElement, VideoProps>(({
+  id,
   url,
   thumbnail,
   title,
   customFrame,
+  className
 }: VideoProps , ref) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -60,8 +71,9 @@ export const VideoPlayer = React.forwardRef<HTMLDivElement, VideoProps>(({
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className='media-container'
+      className={`${className} media-container`}
       ref={ref}  // forwarded up
+      id={id}
     >
       <h4
         className='mt-3 text-lg font-medium text-center text-description'
@@ -114,9 +126,11 @@ export const VideoPlayer = React.forwardRef<HTMLDivElement, VideoProps>(({
 VideoPlayer.displayName = 'VideoPlayer'
 
 export const ImageDisplay = React.forwardRef<HTMLDivElement, ImageProps>(({
+  id,
   url,
   title,
   description,
+  className
 }, ref) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const descriptionPured = DOMPurify.sanitize(description)
@@ -126,8 +140,9 @@ export const ImageDisplay = React.forwardRef<HTMLDivElement, ImageProps>(({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className='media-container mb-8'
+      className={`${className} media-container mb-8`}
       ref={ref}  // forwarded up
+      id={id}
     >
       <div
         className='relative mx-auto overflow-hidden rounded-xl max-w-[400px]'
@@ -172,8 +187,10 @@ export const ImageDisplay = React.forwardRef<HTMLDivElement, ImageProps>(({
 ImageDisplay.displayName = 'ImageDisplay'
 
 export const LetterDisplay = React.forwardRef<HTMLDivElement, LetterProps>(({
+  id,
   title,
   description,
+  className
 }, ref) => {
   const descriptionPured = DOMPurify.sanitize(description)
 
@@ -182,8 +199,9 @@ export const LetterDisplay = React.forwardRef<HTMLDivElement, LetterProps>(({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className='media-container mb-8'
+      className={`${className} media-container mb-8`}
       ref={ref}  // forwarded up
+      id={id}
     >
       <div
         className='relative p-8 mx-auto overflow-hidden rounded-xl max-w-[400px]'
@@ -210,7 +228,7 @@ export const LetterDisplay = React.forwardRef<HTMLDivElement, LetterProps>(({
 
 LetterDisplay.displayName = 'LetterDisplay'
 
-export const AudioPlayer = React.forwardRef<HTMLDivElement, AudioProps>(({ url, title }, ref) => {
+export const AudioPlayer = React.forwardRef<HTMLDivElement, AudioProps>(({ id, url, title, className }, ref) => {
   const sanitizedTitle = DOMPurify.sanitize(title || '')
 
   return (
@@ -218,8 +236,9 @@ export const AudioPlayer = React.forwardRef<HTMLDivElement, AudioProps>(({ url, 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className='mb-8'
+      className={`${className} mb-8`}
       ref={ref} // forwarded up
+      id={id}
     >
       <div className='flex items-center gap-4 p-0 rounded-xl bg-gray-50'>
         {/* <div className="flex-shrink-0 p-3 rounded-full bg-blue-100">

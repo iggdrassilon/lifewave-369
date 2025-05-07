@@ -4,11 +4,12 @@ import { useLocation } from 'react-router-dom'
 const ScrollToTop = () => {
   const { pathname } = useLocation()
   const timer = useRef(null)
-
+  const isExcluded = pathname === '/reviews' || pathname.startsWith('/reviews/')
   useEffect(() => {
     if (timer.current) clearTimeout(timer.current)
-    if (pathname !== '/reviews') {
+    if (!isExcluded) {
       window.scrollTo(0, 0)
+      console.log('scroll to top')
     } else {
       if (pathname.split('/').length === 2) {
         const scrollPosition = sessionStorage.getItem('scrollPosition')

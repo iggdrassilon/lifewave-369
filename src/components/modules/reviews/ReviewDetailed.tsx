@@ -16,224 +16,252 @@ import {
   LetterDisplay,
 } from '@/src/components/atoms/MediaPlayer'
 
-import usePublic from '@/src/hooks/use-lang'
 import { cn } from '@/src/lib/utils'
+import usePublic from '@/src/hooks/use-lang'
 import Spinner from '@/src/components/atoms/Spinner'
-import { logRefs } from '@/src/hooks/useUI'
-
-import GetBack from './GetBack'
 import Titles from './Titles'
 import ReviewDetailedBtn from '../../atoms/ReviewDetailedBtn'
 
-interface RouteParams {
-  path: string
-  [key: string]: string | undefined
-}
-
 const ReviewDetailed: React.FC = () => {
-  const { path, elementId } = useParams<RouteParams>()
+  const { path, section, index } = useParams<{ path: string; section: string; index?: string }>()
+  const navigate = useNavigate()
 
   const [review, setReview] = useState<any>(null)
   const [loading, setLoading] = useState<boolean>(true)
+  const [ pageLoaded, setPageLoaded ] = useState<boolean>(false)
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [isNavigating, setIsNavigating] = useState<boolean>(false) // Флаг для предотвращения повторной навигации
 
-  // refs for viewing elements
-  // MAKE: register to global hook
   const elementRefs = useRef<Map<string, HTMLDivElement>>(new Map())
   const observer = useRef<IntersectionObserver | null>(null)
 
-  // For scroll viewers
-  // const [scrollTop, setScrollTop] = useState<number>(0)
-
-  const scrollParent = useRef<HTMLDivElement | null>(null)
-  const scrollDynBtn = useRef<HTMLDivElement | null>(null)
-//
-  // fetch content storage
   const content = usePublic().CONTENT.reviews
   const reviewsData = usePublic().REVIEWS
-  // fetch links array storage
+
+  const timer = useRef<NodeJS.Timeout | null>(null)
+
   const links = usePublic().LINKS
 
-  const navigate = useNavigate()
-
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
+    window.scrollTo(0, 0)
+  }, [])
+
+  // Fetch review data
+  useEffect(() => {
     setLoading(true)
 
-    // fetch data from storage (json)
     const foundReview = reviewsData.find((r: any) => r.path === path)
-
     if (foundReview) {
       setReview(foundReview)
       document.title = `${content.main.review}: ${foundReview.title}`
     }
 
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 11)
+    setTimeout(() => setLoading(false), 11)
+  }, [path, reviewsData, content.main.review])
 
-    return () => clearTimeout(timer)
-  }, [path])
+  const navigating = () => {
+    const targetId = `${section}-${index}`
+    const targetElement = elementRefs.current.get(targetId)
+    console.log(targetElement)
+    if (targetElement) {
+      setIsNavigating(true) // Prevent other navigation during auto-scroll
+    
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      setActiveSection(section)
+      setActiveIndex(parseInt(index, 10))
+    
+      const checkScrollEnd = () => {
+        const targetRect = targetElement.getBoundingClientRect()
+        const windowHeight = window.innerHeight
+        const targetCenter = targetRect.top + targetRect.height / 2
 
-  // useEffect(() => {
-  //   setScrollTop(window.scrollX)
-  //   console.log(window.scrollX)
-  // }, [window.scrollX])
+        if (Math.abs(targetCenter - windowHeight / 2) < 1 ||
+            (targetRect.bottom >= windowHeight && targetRect.top <= windowHeight)) {
+          setIsNavigating(false)
+          setPageLoaded(true)
+          console.log('navigating')
+        } else {
+          requestAnimationFrame(checkScrollEnd)
+        }
+      }
+    
+      requestAnimationFrame(checkScrollEnd)
+    } else {
+      setIsNavigating(false)
+      setPageLoaded(true)
+      console.log('page load empty')
+    }
+  }
 
+  // Scroll to the element specified in the URL on initial load
   useEffect(() => {
-    if (elementId) {
-      const element = elementRefs.current.get(elementId)
-      if (element) {
-        console.log(`Scrolling to element with id: ${elementId}`, element)
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      } else {
-        console.warn(`Element with id ${elementId} not found in elementRefs`)
+    if (!pageLoaded) {
+      timer.current = setTimeout(() => {
+        navigating()
+      }, 444)
+      return () => {
+        clearTimeout(timer.current)
       }
     }
-  }, [elementId])
+  }, [section, index])
 
+  // Initialize IntersectionObserver
   useEffect(() => {
-    // Initialize IntersectionObserver
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const elementId = entry.target.id
-          navigate(`/reviews/${path}/${elementId}`, { replace: true })
-          console.log(`Element in view: ${elementId}`)
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        if (isNavigating) return // Block updates if navigating programmatically
+
+        const visibleEntry = entries.find((entry) => entry.isIntersecting)
+        if (visibleEntry && pageLoaded) {
+          const [section, index] = visibleEntry.target.id.split('-')
+          const parsedIndex = index ? parseInt(index) : null
+
+          if (section !== activeSection || parsedIndex !== activeIndex) {
+            setActiveSection(section)
+            setActiveIndex(parsedIndex)
+            navigate(`/reviews/${path}/${section}${parsedIndex !== null ? `/${parsedIndex}` : ''}`, {
+              replace: true,
+              state: { preventScrollReset: true },
+            })
+          }
         }
-      })
-    }
+      },
+      { threshold: 0.7 } // Trigger when 70% of the element is visible
+    )
 
-    observer.current = new IntersectionObserver(handleIntersection, { threshold: 0.5 })
-
-    elementRefs.current.forEach((element, id) => {
-      console.log(`Observing element with id: ${id}`, element)
-      observer.current?.observe(element)
-    })
+    elementRefs.current.forEach((element) => observer.current?.observe(element))
 
     return () => {
       observer.current?.disconnect()
     }
-  }, [path, navigate])
+  }, [path, navigate, activeSection, activeIndex, isNavigating, pageLoaded])
 
+  // Register refs
+  const registerRef = (id: string) => (element: HTMLDivElement | null) => {
+    if (element) {
+      elementRefs.current.set(id, element)
+      observer.current?.observe(element)
+    } else {
+      elementRefs.current.delete(id)
+    }
+  }
 
   if (loading) {
     return (
-      <div className='min-h-screen flex items-center justify-center bg-black -z-1'>
+      <div className="min-h-screen flex items-center justify-center bg-black">
         <Spinner />
       </div>
     )
   }
 
   if (!review) {
-    return (
-      <GetBack content={content} />
-    )
+    return <div>Review not found</div>
   }
 
   const { title, description, videos, images, audios, letters } = review || {}
 
-  // Helper function to register element refs
-  const registerRef = (id: string) => (element: HTMLDivElement | null) => {
-    if (element) {
-      console.log(`Registering element with id: ${id}`, element)
-      elementRefs.current.set(id, element)
-    } else {
-      elementRefs.current.delete(id)
-    }
-    // console.log(elementRefs.current)
-  }
-
   return (
-    <>
-      <ReviewDetailedBtn content={content} />
-      <Titles title={title} links={links} description={description} />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.4 }}
-        className={cn(
-          'min-h-screen px-2 py-12 md:px-12 lg:px-24 pt-3 md:pt-4',
-          'bg-white'
+   <>
+    <ReviewDetailedBtn content={content} />
+    <Titles title={title} links={links} description={description} />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+      className={cn('container min-h-screen px-2 py-12 md:px-12 lg:px-24 pt-3 md:pt-4 bg-white')}
+    >
+      <div className="">
+        {videos && videos.length > 0 && (
+          <motion.section
+            id="videos"
+            // className='mb-20'
+            className={`mb-20 py-[60px] rounded-xl transition-all duration-300 
+              ${activeSection === 'videos' 
+                ? 'border-2 shadow-lg' 
+                : 'border-2 border-indigo-50'}
+            `}
+          >
+            <div className="flex items-center mb-20 md:px-[50px] mt-[20px]">
+              <Video className="w-5 h-5 mr-2 text-blue-500" />
+              <h2 className="text-2xl font-semibold text-title">
+                {content.main.videos}
+              </h2>
+            </div>
+            <div className="space-y-20 md:px-[50px]">
+              {videos.map((video: any, index: number) => (
+                <div
+                  key={`video-${index}`}
+                  id={`videos-${index}`}
+                  ref={registerRef(`videos-${index}`)}
+                  className={`transition-all duration-300 ${
+                    activeIndex === index && activeSection === 'videos' ? '' : ''
+                  }`}
+                >
+                  <VideoPlayer {...video} />
+                </div>
+              ))}
+            </div>
+          </motion.section>
         )}
-      >
-        <div className='max-w-4xl mx-auto'>
-          {videos && videos.length > 0 && (
-            <motion.section
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className='mb-20'
-            >
-              <div className='flex text-center items-center mb-20'>
-                <Video className='w-5 h-5 mr-2 text-blue-500' />
-                <h2 className='text-center items-center text-2xl text-title font-semibold'>
-                  {content.main.videos}
-                </h2>
-              </div>
-              <div className='space-y-20'>
-                {videos.map((video: any, index: number) => (
-                  <VideoPlayer
-                    key={`video-${index}`}
-                    url={video.url}
-                    thumbnail={video.thumbnail && video.thumbnail}
-                    customFrame={video.customFrame}
-                    title={video.title}
-                    ref={registerRef(`video-${index}`)}
-                  />
-                ))}
-              </div>
-            </motion.section>
-          )}
-          {images && images.length > 0 && (
-            <motion.section
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className='mb-20'
-            >
-              <div className='flex items-center mb-20'>
-                <ImageIcon className='w-5 h-5 mr-2 text-blue-500' />
-                <h2 className='text-2xl font-semibold text-title'>
-                  {content.main.photos}
-                </h2>
-              </div>
-              <div className='space-y-20'>
-                {images.map((image: any, index: number) => (
-                  <ImageDisplay
-                    key={`image-${index}`}
-                    url={image.url}
-                    title={image.title && image.title}
-                    description={image.description && image.description}
-                    ref={registerRef(`image-${index}`)}
-                  />
-                ))}
-              </div>
-            </motion.section>
-          )}
-          {letters && letters.length > 0 && (
+        {images && images.length > 0 && (
+          <motion.section
+            id="images"
+            className={`mb-20 py-[60px] rounded-xl ${activeSection === 'images' 
+              ? 'border-2 shadow-lg' 
+              : 'border-2 border-indigo-50'} transition-all duration-300`}
+          >
+            <div className="flex items-center mb-20 md:px-[50px]">
+              <ImageIcon className="w-5 h-5 mr-2 text-blue-500" />
+              <h2 className="text-2xl font-semibold text-title">
+                {content.main.photos}
+              </h2>
+            </div>
+            <div className="space-y-20 md:px-[50px]">
+              {images.map((image: any, index: number) => (
+                <ImageDisplay
+                  key={`image-${index}`}
+                  id={`images-${index}`}
+                  title={image.title}
+                  url={image.url}
+                  ref={registerRef(`images-${index}`)}
+                  className={`transition-all duration-500 ${
+                    activeIndex === index && activeSection === 'images' ? '' : ''
+                  }`}
+                />
+              ))}
+            </div>
+          </motion.section>
+        )}
+        {letters && letters.length > 0 && (
             <motion.section
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className='mb-20'
+              className={`mb-20 py-[60px] rounded-xl 
+                ${activeSection === 'letters' 
+                  ? 'border-2 shadow-lg' 
+                  : 'border-2 border-indigo-50'} transition-all duration-300
+              `}
             >
-              <div className='flex items-center mb-20'>
+              <div className='flex items-center mb-20 md:px-[50px]'>
                 <ImageIcon className='w-5 h-5 mr-2 text-blue-500' />
                 <h2 className='text-2xl font-semibold text-title'>
                   {content.main.letters}
                 </h2>
               </div>
-              <div className='space-y-20'>
-                {letters.map((image: any, index: number) => (
-                  <LetterDisplay
+              <div className='space-y-20 px-[50px]'>
+                {letters.map((letter: any, index: number) => (
+                  <LetterDisplay 
                     key={`letter-${index}`}
-                    title={image.title && image.title}
-                    description={image.description && image.description}
-                    ref={registerRef(`letter-${index}`)}
+                    id={`letters-${index}`}
+                    description={letter.description}
+                    title={letter.title && letter.title}
+                    ref={registerRef(`letters-${index}`)}
+                    className={`transition-all duration-500 ${
+                      activeIndex === index && activeSection === 'letters' ? '' : ''
+                    }`}
                   />
                 ))}
               </div>
@@ -244,29 +272,35 @@ const ReviewDetailed: React.FC = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className='mb-12'
+              className={`mb-20 py-[60px] rounded-xl ${activeSection === 'audios' 
+                ? 'border-2 shadow-lg' 
+                : 'border-2 border-indigo-50'} transition-all duration-300`}
             >
-              <div className='flex items-center mb-20'>
+              <div className='flex items-center mb-20 md:px-[50px]'>
                 <AudioLines className='w-5 h-5 mr-2 text-blue-500' />
                 <h2 className='text-2xl font-semibold'>
                   {content.main.audios}
                 </h2>
               </div>
-              <div className='space-y-16'>
+              <div className='space-y-16 md:px-[50px]'>
                 {audios.map((audio: any, index: number) => (
                   <AudioPlayer
                     key={`audio-${index}`}
+                    id={`audios-${index}`}
                     url={audio.url}
                     title={audio.title}
-                    ref={registerRef(`audio-${index}`)}
+                    ref={registerRef(`audios-${index}`)}
+                    className={`transition-all duration-500 ${
+                      activeIndex === index && activeSection === 'audios' ? '' : ''
+                    }`}
                   />
                 ))}
               </div>
             </motion.section>
           )}
-        </div>
-      </motion.div>
-    </>
+      </div>
+    </motion.div>
+   </>
   )
 }
 
