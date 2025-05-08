@@ -35,8 +35,12 @@ const Popup: React.FC<PopupProps> = ({ message }) => {
   return (
     <div style={{
       position: 'fixed',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       top: '50%',
       left: '50%',
+      width: '200px',
       transform: 'translateX(-50%) translateY(-150%)',
       backgroundColor: 'var(--main-blue)',
       color: '#fff',

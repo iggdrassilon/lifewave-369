@@ -1,11 +1,10 @@
+import { setStateAction } from '@/src/context/states'
+import usePublic from '@/src/hooks/use-lang'
+import useStates from '@/src/hooks/useStates'
+import { cn } from '@/src/lib/utils'
+import { motion } from 'framer-motion'
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import usePublic from '@/src/hooks/use-lang'
-import { cn } from '@/src/lib/utils'
-import { setStateAction } from '@/src/context/states'
-import useStates from '@/src/hooks/useStates'
-import styled from 'styled-components'
 
 interface ReviewCardProps {
   id: string
@@ -57,7 +56,19 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
               {description}
             </p>
           )}
-          <ArrowWhite />
+          <div
+            className='absolute m-0 flex items-center justify-center w-[28px] h-[28px] bottom-[10px]'
+            style={{ right: 'calc(1rem - 9px)' }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g>
+                <path 
+                  d="M15.383,8.076a1,1,0,0,0-1.09.217l-6,6A1,1,0,0,0,9,16h6a1,1,0,0,0,1-1V9A1,1,0,0,0,15.383,8.076Z" 
+                  style={{ fill: '#fff' }}
+                />
+              </g>
+            </svg>
+          </div>
           {/* <div className='pt-4? flex justify-end'> */}
             {/* <span className=' text-sm font-medium'> */}
               {/* {content.reviews.main.turnIt} */}
@@ -68,27 +79,5 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
     </motion.div>
   )
 }
-
-const ArrowWhite = styled.div`
-  position: absolute;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  // border: 1px solid red;
-  bottom: 10px;
-  right: calc(1rem - 6px);
-  &:before {
-    position: absolute;
-    content: url('/public/icons/arrow-white.svg');
-    width: 150%;
-    height: 150%;
-    // top: 0;
-    // top: 50%;
-    // left: 50%;
-  }
-`
 
 export default ReviewCard

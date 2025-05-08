@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import earthCopy from '/public/icons/earth-copy.svg'
 
 import {
   Video,
@@ -170,7 +171,15 @@ const ReviewDetailed: React.FC = () => {
     const link = `${protocol}//${domain}/reviews/${path}/${category}/${id}`
     if (navigator.clipboard) {
       navigator.clipboard.writeText(link)
-      popUp(UI.pops.copied)
+        .then(() => {
+          popUp(UI.pops.copied)
+        })
+        .catch(err => {
+          console.error('Failed to copy link: ', err)
+        })
+    } else {
+      // Fallback for browsers that don't support the Clipboard API
+      console.error('Clipboard API not available')
     }
   }
 
@@ -349,7 +358,7 @@ const ReviewDetailed: React.FC = () => {
 
 export default ReviewDetailed
 
-const CopyLinkBtn = styled.a`
+const CopyLinkBtn = styled.button`
   position: absolute;
   width: 20px;
   height: 20px;
@@ -361,7 +370,7 @@ const CopyLinkBtn = styled.a`
   cursor: pointer;
   &:before {
     position: absolute;
-    content: url('/public/icons/earth-copy.svg');
+    content: url(${earthCopy});
     width: 100%;
     height: 100%;
   }
