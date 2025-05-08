@@ -31,7 +31,7 @@ const ReviewDetailed: React.FC = () => {
   const [ activeSection, setActiveSection ] = useState<string | null>(null)
   const [ activeIndex, setActiveIndex ] = useState<number | null>(null)
   const [ isNavigating, setIsNavigating ] = useState<boolean>(false)
-  const [ firstLoad, setFirstLoad ] = useState<boolean>(false)
+  // const [ firstLoad, setFirstLoad ] = useState<boolean>(false)
 
   const elementRefs = useRef<Map<string, HTMLDivElement>>(new Map())
   const observer = useRef<IntersectionObserver | null>(null)
@@ -67,7 +67,7 @@ const ReviewDetailed: React.FC = () => {
     const targetElement = elementRefs.current.get(targetId)
     console.log(targetElement)
     if (targetElement) {
-      setIsNavigating(true) // Prevent other navigation during auto-scroll
+      setIsNavigating(true)
     
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
       setActiveSection(section)
@@ -82,10 +82,10 @@ const ReviewDetailed: React.FC = () => {
             (targetRect.bottom >= windowHeight && targetRect.top <= windowHeight)) {
           setIsNavigating(false)
           setPageLoaded(true)
-          setTimeout(() => {
-            setFirstLoad(true)
-          }, 2222)
-          console.log('navigating')
+          // setTimeout(() => {
+          //   setFirstLoad(true)
+          // }, 2222)
+          // console.log('navigating')
         } else {
           requestAnimationFrame(checkScrollEnd)
         }
@@ -95,10 +95,10 @@ const ReviewDetailed: React.FC = () => {
     } else {
       setIsNavigating(false)
       setPageLoaded(true)
-      setTimeout(() => {
-        setFirstLoad(true)
-      }, 2222)
-      console.log('page load empty')
+      // setTimeout(() => {
+      //   setFirstLoad(true)
+      // }, 2222)
+      // console.log('page load empty')
     }
   }
 
@@ -205,9 +205,9 @@ const ReviewDetailed: React.FC = () => {
                   title={video.title}
                   id={`videos-${index + 1}`}
                   ref={registerRef(`videos-${index + 1}`)}
-                  className={`transition-all duration-300 rounded-3xl border-2 ${
-                    activeIndex === index + 1 && activeSection === 'videos' && !firstLoad && 'animate-track-to'
-                  }`}
+                  // className={`transition-all duration-300 rounded-3xl border-2 ${
+                  //   activeIndex === index + 1 && activeSection === 'videos' && !firstLoad && 'animate-track-to'
+                  // }`}
                 />
               ))}
             </div>
@@ -234,9 +234,9 @@ const ReviewDetailed: React.FC = () => {
                   title={image.title}
                   url={image.url}
                   ref={registerRef(`images-${index + 1}`)}
-                  className={`transition-all duration-500 ${
-                    activeIndex === index + 1 && activeSection === 'images' && !firstLoad && 'animate-track-to'
-                  }`}
+                  // className={`transition-all duration-500 ${
+                  //   activeIndex === index + 1 && activeSection === 'images' && !firstLoad && 'animate-track-to'
+                  // }`}
                 />
               ))}
             </div>
@@ -267,9 +267,9 @@ const ReviewDetailed: React.FC = () => {
                     description={letter.description}
                     title={letter.title && letter.title}
                     ref={registerRef(`letters-${index + 1}`)}
-                    className={`transition-all duration-500 ${
-                      activeIndex === index + 1 && activeSection === 'letters' && !firstLoad && 'animate-track-to'
-                    }`}
+                    // className={`transition-all duration-500 ${
+                    //   activeIndex === index + 1 && activeSection === 'letters' && !firstLoad && 'animate-track-to'
+                    // }`}
                   />
                 ))}
               </div>
@@ -298,9 +298,9 @@ const ReviewDetailed: React.FC = () => {
                     url={audio.url}
                     title={audio.title}
                     ref={registerRef(`audios-${index + 1}`)}
-                    className={`transition-all duration-500 ${
-                      activeIndex === index + 1 && activeSection === 'audios' && !firstLoad && 'animate-track-to'
-                    }`}
+                    // className={`transition-all duration-500 ${
+                    //   activeIndex === index + 1 && activeSection === 'audios' && !firstLoad && 'animate-track-to'
+                    // }`}
                   />
                 ))}
               </div>
