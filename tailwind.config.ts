@@ -84,6 +84,7 @@ export default {
         float: 'float 6s ease-in-out infinite',
         wave: 'wave 1.5s infinite',
         ferrari: 'ferrari 60s ease-in-out forwards',
+        'track-to': 'track_to 60s linear forwards',
       },
       keyframes: {
         fadeIn: {
@@ -112,6 +113,17 @@ export default {
         ferrari: {
           '0%': { transform: 'translateY(40px)', opacity: '1' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        track_to: {
+          '0%': {
+            border: '2px solid rgba(250,0,0, 1)',
+          },
+          '90%': {
+            border: '2px solid rgba(250,0,0, 1)',
+          },
+          '100%': {
+            border: '2px solid rgba(250,0,0, .0)',
+          },
         },
       },
     },

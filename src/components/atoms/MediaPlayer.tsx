@@ -140,12 +140,12 @@ export const ImageDisplay = React.forwardRef<HTMLDivElement, ImageProps>(({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className={`${className} media-container mb-8`}
+      className={`${className} media-container mb-8 flex flex-col items-center rounded-xl`}
       ref={ref}  // forwarded up
       id={id}
     >
       <div
-        className='relative mx-auto overflow-hidden rounded-xl max-w-[400px]'
+        className='relative overflow-hidden rounded-xl max-w-[400px]'
         style={{
           border: url && '1px solid rgba(1,1,1,.1)',
           boxShadow: '0 4px 15px rgba(1,1,1,.2)',

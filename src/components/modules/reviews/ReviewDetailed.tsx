@@ -24,14 +24,14 @@ import ReviewDetailedBtn from '../../atoms/ReviewDetailedBtn'
 
 const ReviewDetailed: React.FC = () => {
   const { path, section, index } = useParams<{ path: string; section: string; index?: string }>()
-  const navigate = useNavigate()
 
-  const [review, setReview] = useState<any>(null)
-  const [loading, setLoading] = useState<boolean>(true)
+  const [ review, setReview ] = useState<any>(null)
+  const [ loading, setLoading ] = useState<boolean>(true)
   const [ pageLoaded, setPageLoaded ] = useState<boolean>(false)
-  const [activeSection, setActiveSection] = useState<string | null>(null)
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const [isNavigating, setIsNavigating] = useState<boolean>(false) // Флаг для предотвращения повторной навигации
+  const [ activeSection, setActiveSection ] = useState<string | null>(null)
+  const [ activeIndex, setActiveIndex ] = useState<number | null>(null)
+  const [ isNavigating, setIsNavigating ] = useState<boolean>(false)
+  const [ firstLoad, setFirstLoad ] = useState<boolean>(false)
 
   const elementRefs = useRef<Map<string, HTMLDivElement>>(new Map())
   const observer = useRef<IntersectionObserver | null>(null)
@@ -42,6 +42,8 @@ const ReviewDetailed: React.FC = () => {
   const timer = useRef<NodeJS.Timeout | null>(null)
 
   const links = usePublic().LINKS
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -80,6 +82,9 @@ const ReviewDetailed: React.FC = () => {
             (targetRect.bottom >= windowHeight && targetRect.top <= windowHeight)) {
           setIsNavigating(false)
           setPageLoaded(true)
+          setTimeout(() => {
+            setFirstLoad(true)
+          }, 2222)
           console.log('navigating')
         } else {
           requestAnimationFrame(checkScrollEnd)
@@ -90,6 +95,9 @@ const ReviewDetailed: React.FC = () => {
     } else {
       setIsNavigating(false)
       setPageLoaded(true)
+      setTimeout(() => {
+        setFirstLoad(true)
+      }, 2222)
       console.log('page load empty')
     }
   }
@@ -183,7 +191,7 @@ const ReviewDetailed: React.FC = () => {
                 : 'border-2 border-indigo-50'}
             `}
           >
-            <div className="flex items-center mb-20 md:px-[50px] mt-[20px]">
+            <div className="flex items-center justify-start mb-20 md:px-[50px] mt-[20px]">
               <Video className="w-5 h-5 mr-2 text-blue-500" />
               <h2 className="text-2xl font-semibold text-title">
                 {content.main.videos}
@@ -191,16 +199,16 @@ const ReviewDetailed: React.FC = () => {
             </div>
             <div className="space-y-20 md:px-[50px]">
               {videos.map((video: any, index: number) => (
-                <div
+                <VideoPlayer
                   key={`video-${index}`}
-                  id={`videos-${index}`}
-                  ref={registerRef(`videos-${index}`)}
-                  className={`transition-all duration-300 ${
-                    activeIndex === index && activeSection === 'videos' ? '' : ''
+                  url={video.url}
+                  title={video.title}
+                  id={`videos-${index + 1}`}
+                  ref={registerRef(`videos-${index + 1}`)}
+                  className={`transition-all duration-300 rounded-3xl border-2 ${
+                    activeIndex === index + 1 && activeSection === 'videos' && !firstLoad && 'animate-track-to'
                   }`}
-                >
-                  <VideoPlayer {...video} />
-                </div>
+                />
               ))}
             </div>
           </motion.section>
@@ -212,22 +220,22 @@ const ReviewDetailed: React.FC = () => {
               ? 'border-2 shadow-lg' 
               : 'border-2 border-indigo-50'} transition-all duration-300`}
           >
-            <div className="flex items-center mb-20 md:px-[50px]">
+            <div className="flex items-center justify-start mb-20 md:px-[50px]">
               <ImageIcon className="w-5 h-5 mr-2 text-blue-500" />
               <h2 className="text-2xl font-semibold text-title">
                 {content.main.photos}
               </h2>
             </div>
-            <div className="space-y-20 md:px-[50px]">
+            <div className="md:px-[50px] flex flex-col items-center ">
               {images.map((image: any, index: number) => (
                 <ImageDisplay
                   key={`image-${index}`}
-                  id={`images-${index}`}
+                  id={`images-${index + 1}`}
                   title={image.title}
                   url={image.url}
-                  ref={registerRef(`images-${index}`)}
+                  ref={registerRef(`images-${index + 1}`)}
                   className={`transition-all duration-500 ${
-                    activeIndex === index && activeSection === 'images' ? '' : ''
+                    activeIndex === index + 1 && activeSection === 'images' && !firstLoad && 'animate-track-to'
                   }`}
                 />
               ))}
@@ -239,28 +247,28 @@ const ReviewDetailed: React.FC = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`mb-20 py-[60px] rounded-xl 
+              className={`mb-20 py-[60px] rounded-xl
                 ${activeSection === 'letters' 
                   ? 'border-2 shadow-lg' 
                   : 'border-2 border-indigo-50'} transition-all duration-300
               `}
             >
-              <div className='flex items-center mb-20 md:px-[50px]'>
+              <div className='flex items-center justify-start mb-20 md:px-[50px]'>
                 <ImageIcon className='w-5 h-5 mr-2 text-blue-500' />
                 <h2 className='text-2xl font-semibold text-title'>
                   {content.main.letters}
                 </h2>
               </div>
-              <div className='space-y-20 px-[50px]'>
+              <div className='space-y-20 md:px-[50px] flex flex-col items-center'>
                 {letters.map((letter: any, index: number) => (
                   <LetterDisplay 
                     key={`letter-${index}`}
-                    id={`letters-${index}`}
+                    id={`letters-${index + 1}`}
                     description={letter.description}
                     title={letter.title && letter.title}
-                    ref={registerRef(`letters-${index}`)}
+                    ref={registerRef(`letters-${index + 1}`)}
                     className={`transition-all duration-500 ${
-                      activeIndex === index && activeSection === 'letters' ? '' : ''
+                      activeIndex === index + 1 && activeSection === 'letters' && !firstLoad && 'animate-track-to'
                     }`}
                   />
                 ))}
@@ -276,7 +284,7 @@ const ReviewDetailed: React.FC = () => {
                 ? 'border-2 shadow-lg' 
                 : 'border-2 border-indigo-50'} transition-all duration-300`}
             >
-              <div className='flex items-center mb-20 md:px-[50px]'>
+              <div className='flex items-center justify-start mb-20 md:px-[50px]'>
                 <AudioLines className='w-5 h-5 mr-2 text-blue-500' />
                 <h2 className='text-2xl font-semibold'>
                   {content.main.audios}
@@ -286,12 +294,12 @@ const ReviewDetailed: React.FC = () => {
                 {audios.map((audio: any, index: number) => (
                   <AudioPlayer
                     key={`audio-${index}`}
-                    id={`audios-${index}`}
+                    id={`audios-${index + 1}`}
                     url={audio.url}
                     title={audio.title}
-                    ref={registerRef(`audios-${index}`)}
+                    ref={registerRef(`audios-${index + 1}`)}
                     className={`transition-all duration-500 ${
-                      activeIndex === index && activeSection === 'audios' ? '' : ''
+                      activeIndex === index + 1 && activeSection === 'audios' && !firstLoad && 'animate-track-to'
                     }`}
                   />
                 ))}
