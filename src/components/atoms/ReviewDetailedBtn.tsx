@@ -63,7 +63,7 @@ const ReviewDetailedBtn = (props: ReviewDetailedBtnProps) => {
       ref={ref}
       className={cn(
         'top-[80px] left-4 h-[40px]',
-        'fixed z-[99]',
+        'fixed z-[1]',
         'rounded-xl',
         'hover:text-description bg-cyan-100/70 font-bold',
         'inline-flex items-center transition-colors font-extrabold',
