@@ -34,6 +34,9 @@
     },
     "patents": {
       "readmore": "Read More"
+    },
+    "pops": {
+      "copied": "Link copied."
     }
   },
   "ru": {
@@ -70,6 +73,9 @@
     },
     "patents": {
       "readmore": "Читать Далее"
+    },
+    "pops": {
+      "copied": "Ссылка скопирована."
     }
   }
 }

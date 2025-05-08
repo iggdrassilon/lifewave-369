@@ -21,6 +21,9 @@ import usePublic from '@/src/hooks/use-lang'
 import Spinner from '@/src/components/atoms/Spinner'
 import Titles from './Titles'
 import ReviewDetailedBtn from '../../atoms/ReviewDetailedBtn'
+import GetBack from './GetBack'
+import styled from 'styled-components'
+import { usePopup } from '../../layouts/popup'
 
 const ReviewDetailed: React.FC = () => {
   const { path, section, index } = useParams<{ path: string; section: string; index?: string }>()
@@ -37,11 +40,15 @@ const ReviewDetailed: React.FC = () => {
   const observer = useRef<IntersectionObserver | null>(null)
 
   const content = usePublic().CONTENT.reviews
+  const UI = usePublic().UI
+
   const reviewsData = usePublic().REVIEWS
 
   const timer = useRef<NodeJS.Timeout | null>(null)
 
   const links = usePublic().LINKS
+
+  const popUp = usePopup()
 
   const navigate = useNavigate()
 
@@ -93,6 +100,8 @@ const ReviewDetailed: React.FC = () => {
     
       requestAnimationFrame(checkScrollEnd)
     } else {
+      navigate(`/reviews/${path}`)
+      // bad link here
       setIsNavigating(false)
       setPageLoaded(true)
       // setTimeout(() => {
@@ -155,6 +164,16 @@ const ReviewDetailed: React.FC = () => {
     }
   }
 
+  const handleClick = (category: string, id: number) => {
+    const protocol = window.location.protocol
+    const domain = window.location.host
+    const link = `${protocol}//${domain}/reviews/${path}/${category}/${id}`
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(link)
+      popUp(UI.pops.copied)
+    }
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-black">
@@ -164,7 +183,7 @@ const ReviewDetailed: React.FC = () => {
   }
 
   if (!review) {
-    return <div>Review not found</div>
+    return <GetBack content={content} />
   }
 
   const { title, description, videos, images, audios, letters } = review || {}
@@ -199,16 +218,19 @@ const ReviewDetailed: React.FC = () => {
             </div>
             <div className="space-y-20 md:px-[50px]">
               {videos.map((video: any, index: number) => (
-                <VideoPlayer
-                  key={`video-${index}`}
-                  url={video.url}
-                  title={video.title}
-                  id={`videos-${index + 1}`}
-                  ref={registerRef(`videos-${index + 1}`)}
-                  // className={`transition-all duration-300 rounded-3xl border-2 ${
-                  //   activeIndex === index + 1 && activeSection === 'videos' && !firstLoad && 'animate-track-to'
-                  // }`}
-                />
+                <div key={index} className='relative'>
+                  <VideoPlayer
+                    key={`video-${index}`}
+                    url={video.url}
+                    title={video.title}
+                    id={`videos-${index + 1}`}
+                    ref={registerRef(`videos-${index + 1}`)}
+                    // className={`transition-all duration-300 rounded-3xl border-2 ${
+                    //   activeIndex === index + 1 && activeSection === 'videos' && !firstLoad && 'animate-track-to'
+                    // }`}
+                  />
+                  <CopyLinkBtn onClick={() => handleClick('videos', index + 1)} />
+                </div>
               ))}
             </div>
           </motion.section>
@@ -228,16 +250,23 @@ const ReviewDetailed: React.FC = () => {
             </div>
             <div className="md:px-[50px] flex flex-col items-center ">
               {images.map((image: any, index: number) => (
-                <ImageDisplay
-                  key={`image-${index}`}
-                  id={`images-${index + 1}`}
-                  title={image.title}
-                  url={image.url}
-                  ref={registerRef(`images-${index + 1}`)}
-                  // className={`transition-all duration-500 ${
-                  //   activeIndex === index + 1 && activeSection === 'images' && !firstLoad && 'animate-track-to'
-                  // }`}
-                />
+                <div key={index} className={cn(
+                  'relative',
+                  `${index !== 0 ? 'mt-[100px]' : ''}`
+                )}>
+                  <ImageDisplay
+                    key={`image-${index}`}
+                    id={`images-${index + 1}`}
+                    title={image.title}
+                    url={image.url}
+                    ref={registerRef(`images-${index + 1}`)}
+                    // className={`${index !== 0 ? 'mt-[100px]' : ''}`}
+                    // className={`transition-all duration-500 ${
+                    //   activeIndex === index + 1 && activeSection === 'images' && !firstLoad && 'animate-track-to'
+                    // }`}
+                  />
+                  <CopyLinkBtn onClick={() => handleClick('images', index + 1)} />
+                </div>
               ))}
             </div>
           </motion.section>
@@ -261,16 +290,19 @@ const ReviewDetailed: React.FC = () => {
               </div>
               <div className='space-y-20 md:px-[50px] flex flex-col items-center'>
                 {letters.map((letter: any, index: number) => (
-                  <LetterDisplay 
-                    key={`letter-${index}`}
-                    id={`letters-${index + 1}`}
-                    description={letter.description}
-                    title={letter.title && letter.title}
-                    ref={registerRef(`letters-${index + 1}`)}
-                    // className={`transition-all duration-500 ${
-                    //   activeIndex === index + 1 && activeSection === 'letters' && !firstLoad && 'animate-track-to'
-                    // }`}
-                  />
+                  <div key={index} className='relative'>
+                    <LetterDisplay
+                      key={`letter-${index}`}
+                      id={`letters-${index + 1}`}
+                      description={letter.description}
+                      title={letter.title && letter.title}
+                      ref={registerRef(`letters-${index + 1}`)}
+                      // className={`transition-all duration-500 ${
+                      //   activeIndex === index + 1 && activeSection === 'letters' && !firstLoad && 'animate-track-to'
+                      // }`}
+                    />
+                    <CopyLinkBtn onClick={() => handleClick('letters', index + 1)} />
+                  </div>
                 ))}
               </div>
             </motion.section>
@@ -292,16 +324,19 @@ const ReviewDetailed: React.FC = () => {
               </div>
               <div className='space-y-16 md:px-[50px]'>
                 {audios.map((audio: any, index: number) => (
-                  <AudioPlayer
-                    key={`audio-${index}`}
-                    id={`audios-${index + 1}`}
-                    url={audio.url}
-                    title={audio.title}
-                    ref={registerRef(`audios-${index + 1}`)}
-                    // className={`transition-all duration-500 ${
-                    //   activeIndex === index + 1 && activeSection === 'audios' && !firstLoad && 'animate-track-to'
-                    // }`}
-                  />
+                  <div key={index} className='relative'>
+                    <AudioPlayer
+                      key={`audio-${index}`}
+                      id={`audios-${index + 1}`}
+                      url={audio.url}
+                      title={audio.title}
+                      ref={registerRef(`audios-${index + 1}`)}
+                      // className={`transition-all duration-500 ${
+                      //   activeIndex === index + 1 && activeSection === 'audios' && !firstLoad && 'animate-track-to'
+                      // }`}
+                    />
+                    <CopyLinkBtn onClick={() => handleClick('audios', index + 1)} />
+                  </div>
                 ))}
               </div>
             </motion.section>
@@ -313,3 +348,21 @@ const ReviewDetailed: React.FC = () => {
 }
 
 export default ReviewDetailed
+
+const CopyLinkBtn = styled.a`
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: -35px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:before {
+    position: absolute;
+    content: url('/public/icons/earth-copy.svg');
+    width: 100%;
+    height: 100%;
+  }
+`

@@ -140,7 +140,10 @@ export const ImageDisplay = React.forwardRef<HTMLDivElement, ImageProps>(({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className={`${className} media-container mb-8 flex flex-col items-center rounded-xl`}
+      className={cn(
+        'media-container flex flex-col items-center rounded-xl',
+        `${className}`
+      )}
       ref={ref}  // forwarded up
       id={id}
     >
@@ -199,7 +202,7 @@ export const LetterDisplay = React.forwardRef<HTMLDivElement, LetterProps>(({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className={`${className} media-container mb-8`}
+      className={`${className} media-container`}
       ref={ref}  // forwarded up
       id={id}
     >

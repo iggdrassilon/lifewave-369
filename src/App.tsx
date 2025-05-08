@@ -23,6 +23,7 @@ import Terms from './pages/Terms'
 import { ScrollToTop } from './lib/sessions'
 import { RootStyler } from './lib/utils'
 import { UseTargetElementsParams } from './hooks/useUI'
+import { PopupProvider } from './components/layouts/popup'
 
 const queryClient = new QueryClient()
 
@@ -36,26 +37,28 @@ const App = () => (
         <ScrollToTop />
         <UseTargetElementsParams />
         <AnimatePresence mode='wait'>
-          <>
-            <Header />
-            <Routes>
-              <Route path='/patents-research' element={<Patents />} />
-              <Route path='/reviews' element={<Reviews />} />
-              <Route path='/privacy' element={<Privacy />} />
-              <Route path='/terms' element={<Terms />} />
-
-              <Route path='/reviews/:path' element={<ReviewDetailed />} />
-              <Route path='/reviews/:path/:category' element={<ReviewDetailed />} />
-              <Route path='/reviews/:path/:section/:index' element={<ReviewDetailed />} />
-
-              <Route path='/' element={<Home />} />
-              <Route path='*' element={<NotFound />} />
-            </Routes>
-
-            <Footer />
-            <BackToTop />
-            <Overlay />
-          </>
+          <PopupProvider>
+            <>
+              <Header />
+              <Routes>
+                <Route path='/patents-research' element={<Patents />} />
+                <Route path='/reviews' element={<Reviews />} />
+                <Route path='/privacy' element={<Privacy />} />
+                <Route path='/terms' element={<Terms />} />
+  
+                <Route path='/reviews/:path' element={<ReviewDetailed />} />
+                <Route path='/reviews/:path/:category' element={<ReviewDetailed />} />
+                <Route path='/reviews/:path/:section/:index' element={<ReviewDetailed />} />
+  
+                <Route path='/' element={<Home />} />
+                <Route path='*' element={<NotFound />} />
+              </Routes>
+  
+              <Footer />
+              <BackToTop />
+              <Overlay />
+            </>
+          </PopupProvider>
         </AnimatePresence>
       </BrowserRouter>
     </TooltipProvider>
