@@ -4,11 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import earthCopy from '/public/icons/earth-copy.svg'
 
-import {
-  Video,
-  Image as ImageIcon,
-  AudioLines,
-} from 'lucide-react'
+import { Video, Image as ImageIcon, AudioLines } from 'lucide-react'
 
 import {
   VideoPlayer,
@@ -27,14 +23,18 @@ import styled from 'styled-components'
 import { usePopup } from '../../layouts/popup'
 
 const ReviewDetailed: React.FC = () => {
-  const { path, section, index } = useParams<{ path: string; section: string; index?: string }>()
+  const { path, section, index } = useParams<{
+    path: string
+    section: string
+    index?: string
+  }>()
 
-  const [ review, setReview ] = useState<any>(null)
-  const [ loading, setLoading ] = useState<boolean>(true)
-  const [ pageLoaded, setPageLoaded ] = useState<boolean>(false)
-  const [ activeSection, setActiveSection ] = useState<string | null>(null)
-  const [ activeIndex, setActiveIndex ] = useState<number | null>(null)
-  const [ isNavigating, setIsNavigating ] = useState<boolean>(false)
+  const [review, setReview] = useState<any>(null)
+  const [loading, setLoading] = useState<boolean>(true)
+  const [pageLoaded, setPageLoaded] = useState<boolean>(false)
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [isNavigating, setIsNavigating] = useState<boolean>(false)
   // const [ firstLoad, setFirstLoad ] = useState<boolean>(false)
 
   const elementRefs = useRef<Map<string, HTMLDivElement>>(new Map())
@@ -76,18 +76,20 @@ const ReviewDetailed: React.FC = () => {
     console.log(targetElement)
     if (targetElement) {
       setIsNavigating(true)
-    
+
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
       setActiveSection(section)
       setActiveIndex(parseInt(index, 10))
-    
+
       const checkScrollEnd = () => {
         const targetRect = targetElement.getBoundingClientRect()
         const windowHeight = window.innerHeight
         const targetCenter = targetRect.top + targetRect.height / 2
 
-        if (Math.abs(targetCenter - windowHeight / 2) < 1 ||
-            (targetRect.bottom >= windowHeight && targetRect.top <= windowHeight)) {
+        if (
+          Math.abs(targetCenter - windowHeight / 2) < 1 ||
+          (targetRect.bottom >= windowHeight && targetRect.top <= windowHeight)
+        ) {
           setIsNavigating(false)
           setPageLoaded(true)
           // setTimeout(() => {
@@ -98,7 +100,7 @@ const ReviewDetailed: React.FC = () => {
           requestAnimationFrame(checkScrollEnd)
         }
       }
-    
+
       requestAnimationFrame(checkScrollEnd)
     } else {
       navigate(`/reviews/${path}`)
@@ -138,10 +140,13 @@ const ReviewDetailed: React.FC = () => {
           if (section !== activeSection || parsedIndex !== activeIndex) {
             setActiveSection(section)
             setActiveIndex(parsedIndex)
-            navigate(`/reviews/${path}/${section}${parsedIndex !== null ? `/${parsedIndex}` : ''}`, {
-              replace: true,
-              state: { preventScrollReset: true },
-            })
+            navigate(
+              `/reviews/${path}/${section}${parsedIndex !== null ? `/${parsedIndex}` : ''}`,
+              {
+                replace: true,
+                state: { preventScrollReset: true },
+              }
+            )
           }
         }
       },
@@ -170,11 +175,12 @@ const ReviewDetailed: React.FC = () => {
     const domain = window.location.host
     const link = `${protocol}//${domain}/reviews/${path}/${category}/${id}`
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(link)
+      navigator.clipboard
+        .writeText(link)
         .then(() => {
           popUp(UI.pops.copied)
         })
-        .catch(err => {
+        .catch((err) => {
           console.error('Failed to copy link: ', err)
         })
     } else {
@@ -185,7 +191,7 @@ const ReviewDetailed: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-black">
+      <div className='min-h-screen flex items-center justify-center bg-black'>
         <Spinner />
       </div>
     )
@@ -198,97 +204,112 @@ const ReviewDetailed: React.FC = () => {
   const { title, description, videos, images, audios, letters } = review || {}
 
   return (
-   <>
-    <ReviewDetailedBtn content={content} />
-    <Titles title={title} links={links} description={description} />
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
-      className={cn('container min-h-screen px-2 py-12 md:px-12 lg:px-24 pt-3 md:pt-4 bg-white')}
-    >
-      <div className="">
-        {videos && videos.length > 0 && (
-          <motion.section
-            id="videos"
-            // className='mb-20'
-            className={`mb-20 py-[60px] rounded-xl transition-all duration-300 
-              ${activeSection === 'videos' 
-                ? 'border-2 shadow-lg' 
-                : 'border-2 border-indigo-50'}
+    <>
+      <ReviewDetailedBtn content={content} />
+      <Titles title={title} links={links} description={description} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4 }}
+        className={cn(
+          'container min-h-screen px-2 py-12 md:px-12 lg:px-24 pt-3 md:pt-4 bg-white'
+        )}
+      >
+        <div className=''>
+          {videos && videos.length > 0 && (
+            <motion.section
+              id='videos'
+              // className='mb-20'
+              className={`mb-20 py-[60px] rounded-xl transition-all duration-300 
+              ${
+                activeSection === 'videos'
+                  ? 'border-2 shadow-lg'
+                  : 'border-2 border-indigo-50'
+              }
             `}
-          >
-            <div className="flex items-center justify-start mb-20 md:px-[50px] mt-[20px]">
-              <Video className="w-5 h-5 mr-2 text-blue-500" />
-              <h2 className="text-2xl font-semibold text-title">
-                {content.main.videos}
-              </h2>
-            </div>
-            <div className="space-y-20 md:px-[50px]">
-              {videos.map((video: any, index: number) => (
-                <div key={index} className='relative'>
-                  <VideoPlayer
-                    key={`video-${index}`}
-                    url={video.url}
-                    title={video.title}
-                    id={`videos-${index + 1}`}
-                    ref={registerRef(`videos-${index + 1}`)}
-                    // className={`transition-all duration-300 rounded-3xl border-2 ${
-                    //   activeIndex === index + 1 && activeSection === 'videos' && !firstLoad && 'animate-track-to'
-                    // }`}
-                  />
-                  <CopyLinkBtn onClick={() => handleClick('videos', index + 1)} />
-                </div>
-              ))}
-            </div>
-          </motion.section>
-        )}
-        {images && images.length > 0 && (
-          <motion.section
-            id="images"
-            className={`mb-20 py-[60px] rounded-xl ${activeSection === 'images' 
-              ? 'border-2 shadow-lg' 
-              : 'border-2 border-indigo-50'} transition-all duration-300`}
-          >
-            <div className="flex items-center justify-start mb-20 md:px-[50px]">
-              <ImageIcon className="w-5 h-5 mr-2 text-blue-500" />
-              <h2 className="text-2xl font-semibold text-title">
-                {content.main.photos}
-              </h2>
-            </div>
-            <div className="md:px-[50px] flex flex-col items-center ">
-              {images.map((image: any, index: number) => (
-                <div key={index} className={cn(
-                  'relative',
-                  `${index !== 0 ? 'mt-[100px]' : ''}`
-                )}>
-                  <ImageDisplay
-                    key={`image-${index}`}
-                    id={`images-${index + 1}`}
-                    title={image.title}
-                    url={image.url}
-                    ref={registerRef(`images-${index + 1}`)}
-                    // className={`${index !== 0 ? 'mt-[100px]' : ''}`}
-                    // className={`transition-all duration-500 ${
-                    //   activeIndex === index + 1 && activeSection === 'images' && !firstLoad && 'animate-track-to'
-                    // }`}
-                  />
-                  <CopyLinkBtn onClick={() => handleClick('images', index + 1)} />
-                </div>
-              ))}
-            </div>
-          </motion.section>
-        )}
-        {letters && letters.length > 0 && (
+            >
+              <div className='flex items-center justify-start mb-20 md:px-[50px] mt-[20px]'>
+                <Video className='w-5 h-5 mr-2 text-blue-500' />
+                <h2 className='text-2xl font-semibold text-title'>
+                  {content.main.videos}
+                </h2>
+              </div>
+              <div className='space-y-20 md:px-[50px]'>
+                {videos.map((video: any, index: number) => (
+                  <div key={index} className='relative'>
+                    <VideoPlayer
+                      key={`video-${index}`}
+                      url={video.url}
+                      title={video.title}
+                      id={`videos-${index + 1}`}
+                      ref={registerRef(`videos-${index + 1}`)}
+                      // className={`transition-all duration-300 rounded-3xl border-2 ${
+                      //   activeIndex === index + 1 && activeSection === 'videos' && !firstLoad && 'animate-track-to'
+                      // }`}
+                    />
+                    <CopyLinkBtn
+                      onClick={() => handleClick('videos', index + 1)}
+                    />
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+          {images && images.length > 0 && (
+            <motion.section
+              id='images'
+              className={`mb-20 py-[60px] rounded-xl ${
+                activeSection === 'images'
+                  ? 'border-2 shadow-lg'
+                  : 'border-2 border-indigo-50'
+              } transition-all duration-300`}
+            >
+              <div className='flex items-center justify-start mb-20 md:px-[50px]'>
+                <ImageIcon className='w-5 h-5 mr-2 text-blue-500' />
+                <h2 className='text-2xl font-semibold text-title'>
+                  {content.main.photos}
+                </h2>
+              </div>
+              <div className='md:px-[50px] flex flex-col items-center '>
+                {images.map((image: any, index: number) => (
+                  <div
+                    key={index}
+                    className={cn(
+                      'relative',
+                      `${index !== 0 ? 'mt-[100px]' : ''}`
+                    )}
+                  >
+                    <ImageDisplay
+                      key={`image-${index}`}
+                      id={`images-${index + 1}`}
+                      title={image.title}
+                      url={image.url}
+                      ref={registerRef(`images-${index + 1}`)}
+                      // className={`${index !== 0 ? 'mt-[100px]' : ''}`}
+                      // className={`transition-all duration-500 ${
+                      //   activeIndex === index + 1 && activeSection === 'images' && !firstLoad && 'animate-track-to'
+                      // }`}
+                    />
+                    <CopyLinkBtn
+                      onClick={() => handleClick('images', index + 1)}
+                    />
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+          {letters && letters.length > 0 && (
             <motion.section
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className={`mb-20 py-[60px] rounded-xl
-                ${activeSection === 'letters' 
-                  ? 'border-2 shadow-lg' 
-                  : 'border-2 border-indigo-50'} transition-all duration-300
+                ${
+                  activeSection === 'letters'
+                    ? 'border-2 shadow-lg'
+                    : 'border-2 border-indigo-50'
+                } transition-all duration-300
               `}
             >
               <div className='flex items-center justify-start mb-20 md:px-[50px]'>
@@ -310,7 +331,9 @@ const ReviewDetailed: React.FC = () => {
                       //   activeIndex === index + 1 && activeSection === 'letters' && !firstLoad && 'animate-track-to'
                       // }`}
                     />
-                    <CopyLinkBtn onClick={() => handleClick('letters', index + 1)} />
+                    <CopyLinkBtn
+                      onClick={() => handleClick('letters', index + 1)}
+                    />
                   </div>
                 ))}
               </div>
@@ -321,9 +344,11 @@ const ReviewDetailed: React.FC = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className={`mb-20 py-[60px] rounded-xl ${activeSection === 'audios' 
-                ? 'border-2 shadow-lg' 
-                : 'border-2 border-indigo-50'} transition-all duration-300`}
+              className={`mb-20 py-[60px] rounded-xl ${
+                activeSection === 'audios'
+                  ? 'border-2 shadow-lg'
+                  : 'border-2 border-indigo-50'
+              } transition-all duration-300`}
             >
               <div className='flex items-center justify-start mb-20 md:px-[50px]'>
                 <AudioLines className='w-5 h-5 mr-2 text-blue-500' />
@@ -344,15 +369,17 @@ const ReviewDetailed: React.FC = () => {
                       //   activeIndex === index + 1 && activeSection === 'audios' && !firstLoad && 'animate-track-to'
                       // }`}
                     />
-                    <CopyLinkBtn onClick={() => handleClick('audios', index + 1)} />
+                    <CopyLinkBtn
+                      onClick={() => handleClick('audios', index + 1)}
+                    />
                   </div>
                 ))}
               </div>
             </motion.section>
           )}
-      </div>
-    </motion.div>
-   </>
+        </div>
+      </motion.div>
+    </>
   )
 }
 

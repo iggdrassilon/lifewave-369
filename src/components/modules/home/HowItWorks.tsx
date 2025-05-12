@@ -108,9 +108,11 @@ const HowItWorks = () => {
                   'md:w-[100%]'
                   // `${shadowElems}`
                 )}
-                style={{
-                  // boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
-                }}
+                style={
+                  {
+                    // boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
+                  }
+                }
                 sectionMounted={() => ''}
               >
                 <div

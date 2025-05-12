@@ -19,8 +19,8 @@ const Titles = (props: TitleProps) => {
     addRef({ id: 'titles', ref: ref.current })
     addRef({ id: 'title', ref: refTitle.current })
     return () => {
-      removeRef( { id: 'titles', ref: ref.current } )
-      removeRef( { id: 'title', ref: refTitle.current } )
+      removeRef({ id: 'titles', ref: ref.current })
+      removeRef({ id: 'title', ref: refTitle.current })
     }
   }, [ref.current, refTitle.current])
 

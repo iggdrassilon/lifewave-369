@@ -44,7 +44,7 @@ const BackToTop = () => {
             'fixed bottom-[30px] right-[20px]   ',
             'backdrop-blur-sm transition-colors duration-300',
             'z-50 p-4 rounded-full',
-            'bg-primary/40 hover:bg-primary/60 text-zinc-400' 
+            'bg-primary/40 hover:bg-primary/60 text-zinc-400'
           )}
           style={{
             boxShadow:

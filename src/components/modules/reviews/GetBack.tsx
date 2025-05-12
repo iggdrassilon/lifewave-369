@@ -10,12 +10,8 @@ const GetBack = (content: any) => {
   }, [])
   return (
     <div className='min-h-screen flex flex-col items-center justify-center px-4'>
-      <h2 className='text-2xl font-bold mb-4'>
-        {errors.notFound}
-      </h2>
-      <p className='mb-8 text-center'>
-        {errors.notExist}
-      </p>
+      <h2 className='text-2xl font-bold mb-4'>{errors.notFound}</h2>
+      <p className='mb-8 text-center'>{errors.notExist}</p>
       <Link
         to='/reviews'
         className={cn(

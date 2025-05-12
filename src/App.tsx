@@ -45,15 +45,21 @@ const App = () => (
                 <Route path='/reviews' element={<Reviews />} />
                 <Route path='/privacy' element={<Privacy />} />
                 <Route path='/terms' element={<Terms />} />
-  
+
                 <Route path='/reviews/:path' element={<ReviewDetailed />} />
-                <Route path='/reviews/:path/:category' element={<ReviewDetailed />} />
-                <Route path='/reviews/:path/:section/:index' element={<ReviewDetailed />} />
-  
+                <Route
+                  path='/reviews/:path/:category'
+                  element={<ReviewDetailed />}
+                />
+                <Route
+                  path='/reviews/:path/:section/:index'
+                  element={<ReviewDetailed />}
+                />
+
                 <Route path='/' element={<Home />} />
                 <Route path='*' element={<NotFound />} />
               </Routes>
-  
+
               <Footer />
               <BackToTop />
               <Overlay />

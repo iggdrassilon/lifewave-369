@@ -111,13 +111,13 @@ const SecondBlock = ({ content }: any) => {
                   'bg-[#ffebcdd4]',
                   'text-[24px]',
                   'bg-gradient-to-r', // Направление градиента слева направо
-                  'from-[rgba(230,230,230,1)]',       // Начальный цвет градиента (белый)
-                  'from-[40%]',        // Начальная позиция градиента (40%)
+                  'from-[rgba(230,230,230,1)]', // Начальный цвет градиента (белый)
+                  'from-[40%]', // Начальная позиция градиента (40%)
                   'z-10 p-[20px] ml-0',
                   'min-w-descr sm:w-[100%] md:min-w-0 md:max-w-descr_md'
                 )}
-                style={{ 
-                  boxShadow: shadowElems
+                style={{
+                  boxShadow: shadowElems,
                 }}
                 duration={1}
                 delay={0.6}

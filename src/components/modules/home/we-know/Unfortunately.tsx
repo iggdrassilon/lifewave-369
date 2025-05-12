@@ -56,7 +56,7 @@ const Unfortunately = () => {
           }}
         >
           <h2 className='text-center my-10 flex items-center justify-center'>
-            { }
+            {}
             <TextAnimated
               text={`${content.home.unfortunately}`}
               textSizes='text-3xl md:text-4xl'
@@ -70,9 +70,11 @@ const Unfortunately = () => {
           <div className='sm:w-[523px] pb-[100px] md:w-[60%] mb-[10 0px] max-w-[800px] flex flex-col items-center justify-center w-[calc(100%-40px)]'>
             <div
               className={`text-description prose font-bold ${chatBox} ${textDensity} sm:text-3xl`}
-              style={{
-                // boxShadow: shadowElems,
-              }}
+              style={
+                {
+                  // boxShadow: shadowElems,
+                }
+              }
             >
               {content.home.slowlyregenerate}
             </div>
@@ -86,9 +88,11 @@ const Unfortunately = () => {
             />
             <div
               className={`mt-5 text-description ${chatBox} ${textDensity}`}
-              style={{
-                // boxShadow: shadowElems,  
-              }}
+              style={
+                {
+                  // boxShadow: shadowElems,
+                }
+              }
             >
               {content.home.to30years}
             </div>
@@ -102,9 +106,11 @@ const Unfortunately = () => {
             />
             <div
               className={`text-description ${chatBox} ${textDensity}`}
-              style={{
-                // boxShadow: shadowElems,
-              }}
+              style={
+                {
+                  // boxShadow: shadowElems,
+                }
+              }
             >
               {content.home.to60years}
             </div>

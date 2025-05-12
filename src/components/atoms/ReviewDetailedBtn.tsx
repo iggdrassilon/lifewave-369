@@ -13,32 +13,36 @@ interface ReviewDetailedBtnProps {
 
 const ReviewDetailedBtn = (props: ReviewDetailedBtnProps) => {
   const { content } = props
-  const [ state, setState ] = useState<boolean>(false)
-  const [ params, setParams ] = useState({
+  const [state, setState] = useState<boolean>(false)
+  const [params, setParams] = useState({
     titleH: 0,
     btnTop: 0,
-    btnH: 0
+    btnH: 0,
   })
 
   const ref = useRef<HTMLAnchorElement | null>(null)
   const refs = useOurUI().Refs
 
   useEffect(() => {
-    const titleRef = refs.filter(ref => ref.id === 'titles')[0]
-    const descrRef = refs.filter(ref => ref.id === 'title')[0]
-    const headerRef = refs.filter(ref => ref.id === 'header')[0]
-    const btnCordTop = Number(window.getComputedStyle(ref.current).top.slice(0, -2))
-    const btnPaddings = Number(window.getComputedStyle(ref.current).padding.slice(0, -2))
+    const titleRef = refs.filter((ref) => ref.id === 'titles')[0]
+    const descrRef = refs.filter((ref) => ref.id === 'title')[0]
+    const headerRef = refs.filter((ref) => ref.id === 'header')[0]
+    const btnCordTop = Number(
+      window.getComputedStyle(ref.current).top.slice(0, -2)
+    )
+    const btnPaddings = Number(
+      window.getComputedStyle(ref.current).padding.slice(0, -2)
+    )
     const handleScroll = () => {
       if (titleRef && descrRef && headerRef) {
         const titleH = titleRef.ref.getBoundingClientRect().height
         const descrH = descrRef.ref.getBoundingClientRect().height
         const header = headerRef.ref.getBoundingClientRect().height
-        setParams(prev => ({
+        setParams((prev) => ({
           ...prev,
-          titleH: titleH - descrH - header - btnCordTop + (btnPaddings * 2),
+          titleH: titleH - descrH - header - btnCordTop + btnPaddings * 2,
           btnTop: ref.current.clientTop,
-          btnH: ref.current.clientHeight
+          btnH: ref.current.clientHeight,
         }))
       }
     }
@@ -48,7 +52,7 @@ const ReviewDetailedBtn = (props: ReviewDetailedBtnProps) => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [refs])
-  
+
   useMemo(() => {
     if (ref.current && window.scrollY >= params.titleH) {
       setState(true)

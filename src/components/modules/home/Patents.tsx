@@ -36,21 +36,21 @@ const Patents = () => {
   const shadowElems =
     // 'drop-shadow-[0_4px_15px_rgba(0,50,250,0.4)] rounded-xl backdrop-blur-sm'
 
-  useEffect(() => {
-    if (inView && sectionMounted) {
-      setState(true)
-    }
+    useEffect(() => {
+      if (inView && sectionMounted) {
+        setState(true)
+      }
 
-    const handleResize = () => {
-      setIsXlScreen(window.innerWidth < xlScreen)
-      setIsSmScreen(window.innerWidth < smScreen)
-    }
+      const handleResize = () => {
+        setIsXlScreen(window.innerWidth < xlScreen)
+        setIsSmScreen(window.innerWidth < smScreen)
+      }
 
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [inView, sectionMounted])
+      window.addEventListener('resize', handleResize)
+      return () => {
+        window.removeEventListener('resize', handleResize)
+      }
+    }, [inView, sectionMounted])
 
   useEffect(() => {
     if (gridInView) {

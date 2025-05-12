@@ -117,9 +117,11 @@ const BreakThrough = () => {
                   'rounded-xl'
                   // `${shadowElems}`
                 )}
-                style={{
-                  // boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
-                }}
+                style={
+                  {
+                    // boxShadow: '0 4px 15px rgba(0,50,250, 0.4)',
+                  }
+                }
               />
             ),
           }}
