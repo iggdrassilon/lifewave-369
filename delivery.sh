@@ -1,9 +1,9 @@
 DIST_DIR_CLIENT="$PWD/dist"
-REMOTE_USER="jasmine"
-REMOTE_HOST="89.111.153.143"
+REMOTE_USER="igg"
+REMOTE_HOST="103.73.35.242"
 REMOTE_DIR_CLIENT="~/Work/cell"
 REMOTE_HOST_DIR='~/Work/www'
-SECRET='~/.ssh/jsm_vps'
+SECRET='~/.ssh/id_rsa'
 
 echo "begin building of client..."
 yarn build
