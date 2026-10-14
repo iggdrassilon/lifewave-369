@@ -1,0 +1,58 @@
+# Журнал работы — lifewave-369
+
+Формат и правило: `/opt/infrastructure-docs/workloads/README.md`, раздел
+«Журнал сессии». Свежее — сверху. Время UTC.
+
+## Где мы сейчас (2026-10-14)
+
+Проект развёртывается на `tg-cl-dev.com` (194.147.215.34) под своим доменом
+**patch-stem-cells.ru** (A-запись домена и www уже указывают на этот IP).
+
+| Что | Состояние |
+|---|---|
+| Ветка | `deploy/infra` от `master` (9924afc) |
+| Код сайта | `master` — на нём самые свежие отзывы (`public/content/reviews.json`, 08.05.2025, 114 КБ) |
+| Контейнер | `lifewave-369`, образ `lifewave-369:local`, 127.0.0.1:8089 → :80 |
+| Наружу | хостовый nginx: `:443` сайт, `:80` редирект + ACME |
+| Рунбук | `/opt/infrastructure-docs/workloads/lifewave-369/README.md` |
+
+Незакоммиченного нет — что добавлено в `deploy/infra`, перечислено в хронике.
+
+## Почему master, а не edits_03.30
+
+Ветки с правками отзывов — две: `master` и `edits_03.30`. У `edits_03.30` тик
+свежее по дате (2026-07-12), но это один коммит «fix: upd cfgs» (`.nginx/nginx.conf`
++ `delivery.sh`) поверх базы, отставшей от `master` на 26 коммитов: отзывы там
+версии 11.04.2025. На `master` они правились до 08.05.2025 (`edit reviews pt.1/2`,
+`new reviews from client`, `upd ui reviews`, `add tracking current review`).
+Поэтому код — `master`, а смысл того единственного коммита `edits_03.30`
+(SSL-строки закомментированы до выпуска сертификата) воспроизведён на хосте.
+
+## Устройство деплоя
+
+```
+браузер → хостовый nginx :443 (TLS, certbot)
+                 ↓ proxy_pass
+          127.0.0.1:8089 → контейнер lifewave-369 (nginx:alpine)
+                 ↓
+          /var/www/cell — dist, собранный Vite в образ
+```
+
+Конфиг сайта едет с кодом: `.nginx/container.conf` (копия `.nginx/nginx.conf`
+без хостовых частей) попадает в образ. На хосте лежит только то, что
+принадлежит хосту: имя, TLS, ACME, редирект.
+
+- Правки отзывов: `public/content/reviews.json` → пересборка образа. Конфиг
+  намеренно отдаёт `*.json` с `no-store`, иначе правки клиента не доезжают.
+- Публичные порты проекта на loopback: 8089 наружу не открыт.
+
+## Хроника
+
+### 2026-10-14 — первичное развёртывание
+- Клон `iggdrassilon/lifewave-369` в `/opt/claude/lifewave-369`, ветка
+  `deploy/infra` от `master`.
+- Добавлены файлы деплоя: рабочий `Dockerfile` (старый ставил только
+  production-зависимости и запускал `vite start` — несуществующую команду),
+  `.nginx/container.conf`, `.nginx/blocked_ips.conf`, `.dockerignore`.
+- Сервис `lifewave-369` в `/opt/infra/docker-compose.yml`, манифест
+  `workloads/lifewave-369/project.yml`.
